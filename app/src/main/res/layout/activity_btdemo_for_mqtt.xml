@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.BTDemoBigDataActivity">
+
+
+    <RelativeLayout
+        android:id="@+id/rlvHeaderViewID"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:background="@drawable/btn_grediant_drawable">
+
+
+        <!-- <ImageView
+             android:id="@+id/imgHeaderID"
+             android:layout_width="@dimen/_50sdp"
+             android:layout_height="@dimen/_50sdp"
+             android:paddingStart="@dimen/_5sdp"
+             android:paddingTop="@dimen/_15sdp"
+             android:paddingEnd="@dimen/_20sdp"
+             android:paddingBottom="@dimen/_15sdp"
+             android:src="@drawable/icn_back" />-->
+
+        <RelativeLayout
+            android:id="@+id/rlvBackViewID"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_centerVertical="true"
+                android:id="@+id/imgHeaderID"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingTop="@dimen/_15sdp"
+                android:paddingEnd="@dimen/_1sdp"
+                android:paddingBottom="@dimen/_15sdp"
+                android:src="@drawable/icn_back" />
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/txtHeaderID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_toEndOf="@+id/rlvBackViewID"
+
+            android:text="@string/app_name"
+            android:textColor="@color/white"
+
+            android:textSize="@dimen/_14sdp"
+            android:fontFamily="@font/open_sans_regular"
+
+            />
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_below="@+id/rlvHeaderViewID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_10sdp">
+
+    <TextView
+        android:layout_gravity="center"
+        android:id="@+id/txtIMEIBTNID"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:text="@string/st_GETIMEI"
+        android:textAllCaps="true"
+        android:gravity="center"
+        android:textColor="@color/cb_white"
+        android:textSize="@dimen/_14sdp"
+        android:fontFamily="@font/open_sans_regular"
+        android:background="@drawable/rounded_corner_gredient_btn"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+
+        />
+
+        <TextView
+            android:visibility="gone"
+            android:layout_below="@+id/txtIMEIBTNID"
+            android:layout_gravity="center"
+            android:id="@+id/txtIMEIshowID"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_30sdp"
+            android:text=""
+            android:textAllCaps="false"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            android:fontFamily="@font/open_sans_regular"
+            android:background="@android:color/transparent"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+
+            />
+
+        <RelativeLayout
+            android:layout_below="@+id/txtIMEIshowID"
+            android:id="@+id/rlvClientID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <LinearLayout
+            android:weightSum="2"
+            android:orientation="horizontal"
+            android:id="@+id/lvlClientID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:id="@+id/txtClientBTNID"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:text="@string/st_SETCLIENTID"
+            android:textAllCaps="true"
+            android:gravity="center"
+            android:textColor="@color/cb_white"
+            android:textSize="@dimen/_14sdp"
+            android:fontFamily="@font/open_sans_regular"
+            android:background="@drawable/rounded_corner_gredient_btn"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            />
+
+
+            <TextView
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:id="@+id/txtClientGETBTNID"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:text="@string/st_GETCLIENTID"
+                android:textAllCaps="true"
+                android:gravity="center"
+                android:textColor="@color/cb_white"
+                android:textSize="@dimen/_14sdp"
+                android:fontFamily="@font/open_sans_regular"
+                android:background="@drawable/rounded_corner_gredient_btn"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                />
+
+
+        </LinearLayout>
+
+
+            <TextView
+                android:visibility="gone"
+                android:layout_below="@+id/lvlClientID"
+                android:layout_gravity="center"
+                android:id="@+id/txtClientshowID"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:text=""
+                android:textAllCaps="false"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp"
+                android:fontFamily="@font/open_sans_regular"
+                android:background="@android:color/transparent"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+
+                />
+        </RelativeLayout>
+
+
+<!--Username-->
+
+        <RelativeLayout
+            android:layout_below="@+id/rlvClientID"
+            android:id="@+id/rlvUsernameID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:weightSum="2"
+                android:orientation="horizontal"
+                android:id="@+id/lvlUsernameID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                   android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:id="@+id/txtUsernameBTNID"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:text="@string/st_SETUSERNAME"
+                    android:textAllCaps="true"
+                    android:gravity="center"
+                    android:textColor="@color/cb_white"
+                    android:textSize="@dimen/_14sdp"
+                    android:fontFamily="@font/open_sans_regular"
+                    android:background="@drawable/rounded_corner_gredient_btn"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+
+                    />
+
+
+                <TextView
+                   android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:id="@+id/txtUsernameGETBTNID"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:text="@string/st_GETUSERNAME"
+                    android:textAllCaps="true"
+                    android:gravity="center"
+                    android:textColor="@color/cb_white"
+                    android:textSize="@dimen/_14sdp"
+                    android:fontFamily="@font/open_sans_regular"
+                    android:background="@drawable/rounded_corner_gredient_btn"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+
+                    />
+
+
+            </LinearLayout>
+
+
+            <TextView
+                android:visibility="gone"
+                android:layout_below="@+id/lvlUsernameID"
+                android:layout_gravity="center"
+                android:id="@+id/txtUsernameShowID"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:text=""
+                android:textAllCaps="false"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp"
+                android:fontFamily="@font/open_sans_regular"
+                android:background="@android:color/transparent"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+
+                />
+
+
+        </RelativeLayout>
+
+
+        <!--Password-->
+
+        <RelativeLayout
+            android:layout_below="@+id/rlvUsernameID"
+            android:id="@+id/rlvPasswordID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:weightSum="2"
+                android:orientation="horizontal"
+                android:id="@+id/lvlPasswordID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_below="@+id/rlvUsernameID"
+                    android:layout_gravity="center"
+                    android:id="@+id/txtPasswordBTNID"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:text="@string/st_SETPassword"
+                    android:textAllCaps="true"
+                    android:gravity="center"
+                    android:textColor="@color/cb_white"
+                    android:textSize="@dimen/_14sdp"
+                    android:fontFamily="@font/open_sans_regular"
+                    android:background="@drawable/rounded_corner_gredient_btn"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+
+                    />
+
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_below="@+id/rlvUsernameID"
+                    android:layout_gravity="center"
+                    android:id="@+id/txtPasswordGETBTNID"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:text="@string/st_GETPassword"
+                    android:textAllCaps="false"
+                    android:gravity="center"
+                    android:textColor="@color/cb_white"
+                    android:textSize="@dimen/_14sdp"
+                    android:fontFamily="@font/open_sans_regular"
+                    android:background="@drawable/rounded_corner_gredient_btn"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+
+                    />
+            </LinearLayout>
+
+            <TextView
+                android:visibility="gone"
+                android:layout_below="@+id/lvlPasswordID"
+                android:layout_gravity="center"
+                android:id="@+id/txtPasswordShowID"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:text=""
+                android:textAllCaps="false"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp"
+                android:fontFamily="@font/open_sans_regular"
+                android:background="@android:color/transparent"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+
+                />
+        </RelativeLayout>
+
+
+
+
+        <LinearLayout
+
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_alignParentBottom="true"
+            android:weightSum="2"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:layout_weight="1"
+                android:layout_below="@+id/txtUsernameShowID"
+                android:layout_gravity="center"
+                android:id="@+id/txtMQTTBTNID"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:text="@string/st_SwitchMQTT"
+                android:textAllCaps="true"
+                android:gravity="center"
+                android:textColor="@color/cb_white"
+                android:textSize="@dimen/_14sdp"
+                android:fontFamily="@font/open_sans_regular"
+                android:background="@drawable/rounded_corner_gredient_btn"
+                android:layout_marginStart="@dimen/_2sdp"
+                android:layout_marginEnd="@dimen/_2sdp"
+
+                />
+
+
+
+
+            <TextView
+                android:layout_weight="1"
+                android:layout_below="@+id/txtUsernameShowID"
+                android:layout_gravity="center"
+                android:id="@+id/txtTCPBTNID"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:text="@string/st_SwitchTCP"
+                android:textAllCaps="true"
+                android:gravity="center"
+                android:textColor="@color/cb_white"
+                android:textSize="@dimen/_14sdp"
+                android:fontFamily="@font/open_sans_regular"
+                android:background="@drawable/rounded_corner_gredient_btn"
+                android:layout_marginStart="@dimen/_2sdp"
+                android:layout_marginEnd="@dimen/_2sdp"
+
+                />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

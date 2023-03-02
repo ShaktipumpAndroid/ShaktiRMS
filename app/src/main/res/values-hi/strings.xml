@@ -1,0 +1,400 @@
+<resources>
+    <string name="app_name">शक्ति आरएमएस</string>
+
+    <string name="hint_activity">गतिविधि</string>
+    <string name="hint_password"> पॉसवर्ड</string>
+    <string name="hint_user_name"> यूजरनेम </string>
+    <string name="hint_user_last_name"> अंतिम नाम</string>
+    <string name="hint_user_first_name"> पहला नाम</string>
+    <string name="hint_OTP"> OTP डाले </string>
+
+    <string name="hint_confirm_password"> पासवर्ड की पुष्टि कीजिये</string>
+    <string name="hint_controller_id"> नियंत्रक आईडी </string>
+    <string name="hint_phone_no"> फ़ोन नंबर </string>
+    <string name="hint_address"> पता </string>
+    <string name="err_reg_mobile_no"> पंजीकृत मोबाइल नंबर दर्ज करें </string>
+    <string name="err_reg_mobile_no1"> डिवाइस रजिस्टर करने के लिए मोबाइल नंबर डालें </string>
+    <string name="err_reg_mobile_no12"> मोबाइल नंबर या ईमेल आईडी डालें </string>
+
+    <string name="err_msg_name">यूज़रनेम  डाले</string>
+    <string name="err_msg_first_name">पहला नाम दर्ज करें</string>
+    <string name="err_msg_last_name">अंतिम नाम दर्ज करो</string>
+    <string name="err_msg_email">सही ईमेल पता दर्ज करें</string>
+    <string name="err_msg_password">पासवर्ड डाले</string>
+
+    <string name="err_msg_phone_no"> फ़ोन नंबर डाले</string>
+    <string name="err_msg_valid_phone_no"> कृपया सही फ़ोन नंबर डाले </string>
+    <string name="err_msg_valid_phone_no1"> कृपया सही फ़ोन नंबर और ईमेल पता डाले </string>
+    <string name="err_msg_password_match">आपका पासवर्ड और पुष्टिकरण पासवर्ड मेल नहीं खाते हैं</string>
+
+    <string name="err_msg_address"> पता डाले</string>
+    <string name="err_msg_controller"> नियंत्रक आईडी डाले </string>
+    <string name="err_msg_confirm_password"> पुस्टि करने के लिए वापस पासवर्ड डाले </string>
+    <string name="bt_not_permitted_msg"> ब्लूटूथ के लिए डिवाइस की अनुमति नहीं है!</string>
+
+    <string name="error"> त्रुटि </string>
+    <string name="alert"> चेतावनी </string>
+    <string name="success"> सफलता </string>
+
+    <string name="err_invalid_user_password"> उपयोगकर्ता नाम या पासवर्ड गलत है  </string>
+    <string name="err_device_disconnect"> उपकरण सर्वर से कनेक्टेड नहीं है  </string>
+    <string name="parameter_set_successfully"> पैरामीटर सफलतापूर्वक सेट हो गया है!</string>
+    <string name="err_app_permission"> फ़ोन सेटिंग में जाकर अप्प को अनुमति प्रदान करे  </string>
+
+    <string name="succ_device_start"> डिवाइस सफलतापूर्वक चालू हो गया है| </string>
+    <string name="succ_device_stop"> डिवाइस सफलतापूर्वक बंद हो गया है| </string>
+    <string name="err_start_command_fail"> चालू आदेश विफल हो गया है| </string>
+    <string name="err_read_mode_fail"> रीड आदेश विफल हो गया है|  </string>
+    <string name="err_set_mode_fail"> सेट मोड आदेश विफल हो गया है|  </string>
+    <string name="err_stop_command_fail"> बंद आदेश विफल हो गया है|  </string>
+
+    <string name="err_user_block"> प्रबंधन द्वारा आपको प्रतिबंदित किया गया है| </string>
+    <string name="err_connection"> सर्वर से  कनेक्शन नहीं बन रहा है| </string>
+    <string name="err_no_device_found">कोई उपकरण उपलब्ध नहीं है|</string>
+
+    <string name="err_disconnect"> उपकरण कनेक्टेड नहीं है|</string>
+
+    <string name="err_invalid_device"> कृपया सही उपकरण नंबर डाले </string>
+    <string name="err_device_already_added"> उपकरण पहले से मौजूद हैं|</string>
+
+    <string name="err_user_name"> यह यूजरनेम पहले से मौजूद हैं| कृपया दूसरा नेम सेलेक्ट करे|</string>
+
+    <string name="err_Mobile_no_exist"> इस मोबाइल नंबर के साथ दूसरा अकाउंट पहले इ मौजूद हैं|</string>
+
+    <string name="err_internet"> इंटरनेट कनेक्शन मौजूद नहीं हैं|</string>
+    <string name="err_device_number"> सही उपकरण नंबर डाले </string>
+
+    <string name="err_msg_otp"> OTP डाले </string>
+    <string name="err_invaild_otp"> OTP सही नहीं हैं </string>
+    <string name="success_device"> उपकरण वेरिफिकेशन सफलतापूर्वक हो गया है|</string>
+    <string name="data_save"> डेटा सफलतापूर्वक सेव हो गया है! </string>
+
+    <!-- material design-->
+
+    <string name="action_search">सर्च</string>
+    <string name="action_login">लॉगिन</string>
+    <string name="action_new_account"> नया अकाउंट बनाये </string>
+    <string name="action_get_bt_data"> ब्लूटूथ डेटा प्राप्त करें </string>
+    <string name="action_forgot_password"> Forgot Password?</string>
+
+    <string name="action_verify_account"> खाता संख्या सत्यापित करें </string>
+    <string name="action_verify_device"> उपकरण नंबर सत्यापित करें </string>
+    <string name="action_add_device"> उपकरण नंबर जोड़ें </string>
+    <string name="action_forgotPassword"> फॉरगॉट पासवर्ड</string>
+    <string name="action_chnagePassword"> पासवर्ड बदले </string>
+    <string name="action_get_imei_number"> IMEI नंबर प्राप्त करे</string>
+    <string name="action_activation_pending"> सक्रियण लंबित </string>
+    <string name="action_delete_device"> वर्तमान हटाएं </string>
+    <string name="action_data_report"> डेटा रिपोर्ट </string>
+    <string name="action_real_monitoring"> वर्तमान निगरानी </string>
+    <string name="action_device_setting"> उपकरण सेटिंग्स </string>
+    <string name="action_device_settingBT"> उपकरण सेटिंग्स </string>
+    <string name="action_forgot_passwordid"> उपकरण सेटिंग्स </string>
+    <string name="fault_report"> दोष रिपोर्ट </string>
+    <string name="fault_detail"> दोष विवरण </string>
+
+    <string name="btn_sign_up"> साइन अप करें </string>
+    <string name="btn_send_otp"> ओटीपी पुनः भेजें </string>
+    <string name="btn_verify_otp"> OTP सत्यापित करें </string>
+    <string name="btn_save"> सेव करे  </string>
+
+    <string name="drawer_open">खोले</string>
+    <string name="drawer_close">बंद करे</string>
+
+    <string name="MenuHome">मुख्य पटल</string>
+    <string name="MenuAddDevice">ऐड डिवाइस</string>
+    <string name="MenuChangePassword">चेंज पासवर्ड</string>
+    <string name="MenuLogout">लॉगआउट</string>
+    <string name="MenuDeleteDevice">डिलीट डिवाइस</string>
+    <string name="MenuChangeLanguage">भाषा बदलिए</string>
+    <string name="MenuGETIMEI">गेट आई ऍम इ आई</string>
+
+    <string name="MenuWelcome">स्वागतम</string>
+    <string name="MenuAppVersion">ऐप वर्शन</string>
+    <string name="nav_item_home">मुख्य पटल</string>
+    <string name="nav_add_device">उपकरण जोड़े</string>
+    <string name="nav_chnage_password">पासवर्ड बदलिए</string>
+    <string name="nav_pending_device">सक्रियण लंबित</string>
+    <string name="nav_item_logout">लॉगआउट</string>
+    <string name="nav_item_about">हमारे बारे में</string>
+    <string name="nav_item_bt_imeinum">IMEI प्राप्त करे</string>
+    <string name="nav_item_change_lan">भाषा बदलिए</string>
+    <string name="nav_item_mqtt_option">MQTT</string>
+    <string name="nav_item_contact">संपर्क करें</string>
+    <string name="nav_item_condition">नियम और शर्तें</string>
+    <string name="nav_item_fault_report">दोष रिपोर्ट</string>
+    <string name="nav_item_data_report">डेटा रिपोर्ट</string>
+    <string name="nav_item_bt_data_extract">ब्लूटूथ डाटा एक्सट्रैक्शन</string>
+    <string name="upload_file_data_extract">डेटा एक्सेल अपलोड करें</string>
+    <!--<string name="nav_item_bt_a1ss_app">A1SS App</string>-->
+    <string name="nav_delete_device">उपकरण हटाएं</string>
+
+    <!-- navigation drawer item labels single user  -->
+    <string-array name="nav_drawer_labels_single_user">
+        <item>@string/nav_item_home</item>
+        <item>@string/nav_add_device</item>
+        <item>@string/nav_chnage_password</item>
+        <item>@string/nav_item_bt_imeinum</item>
+        <item>@string/nav_item_change_lan</item>
+        <item>@string/nav_item_logout</item>
+    </string-array>
+
+    <!-- navigation drawer item labels org user   -->
+    <string-array name="nav_drawer_labels_org_user">
+        <item>@string/nav_item_home</item>
+        <item>@string/nav_chnage_password</item>
+        <item>@string/nav_item_mqtt_option</item>
+        <item>@string/nav_item_change_lan</item>
+        <item>@string/nav_item_logout</item>
+    </string-array>
+
+    <string name="Permission_granted_now_you_can_read_the_storage_text">Permission granted now you can read the storage</string>
+    <string name="Oops_you_just_denied_the_permission_text">Oops you just denied the permission</string>
+    <string name="permission_set_manually">Please set app permission manually!</string>
+    <string name="Permission_granted_now_you_can_use_camera_text">Permission granted now you can use camera</string>
+    <string name="Permission_granted_now_you_can_use_user_imeinumber_text">Permission granted now you can use user device imei number</string>
+    <string name="Permission_granted_now_you_can_use_user_location_text">Permission granted now you can use user location</string>
+    <string name="is_user_location_text">क्या मोबाइल  लोकेशन चालू है?</string>
+    <string name="No_Internet_Avaliable_text">कोई इंटरनेट उपलब्ध नहीं है|</string>
+
+    <string name="action_logout">लॉग आउट</string>
+    <string name="action_download">उपकरण डाउनलोड करें</string>
+    <string name="action_bluetoothdataExc">ब्लूटूथ डाटा</string>
+    <string name="action_download_all">डाउनलोड डाटा</string>
+    <string name="action_sync_offline">ऑफ़लाइन डेटा सिंक करें</string>
+
+    <string name="crash_toast_text">Ooooops ! App crashed, but a report will be sent to developer to help fix the issue !</string>
+
+    <string name="action_video_download">Download Video List</string>
+    <string name="action_unsync_menu">Sync Offline Data</string>
+    <string name="action_target_menu">Download Data</string>
+    <string name="action_menu_material_analysis">Sync Data</string>
+    <string name="action_file_menu">Sync Data</string>
+    <string name="action_file_detail_menu">Sync Data</string>
+    <string name="action_route_map_menu">Show on Map</string>
+    <string name="action_add_customer">Add New Customer in Route</string>
+
+    <string name="action_download_complaint">Download Complaint</string>
+    <string name="action_share_file"> Share Data</string>
+    <string name="action_download_service_center">Download Service Center </string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_maps">Map</string>
+
+    <!--String for aarybata-->
+    <string name="title_activity_settings">Settings</string>
+    <string name="pref_header_general">General</string>
+    <string name="choose_email_client">Choose email client</string>
+    <string name="url">http://www.accendereit.co/</string>
+    <string name="url1">https://enstinlabs.com/</string>
+    <string name="url2">https://www.shaktipumps.com/</string>
+
+    <string name="title_single_shot">Select For Bluetooth Communication</string>
+    <string name="desc_single_shot">Press the button and you\'ll only see paired devices,so please be ensured that device has been paired earlier.</string>
+    <string name="next">Next</string>
+    <string name="LoadingMessage">Loading…</string>
+    <string name="copyrightoffice">© Accendere Info Technologies Pvt.Ltd.</string>
+    <string name="loginbutton">Login</string>
+    <string name="passwordentry">Password</string>
+    <string name="emailentry">Email</string>
+    <string name="aryabhattaname">Aryabhatta</string>
+    <string name="paired_devices">पेअर उपकरण</string>
+    <string name="bluetoothdemo">All paired Bluetooth Devices are displayed under Bluetooth selection List, Select Accordingly .</string>
+    <string name="demo1">Bluetooth Connectivity.</string>
+    <string name="demo2">USB Connectivity.</string>
+    <string name="usbdemo">Connected USB Devices are displayed under USB selection List, Select Accordingly .</string>
+    <string name="demo3">Settings.</string>
+    <string name="settingsdemo">Settings Activity provide seamless user experience and many more.</string>
+    <string name="Designandde">Design and Developed By</string>
+    <string name="client">Aryabhatta (Enstin labs)</string>
+    <string name="parameters_permission">You have permission to \'view parameters\' in the app</string>
+    <string name="view_logs">You have permission to \'view Logs\' in the app</string>
+
+    <string name="setparapermissions">You have permission to \'set parameters\' in the app</string>
+    <string name="performpermissions">You have permission to \'perform actions\' in the app</string>
+    <string name="lableoperations">Operations</string>
+    <string name="lableparameters">Parameters</string>
+    <string name="lablesettings">Settings</string>
+    <string name="labledata">Data</string>
+    <string name="labledatasimha">Data Extraction</string>
+    <string name="shakthipumpss">Shakti pumps</string>
+    <string name="getlogs">Get Logs</string>
+    <string name="placeholder_long">xxxxxxxxx</string>
+    <string name="placeholder_short">XX</string>
+    <string name="ERROR">Error</string>
+    <string name="G_ERROR">G/ERROR</string>
+    <string name="COLON_OK_HASH">:OK#</string>
+    <string name="SET_ERROR">S/ERROR</string>
+
+    <string name="text_15_Days">१५ दिन</string>
+    <string name="text_5_Years">५ वर्ष</string>
+
+    <string name="delete_msg_text">क्या आप उपकरण डिलीट करना चाहते है?</string>
+    <string name="go_back_text">क्या आप वापस जाना चाहते है ?</string>
+    <string name="file_upload_text">Select below option to upload excel file on server.</string>
+    <string name="force_fully_update_heading_text">ऐप का नया संस्करण उपलब्ध हैं|</string>
+    <string name="force_fully_update_text">कृपया, रीपोस्टिंग जारी रखने के लिए नए संस्करण में ऐप अपडेट करें।</string>
+    <string name="Back_head">वापस जाये</string>
+    <string name="Update_text">अपडेट करे</string>
+    <string name="No_thanks_text">नहीं, धन्यवाद</string>
+
+    <string name="Get_text">प्राप्त करे</string>
+    <string name="Set_text">सेट</string>
+    <string name="default_notification_channel_id">Set</string>
+
+    <string name="shakti_welcome_text">सोलर RMS ऐप में आपका स्वागत है</string>
+    <string name="English_Text">English</string>
+    <string name="English">English</string>
+    <string name="Hindi">हिन्दी</string>
+    <string name="Marathi">Marathi</string>
+    <string name="Please_select_application_language">कृपया एप्लिकेशन की भाषा का चयन करे।</string>
+
+    <string name="addDevicePressHeretoSCAN">स्कैन करने के लिए यहां दबाये</string>
+    <string name="homeDeviceName">उपकरण नाम : </string>
+    <string name="homeDeviceNumber">उपकरण नंबर : </string>
+    <string name="homeCustomerName">ग्राहक नाम : </string>
+
+    <string name="homeSerchbycustemername1">सर्च बाय ग्राहक नाम, उपकरण नंबर</string>
+    <string name="homeSerchbycustemername">ग्राहक नाम और उपकरण नंबर से खोजे|</string>
+
+   <!--real monitoring-->
+
+    <string name="rl_device_number">उपकरण नंबर </string>
+    <string name="rl_Date_and_Time">दिनांक और समय </string>
+    <string name="rl_Name">नाम: </string>
+    <string name="rl_Status">स्थिति: </string>
+    <string name="rl_disconnected">संपर्क में नहीं है</string>
+
+    <string name="st_nternet">इंटरनेट</string>
+    <string name="st_BLUETOOTH">ब्लूटूथ</string>
+    <string name="st_WifiHotspot">वाईफाई हॉटस्पॉट</string>
+    <string name="st_Motor">मोटर</string>
+    <string name="st_Control">नियंत्रण(कंट्रोल)</string>
+    <string name="st_pairedDevice">पेअर उपकरण</string>
+
+    <string name="st_Totalenergy">कुल ऊर्जा</string>
+    <string name="st_TodayEnergy">दैनिक ऊर्जा</string>
+    <string name="st_Totalflow">कुल प्रवाह</string>
+    <string name="st_Todayflow">दैनिक प्रवाह</string>
+
+    <string name="st_Day">दैनिक</string>
+    <string name="st_Month">मासिक</string>
+    <string name="st_Setting">सेटिंग</string>
+    <string name="st_RealMonitoring">वर्तमान स्थिति</string>
+    <string name="st_DataExtraction">डाटा एक्सट्रैक्शन</string>
+    <string name="st_Start">चालू</string>
+    <string name="st_Stop">बंद</string>
+    <string name="st_Doyouwanttostartdevice">क्या आप उपकरण चालू करना चाहते है?</string>
+    <string name="st_Doyouwanttostopdevice">क्या आप उपकरण बंद करना चाहते है?</string>
+
+    <string name="st_StartAlert">चालू अलर्ट!</string>
+    <string name="st_StopAlert">बंद अलर्ट!</string>
+
+    <string name="st_Yes">हाँ</string>
+    <string name="st_No">नहीं</string>
+
+    <string name="st_Pleasecheckinternetconnection">कृपया इंटरनेट कनेक्शन की जाँच करें!</string>
+
+    <string name="st_Loading">कृपया प्रतीक्षा करें...</string>
+    <string name="st_Pleasewait">कृपया प्रतीक्षा करें...</string>
+
+    <string name="st_PV">सोलर</string>
+
+    <string name="st_TotalRuningHours">कुल रनिंग घंटे</string>
+    <string name="st_TodayRunninghours">आज के रनिंग घंटे</string>
+
+    <string name="st_HR">Hr</string>
+    <string name="st_meter">m³</string>
+    <string name="st_appVersion">एप्प वर्शन</string>
+
+    <string name="st_Grid">ग्रिड</string>
+
+    <string name="st_TotalRunninghoursVk">कुल चलित समय</string>
+
+    <string name="st_TodayRunninghoursVk">आज का चलित समय</string>
+
+    <string name="st_DATE">Date</string>
+
+    <string name="st_KWH">Kwh</string>
+
+    <string name="st_LogoutAlert">लॉगआउट अलर्ट!</string>
+
+    <string name="st_DoyouwanttoLogoutthisapplication">क्या आप अप्प से लॉगआउट होना चाहते है?</string>
+
+    <string name="st_Time">समय</string>
+
+    <string name="st_DeviceDeleteSuccessfully">उपकरण को सफलता पूर्वक डिलीट कर दिया गया है।</string>
+
+    <string name="st_DoyouwanttoExit">क्या आप ऐप से बाहर निकलना चाहते हैं?</string>
+
+    <string name="st_GETIMEI">IMEI प्राप्त करे</string>
+    <string name="st_SETCLIENTID">ग्राहक  ID समपादित करे</string>
+    <string name="st_SETUSERNAME">उपयोगकर्ता नाम सम्पादित करे</string>
+    <string name="st_SETPassword">पासवर्ड सम्पादित करे</string>
+    <string name="st_MQTT">MQTT</string>
+    <string name="st_TCP">TCP</string>
+
+    <string name="st_SwitchMQTT">MQTT पर जाये</string>
+    <string name="st_SwitchTCP">TCP पर जाये</string>
+
+    <string name="st_GETCLIENTID">ग्राहक ID प्राप्त करे</string>
+    <string name="st_GETPassword">पासवर्ड प्राप्त करे</string>
+    <string name="st_GETUSERNAME">उपयोगकर्ता नाम प्राप्त करे</string>
+
+    <string name="st_SetClientIDSuccess">Client ID set Successfully!</string>
+    <string name="st_SetUsernameSuccess">Username set Successfully!</string>
+    <string name="st_SetPasswordSuccess">Password set Successfully!</string>
+
+    <string name="st_STANDBY">STANDBY</string>
+    <string name="st_MOTORON">MOTOR ON</string>
+    <string name="st_ONGRID">ON GRID</string>
+    <string name="st_MOTORON_GRIDON">ON GRID, MOTOR ON </string>
+    <string name="st_BOOSTERON">BOOSTER ON</string>
+    <string name="st_TSMOTORON">TS MOTOR ON</string>
+    <string name="st_TSONGRID">TS ON GRID </string>
+    <string name="st_TSONGRID_MOTORON">TS ON GRID,MOTOR ON</string>
+
+
+    <string name="st_Monthly_Energy">Monthly Energy</string>
+
+    <string name="st_GetLatitude">Latitude:</string>
+    <string name="st_GetLongitude">Longitude:</string>
+    <string name="st_GetLongitudeSuccess">Latitude and Longitude set Successfully!</string>
+    <string name="st_GetLongitudeFaild">Latitude and Longitude set faild!</string>
+
+    <string name="nav_item_add_lat_long">Add Lat Long</string>
+    <string name="Total_EnergyMwh">Total Energy(MWh)</string>
+
+    <string name="Total_Plants">Total Plants</string>
+
+    <string name="Total_Error">Total Error (pcs)</string>
+
+    <string name="Normal">Normal</string>
+
+    <string name="Error">Error</string>
+
+    <string name="Pending">Pending</string>
+
+    <string name="Handling">Handling</string>
+
+    <string name="Plant">Plant</string>
+
+    <string name="User">User</string>
+
+    <string name="Message">Message</string>
+
+    <string name="Today_Energy">Today Energy</string>
+
+    <string name="Total_Energy">Total Energy</string>
+
+    <string name="Montly_Energy">Montly Energy</string>
+
+    <string name="kWh">kWh</string>
+
+    <string name="MWh">MWh</string>
+
+    <string name="MWp">MWp</string>
+
+
+</resources>

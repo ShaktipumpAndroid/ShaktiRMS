@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_image">
+
+
+
+    <RelativeLayout
+        android:id="@+id/rlvBackMainViewTop"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:background="@android:color/transparent">
+
+        <ImageView
+            android:visibility="visible"
+            android:id="@+id/imgBackID"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:paddingTop="@dimen/_4sdp"
+            android:paddingBottom="@dimen/_4sdp"
+            android:paddingEnd="@dimen/_4sdp"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/img_back_arrow"/>
+
+
+    </RelativeLayout>
+   <!-- <ScrollView
+        android:layout_below="@+id/rlvBackMainViewTop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        >-->
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+
+                <RelativeLayout
+                    android:background="@drawable/bg_image"
+                    android:id="@+id/rlvLogoViewID"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_150sdp"
+
+                    >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_centerHorizontal="true"
+                       android:padding="@dimen/_35sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:src="@drawable/logo" />
+
+                  <!--  <TextView
+                        android:fontFamily="@font/open_sans_regular"
+                        android:id="@+id/txtAppNameLogin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="@dimen/_7sdp"
+                        android:text="@string/app_name"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/_28sdp" />-->
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_below="@+id/rlvLogoViewID"
+                    android:id="@+id/rlvMainOTPOptionContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorWhite"
+                    >
+
+                    <LinearLayout
+                        android:id="@+id/lvlSignupContainerID"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:orientation="vertical">
+
+
+                        <!--Sub tittle message-->
+                        <TextView
+                            android:fontFamily="@font/open_sans_regular"
+                            android:id="@+id/txtForgotHeading"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:text="@string/app_name"
+                            android:layout_gravity="center_horizontal"
+                            android:textColor="@color/black"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:textSize="@dimen/_20sdp"
+
+                            />
+
+
+
+
+                        <!--Sub Content tittle message-->
+                        <TextView
+                            android:fontFamily="@font/open_sans_regular"
+                            android:id="@+id/txtVarifyContentID"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:layout_marginEnd="@dimen/_8sdp"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:layout_centerHorizontal="true"
+                            android:text="@string/Please_select_application_language"
+                            android:layout_gravity="center_horizontal"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_16sdp"
+                            android:textStyle="normal"
+                            android:gravity="center"/>
+
+                        <!--remove and add edit text field-->
+
+
+
+                        <!--English layout-->
+                        <RelativeLayout
+                            android:id="@+id/rlvEnglishViewID"
+                            android:layout_width="match_parent"
+                            android:layout_marginStart="@dimen/_12sdp"
+                            android:layout_marginEnd="@dimen/_12sdp"
+                            android:layout_marginTop="@dimen/_12sdp"
+                            android:layout_height="@dimen/_40sdp">
+
+                              <ImageView
+                                  android:id="@+id/imgEnglishlcon"
+                                  android:layout_width="@dimen/_20sdp"
+                                  android:layout_height="@dimen/_20sdp"
+                                  android:padding="@dimen/_4sdp"
+                                  android:layout_centerVertical="true"
+                                  android:src="@drawable/ic_select_icon" />
+
+                            <TextView
+                                android:layout_toEndOf="@+id/imgEnglishlcon"
+                                android:fontFamily="@font/open_sans_regular"
+                                android:id="@+id/txtEnglishLangaugeID"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:text="@string/English_Text"
+                                android:textColor="@color/black"
+                                android:layout_marginStart="@dimen/_1sdp"
+                                android:textSize="@dimen/_12sdp"
+                                />
+
+                        </RelativeLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_alignParentBottom="true"
+                            android:background="@color/gray" />
+
+                        <!--hindi layout-->
+                        <RelativeLayout
+                            android:id="@+id/rlvHindiViewID"
+                            android:layout_width="match_parent"
+                            android:layout_marginStart="@dimen/_12sdp"
+                            android:layout_marginEnd="@dimen/_12sdp"
+
+                            android:layout_height="@dimen/_40sdp">
+
+                            <ImageView
+                                android:id="@+id/imgHindilcon"
+                                android:layout_width="@dimen/_20sdp"
+                                android:layout_height="@dimen/_20sdp"
+                                android:padding="@dimen/_4sdp"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/ic_unselect_icon" />
+
+                            <TextView
+                                android:layout_toEndOf="@+id/imgHindilcon"
+                                android:fontFamily="@font/open_sans_regular"
+                                android:id="@+id/txtHindiLangaugeID"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:text="@string/Hindi"
+                                android:textColor="@color/black"
+                                android:layout_marginStart="@dimen/_1sdp"
+                                android:textSize="@dimen/_12sdp"
+                                />
+
+
+                        </RelativeLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_alignParentBottom="true"
+                            android:background="@color/gray" />
+
+                        <!--hindi layout-->
+                        <RelativeLayout
+                            android:visibility="gone"
+                            android:id="@+id/rlvMarathiViewID"
+                            android:layout_width="match_parent"
+                            android:layout_marginStart="@dimen/_12sdp"
+                            android:layout_marginEnd="@dimen/_12sdp"
+
+                            android:layout_height="@dimen/_40sdp">
+
+                            <ImageView
+                                android:id="@+id/imgMarathilcon"
+                                android:layout_width="@dimen/_20sdp"
+                                android:layout_height="@dimen/_20sdp"
+                                android:padding="@dimen/_4sdp"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/ic_unselect_icon" />
+
+                            <TextView
+                                android:layout_toEndOf="@+id/imgMarathilcon"
+                                android:fontFamily="@font/open_sans_regular"
+                                android:id="@+id/txtMarathiLangaugeID"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:text="@string/Marathi"
+                                android:textColor="@color/black"
+                                android:layout_marginStart="@dimen/_1sdp"
+                                android:textSize="@dimen/_12sdp"
+                                />
+
+
+                        </RelativeLayout>
+
+
+
+
+                    </LinearLayout>
+
+
+
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+  <!--  </ScrollView>-->
+
+    <!--Side language drop down-->
+
+
+
+
+
+
+
+    <EditText
+        android:id="@+id/pin_hidden_edittext"
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        android:background="@android:color/transparent"
+
+        />
+
+    <!--Language drop down-->
+    <!--Language drop down-->
+
+    <TextView
+        android:id="@+id/txtApplyLanguagBTNID"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_35sdp"
+        android:background="@drawable/bg_image"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="@dimen/_40sdp"
+        android:layout_marginEnd="@dimen/_40sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:text="Apply"
+        android:gravity="center"
+        android:textSize="@dimen/_12sdp"
+        android:textColor="@color/colorWhite"/>
+
+
+
+</RelativeLayout>

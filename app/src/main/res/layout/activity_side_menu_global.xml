@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent">
+
+    <!--Custome Drawer menu by vikas-->
+    <RelativeLayout
+        android:id="@+id/rlvSlideMenuViewID"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#66000000"
+        android:visibility="visible">
+
+        <RelativeLayout
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <RelativeLayout
+                android:id="@+id/rlvMenuHeadeViewID"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_150sdp"
+                android:background="@drawable/btn_grediant_drawable">
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_70sdp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:src="@drawable/logo" />
+
+                <TextView
+                    android:id="@+id/txtAppUserNameID"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/txtAppVersionID"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:gravity="center_horizontal"
+                    android:text="Welcome, Vikas"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12ssp" />
+
+                <TextView
+                    android:id="@+id/txtAppVersionID"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:gravity="center_horizontal"
+                    android:text="App Version:  3.3"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12ssp" />
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:id="@+id/lvlMenuOptionContainerViewID"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/rlvMenuHeadeViewID"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/rlvMenuOptionHomeViewID"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:background="@color/white">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:fontFamily="@font/open_sans_regular"
+                        android:gravity="center_vertical"
+                        android:text="@string/MenuHome"
+                        android:textAllCaps="true"
+                        android:textColor="@color/darkGrey"
+                        android:textSize="@dimen/_12ssp" />
+
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_2sdp"
+                    android:background="@color/light_bg_color" />
+
+                <RelativeLayout
+                    android:id="@+id/rlvMenuOptionAddDeviceViewID"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:background="@color/white">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:fontFamily="@font/open_sans_regular"
+                        android:gravity="center_vertical"
+                        android:text="@string/MenuAddDevice"
+                        android:textAllCaps="true"
+                        android:textColor="@color/darkGrey"
+                        android:textSize="@dimen/_12ssp" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_2sdp"
+                    android:background="@color/light_bg_color" />
+
+                <RelativeLayout
+                    android:id="@+id/rlvMenuOptionChangePassViewID"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:background="@color/white">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:fontFamily="@font/open_sans_regular"
+                        android:gravity="center_vertical"
+                        android:text="@string/MenuChangePassword"
+                        android:textAllCaps="true"
+                        android:textColor="@color/darkGrey"
+                        android:textSize="@dimen/_12ssp" />
+
+
+                </RelativeLayout>
+
+                <!--/////////////delete//////////-->
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_2sdp"
+                    android:background="@color/light_bg_color"/>
+
+                <RelativeLayout
+                    android:id="@+id/rlvMenuOptionRemoveDeviceViewID"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:background="@color/white">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/MenuChangeLanguage"
+                        android:textAllCaps="true"
+                        android:textColor="@color/darkGrey"
+                        android:textSize="@dimen/_12ssp"
+                        android:fontFamily="@font/open_sans_regular"
+                        android:gravity="center_vertical"
+                        android:layout_marginStart="@dimen/_10sdp"/>
+
+
+
+                </RelativeLayout>
+
+
+                <!--/////////////end delete//////////-->
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_2sdp"
+                    android:background="@color/light_bg_color" />
+
+                <RelativeLayout
+                    android:id="@+id/rlvMenuOptionFaultReportViewID"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:background="@color/white"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:fontFamily="@font/open_sans_regular"
+                        android:gravity="center_vertical"
+                        android:text="Fault Report"
+                        android:textAllCaps="true"
+                        android:textColor="@color/darkGrey"
+                        android:textSize="@dimen/_12ssp" />
+
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_2sdp"
+                    android:background="@color/light_bg_color"
+                    android:visibility="gone" />
+
+                <RelativeLayout
+                    android:id="@+id/rlvMenuOptionDataReportViewID"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:background="@color/white"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:fontFamily="@font/open_sans_regular"
+                        android:gravity="center_vertical"
+                        android:text="Data Report"
+                        android:textAllCaps="true"
+                        android:textColor="@color/darkGrey"
+                        android:textSize="@dimen/_12ssp" />
+
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_2sdp"
+                    android:background="@color/light_bg_color" />
+
+                <RelativeLayout
+
+                    android:id="@+id/rlvMenuOptionLogoutViewID"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:background="@color/white">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:fontFamily="@font/open_sans_regular"
+                        android:gravity="center_vertical"
+                        android:text="@string/MenuLogout"
+                        android:textAllCaps="true"
+                        android:textColor="@color/darkGrey"
+                        android:textSize="@dimen/_12ssp" />
+
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_2sdp"
+                    android:background="@color/light_bg_color" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,707 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gredenit_bg">
+
+    <LinearLayout
+
+        android:id="@+id/lvlHeaderViewID"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:background="@drawable/btn_grediant_drawable"
+        android:weightSum="3">
+
+        <RelativeLayout
+            android:id="@+id/rlvBackViewID"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.2"
+            android:background="@android:color/transparent">
+
+            <ImageView
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_margin="@dimen/_5sdp"
+                android:padding="@dimen/_3sdp"
+                android:src="@drawable/ic_back" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.6"
+            android:background="@android:color/transparent">
+
+
+            <TextView
+                android:id="@+id/txtAdd_Plant_and_DeviceID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/open_sans_regular"
+                android:text="@string/AddPlant"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/_18sdp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.2"
+            android:background="@android:color/transparent">
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/lvlHeaderViewID"
+        android:orientation="vertical">
+
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:overScrollMode="ifContentScrolls"
+            android:scrollbars="none">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent">
+
+<!--add plant -->
+                <LinearLayout
+                    android:id="@+id/lvlAddPlantViewID"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_40sdp"
+                    android:background="@android:color/transparent"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="*Here you can add only KLP grid devices not other."
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:textColor="@color/green"
+                        android:textSize="@dimen/_12sdp"
+                        />
+
+
+                    <LinearLayout
+
+                        android:id="@+id/lvlPlantViewID"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_45sdp"
+                        android:layout_above="@+id/lvlLoginPasswordViewID"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:background="@drawable/left_side_corner"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.4"
+                            android:background="@android:color/transparent">
+
+
+                            <EditText
+                                android:hint="Enter plant name"
+                                android:id="@+id/edtPlantnameID"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@android:color/transparent"
+                                android:fontFamily="@font/open_sans_regular"
+                                android:textSize="@dimen/_14ssp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="@dimen/_14sdp"
+                                />
+
+
+                          <!--  <EditText
+
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="@dimen/_15sdp"
+
+                                android:fontFamily="@font/open_sans_regular"
+                                android:hint="Enter plant name"
+                                android:textAllCaps="true"
+                                android:textColor="@color/black"
+                                android:textColorHint="@color/colorGray"
+                                android:textSize="@dimen/_14ssp"
+                                android:cursorVisible="true"
+                                android:selectAllOnFocus="true"
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+
+                                android:ems="10"
+                                android:inputType="textMultiLine"/>-->
+
+
+                        </RelativeLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+
+                        android:id="@+id/lvlPlantCapecityViewID"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_45sdp"
+                        android:layout_above="@+id/lvlLoginPasswordViewID"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:background="@drawable/left_side_corner"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.4"
+                            android:background="@android:color/transparent">
+
+
+                            <EditText
+                                android:hint="Enter plant capacity "
+                                android:id="@+id/edtEnterCapacityID"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@android:color/transparent"
+                                android:fontFamily="@font/open_sans_regular"
+                                android:textSize="@dimen/_14ssp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="@dimen/_14sdp"
+                                />
+
+                            <!--  <EditText
+
+                                  android:layout_alignParentStart="true"
+                                  android:layout_centerVertical="true"
+                                  android:layout_marginStart="@dimen/_15sdp"
+
+                                  android:fontFamily="@font/open_sans_regular"
+                                  android:hint="Enter plant name"
+                                  android:textAllCaps="true"
+                                  android:textColor="@color/black"
+                                  android:textColorHint="@color/colorGray"
+                                  android:textSize="@dimen/_14ssp"
+                                  android:cursorVisible="true"
+                                  android:selectAllOnFocus="true"
+
+                                  android:layout_width="match_parent"
+                                  android:layout_height="wrap_content"
+
+                                  android:ems="10"
+                                  android:inputType="textMultiLine"/>-->
+
+
+                        </RelativeLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lvltMobileNumberViewID"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_45sdp"
+                        android:layout_above="@+id/lvlLoginPasswordViewID"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:background="@drawable/left_side_corner"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.4"
+                            android:background="@android:color/transparent">
+
+                           <!-- <EditText
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"
+
+                                android:layout_marginStart="@dimen/_15sdp"
+                                android:background="@android:color/transparent"
+                                android:fontFamily="@font/open_sans_regular"
+
+                                android:textAllCaps="true"
+                                android:textColor="@color/black"
+                                android:textColorHint="@color/colorGray"
+                                android:textSize="@dimen/_14ssp" />-->
+
+
+                            <EditText
+                                android:id="@+id/edtMobileNumberID"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@android:color/transparent"
+                                android:fontFamily="@font/open_sans_regular"
+                                android:hint="Enter mobile number"
+                                android:textSize="@dimen/_14ssp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="@dimen/_14sdp"
+                                />
+
+
+                        </RelativeLayout>
+
+
+                    </LinearLayout>
+
+                    <!--plant capicity-->
+<!--
+
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:id="@+id/lvlCapacityViewID"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_45sdp"
+                        android:layout_above="@+id/lvlLoginPasswordViewID"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:background="@drawable/left_side_corner"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.4"
+                            android:background="@android:color/transparent">
+
+
+
+                            <EditText
+                                android:hint="Enter plant capacity"
+                                android:id="@+id/edtEnterCapacityID"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@android:color/transparent"
+                                android:fontFamily="@font/open_sans_regular"
+                                android:textSize="@dimen/_14ssp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="@dimen/_14sdp"
+                                />
+
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+-->
+
+                    <!--end-->
+
+                    <LinearLayout
+                        android:id="@+id/lvlAddressViewID"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_45sdp"
+                        android:layout_above="@+id/lvlLoginPasswordViewID"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:background="@drawable/left_side_corner"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.4"
+                            android:background="@android:color/transparent">
+
+
+
+                            <EditText
+                                android:hint="Enter address"
+                                android:id="@+id/edtEnterAddressID"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@android:color/transparent"
+                                android:fontFamily="@font/open_sans_regular"
+                                android:textSize="@dimen/_14ssp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="@dimen/_14sdp"
+                                />
+
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+                    <!--Lat-->
+                    <LinearLayout
+                        android:id="@+id/lvlLatitudeViewID"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_45sdp"
+                        android:layout_above="@+id/lvlLoginPasswordViewID"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:background="@drawable/left_side_corner"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.4"
+                            android:background="@android:color/transparent">
+
+
+
+                            <EditText
+                                android:hint="Enter Latitude"
+                                android:id="@+id/edtEnterLatitudeID"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@android:color/transparent"
+                                android:fontFamily="@font/open_sans_regular"
+                                android:textSize="@dimen/_14ssp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="@dimen/_14sdp"
+                                />
+
+                            <TextView
+                                android:id="@+id/txtGPSBTNID"
+                                android:layout_width="@dimen/_60sdp"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/right_round_selected"
+                                android:layout_alignParentEnd="true"
+                                android:text="GPS Location"
+                                android:textColor="@color/white"
+                                android:textStyle="normal"
+                                android:textSize="@dimen/_8ssp"
+                                android:gravity="center"
+
+                                />
+
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <!--Long-->
+                    <LinearLayout
+                        android:id="@+id/lvlLongitudeViewID"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_45sdp"
+                        android:layout_above="@+id/lvlLoginPasswordViewID"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:background="@drawable/left_side_corner"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.4"
+                            android:background="@android:color/transparent">
+
+
+
+                            <EditText
+                                android:hint="Enter Longitude"
+                                android:id="@+id/edtEnterLongitudeID"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@android:color/transparent"
+                                android:fontFamily="@font/open_sans_regular"
+                                android:textSize="@dimen/_14ssp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="@dimen/_14sdp"
+                                />
+
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+                    <!--End long-->
+                    <LinearLayout
+                        android:id="@+id/lvlAddPlantButtonViewID"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_above="@+id/lvlLoginPasswordViewID"
+                        android:layout_marginStart="@dimen/_60sdp"
+                        android:layout_marginTop="@dimen/_14sdp"
+                        android:layout_marginEnd="@dimen/_60sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:background="@drawable/yello_round_btn"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.4"
+                            android:background="@android:color/transparent">
+
+                            <TextView
+                                android:id="@+id/txtAddPlantID"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_centerVertical="true"
+                                android:background="@android:color/transparent"
+                                android:fontFamily="@font/open_sans_semibold"
+                                android:text="Add Plant"
+                                android:textAllCaps="true"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_14ssp" />
+
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+<!--add device-->
+                <LinearLayout
+                    android:visibility="gone"
+                    android:id="@+id/lvlAddDeviceViewID"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_40sdp"
+                    android:background="@android:color/transparent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="*Here you can add only KLP grid devices not other."
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:textColor="@color/green"
+                        android:textSize="@dimen/_12sdp"
+                        />
+
+                    <LinearLayout
+                        android:id="@+id/lvlLoginEmailViewID"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_45sdp"
+                        android:layout_above="@+id/lvlLoginPasswordViewID"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:background="@drawable/left_side_corner"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.4"
+                            android:background="@android:color/transparent">
+
+                            <EditText
+                                android:id="@+id/txtQRCodeScanID"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"
+
+                                android:layout_marginStart="@dimen/_15sdp"
+                                android:background="@android:color/transparent"
+                                android:fontFamily="@font/open_sans_regular"
+                                android:hint="Enter or Scan QR code"
+                                android:textAllCaps="true"
+                                android:textColor="@color/black"
+                                android:textColorHint="@color/colorGray"
+                                android:textSize="@dimen/_14ssp" />
+
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rlvScanBTNID"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+
+                            android:layout_weight="1.6"
+                            android:background="@drawable/right_side_corner">
+
+
+                            <ImageView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:src="@drawable/ic_qrcode_iconn" />
+
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/lvltAddMobileNumberViewID"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_45sdp"
+                        android:layout_above="@+id/lvlLoginPasswordViewID"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:background="@drawable/left_side_corner"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.4"
+                            android:background="@android:color/transparent">
+
+
+
+                            <EditText
+                                android:hint="Enter mobile number"
+                                android:id="@+id/edtaddMobileNumberID"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@android:color/transparent"
+                                android:fontFamily="@font/open_sans_regular"
+                                android:textSize="@dimen/_14ssp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="@dimen/_14sdp"
+                                />
+
+
+
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lvladdAddressViewID"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_above="@+id/lvlLoginPasswordViewID"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_14sdp"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:background="@drawable/left_side_corner"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.4"
+                            android:background="@android:color/transparent">
+
+
+                            <EditText
+                                android:hint="Enter address"
+                                android:id="@+id/edtaddEnterAddressID"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@android:color/transparent"
+                                android:fontFamily="@font/open_sans_regular"
+                                android:textSize="@dimen/_14ssp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="@dimen/_14sdp"
+                                />
+
+
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/lvladddeviceButtonViewID"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_above="@+id/lvlLoginPasswordViewID"
+                        android:layout_marginStart="@dimen/_60sdp"
+                        android:layout_marginTop="@dimen/_14sdp"
+                        android:layout_marginEnd="@dimen/_60sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:background="@drawable/yello_round_btn"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.4"
+                            android:background="@android:color/transparent">
+
+                            <TextView
+                                android:id="@+id/txtAddDeviceID"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_centerVertical="true"
+                                android:background="@android:color/transparent"
+                                android:fontFamily="@font/open_sans_semibold"
+                                android:text="Add Device"
+                                android:textAllCaps="true"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_14ssp" />
+
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</RelativeLayout>

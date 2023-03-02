@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+
+        android:id="@+id/rlvHeaderViewID"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:background="@drawable/btn_grediant_drawable">
+
+
+        <!-- <ImageView
+             android:id="@+id/imgHeaderID"
+             android:layout_width="@dimen/_50sdp"
+             android:layout_height="@dimen/_50sdp"
+             android:paddingStart="@dimen/_5sdp"
+             android:paddingTop="@dimen/_15sdp"
+             android:paddingEnd="@dimen/_20sdp"
+             android:paddingBottom="@dimen/_15sdp"
+             android:src="@drawable/icn_back" />-->
+
+        <RelativeLayout
+
+            android:id="@+id/rlvBackViewID"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_centerVertical="true"
+                android:id="@+id/imgHeaderID"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="match_parent"
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingTop="@dimen/_15sdp"
+                android:paddingEnd="@dimen/_1sdp"
+                android:paddingBottom="@dimen/_15sdp"
+                android:src="@drawable/icn_back" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgDeviceImageID"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:visibility="gone"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/imgHeaderID"
+                android:paddingStart="@dimen/_1sdp"
+                android:paddingTop="@dimen/_2sdp"
+                android:paddingEnd="@dimen/_2sdp"
+                android:paddingBottom="@dimen/_2sdp"
+                android:src="@drawable/dt7" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/txtHeaderID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_toEndOf="@+id/rlvBackViewID"
+            android:fontFamily="@font/open_sans_semibold"
+            android:text="Add device"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14ssp"
+
+            />
+<!--9993247636-->
+
+        <RelativeLayout
+            android:visibility="gone"
+            android:layout_centerVertical="true"
+            android:layout_width="@dimen/_99sdp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/white_bg_round_corner"
+            >
+
+
+            <!--   <ImageView
+                   android:id="@+id/imgBTAndInternetToggleID"
+                   android:layout_width="@dimen/_80sdp"
+                   android:layout_height="wrap_content"
+                   android:layout_alignParentEnd="true"
+                   android:layout_centerVertical="true"
+                   android:padding="@dimen/_2sdp"
+                   android:paddingTop="@dimen/_12sdp"
+                   android:paddingBottom="@dimen/_12sdp"
+
+                   android:src="@drawable/iv_internet_btn" />-->
+
+            <ImageView
+                android:id="@+id/imgInternetToggleID"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_18sdp"
+                android:layout_centerVertical="true"
+                android:padding="@dimen/_2sdp"
+                android:paddingTop="@dimen/_12sdp"
+                android:paddingBottom="@dimen/_12sdp"
+                android:layout_marginEnd="@dimen/_3sdp"
+                android:src="@drawable/iv_connection_selected"
+                android:layout_toStartOf="@+id/switch1"/>
+
+
+            <Switch
+                android:layout_toStartOf="@+id/imgBTToggleID"
+                android:id="@+id/switch1"
+                android:layout_width="@dimen/_36sdp"
+                android:layout_height="@dimen/_28sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_3sdp"
+
+                android:layout_centerVertical="true"
+                android:checked="false"
+                android:scaleX="1.3"
+                android:scaleY="1.2"
+                android:theme="@style/SwitchTheme"
+
+
+                />
+
+            <ImageView
+                android:id="@+id/imgBTToggleID"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_18sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:padding="@dimen/_2sdp"
+                android:layout_marginEnd="@dimen/_2sdp"
+                android:paddingTop="@dimen/_12sdp"
+                android:paddingBottom="@dimen/_12sdp"
+
+                android:src="@drawable/iv_bluetooth_unselected" />
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--<WebView
+            android:id="@+id/simpleWebView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:layout_margin="20dp" />-->
+
+    <LinearLayout
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:background="@color/white"
+        >
+
+        <RelativeLayout
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:background="@drawable/round_edit_text_border">
+
+            <TextView
+                android:id="@+id/edtSerialNumberID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:text="Serial number"
+                android:textSize="@dimen/_14sdp"
+                android:textColor="@color/black"
+                android:background="@android:color/transparent"
+                android:fontFamily="@font/open_sans_regular">
+
+            </TextView>
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:background="@drawable/round_edit_text_border">
+
+            <TextView
+
+                android:id="@+id/edtMobileNumberID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:text="Mobile Number"
+                android:textSize="@dimen/_14sdp"
+                android:textColor="@color/black"
+                android:background="@android:color/transparent"
+
+                android:fontFamily="@font/open_sans_regular">
+
+            </TextView>
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:visibility="gone"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:background="@drawable/round_edit_text_border">
+
+            <EditText
+                android:id="@+id/edtLatitudeID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:hint="Please Enetr Latitude"
+                android:textColorHint="@color/gray"
+                android:textSize="@dimen/_14sdp"
+                android:textColor="@color/black"
+                android:background="@android:color/transparent"
+
+                android:fontFamily="@font/open_sans_regular">
+
+            </EditText>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:visibility="gone"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:background="@drawable/round_edit_text_border">
+
+            <EditText
+                android:id="@+id/edtLongitudeID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:hint="Please Enetr Longitude"
+                android:textColorHint="@color/gray"
+                android:textSize="@dimen/_14sdp"
+                android:textColor="@color/black"
+                android:background="@android:color/transparent"
+                android:fontFamily="@font/open_sans_regular">
+
+            </EditText>
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:visibility="gone"
+            android:id="@+id/rlcGetLatlongID"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/txtGetLatLongLinkID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:text="Click here for lat and long."
+                android:soundEffectsEnabled="true"
+                android:textSize="@dimen/_14sdp"
+
+                android:textColor="@color/blue"
+                android:background="@android:color/transparent"
+                android:fontFamily="@font/open_sans_bold">
+
+           <!--https://solar10.shaktisolarrms.com/RMSApp/getLocation.jsp   -->
+            </TextView>
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/txtLatLongInfoID"
+            android:visibility="visible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:text="Note:- If browser open up for real time location. Please close the browser after few second using back button."
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            android:fontFamily="@font/open_sans_semibold"/>
+
+        <RelativeLayout
+            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txtSubmiteBTNID"
+            android:background="@drawable/rounded_corner_blue"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_centerHorizontal="true"
+            android:text="Submit"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_15ssp"
+            android:fontFamily="@font/open_sans_bold"
+            />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

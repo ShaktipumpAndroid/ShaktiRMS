@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#0179b6</color>
+    <color name="colorPrimaryTRNS">#850179b6</color>
+    <color name="upload_btn_color">#e0e0d4</color>
+    <color name="colorBuleDark">#09203f</color>
+    <color name="colorBuleDarkTrans">#8809203f</color>
+    <color name="colorBuleDarkTrans1">#A609203f</color>
+    <color name="colorBulelight">#034f84</color>
+    <color name="colorPrimaryDark">#0179b6</color>
+    <color name="shakti_blue">#0f81c2</color>
+    <color name="background_floating_material_light">#ffeeeeee</color>
+    <!--<color name="colorAccent">#FF7A7A7B</color>-->
+    <color name="colorAccent">#5e5e5e</color>
+    <color name="gray">#8b8b8c</color>
+    <color name="colorAccentLight1">#d7de8016</color>
+    <color name="colorGray">#686868</color>
+    <color name="off_gray">#f9f9f9</color>
+    <color name="white">#ffffff</color>
+    <color name="font_color_red">#ff512f</color>
+    <color name="font_color_green">#009245</color>
+    <color name="font_color_blue">#034f84</color>
+    <color name="white_trans">#80ffffff</color>
+    <color name="blue_fb">#0179b6</color>
+    <color name="blue_fb1">#4D0179b6</color>
+    <color name="trans_pink">#BFFFD1DC</color>
+    <color name="blue_xle_header">#09203f</color>
+    <color name="edit_text_border_bg">#DFDFDF</color>
+    <color name="translucent_color">#80000000</color>
+    <color name="transparent_color">@android:color/transparent</color>
+    <color name="darkGrey">#2F4F4F</color>
+    <color name="lt_grey_text">#666666</color>
+    <color name="link_color">#A40000</color>
+    <color name="black">#000000</color>
+    <color name="black_trans">#80000000</color>
+    <color name="black_trans_lt">#D9000000</color>
+    <color name="black_trans_lt1">#B3000000</color>
+    <color name="signup_normal_text_color">#999999</color>
+    <color name="msg_error_color">#e55948</color>
+    <color name="msg_success_color">#366300</color>
+    <color name="msg_info_color">#448ed9</color>
+    <color name="msg_warning_color">#e7cd54</color>
+    <color name="red">#ba0303</color>
+    <color name="green">#037414</color>
+    <color name="chocolate">#D2691E</color>
+    <color name="dg_font_color">#f18904</color>
+
+    <color name="green_new_san">#81B214</color>
+    <color name="green_trans">#99037414</color>
+    <color name="red_trans">#99ba0303</color>
+    <color name="red_new_san">#F58634</color>
+    <color name="blue_trans">#990179b6</color>
+    <color name="yellow_trans">#99de8016</color>
+    <color name="gray_trans">#998b8b8c</color>
+    <color name="gray_new_san">#FFCC29</color>
+
+    <!--  <color name="green_trans">#77037414</color>
+    <color name="red_trans">#77ba0303</color>
+    <color name="blue_trans">#770179b6</color>
+    <color name="yellow_trans">#77de8016</color>
+    <color name="gray_trans">#888b8b8c</color>-->
+
+    <color name="background_gray">#f9f9f6</color>
+
+    <color name="submit_bg">#a09f9a</color>
+    <color name="sighn_in_bg">#a09f9a</color>
+    <color name="dull_btn">#9d9c97</color>
+    <color name="tag_bg_color">#e0e0d4</color>
+    <color name="menu_seleted_color">#F18060</color>
+    <color name="left_menu_color">#414143</color>
+    <color name="app_background">#fffef1</color>
+
+    <color name="red_btn">#ee7f63</color>
+    <color name="red_color">#fc0000</color>
+
+    <color name="light_grey_color">#D3D3D3</color>
+    <color name="divider_color_bg">#EEEEEE</color>
+    <color name="header_bg_color">#00bcd4</color>
+    <color name="twitter_color">#00aced</color>
+    <color name="gray_btn">#A09F9A</color>
+    <color name="dark_grey_text">#333333</color>
+    <color name="selector_menu_bgcolor">#22000000</color>
+    <color name="divider_color">#444444</color>
+    <color name="comment_time">#ea4b25</color>
+    <color name="city_selector_color">#e94b25</color>
+
+    <!-- gradient color -->
+
+    <color name="music_light_tone">#99d12c</color>
+    <color name="music_dark_tone">#31a62d</color>
+    <color name="theater_light_tone">#00dbd3</color>
+    <color name="theater_dark_tone">#00a5a1</color>
+    <color name="art_light_tone">#f5d010</color>
+    <color name="art_dark_tone">#d09118</color>
+    <color name="meet_light_tone">#ff8a00</color>
+    <color name="meet_dark_tone">#b96000</color>
+    <color name="cuisines_light_tone">#fd4703</color>
+    <color name="cuisines_dark_tone">#b43303</color>
+    <color name="launch_light_tone">#e21b52</color>
+    <color name="launch_dark_tone">#941035</color>
+    <color name="workshop_light_tone">#9800b2</color>
+    <color name="workshop_dark_tone">#6b00b2</color>
+    <color name="general_light_tone">#2e139f</color>
+    <color name="general_dark_tone">#12005f</color>
+    <color name="seminar_light_tone">#2e139f</color>
+    <color name="seminar_dark_tone">#12005f</color>
+    <color name="reset_dark">#4b4b4b</color>
+
+    <color name="music_light_tone_alpha">#9999d12c</color>
+    <color name="music_dark_tone_alpha">#9931a62d</color>
+    <color name="theater_light_tone_alpha">#9900dbd3</color>
+    <color name="theater_dark_tone_alpha">#9900a5a1</color>
+    <color name="art_light_tone_alpha">#99f5d010</color>
+    <color name="art_dark_tone_alpha">#99d09118</color>
+    <color name="meet_light_tone_alpha">#99ff8a00</color>
+    <color name="meet_dark_tone_alpha">#99b96000</color>
+    <color name="cuisines_light_tone_alpha">#99fd4703</color>
+    <color name="cuisines_dark_tone_alpha">#99b43303</color>
+    <color name="launch_light_tone_alpha">#99e21b52</color>
+    <color name="launch_dark_tone_alpha">#99941035</color>
+    <color name="workshop_light_tone_alpha">#999800b2</color>
+    <color name="workshop_dark_tone_alpha">#996b00b2</color>
+    <color name="general_light_tone_alpha">#992e139f</color>
+    <color name="general_dark_tone_alpha">#9912005f</color>
+    <color name="seminar_light_tone_alpha">#992e139f</color>
+    <color name="seminar_dark_tone_alpha">#9912005f</color>
+
+    <color name="header_color">#0179b6</color>
+    <color name="dark_header_color">#0179b6</color>
+
+    <color name="header_color1">#00bcd4</color>
+    <color name="trans_header_color">#8000bcd4</color>
+
+    <color name="gray_color">#faf8f8</color>
+    <color name="orange_color">#D3D3D3</color>
+    <color name="orange_color_trans">#D3D3D3</color>
+    <color name="cream">#D3D3D3</color>
+
+    <color name="dark_bg_grey">#7E7E7E</color>
+    <!--<color name="light_bg_color">#f2eded</color>-->
+    <color name="light_bg_color">#0d00bff3</color>
+
+    <color name="shakti_color">#0179b6</color>
+
+    <!--aarabhata-->
+
+ <!--<color name="colorPrimary">#1E88E5</color>
+    <color name="colorPrimaryDark">#1976D2</color>
+    <color name="colorAccent">#EF6C00</color>
+    <color name="colorGray">#686868</color>-->
+
+    <color name="colorAccentLight">#de8016</color>
+    <color name="trans">#00000000</color>
+    <color name="trans1">#B3000000</color>
+    <color name="transBlack">#33000000</color>
+
+    <color name="colorControlNormal">#FF78909C</color>
+    <color name="cb_white">#FFFFFF</color>
+    <color name="custom_showcase_bg">#BB1976D2</color>
+
+    <color name="backgroundtintcolor">#ce3a8bd1</color>
+    <color name="splashtextbackground">#de8016</color>
+
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorGrapeFruit">#ED5565</color>
+    <color name="colorGrapeFruitDark">#DA4453</color>
+    <color name="colorBitterSweet">#FC6E51</color>
+    <color name="colorBitterSweetDark">#E9573F</color>
+    <color name="colorFlower">#FFCE54</color>
+    <color name="colorFlowerDark">#F68B42</color>
+    <color name="colorGrass">#A0D468</color>
+    <color name="colorGrassDark">#8CC152</color>
+    <color name="colorBlueJeans">#509CEC</color>
+    <color name="colorBlueJeansDark">#4A89DC</color>
+    <color name="colorMint">#48CFAD</color>
+    <color name="colorMintDark">#37BC9B</color>
+
+
+    <color name="colorErrorRed">#e84747</color>
+    <color name="colorSucessGreen">#1b9b12</color>
+
+
+    <color name="header1">#30e8bf</color>
+    <color name="header2">#ff8235</color>
+
+
+
+</resources>

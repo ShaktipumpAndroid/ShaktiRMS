@@ -1,0 +1,171 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/a"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+
+        android:scaleType="fitCenter">
+
+        <TextView
+            android:layout_marginStart="@dimen/_10sdp"
+            android:id="@+id/text_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:text="Select below option to upload excel file on server."
+            android:textColor="@color/white"
+            android:textSize="@dimen/_13ssp" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_below="@+id/a"
+        android:weightSum="3"
+        android:orientation="horizontal"
+        android:id="@+id/lvlUploadTopOPID"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_30sdp">
+
+
+        <RelativeLayout
+
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="15th Days"
+                android:id="@+id/btnDayWiseDataUPLID"
+                android:gravity="center_vertical|center_horizontal"
+
+android:textSize="@dimen/_8sdp"
+
+                android:background="@color/upload_btn_color"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/black" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5th years"
+                android:id="@+id/btnMonthWiseDataUPLID"
+                android:gravity="center_vertical|center_horizontal"
+                android:textSize="@dimen/_8sdp"
+
+                android:background="@color/upload_btn_color"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/black" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fault"
+                android:id="@+id/btnFaultWiseDataUPLID"
+                android:gravity="center_vertical|center_horizontal"
+                android:textSize="@dimen/_8sdp"
+                android:background="@color/upload_btn_color"
+                android:layout_centerHorizontal="true"
+
+                android:textColor="@color/black" />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:layout_below="@+id/lvlUploadTopOPID"
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:id="@+id/lvlUploadBottomOPID"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_30sdp">
+
+
+        <RelativeLayout
+
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+
+
+                android:layout_marginStart="@dimen/_40sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="15th Dongle Days"
+                android:id="@+id/btnDongleDayWiseDataUPLID"
+                android:gravity="center_vertical|center_horizontal"
+                android:textSize="@dimen/_8sdp"
+                android:background="@color/upload_btn_color"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/black" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+
+android:layout_marginEnd="@dimen/_40sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1 Dongle years"
+                android:id="@+id/btnDongleMonthWiseDataUPLID"
+                android:gravity="center_vertical|center_horizontal"
+                android:textSize="@dimen/_8sdp"
+
+                android:background="@color/upload_btn_color"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/black" />
+
+        </RelativeLayout>
+
+
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

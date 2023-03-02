@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gredenit_bg">
+
+    <LinearLayout
+
+        android:id="@+id/lvlHeaderViewID"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:background="@drawable/btn_grediant_drawable"
+        android:weightSum="3">
+
+        <RelativeLayout
+            android:id="@+id/rlvBackViewID"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.2"
+            android:background="@android:color/transparent">
+
+            <ImageView
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_margin="@dimen/_5sdp"
+                android:padding="@dimen/_3sdp"
+                android:src="@drawable/ic_back" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.6"
+            android:background="@android:color/transparent">
+
+
+            <TextView
+                android:id="@+id/txtAdd_Plant_and_DeviceID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/open_sans_regular"
+                android:text="Add Options"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/_18sdp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.2"
+            android:background="@android:color/transparent">
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+
+        <LinearLayout
+            android:id="@+id/lvlAddPlantButtonViewID"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_above="@+id/lvlLoginPasswordViewID"
+            android:layout_marginStart="@dimen/_60sdp"
+            android:layout_marginTop="@dimen/_14sdp"
+            android:layout_marginEnd="@dimen/_60sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:background="@drawable/yello_round_btn"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.4"
+                android:background="@android:color/transparent">
+
+                <TextView
+                    android:id="@+id/txtAddPlantID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_centerVertical="true"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:text="Add Plant"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14ssp" />
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_below="@+id/lvlAddPlantButtonViewID"
+            android:id="@+id/lvlAddDeviceButtonViewID"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+
+            android:layout_marginStart="@dimen/_60sdp"
+            android:layout_marginTop="@dimen/_14sdp"
+            android:layout_marginEnd="@dimen/_60sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:background="@drawable/yello_round_btn"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.4"
+                android:background="@android:color/transparent">
+
+                <TextView
+                    android:id="@+id/txtAddDeviceID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_centerVertical="true"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:text="Add Device"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14ssp" />
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

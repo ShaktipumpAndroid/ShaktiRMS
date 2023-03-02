@@ -1,0 +1,451 @@
+<resources>
+    <string name="app_name">Shakti RMS</string>
+
+    <string name="hint_activity">Activity</string>
+
+    <string name="hint_password"> Password</string>
+    <string name="hint_user_name"> User Name</string>
+    <string name="hint_user_last_name"> Last Name</string>
+    <string name="hint_user_first_name"> First Name</string>
+    <string name="hint_OTP"> Enter OTP</string>
+
+    <string name="hint_confirm_password"> Confirm Password</string>
+    <string name="hint_controller_id"> Controller Id </string>
+    <string name="hint_phone_no"> Phone No </string>
+    <string name="hint_address"> Address </string>
+    <string name="err_reg_mobile_no"> Enter registered mobile number </string>
+    <string name="err_reg_mobile_no1"> Enter mobile number to register device </string>
+    <string name="err_reg_mobile_no12"> Enter mobile number OR Email id </string>
+
+    <string name="err_msg_name">Enter User Name</string>
+    <string name="err_msg_first_name">Enter First Name</string>
+    <string name="err_msg_last_name">Enter Last Name</string>
+    <string name="err_msg_email">Enter valid email address</string>
+    <string name="err_msg_password">Enter the password</string>
+
+    <string name="err_msg_phone_no"> Enter Phone No </string>
+    <string name="err_msg_valid_phone_no"> Please Enter Valid Mobile No </string>
+    <string name="err_msg_valid_phone_no1"> Please Enter Valid Mobile No  OR Email</string>
+    <string name="err_msg_password_match">Your password and confirmation password do not match </string>
+
+    <string name="err_msg_address"> Enter Address </string>
+    <string name="err_msg_controller"> Enter Controller Id </string>
+    <string name="err_msg_confirm_password"> Enter Confirm Password </string>
+    <string name="bt_not_permitted_msg"> Device not permited for Bluetooth!</string>
+
+
+    <string name="error"> Error </string>
+    <string name="alert"> Alert </string>
+    <string name="success"> Success </string>
+
+    <string name="err_invalid_user_password"> Invalid username or password </string>
+    <string name="err_device_disconnect"> Device is disconnected </string>
+    <string name="parameter_set_successfully"> Parameter set successfully!</string>
+    <string name="err_app_permission"> Please enable app permission under phone setting  </string>
+
+    <string name="succ_device_start"> Device start successfully </string>
+    <string name="succ_device_stop"> Device stop successfully </string>
+    <string name="err_start_command_fail"> Start command failed </string>
+    <string name="err_read_mode_fail"> Read mode command failed </string>
+    <string name="err_set_mode_fail"> Set mode command failed </string>
+    <string name="err_stop_command_fail"> Stop command failed </string>
+
+    <string name="err_user_block"> User is blocked by administrator </string>
+    <string name="err_connection"> Connection to server failed </string>
+    <string name="err_no_device_found">No device found.</string>
+    <string name="err_no_Plant_found">No Plant found.</string>
+
+    <string name="err_disconnect"> Device is disconnected </string>
+
+    <string name="err_invalid_device"> Please enter valid device number </string>
+    <string name="err_device_already_added"> Device is already added </string>
+    <string name="sucDevice_added_successfully"> Device added successfully!</string>
+
+    <string name="err_user_name"> Username is already taken, \nPlease choose another name.</string>
+    <string name="err_Mobile_no_exist"> an account is already exists with this mobile number </string>
+
+
+    <string name="err_internet"> No Internet Connection </string>
+
+    <string name="err_device_number"> Enter Valid Device Number </string>
+
+    <string name="err_msg_otp"> Enter OTP </string>
+    <string name="err_invaild_otp"> OTP is not valid </string>
+    <string name="success_device"> Device verification is successfully done! </string>
+    <string name="data_save"> Data successfully save ! </string>
+
+    <!-- material design-->
+
+
+    <string name="action_search">Search</string>
+    <string name="action_login">Login</string>
+    <string name="action_new_account"> Register New Account </string>
+    <string name="action_get_bt_data"> Get Bluetooth Data </string>
+    <string name="action_forgot_password"> Forgot Password  ?</string>
+
+    <string name="action_verify_account"> Verify Account Number </string>
+    <string name="action_verify_device"> Verify Device Number </string>
+    <string name="action_add_device"> Add Device Number </string>
+    <string name="action_forgotPassword"> Forgot Password</string>
+    <string name="action_chnagePassword"> Change Password</string>
+    <string name="action_get_imei_number"> Get IMEI Number</string>
+    <string name="action_activation_pending"> Activation Pending </string>
+    <string name="action_delete_device"> Delete Device </string>
+    <string name="action_data_report"> Data Report </string>
+    <string name="action_real_monitoring"> Real Monitoring </string>
+    <string name="action_device_setting"> Device settings </string>
+    <string name="action_device_settingBT"> Device settings </string>
+    <string name="action_forgot_passwordid"> Device settings </string>
+    <string name="fault_report"> Fault Report </string>
+    <string name="fault_detail"> Fault Details </string>
+
+    <string name="btn_sign_up"> Sign Up </string>
+    <string name="btn_send_otp"> Resend OTP </string>
+    <string name="btn_verify_otp"> Verify OTP </string>
+    <string name="btn_save"> Save </string>
+
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+
+
+    <string name="nav_item_home">Home</string>
+    <string name="nav_add_device">Add device</string>
+    <string name="nav_chnage_password">Change password</string>
+    <string name="nav_pending_device">Activation Pending</string>
+    <string name="nav_item_logout">Logout</string>
+    <string name="nav_item_about">About Us</string>
+    <string name="nav_item_bt_imeinum">Get IMEI number</string>
+    <string name="nav_item_change_lan">Change Language</string>
+
+    <string name="nav_item_mqtt_option">MQTT</string>
+    <string name="nav_item_contact">Contact Us</string>
+    <string name="nav_item_add_lat_long">Add Lat Long</string>
+
+    <string name="nav_item_condition">Terms and Conditions</string>
+    <string name="nav_item_fault_report">Fault Report</string>
+    <string name="nav_item_data_report">Data Report</string>
+    <string name="nav_item_bt_data_extract">BT Data Extraction</string>
+    <string name="upload_file_data_extract">Upload Data Excel</string>
+    <!--<string name="nav_item_bt_a1ss_app">A1SS App</string>-->
+    <string name="nav_delete_device">Delete device</string>
+
+    <!-- navigation drawer item labels single user  -->
+    <string-array name="nav_drawer_labels_single_user">
+        <item>@string/nav_item_home</item>
+        <item>@string/nav_add_device</item>
+        <item>@string/nav_chnage_password</item>
+        <item>@string/nav_item_bt_imeinum</item>
+        <item>@string/nav_item_change_lan</item>
+        <!--<item>@string/nav_pending_device</item>-->
+        <!--  <item>@string/nav_item_fault_report</item>
+        <item>@string/nav_item_data_report</item>-->
+        <!--<item>@string/nav_item_bt_data_extract</item>-->
+        <!-- <item>@string/nav_item_bt_a1ss_app</item>-->
+        <item>@string/nav_item_logout</item>
+    </string-array>
+
+
+    <!-- navigation drawer item labels org user   -->
+    <string-array name="nav_drawer_labels_org_user">
+        <item>@string/nav_item_home</item>
+        <item>@string/nav_chnage_password</item>
+        <!-- <item>@string/nav_item_fault_report</item>
+        <item>@string/nav_item_data_report</item>-->
+        <!-- <item>@string/nav_item_bt_data_extract</item>-->
+        <!--<item>@string/nav_item_bt_a1ss_app</item>-->
+        <item>@string/nav_item_mqtt_option</item>
+        <item>@string/nav_item_change_lan</item>
+        <item>@string/nav_item_add_lat_long</item>
+        <item>@string/nav_item_logout</item>
+    </string-array>
+
+
+    <string name="Permission_granted_now_you_can_read_the_storage_text">Permission granted now you can read the storage</string>
+    <string name="Oops_you_just_denied_the_permission_text">Oops you just denied the permission</string>
+    <string name="permission_set_manually">Please set app permission manually!</string>
+    <string name="Permission_granted_now_you_can_use_camera_text">Permission granted now you can use camera</string>
+    <string name="Permission_granted_now_you_can_use_user_imeinumber_text">Permission granted now you can use user device imei number</string>
+    <string name="Permission_granted_now_you_can_use_user_location_text">Permission granted now you can use user location</string>
+    <string name="is_user_location_text">Is location on?</string>
+    <string name="No_Internet_Avaliable_text">No Internet Avaliable.</string>
+
+
+    <string name="action_logout">Logout</string>
+    <string name="action_download">Download Device</string>
+    <string name="action_bluetoothdataExc">Bluetooth Data</string>
+    <string name="action_download_all">Download Data</string>
+    <string name="action_sync_offline">Sync Offline Data</string>
+
+    <string name="crash_toast_text">Ooooops ! App crashed, but a report will be sent to developer to help fix the issue !</string>
+
+    <string name="action_video_download">Download Video List</string>
+    <string name="action_unsync_menu">Sync Offline Data</string>
+    <string name="action_target_menu">Download Data</string>
+    <string name="action_menu_material_analysis">Sync Data</string>
+    <string name="action_file_menu">Sync Data</string>
+    <string name="action_file_detail_menu">Sync Data</string>
+    <string name="action_route_map_menu">Show on Map</string>
+    <string name="action_add_customer">Add New Customer in Route</string>
+
+    <string name="action_download_complaint">Download Complaint</string>
+    <string name="action_share_file"> Share Data</string>
+
+    <string name="action_download_service_center">Download Service Center </string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_maps">Map</string>
+
+    <!--String for aarybata-->
+    <string name="title_activity_settings">Settings</string>
+    <string name="pref_header_general">General</string>
+    <string name="choose_email_client">Choose email client</string>
+    <string name="url">http://www.accendereit.co/</string>
+    <string name="url1">https://enstinlabs.com/</string>
+    <string name="url2">https://www.shaktipumps.com/</string>
+
+    <string name="title_single_shot">Select For Bluetooth Communication</string>
+    <string name="desc_single_shot">Press the button and you\'ll only see paired devices,so please be ensured that device has been paired earlier.</string>
+    <string name="next">Next</string>
+    <string name="LoadingMessage">Loading…</string>
+    <string name="copyrightoffice">© Accendere Info Technologies Pvt.Ltd.</string>
+    <string name="loginbutton">Login</string>
+    <string name="passwordentry">Password</string>
+    <string name="emailentry">Email</string>
+    <string name="aryabhattaname">Aryabhatta</string>
+    <string name="paired_devices">Paired Devices</string>
+    <string name="bluetoothdemo">All paired Bluetooth Devices are displayed under Bluetooth selection List, Select Accordingly .</string>
+    <string name="demo1">Bluetooth Connectivity.</string>
+    <string name="demo2">USB Connectivity.</string>
+    <string name="usbdemo">Connected USB Devices are displayed under USB selection List, Select Accordingly .</string>
+    <string name="demo3">Settings.</string>
+    <string name="settingsdemo">Settings Activity provide seamless user experience and many more.</string>
+    <string name="Designandde">Design and Developed By</string>
+    <string name="client">Aryabhatta (Enstin labs)</string>
+    <string name="parameters_permission">You have permission to \'view parameters\' in the app</string>
+    <string name="view_logs">You have permission to \'view Logs\' in the app</string>
+
+    <string name="setparapermissions">You have permission to \'set parameters\' in the app</string>
+    <string name="performpermissions">You have permission to \'perform actions\' in the app</string>
+    <string name="lableoperations">Operations</string>
+    <string name="lableparameters">Parameters</string>
+    <string name="lablesettings">Settings</string>
+    <string name="labledata">Data</string>
+    <string name="labledatasimha">Data Extraction</string>
+    <string name="shakthipumpss">Shakti pumps</string>
+    <string name="getlogs">Get Logs</string>
+    <string name="placeholder_long">xxxxxxxxx</string>
+    <string name="placeholder_short">XX</string>
+    <string name="ERROR">Error</string>
+    <string name="G_ERROR">G/ERROR</string>
+    <string name="COLON_OK_HASH">:OK#</string>
+    <string name="SET_ERROR">S/ERROR</string>
+
+
+    <string name="text_15_Days">15th Days</string>
+    <string name="text_5_Years">5th Years</string>
+
+
+    <string name="delete_msg_text">Are you sure you want to delete?</string>
+    <string name="go_back_text">Are you sure you want to go back?</string>
+    <string name="file_upload_text">Select below option to upload excel file on server.</string>
+    <string name="force_fully_update_heading_text">New version available</string>
+    <string name="force_fully_update_text">Please, update app to new version to continue reposting.</string>
+    <string name="Back_head">Go Back</string>
+    <string name="Update_text">UPDATE</string>
+    <string name="No_thanks_text">NO, THANKS</string>
+
+
+    <string name="Get_text">Get</string>
+    <string name="Set_text">Set</string>
+    <string name="default_notification_channel_id">Set</string>
+
+    <string name="shakti_welcome_text">Welcome Solar RMS</string>
+    <string name="English_Text">English</string>
+    <string name="English">English</string>
+    <string name="Hindi">हिन्दी</string>
+    <string name="Marathi">Marathi</string>
+    <string name="Please_select_application_language">Please select the applications language</string>
+
+
+    <string name="MenuHome">Home</string>
+    <string name="MenuAddDevice">Add Device</string>
+    <string name="MenuChangePassword">Change Password</string>
+    <string name="MenuLogout">Logout</string>
+    <string name="MenuDeleteDevice">DELETE Device</string>
+    <string name="MenuGETIMEI">Get IMEI</string>
+    <string name="MenuChangeLanguage">Change Language</string>
+    <string name="MenuWelcome">Welcome</string>
+    <string name="MenuAppVersion">App Version</string>
+    <string name="addDevicePressHeretoSCAN">Press Here to SCAN</string>
+
+    <string name="homeDeviceName">Device Name : </string>
+    <string name="homeDeviceNumber">Device Number : </string>
+    <string name="homeCustomerName">Customer Name : </string>
+    <string name="homeSerchbycustemername1">Search By Customer Name , Device Number</string>
+    <string name="homeSerchbycustemername">Search By Customer Name , Device Number</string>
+
+
+    <string name="rl_device_number">Device Number </string>
+    <string name="rl_Date_and_Time">Date and Time </string>
+    <string name="rl_Name">Name: </string>
+    <string name="rl_Status">Status: </string>
+    <string name="rl_disconnected">Disconnected</string>
+
+
+    <string name="st_nternet">Internet</string>
+    <string name="st_BLUETOOTH">BLUETOOTH</string>
+    <string name="st_WifiHotspot">Wifi Hotspot</string>
+    <string name="st_Motor">Motor</string>
+    <string name="st_Control">Control</string>
+    <string name="st_pairedDevice">Paired Devices</string>
+
+
+    <string name="st_Totalenergy">Total Energy</string>
+    <string name="st_TodayEnergy">Today Energy</string>
+    <string name="st_Totalflow">Total flow</string>
+    <string name="st_Todayflow">Today flow</string>
+
+
+    <string name="st_Day">Day</string>
+    <string name="st_Month">Month</string>
+    <string name="st_Setting">Setting</string>
+    <string name="st_RealMonitoring">Real Monitoring</string>
+    <string name="st_DataExtraction">Data Extraction</string>
+    <string name="st_Start">Start</string>
+    <string name="st_Stop">Stop</string>
+
+    <string name="st_Doyouwanttostartdevice">Do you want to start device?</string>
+    <string name="st_StartAlert">Start Alert!</string>
+    <string name="st_Doyouwanttostopdevice">Do you want to stop device?</string>
+
+    <string name="st_StopAlert">Stop Alert!</string>
+    <string name="st_Yes">Yes</string>
+
+    <string name="st_No">No</string>
+    <string name="st_Pleasecheckinternetconnection">Please check internet connection!!</string>
+    <string name="st_Loading">Loading...</string>
+    <string name="st_Pleasewait">Please wait...</string>
+
+
+    <string name="st_PV">PV</string>
+
+
+    <string name="st_TotalRuningHours">Total Running Hours</string>
+    <string name="st_TodayRunninghours">Today Running Hours</string>
+
+
+    <string name="st_HR">Hrs</string>
+    <string name="st_meter">m³</string>
+    <string name="st_appVersion">App Version </string>
+    <string name="st_Grid">Grid</string>
+
+    <string name="st_TotalRunninghoursVk">Total Running Hours</string>
+
+    <string name="st_TodayRunninghoursVk">Today Running Hours</string>
+
+
+    <string name="st_DATE">Date</string>
+
+    <string name="st_KWH">Kwh</string>
+
+
+    <string name="st_LogoutAlert">Logout Alert!</string>
+    <string name="st_DoyouwanttoLogoutthisapplication">Do you want to Logout this application?</string>
+    <string name="st_Time">Time</string>
+    <string name="st_DeviceDeleteSuccessfully">Device Delete Successfully</string>
+    <string name="st_DoyouwanttoExit">Do you want to Exit?</string>
+
+
+    <string name="st_GETIMEI">GET IMEI</string>
+    <string name="st_SETCLIENTID">SET CLIENT ID</string>
+
+    <string name="st_GETCLIENTID">GET CLIENT ID</string>
+    <string name="st_GETPassword">GET Password</string>
+    <string name="st_GETUSERNAME">GET USERNAME</string>
+    <string name="st_SETUSERNAME">SET USERNAME</string>
+
+    <string name="st_SETPassword">SET Password</string>
+
+    <string name="st_MQTT">MQTT</string>
+    <string name="st_SwitchMQTT">Switch To MQTT</string>
+    <string name="st_SwitchTCP">Switch To TCP</string>
+    <string name="st_TCP">TCP</string>
+
+    <string name="st_SetClientIDSuccess">Client ID set Successfully!</string>
+    <string name="st_SetUsernameSuccess">Username set Successfully!</string>
+    <string name="st_SetPasswordSuccess">Password set Successfully!</string>
+
+
+    <string name="st_STANDBY">STANDBY</string>
+    <string name="st_MOTORON">MOTOR ON</string>
+    <string name="st_ONGRID">ON GRID</string>
+    <string name="st_MOTORON_GRIDON">ON GRID, MOTOR ON </string>
+    <string name="st_BOOSTERON">BOOSTER ON</string>
+    <string name="st_TSMOTORON">TS MOTOR ON</string>
+    <string name="st_TSONGRID">TS ON GRID </string>
+    <string name="st_TSONGRID_MOTORON">TS ON GRID,MOTOR ON</string>
+
+
+    <string name="st_Monthly_Energy">Monthly Energy</string>
+
+    <string name="st_GetLatitude">Latitude:</string>
+    <string name="st_GetLongitude">Longitude:</string>
+    <string name="st_GetLongitudeSuccess">Latitude and Longitude set Successfully!</string>
+    <string name="st_GetLongitudeFaild">Latitude and Longitude set faild!</string>
+
+
+    <string name="Total_EnergyMwh">Total Energy(MWh)</string>
+
+    <string name="Total_Plants">Total Plants</string>
+
+    <string name="Total_Error">Total Error (pcs)</string>
+
+    <string name="Normal">Normal</string>
+
+    <string name="Error">Error</string>
+
+    <string name="Pending">Pending</string>
+
+    <string name="Handling">Handling</string>
+
+    <string name="Plant">Plant</string>
+    <string name="AddPlant">Add Plant</string>
+    <string name="SolarPlant">Solar Rooftop</string>
+    <string name="Devices">Solar Pump</string>
+
+    <string name="User">User</string>
+
+    <string name="Message">Message</string>
+
+    <string name="Today_Energy">Today Energy</string>
+
+    <string name="Total_Energy">Total Energy</string>
+
+    <string name="Montly_Energy">Montly Energy</string>
+
+    <string name="kWh">kWh</string>
+
+    <string name="MWh">MWh</string>
+
+    <string name="MWp">MWp</string>
+
+    <string name="kW">kW</string>
+    <string name="Today_Power">Feeding Power</string>
+    <string name="Total_Power">Total Power</string>
+    <string name="Today_Hour">Today Hour</string>
+    <string name="Total_Hour">Total Hour</string>
+    <string name="KLP_Graph">Graph</string>
+    <string name="KLP_Devices">Devices</string>
+    <string name="KLP_Dashboard">Dashboard</string>
+    <string name="KLP_Plant_Dashboard">Plant Dashboard</string>
+    <string name="Total_Devices">Total Devices</string>
+    <string name="Online_Devices">Online Inverter</string>
+    <string name="ofline_Devices">Ofline Inverter</string>
+    <string name="Inverter">Inverter</string>
+    <string name="Map">Map</string>
+
+    <string name="st_W">W</string>
+
+
+</resources>

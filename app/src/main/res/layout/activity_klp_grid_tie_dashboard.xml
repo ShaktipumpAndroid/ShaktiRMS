@@ -1,0 +1,827 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gredenit_bg"
+    >
+
+    <LinearLayout
+
+        android:id="@+id/lvlHeaderViewID"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:background="@drawable/gredenit_header"
+        android:weightSum="3">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.2"
+            android:background="@android:color/transparent">
+
+            <ImageView
+                android:layout_margin="@dimen/_5sdp"
+                android:padding="@dimen/_3sdp"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_back"
+                android:layout_centerVertical="true"/>
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.6"
+            android:background="@android:color/transparent">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Plant"
+                android:textSize="@dimen/_18sdp"
+                android:layout_centerInParent="true"
+                android:textColor="@color/colorWhite"
+                android:fontFamily="@font/open_sans_regular"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.2"
+            android:background="@android:color/transparent">
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+
+    <RelativeLayout
+        android:layout_above="@+id/lvlMainEnergyViewID"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_below="@+id/lvlHeaderViewID"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent">
+
+
+        <RelativeLayout
+            android:id="@+id/rlvTopTotalEnergyViewID"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_80sdp"
+            android:background="@android:color/transparent"
+            >
+
+            <TextView
+                android:layout_marginTop="@dimen/_8sdp"
+                android:id="@+id/txtTotalEnergyHeadID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Total_EnergyMwh"
+                android:textSize="@dimen/_14ssp"
+                android:layout_alignParentTop="true"
+                android:textColor="@color/black"
+                android:fontFamily="@font/open_sans_regular"
+                />
+
+
+            <TextView
+                android:layout_below="@+id/txtTotalEnergyHeadID"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:id="@+id/txtTotalEnergyValueID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="764473444:489"
+                android:textSize="@dimen/_40ssp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/dg_font_color"
+                android:fontFamily="@font/digital_italic"
+                />
+
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:id="@+id/lvlCircleViewID"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_below="@+id/rlvTopTotalEnergyViewID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:orientation="horizontal">
+
+
+            <RelativeLayout
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <com.devlomi.circularstatusview.CircularStatusView
+                    android:id="@+id/crlvTotalPlantID"
+                    android:layout_width="@dimen/_90sdp"
+                    android:layout_height="@dimen/_90sdp"
+                    android:layout_centerInParent="true"
+                    app:portion_color="@color/header1"
+                    app:portion_spacing="@dimen/_3sdp"
+                    app:portion_width="@dimen/_3sdp"
+                    app:portions_count="5" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true">
+
+                    <TextView
+                        android:layout_centerHorizontal="true"
+                        android:id="@+id/txtTotalPlantsValueID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="333"
+                        android:textSize="@dimen/_14ssp"
+                        android:layout_alignParentTop="true"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/open_sans_regular"
+                        />
+                    <TextView
+                        android:layout_below="@+id/txtTotalPlantsValueID"
+                        android:id="@+id/txtTotalPlantsHeadID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/Total_Plants"
+                        android:textSize="@dimen/_8ssp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/open_sans_regular"
+                        />
+
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <com.devlomi.circularstatusview.CircularStatusView
+                    android:id="@+id/crlvTotalErrorID"
+                    android:layout_width="@dimen/_90sdp"
+                    android:layout_height="@dimen/_90sdp"
+                    android:layout_centerInParent="true"
+                    app:portion_color="@color/colorAccent"
+                    app:portion_spacing="@dimen/_3sdp"
+                    app:portion_width="@dimen/_3sdp"
+                    app:portions_count="5" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true">
+
+                    <TextView
+                        android:layout_centerHorizontal="true"
+                        android:id="@+id/txtTotalErrorValueID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="111"
+                        android:textSize="@dimen/_14ssp"
+                        android:layout_alignParentTop="true"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/open_sans_regular"
+                        />
+                    <TextView
+                        android:layout_below="@+id/txtTotalErrorValueID"
+                        android:id="@+id/txtTotalErrorHeadID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/Total_Error"
+                        android:textSize="@dimen/_8ssp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/open_sans_regular"
+                        />
+
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+
+
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:id="@+id/lvlCountViewID"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_below="@+id/lvlCircleViewID"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_80sdp"
+            android:weightSum="2"
+            android:orientation="horizontal">
+
+
+            <LinearLayout
+
+                android:layout_weight="1"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_below="@+id/lvlCircleViewID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="3"
+                android:orientation="horizontal">
+
+
+
+                <RelativeLayout
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <ImageView
+                        android:id="@+id/imgGreenCountID"
+                        android:layout_centerHorizontal="true"
+                        android:layout_width="@dimen/_10sdp"
+                        android:layout_height="@dimen/_10sdp"
+                        android:background="@drawable/green_circle"/>
+
+                    <TextView
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_centerHorizontal="true"
+                        android:id="@+id/txtGreenCountID"
+                        android:layout_below="@+id/imgGreenCountID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="33"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10ssp"
+                        android:textAllCaps="true"
+                        android:fontFamily="@font/open_sans_regular"/>
+
+                    <TextView
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_centerHorizontal="true"
+                        android:id="@+id/txtGreenCountHeadID"
+                        android:layout_below="@+id/txtGreenCountID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/Normal"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_8ssp"
+                        android:textAllCaps="true"
+                        android:fontFamily="@font/open_sans_light"/>
+
+                </RelativeLayout>
+
+
+
+                <RelativeLayout
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <ImageView
+                        android:id="@+id/imgErrorCountID"
+                        android:layout_centerHorizontal="true"
+                        android:layout_width="@dimen/_10sdp"
+                        android:layout_height="@dimen/_10sdp"
+                        android:background="@drawable/red_circle"/>
+
+                    <TextView
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_centerHorizontal="true"
+                        android:id="@+id/txtErrorCountID"
+                        android:layout_below="@+id/imgErrorCountID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="21"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10ssp"
+                        android:textAllCaps="true"
+                        android:fontFamily="@font/open_sans_regular"/>
+
+                    <TextView
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_centerHorizontal="true"
+                        android:id="@+id/txtErrorCountHeadID"
+                        android:layout_below="@+id/txtErrorCountID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/Error"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_8ssp"
+                        android:textAllCaps="true"
+                        android:fontFamily="@font/open_sans_light"/>
+
+
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <ImageView
+                        android:id="@+id/imgofflineCountID"
+                        android:layout_centerHorizontal="true"
+                        android:layout_width="@dimen/_10sdp"
+                        android:layout_height="@dimen/_10sdp"
+                        android:background="@drawable/yello_circle"/>
+
+                    <TextView
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_centerHorizontal="true"
+                        android:id="@+id/txtofflineCountID"
+                        android:layout_below="@+id/imgofflineCountID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="36"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10ssp"
+                        android:textAllCaps="true"
+                        android:fontFamily="@font/open_sans_regular"/>
+
+                    <TextView
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_centerHorizontal="true"
+                        android:id="@+id/txtofflineCountHeadID"
+                        android:layout_below="@+id/txtofflineCountID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/Normal"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_8ssp"
+                        android:textAllCaps="true"
+                        android:fontFamily="@font/open_sans_light"/>
+
+
+
+
+                </RelativeLayout>
+
+
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+
+                android:layout_weight="1"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_below="@+id/lvlCircleViewID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                android:orientation="horizontal">
+
+
+
+                <RelativeLayout
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <ImageView
+                        android:id="@+id/imgPendingCountID"
+                        android:layout_centerHorizontal="true"
+                        android:layout_width="@dimen/_10sdp"
+                        android:layout_height="@dimen/_10sdp"
+                        android:background="@drawable/red_circle"/>
+
+                    <TextView
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_centerHorizontal="true"
+                        android:id="@+id/txtPendingCountID"
+                        android:layout_below="@+id/imgPendingCountID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="16"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10ssp"
+                        android:textAllCaps="true"
+                        android:fontFamily="@font/open_sans_regular"/>
+
+                    <TextView
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_centerHorizontal="true"
+                        android:id="@+id/txtPendingCountHeadID"
+                        android:layout_below="@+id/txtPendingCountID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/Pending"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_8ssp"
+                        android:textAllCaps="true"
+                        android:fontFamily="@font/open_sans_light"/>
+
+                </RelativeLayout>
+
+
+
+                <RelativeLayout
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <ImageView
+                        android:id="@+id/imgHandlingCountID"
+                        android:layout_centerHorizontal="true"
+                        android:layout_width="@dimen/_10sdp"
+                        android:layout_height="@dimen/_10sdp"
+                        android:background="@drawable/yello_circle"/>
+
+                    <TextView
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_centerHorizontal="true"
+                        android:id="@+id/txtHandlingCountID"
+                        android:layout_below="@+id/imgHandlingCountID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="12"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10ssp"
+                        android:textAllCaps="true"
+                        android:fontFamily="@font/open_sans_regular"/>
+
+                    <TextView
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_centerHorizontal="true"
+                        android:id="@+id/txtHandlingCountHeadID"
+                        android:layout_below="@+id/txtHandlingCountID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/Handling"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_8ssp"
+                        android:textAllCaps="true"
+                        android:fontFamily="@font/open_sans_light"/>
+
+
+
+
+                </RelativeLayout>
+
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_above="@+id/viewSepratorID"
+        android:id="@+id/lvlMainEnergyViewID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="3"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:orientation="vertical"
+        >
+
+
+        <RelativeLayout
+            android:layout_weight="1"
+            android:id="@+id/rlvTodayEnergyViewID"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:background="@drawable/today_round_view">
+
+
+            <ImageView
+                android:layout_centerVertical="true"
+                android:id="@+id/imgTodayEnergyIconID"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:src="@drawable/ic_today_time"/>
+
+
+            <TextView
+                android:layout_marginStart="@dimen/_10sdp"
+                android:id="@+id/txtTodayEnergyHeadID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/imgTodayEnergyIconID"
+                android:text="@string/Today_Energy"
+                android:textSize="@dimen/_14ssp"
+                android:fontFamily="@font/open_sans_regular"
+                android:textColor="@color/colorWhite"/>
+
+            <TextView
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:id="@+id/txtTodayEnergyValueID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/txtTodayEnergyUnitID"
+                android:layout_alignParentEnd="true"
+                android:text="708.00"
+                android:textSize="@dimen/_16ssp"
+                android:background="@android:color/transparent"
+                android:fontFamily="@font/open_sans_bold"
+                android:textColor="@color/colorWhite"/>
+
+            <TextView
+                android:background="@android:color/transparent"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:id="@+id/txtTodayEnergyUnitID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="@string/kWh"
+                android:textSize="@dimen/_12ssp"
+                android:fontFamily="@font/open_sans_bold"
+                android:textColor="@color/colorWhite"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="@dimen/_5sdp"
+                />
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_weight="1"
+            android:id="@+id/rlvMontlyEnergyViewID"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:background="@drawable/montly_round_view">
+
+
+            <ImageView
+                android:layout_centerVertical="true"
+                android:id="@+id/imgMontlyEnergyIconID"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:src="@drawable/ic_montly_icon"/>
+
+
+            <TextView
+                android:layout_marginStart="@dimen/_10sdp"
+                android:id="@+id/txtMontlyEnergyHeadID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/imgMontlyEnergyIconID"
+                android:text="@string/Montly_Energy"
+                android:textSize="@dimen/_14ssp"
+                android:fontFamily="@font/open_sans_regular"
+                android:textColor="@color/colorWhite"/>
+
+            <TextView
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:id="@+id/txtMontlyEnergyValueID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/txtMontlyEnergyUnitID"
+                android:layout_alignParentEnd="true"
+                android:text="4590.00"
+                android:textSize="@dimen/_14ssp"
+                android:fontFamily="@font/open_sans_bold"
+                android:textColor="@color/colorWhite"/>
+
+            <TextView
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:id="@+id/txtMontlyEnergyUnitID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="@string/MWh"
+                android:textSize="@dimen/_14ssp"
+                android:fontFamily="@font/open_sans_regular"
+                android:textColor="@color/colorWhite"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="@dimen/_3sdp"/>
+
+
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:layout_weight="1"
+            android:id="@+id/rlvTotalEnergyViewID"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:background="@drawable/total_round_view">
+
+
+            <ImageView
+                android:layout_centerVertical="true"
+                android:id="@+id/imgTotalEnergyIconID"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:src="@drawable/ic_totalen_icon"/>
+
+
+            <TextView
+                android:layout_marginStart="@dimen/_5sdp"
+                android:id="@+id/txtTotalEnergyHeadIDB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/imgTotalEnergyIconID"
+                android:text="@string/Total_Energy"
+                android:textSize="@dimen/_14ssp"
+                android:fontFamily="@font/open_sans_regular"
+                android:textColor="@color/colorWhite"/>
+
+            <TextView
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:id="@+id/txtTotalEnergyValueIDB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/txtTotalEnergyUnitID"
+                android:layout_alignParentEnd="true"
+                android:text="8888.00"
+                android:textSize="@dimen/_14ssp"
+                android:fontFamily="@font/open_sans_bold"
+                android:textColor="@color/colorWhite"/>
+
+            <TextView
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:id="@+id/txtTotalEnergyUnitID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="@string/MWp"
+                android:textSize="@dimen/_14ssp"
+                android:fontFamily="@font/open_sans_regular"
+                android:textColor="@color/colorWhite"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="@dimen/_3sdp"/>
+
+
+        </RelativeLayout>
+
+
+
+
+
+
+    </LinearLayout>
+
+
+    <View
+        android:id="@+id/viewSepratorID"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:background="@color/colorGray"
+        android:layout_above="@+id/rlvBottomViewID"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/rlvBottomViewID"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_55sdp"
+        android:weightSum="3"
+        android:background="@color/colorWhite"
+
+        >
+
+        <RelativeLayout
+            android:id="@+id/rlvPlantBottomViewID"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            >
+
+            <ImageView
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:layout_above="@+id/txtPlantHeadID"
+                android:id="@+id/imgPlantIconID"
+                android:layout_centerHorizontal="true"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_house_selected"/>
+
+            <TextView
+                android:layout_marginBottom="@dimen/_7sdp"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/txtPlantHeadID"
+                android:layout_alignParentBottom="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Plant"
+                android:textColor="@color/chocolate"
+                android:textSize="@dimen/_12ssp"
+                android:textAllCaps="true"
+                android:fontFamily="@font/open_sans_regular"/>
+
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/rlvChatBottomViewID"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            >
+
+            <ImageView
+                android:layout_above="@+id/txtMessageHeadID"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:id="@+id/imgMessageIconID"
+                android:layout_centerHorizontal="true"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_chat_unselected"/>
+
+            <TextView
+
+                android:layout_marginBottom="@dimen/_7sdp"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/txtMessageHeadID"
+                android:layout_alignParentBottom="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Message"
+                android:textColor="@color/colorGray"
+                android:textSize="@dimen/_12ssp"
+                android:textAllCaps="true"
+                android:fontFamily="@font/open_sans_regular"/>
+
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+
+            android:id="@+id/rlvUserBottomViewID"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            >
+
+            <ImageView
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:layout_above="@+id/txtUserHeadID"
+                android:id="@+id/imgUserIconID"
+                android:layout_centerHorizontal="true"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_user_unselected"/>
+
+            <TextView
+
+                android:layout_marginBottom="@dimen/_7sdp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/txtUserHeadID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/User"
+                android:textColor="@color/colorGray"
+                android:textSize="@dimen/_12ssp"
+                android:textAllCaps="true"
+                android:fontFamily="@font/open_sans_regular"/>
+
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

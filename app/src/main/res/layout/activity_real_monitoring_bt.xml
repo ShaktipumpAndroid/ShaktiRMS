@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar" />
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:layout_height="fill_parent" >
+
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="2dp">
+
+            <TextView
+                android:id="@+id/real_monitor_icon"
+                android:layout_width="wrap_content"
+
+                android:drawableLeft="@mipmap/grey_ball"
+                android:textStyle="bold"
+
+                android:layout_height="wrap_content" />
+
+
+            <TextView
+                android:id="@+id/real_monitor_name"
+                android:layout_width="wrap_content"
+                android:gravity="left"
+                android:layout_toRightOf="@+id/real_monitor_icon"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:paddingTop="15dp"
+                android:textStyle="bold|italic"
+                android:text=""
+                android:textSize="18sp"/>
+
+            <TextView
+                android:id="@+id/network_icon"
+                android:layout_width="wrap_content"
+                android:gravity="right"
+                android:layout_toRightOf="@+id/real_monitor_name"
+                android:layout_height="wrap_content"
+                android:drawableRight="@mipmap/network_0"
+
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:textSize="15sp"/>
+
+            <TextView
+                android:id="@+id/frame_date_time"
+                android:layout_width="wrap_content"
+                android:layout_below="@+id/real_monitor_icon"
+                android:layout_marginTop="1dp"
+                android:layout_marginLeft="2dp"
+                android:textStyle="italic"
+                android:textSize="13sp"
+                android:layout_height="wrap_content" />
+
+
+            <TextView
+                android:id="@+id/device_number"
+                android:layout_width="wrap_content"
+                android:gravity="right"
+                android:layout_toRightOf="@+id/frame_date_time"
+                android:layout_height="wrap_content"
+                android:textStyle="italic"
+                android:layout_below="@+id/network_icon"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:textSize="13sp"/>
+
+            <TextView
+                android:id="@+id/customer_name"
+                android:layout_width="wrap_content"
+                android:layout_below="@+id/frame_date_time"
+                android:layout_marginTop="1dp"
+                android:layout_marginLeft="2dp"
+
+                android:textStyle="italic"
+                android:textSize="13sp"
+                android:layout_height="wrap_content" />
+
+
+            <TextView
+                android:id="@+id/mobile_no"
+                android:layout_width="wrap_content"
+                android:gravity="right"
+                android:layout_toRightOf="@+id/customer_name"
+                android:layout_height="wrap_content"
+                android:textStyle="italic"
+
+                android:layout_below="@+id/device_number"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:textSize="13sp"/>
+
+
+        </RelativeLayout>
+
+
+
+        <ListView
+            android:id="@+id/listview"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+
+
+
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            />
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

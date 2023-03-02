@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <!--Header icon-->
+        <RelativeLayout
+            android:id="@+id/rlvHeaderViewID"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:background="@color/blue_fb">
+
+            <RelativeLayout
+                android:id="@+id/rlvBackViewID"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imgHeaderID"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_centerVertical="true"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:paddingTop="@dimen/_15sdp"
+                    android:paddingEnd="@dimen/_1sdp"
+                    android:paddingBottom="@dimen/_15sdp"
+                    android:src="@drawable/icn_back" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/imgDeviceImageID"
+                    android:layout_width="@dimen/_35sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/imgHeaderID"
+                    android:paddingStart="@dimen/_1sdp"
+                    android:paddingTop="@dimen/_2sdp"
+                    android:paddingEnd="@dimen/_2sdp"
+                    android:paddingBottom="@dimen/_2sdp"
+                    android:src="@drawable/dt7" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/txtHeaderID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_toEndOf="@+id/rlvBackViewID"
+                android:fontFamily="@font/open_sans_semibold"
+                android:text="Vikas Gothi"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10ssp"
+
+                />
+
+        </RelativeLayout>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/crdOptionViewID"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_below="@+id/rlvHeaderViewID"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:elevation="@dimen/_10sdp"
+            app:cardBackgroundColor="@color/blue_fb"
+            app:cardCornerRadius="@dimen/_10sdp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/blue_fb"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <RelativeLayout
+                    android:id="@+id/rlvDayGharpID"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent">
+
+                    <TextView
+                        android:id="@+id/txtDayGharpID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="@font/open_sans_semibold"
+                        android:text="Day"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_16ssp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlvMonthGharpID"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/gray_btn">
+
+                    <TextView
+                        android:id="@+id/txtMonthGharpID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="@font/open_sans_semibold"
+                        android:text="Month"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_16ssp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlvYearGharpID"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/gray_btn">
+
+                    <TextView
+                        android:id="@+id/txtYearGharpID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="@font/open_sans_semibold"
+                        android:text="Year"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_16ssp" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!--DAy wise data-->
+        <RelativeLayout
+            android:id="@+id/rlvDayGharpViewContainerID"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/crdOptionViewID"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_3sdp"
+            android:background="@color/blue_fb">
+
+        </RelativeLayout>
+
+        <!--Month wise data-->
+        <RelativeLayout
+            android:id="@+id/rlvMonthGharpViewContainerID"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/crdOptionViewID"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_3sdp"
+            android:background="@color/green">
+
+        </RelativeLayout>
+
+        <!--Year wise data-->
+        <RelativeLayout
+            android:id="@+id/rlvYearGharpViewContainerID"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/crdOptionViewID"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_3sdp"
+            android:background="@color/red">
+
+        </RelativeLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/crdBottomOptionViewID"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:elevation="@dimen/_10sdp"
+            app:cardBackgroundColor="@color/blue_fb"
+            app:cardCornerRadius="@dimen/_1sdp">
+
+            <LinearLayout
+                android:id="@+id/rlvBottomTabViewID"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/blue_fb"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+                <RelativeLayout
+                    android:id="@+id/rlv1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent">
+
+                    <TextView
+                        android:id="@+id/txt1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="@font/open_sans_semibold"
+                        android:text="Day"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_16ssp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlv2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/gray_btn">
+
+                    <TextView
+                        android:id="@+id/txt2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="@font/open_sans_semibold"
+                        android:text="Month"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_16ssp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlv3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/gray_btn">
+
+                    <TextView
+                        android:id="@+id/txt3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="@font/open_sans_semibold"
+                        android:text="Year"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_16ssp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlv4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/gray_btn">
+
+                    <TextView
+                        android:id="@+id/txt4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="@font/open_sans_semibold"
+                        android:text="Year"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_16ssp" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <!--toolbar-->
+    <include layout="@layout/toolbar" />
+
+    <ImageView
+        android:id="@+id/imgShaktiLogoID"
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="@dimen/_130sdp"
+        android:layout_below="@+id/toolbar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:src="@drawable/logo_blue" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/imgShaktiLogoID"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_40sdp">
+
+        <!--<TextView
+            android:id="@+id/txtforgotheadingID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:background="@color/white"
+            android:text="Please enter username"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/_14ssp"
+            android:textStyle="normal"
+            android:visibility="invisible"/>-->
+
+
+        <RelativeLayout
+            android:id="@+id/rlvEditOldPassViewID"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:layout_below="@+id/txtforgotheadingID"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:background="@drawable/round_edit_text_border">
+
+            <EditText
+                android:inputType="textPassword"
+                android:id="@+id/edtOldPassID"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:background="@android:color/transparent"
+                android:hint="Please enter old password!"
+                android:textColorHint="@color/colorAccent"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14ssp"
+                android:singleLine="true"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textStyle="normal"
+                tools:ignore="Autofill"/>
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+
+            android:id="@+id/rlvEditnewPassViewID"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:layout_below="@+id/rlvEditOldPassViewID"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:background="@drawable/round_edit_text_border">
+
+            <EditText
+                android:inputType="textPassword"
+                android:id="@+id/edtnewPassID"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:background="@android:color/transparent"
+                android:hint="Please enter new password!"
+                android:textColorHint="@color/colorAccent"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14ssp"
+                android:singleLine="true"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textStyle="normal"
+                tools:ignore="Autofill"/>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlvEditConfirmPassViewID"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:layout_below="@+id/rlvEditnewPassViewID"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:background="@drawable/round_edit_text_border">
+
+            <EditText
+                android:id="@+id/edtConfirmPassID"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:background="@android:color/transparent"
+                android:hint="Please enter confirm password!"
+                android:textColorHint="@color/colorAccent"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14ssp"
+                android:singleLine="true"
+                android:maxLines="1"
+
+                android:inputType="textPassword"
+                android:ellipsize="end"
+                android:textStyle="normal"
+                tools:ignore="Autofill"/>
+
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/txtNextBTNID"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_below="@+id/rlvEditConfirmPassViewID"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginStart="@dimen/_90sdp"
+            android:layout_marginEnd="@dimen/_90sdp"
+            android:background="@drawable/round_shape_setbtn"
+            android:text="Submit"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14sdp">
+
+        </TextView>
+
+    </RelativeLayout>
+
+</RelativeLayout>

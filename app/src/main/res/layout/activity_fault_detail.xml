@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginLeft="5dp"
+            android:id="@+id/device_number_text"
+            android:textSize="15sp"
+            android:text="Device Number :"
+            android:textStyle="bold|italic" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_toRightOf="@+id/device_number_text"
+            android:id="@+id/device_number"
+            android:textSize="15sp"
+            android:layout_marginLeft="10dp"
+            android:textStyle="italic" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:id="@+id/fault_date_txt"
+            android:layout_marginLeft="5dp"
+            android:textSize="15sp"
+            android:layout_below="@+id/device_number_text"
+            android:text="Fault Date :"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold|italic" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_toRightOf="@+id/fault_date_txt"
+            android:id="@+id/fault_date"
+            android:textSize="15sp"
+
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/device_number"
+            android:textStyle="italic" />
+
+
+
+
+    </RelativeLayout>
+
+
+
+
+
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="30dp"
+        android:layout_height="fill_parent" >
+
+
+        <EditText
+            android:id="@+id/search"
+            android:layout_width="fill_parent"
+            android:layout_height="25dp"
+            android:singleLine="true"
+            android:hint="Search By Fault Name"
+            android:background="@color/background_floating_material_light"
+
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:textSize="15sp"
+            android:textStyle="bold|italic">
+
+            <requestFocus />
+        </EditText>
+
+        <ListView
+            android:id="@+id/listview"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@+id/search"
+            android:layout_marginTop="20dp"
+
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            />
+    </LinearLayout>
+
+
+
+</LinearLayout>

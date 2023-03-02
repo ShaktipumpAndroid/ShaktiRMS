@@ -1,0 +1,73 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+
+    tools:context="com.shaktipumps.shakti_rms.activity.MainActivity">
+
+<!--    <item
+        android:id="@+id/action_search"
+        android:title="@string/action_search"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_action_search"
+
+        app:showAsAction="ifRoom"/>-->
+       <!-- app:showAsAction="ifRoom"-->
+
+
+       <!--<item
+        android:id="@+id/action_logo"
+           android:title="shakti"
+        android:orderInCategory="100"
+
+        android:icon="@drawable/shakti_white"
+        app:showAsAction="ifRoom"/>-->
+
+    <item
+        android:id="@+id/action_download"
+        android:title="@string/action_download"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        android:visible="false"/>
+
+    <item
+        android:id="@+id/action_BT_Selection"
+        android:title="@string/action_bluetoothdataExc"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        android:visible="false"/>
+
+    <item
+        android:id="@+id/action_logout"
+        android:title="@string/action_logout"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        android:visible="false"/>
+
+
+
+   <!-- <item
+        android:id="@+id/action_route_map_menu"
+        android:title="@string/action_route_map_menu"
+        android:icon="@drawable/location"
+        android:orderInCategory="1"
+        app:showAsAction="ifRoom" /> -->
+
+    <!--<item
+        android:id="@+id/action_route_bluetooth"
+        android:title="@string/action_route_map_menu"
+        android:icon="@drawable/iv_bluetooth_unselected"
+        android:orderInCategory="1"
+        app:showAsAction="ifRoom"
+        android:visible="false"/>
+
+    <item
+        android:id="@+id/action_route_internet"
+        android:title="@string/action_route_map_menu"
+        android:icon="@drawable/iv_connection_selected"
+        android:orderInCategory="1"
+        app:showAsAction="ifRoom"
+        android:visible="false"/>-->
+
+</menu>

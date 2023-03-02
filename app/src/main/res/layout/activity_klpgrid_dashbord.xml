@@ -1,0 +1,1533 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gredenit_bg">
+
+    <LinearLayout
+
+        android:id="@+id/lvlHeaderViewID"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:background="@drawable/btn_grediant_drawable"
+        android:weightSum="3">
+
+        <RelativeLayout
+            android:id="@+id/rlvBackViewID"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.2"
+            android:background="@android:color/transparent">
+
+            <ImageView
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_margin="@dimen/_5sdp"
+                android:padding="@dimen/_3sdp"
+                android:src="@drawable/ic_back" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.6"
+            android:background="@android:color/transparent">
+
+
+            <TextView
+                android:id="@+id/txtHdrTextID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/open_sans_regular"
+                android:text="@string/KLP_Plant_Dashboard"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/_18sdp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlvAddDEviceViewID"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.2"
+            android:background="@android:color/transparent">
+
+            <ImageView
+                android:id="@+id/imgaddDeviceIconID"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_2sdp"
+                android:src="@drawable/fab_add" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlvDashbordViewID"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/viewSepratorID"
+        android:layout_below="@+id/lvlHeaderViewID"
+        android:visibility="visible">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/lvlMainEnergyViewID"
+
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:background="@android:color/transparent">
+
+
+            <RelativeLayout
+                android:id="@+id/rlvTopTotalEnergyViewID"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_65sdp"
+                android:background="@android:color/transparent">
+
+                <TextView
+                    android:id="@+id/txtTotalEnergyHeadID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:fontFamily="@font/open_sans_regular"
+                    android:text="@string/Total_EnergyMwh"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14ssp" />
+
+
+                <TextView
+                    android:id="@+id/txtTotalEnergyValueID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtTotalEnergyHeadID"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:fontFamily="@font/digital_italic"
+                    android:text="00000000.0000"
+                    android:textColor="@color/dg_font_color"
+                    android:textSize="@dimen/_30ssp" />
+
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:id="@+id/lvlCircleViewID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rlvTopTotalEnergyViewID"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+
+                    <com.devlomi.circularstatusview.CircularStatusView
+                        android:id="@+id/crlvTotalPlantID"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_80sdp"
+                        android:layout_centerInParent="true"
+                        app:portion_color="@color/header1"
+                        app:portion_spacing="@dimen/_3sdp"
+                        app:portion_width="@dimen/_3sdp"
+                        app:portions_count="5" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true">
+
+                        <TextView
+                            android:id="@+id/txtTotalPlantsValueID"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true"
+                            android:fontFamily="@font/open_sans_regular"
+                            android:text="0"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_14ssp" />
+
+                        <TextView
+                            android:id="@+id/txtTotalPlantsHeadID"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/txtTotalPlantsValueID"
+                            android:fontFamily="@font/open_sans_regular"
+                            android:text="@string/Online_Devices"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_8ssp" />
+
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+                <!--new circle-->
+                <RelativeLayout
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <com.devlomi.circularstatusview.CircularStatusView
+                        android:id="@+id/crlvOflinePlantID"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_80sdp"
+                        android:layout_centerInParent="true"
+                        app:portion_color="@color/colorErrorRed"
+                        app:portion_spacing="@dimen/_3sdp"
+                        app:portion_width="@dimen/_3sdp"
+                        app:portions_count="5" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true">
+
+                        <TextView
+                            android:layout_centerHorizontal="true"
+                            android:id="@+id/txtOflinePlantsValueID"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textSize="@dimen/_14ssp"
+                            android:layout_alignParentTop="true"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/open_sans_regular"
+                            />
+
+                        <TextView
+                            android:layout_below="@+id/txtOflinePlantsValueID"
+                            android:id="@+id/txtOflinePlantsHeadID"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/open_sans_regular"
+                            android:text="@string/ofline_Devices"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_8ssp" />
+
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+                <!--end new circle-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+
+                    <com.devlomi.circularstatusview.CircularStatusView
+                        android:id="@+id/crlvTotalErrorID"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_80sdp"
+                        android:layout_centerInParent="true"
+                        app:portion_color="@color/colorAccent"
+                        app:portion_spacing="@dimen/_3sdp"
+                        app:portion_width="@dimen/_3sdp"
+                        app:portions_count="5" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true">
+
+                        <TextView
+                            android:id="@+id/txtTotalErrorValueID"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true"
+                            android:fontFamily="@font/open_sans_regular"
+                            android:text="0"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_14ssp" />
+
+                        <TextView
+                            android:id="@+id/txtTotalErrorHeadID"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/txtTotalErrorValueID"
+                            android:fontFamily="@font/open_sans_regular"
+                            android:text="@string/Total_Error"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_8ssp" />
+
+
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+            <!--added some status indicator here-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_below="@+id/lvlCircleViewID"
+
+                android:layout_marginTop="@dimen/_10sdp"
+
+                android:background="@android:color/transparent"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:layout_centerInParent="true"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:src="@mipmap/green_ball"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:layout_centerInParent="true"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:src="@mipmap/red_ball"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+                    <ImageView
+                        android:layout_centerInParent="true"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:src="@mipmap/grey_ball"/>
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/lvlCountViewID"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_80sdp"
+                android:layout_below="@+id/lvlCircleViewID"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:weightSum="2">
+
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lvlCircleViewID"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+
+                        <ImageView
+                            android:id="@+id/imgGreenCountID"
+                            android:layout_width="@dimen/_10sdp"
+                            android:layout_height="@dimen/_10sdp"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/green_circle" />
+
+                        <TextView
+                            android:id="@+id/txtGreenCountID"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/imgGreenCountID"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:fontFamily="@font/open_sans_regular"
+                            android:text="33"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_10ssp" />
+
+                        <TextView
+                            android:id="@+id/txtGreenCountHeadID"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/txtGreenCountID"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:fontFamily="@font/open_sans_light"
+                            android:text="@string/Normal"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_8ssp" />
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/imgErrorCountID"
+                            android:layout_width="@dimen/_10sdp"
+                            android:layout_height="@dimen/_10sdp"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/red_circle" />
+
+                        <TextView
+                            android:id="@+id/txtErrorCountID"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/imgErrorCountID"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:fontFamily="@font/open_sans_regular"
+                            android:text="21"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_10ssp" />
+
+                        <TextView
+                            android:id="@+id/txtErrorCountHeadID"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/txtErrorCountID"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:fontFamily="@font/open_sans_light"
+                            android:text="@string/Error"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_8ssp" />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+
+                        <ImageView
+                            android:id="@+id/imgofflineCountID"
+                            android:layout_width="@dimen/_10sdp"
+                            android:layout_height="@dimen/_10sdp"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/yello_circle" />
+
+                        <TextView
+                            android:id="@+id/txtofflineCountID"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/imgofflineCountID"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:fontFamily="@font/open_sans_regular"
+                            android:text="36"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_10ssp" />
+
+                        <TextView
+                            android:id="@+id/txtofflineCountHeadID"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/txtofflineCountID"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:fontFamily="@font/open_sans_light"
+                            android:text="@string/Normal"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_8ssp" />
+
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lvlCircleViewID"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+
+                        <ImageView
+                            android:id="@+id/imgPendingCountID"
+                            android:layout_width="@dimen/_10sdp"
+                            android:layout_height="@dimen/_10sdp"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/red_circle" />
+
+                        <TextView
+                            android:id="@+id/txtPendingCountID"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/imgPendingCountID"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:fontFamily="@font/open_sans_regular"
+                            android:text="16"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_10ssp" />
+
+                        <TextView
+                            android:id="@+id/txtPendingCountHeadID"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/txtPendingCountID"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:fontFamily="@font/open_sans_light"
+                            android:text="@string/Pending"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_8ssp" />
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+
+                        <ImageView
+                            android:id="@+id/imgHandlingCountID"
+                            android:layout_width="@dimen/_10sdp"
+                            android:layout_height="@dimen/_10sdp"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/yello_circle" />
+
+                        <TextView
+                            android:id="@+id/txtHandlingCountID"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/imgHandlingCountID"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:fontFamily="@font/open_sans_regular"
+                            android:text="12"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_10ssp" />
+
+                        <TextView
+                            android:id="@+id/txtHandlingCountHeadID"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/txtHandlingCountID"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:fontFamily="@font/open_sans_light"
+                            android:text="@string/Handling"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_8ssp" />
+
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:id="@+id/lvlMainEnergyViewID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:orientation="vertical"
+            android:weightSum="6">
+
+
+            <RelativeLayout
+                android:id="@+id/rlvTodayEnergyViewID"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:background="@drawable/today_round_view">
+
+
+                <ImageView
+                    android:id="@+id/imgTodayEnergyIconID"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:src="@drawable/ic_energy_icon" />
+
+
+                <TextView
+                    android:id="@+id/txtTodayEnergyHeadID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_toEndOf="@+id/imgTodayEnergyIconID"
+                    android:fontFamily="@font/open_sans_regular"
+                    android:text="@string/Today_Energy"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/_14ssp" />
+
+                <TextView
+                    android:id="@+id/txtTodayEnergyValueID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/txtTodayEnergyUnitID"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:text="0.0"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/_12ssp" />
+
+                <TextView
+                    android:id="@+id/txtTodayEnergyUnitID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:text="@string/kWh"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/_12ssp" />
+
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rlvMontlyEnergyViewID"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:background="@drawable/today_round_view">
+
+
+                <ImageView
+                    android:id="@+id/imgMontlyEnergyIconID"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:src="@drawable/ic_energy_icon" />
+
+
+                <TextView
+                    android:id="@+id/txtMontlyEnergyHeadID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_toEndOf="@+id/imgMontlyEnergyIconID"
+                    android:fontFamily="@font/open_sans_regular"
+                    android:text="@string/Montly_Energy"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/_14ssp" />
+
+                <TextView
+                    android:id="@+id/txtMontlyEnergyValueID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/txtMontlyEnergyUnitID"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:text="0.0"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/_12ssp" />
+
+                <TextView
+                    android:id="@+id/txtMontlyEnergyUnitID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_3sdp"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:text="@string/kWh"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/_12ssp" />
+
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+
+                android:id="@+id/rlvTotalEnergyViewID"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:background="@drawable/montly_round_view">
+
+
+                <ImageView
+                    android:id="@+id/imgTotalEnergyIconID"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:src="@drawable/ic_totalen_icon" />
+
+
+                <TextView
+                    android:id="@+id/txtTodayPowerHeadIDB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_toEndOf="@+id/imgTotalEnergyIconID"
+                    android:fontFamily="@font/open_sans_regular"
+                    android:text="@string/Today_Power"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/_14ssp" />
+
+                <TextView
+                    android:id="@+id/txtTodayPowerValueIDB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/txtTotalEnergyUnitID"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:text="0.0"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/_12ssp" />
+
+                <TextView
+                    android:id="@+id/txtTodayPowerUnitID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_3sdp"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:text="@string/kW"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/_12ssp" />
+
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rlvTotalPowerViewID"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:background="@drawable/montly_round_view"
+                android:visibility="gone">
+
+
+                <ImageView
+                    android:id="@+id/imgTotalPowerIconID"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:src="@drawable/ic_totalen_icon" />
+
+
+                <TextView
+                    android:id="@+id/txtTotalPowerHeadIDB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_toEndOf="@+id/imgTotalPowerIconID"
+                    android:fontFamily="@font/open_sans_regular"
+                    android:text="@string/Total_Power"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/_14ssp" />
+
+                <TextView
+                    android:id="@+id/txtTotalPowerValueIDB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/txtTotalPowerUnitID"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:text="8888.00"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/_12ssp" />
+
+                <TextView
+                    android:id="@+id/txtTotalPowerUnitID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_3sdp"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:text="@string/MWp"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/_12ssp" />
+
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rlvTodayHourViewID"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:background="@drawable/total_round_view">
+
+
+                <ImageView
+                    android:id="@+id/imgTodayHourIconID"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:src="@drawable/ic_today_time" />
+
+
+                <TextView
+                    android:id="@+id/txtTodayHourHeadIDB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_toEndOf="@+id/imgTodayHourIconID"
+                    android:fontFamily="@font/open_sans_regular"
+                    android:text="@string/Today_Hour"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/_14ssp" />
+
+                <TextView
+                    android:id="@+id/txtTodayHourValueIDB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/txtTodayHourUnitID"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:text="0.0"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/_12ssp" />
+
+                <TextView
+                    android:id="@+id/txtTodayHourUnitID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_3sdp"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:text="@string/st_HR"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/_12ssp" />
+
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rlvTotalHourViewID"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_weight="1"
+                android:background="@drawable/total_round_view">
+
+
+                <ImageView
+                    android:id="@+id/imgTotalHourIconID"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:src="@drawable/ic_today_time" />
+
+
+                <TextView
+                    android:id="@+id/txtTotalHourHeadIDB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_toEndOf="@+id/imgTotalHourIconID"
+                    android:fontFamily="@font/open_sans_regular"
+                    android:text="@string/Total_Hour"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/_14ssp" />
+
+                <TextView
+                    android:id="@+id/txtTotalHourValueIDB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/txtTotalHourUnitID"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:text="0.0"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/_12ssp" />
+
+                <TextView
+                    android:id="@+id/txtTotalHourUnitID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_3sdp"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:text="@string/st_HR"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/_12ssp" />
+
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <!--graph idd-->
+
+    <RelativeLayout
+        android:id="@+id/rlvDashbordGraphViewID"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/viewSepratorID"
+        android:layout_below="@+id/lvlHeaderViewID"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/lrlGraphViewDataKLPID"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginStart="@dimen/_3sdp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:layout_marginEnd="@dimen/_3sdp"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+
+            <RelativeLayout
+                android:id="@+id/rlvDayViewID"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="@dimen/_1sdp"
+                android:layout_weight="1.3"
+                android:background="@drawable/rounded_corner_gredient_btn">
+
+                <TextView
+                    android:id="@+id/txtDayWiseDataKLPID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:gravity="center"
+                    android:text="@string/st_Day"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_8ssp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlvDayViewID1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="@dimen/_1sdp"
+                android:layout_weight="0.4"
+                android:background="@drawable/rounded_corner_gredient_btn">
+
+                <TextView
+                    android:id="@+id/txtTotalEnergyValueKLPID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/digital_narmal"
+                    android:text="4473:489"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_28ssp" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="@dimen/_3sdp"
+
+                    android:fontFamily="@font/open_sans_bold"
+                    android:text="@string/st_KWH"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_8sdp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlvMonthViewID"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_1sdp"
+                android:layout_marginEnd="@dimen/_1sdp"
+                android:layout_weight="1.3"
+                android:background="@drawable/rounded_corner_gredient_btn">
+
+                <TextView
+                    android:id="@+id/txtMonthWiseDataKLPID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:gravity="center"
+                    android:text="@string/st_Month"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_8ssp" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/lrlGraphViewDataKLPID"
+            android:layout_marginBottom="@dimen/_10sdp"
+
+            android:background="@color/white">
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/chartGridEnergyID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_2sdp"
+                android:visibility="gone"
+                android:background="@android:color/transparent" />
+
+              <!--<com.github.mikephil.charting.charts.LineChart
+                  android:visibility="gone"
+                    android:id="@+id/chartGridEnergyID1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                  android:outlineProvider="bounds"
+
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_2sdp"
+                    android:background="@android:color/transparent" />-->
+
+            <lecho.lib.hellocharts.view.LineChartView
+                android:visibility="gone"
+                android:id="@+id/chartGridEnergyID1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:outlineProvider="bounds"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_2sdp"
+                android:background="@android:color/transparent"/>
+
+            <TextView
+
+                android:id="@+id/txtDateHeadingGraphID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20ssp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:fontFamily="@font/open_sans_semibold"
+                android:gravity="start"
+                android:text="@string/st_Time"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/_10ssp" />
+
+            <View
+                android:id="@+id/vViewID"
+                android:layout_width="@dimen/_33sdp"
+                android:layout_height="@dimen/_2sdp"
+                android:layout_marginStart="@dimen/_1ssp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:background="@color/blue"
+                android:rotation="30"
+
+                />
+
+            <TextView
+                android:id="@+id/txtEnergyHeadingGraphID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/vViewID"
+                android:layout_marginStart="@dimen/_1sdp"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:layout_marginEnd="@dimen/_1ssp"
+                android:fontFamily="@font/open_sans_semibold"
+                android:text="@string/st_W"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/_10ssp" />
+
+            <TextView
+                android:id="@+id/txttodayDateGraphID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+               android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_1sdp"
+
+                android:fontFamily="@font/open_sans_semibold"
+                android:text="@string/st_W"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/_10ssp" />
+
+
+
+
+
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <!--Devices idd-->
+    <RelativeLayout
+        android:id="@+id/rlvDashbordDeviceViewID"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/viewSepratorID"
+        android:layout_below="@+id/lvlHeaderViewID"
+        android:visibility="gone">
+        <!--organization selection-->
+        <RelativeLayout
+            android:id="@+id/org_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:visibility="gone">
+
+            <ExpandableListView
+                android:id="@+id/orglistview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:background="@color/white"
+                android:minHeight="15dp"
+                android:transcriptMode="alwaysScroll" />
+
+            <!--android:transcriptMode="alwaysScroll"-->
+            <TextView
+                android:id="@+id/previous_level"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@+id/orglistview"
+                android:layout_gravity="right"
+                android:drawableRight="@drawable/go_up"
+                android:gravity="center"
+                android:text="Back"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:visibility="invisible" />
+
+        </RelativeLayout>
+        <!--organization selection-->
+
+        <LinearLayout
+            android:id="@+id/lvlListViewDataContainerID"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/org_layout"
+            android:layout_marginTop="1dp"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:hint="@string/homeSerchbycustemername"
+                android:singleLine="true"
+                android:textSize="15sp"
+                android:textStyle="italic"
+                android:visibility="gone">
+
+                <requestFocus />
+            </EditText>
+
+            <LinearLayout
+                android:id="@+id/lrlGraphViewDataID"
+                android:layout_width="match_parent"
+
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:weightSum="2">
+
+                <RelativeLayout
+                    android:id="@+id/rlvDevicesViewID"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="@dimen/_1sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/left_round_selected">
+
+                    <TextView
+                        android:id="@+id/txtDayWiseDataID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="@font/open_sans_semibold"
+                        android:gravity="center"
+                        android:text="@string/Devices"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_15ssp" />
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlvPlantViewID"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_1sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/right_round_unselected">
+
+                    <TextView
+                        android:id="@+id/txtMonthWiseDataID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="@font/open_sans_semibold"
+                        android:gravity="center"
+                        android:text="@string/Plant"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_15ssp" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/listview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignEnd="@+id/lvlListViewDataContainerID"
+
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_marginBottom="@dimen/_1sdp"
+                android:background="@drawable/bg_wtsp"
+                android:visibility="visible" />
+
+
+        </LinearLayout>
+
+        <!--
+        android:layout_below="@+id/search"
+        <ListView
+            android:visibility="visible"
+            android:id="@+id/listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignEnd="@+id/lvlListViewDataContainerID"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:layout_marginBottom="@dimen/_1sdp"
+            android:background="@drawable/bg_wtsp" />-->
+
+    </RelativeLayout>
+
+
+
+
+    <!--Devices idd-->
+    <RelativeLayout
+        android:id="@+id/rlvDashbordMapViewID"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/viewSepratorID"
+        android:layout_below="@+id/lvlHeaderViewID"
+        android:visibility="gone">
+        <!--organization selection-->
+        <RelativeLayout
+            android:id="@+id/Map_org_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:visibility="visible">
+
+            <fragment
+                android:id="@+id/map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context="activity.MapsActivity" />
+
+
+            <!--android:transcriptMode="alwaysScroll"-->
+
+
+        </RelativeLayout>
+        <!--organization selection-->
+
+
+
+        <!--
+        android:layout_below="@+id/search"
+        <ListView
+            android:visibility="visible"
+            android:id="@+id/listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignEnd="@+id/lvlListViewDataContainerID"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:layout_marginBottom="@dimen/_1sdp"
+            android:background="@drawable/bg_wtsp" />-->
+
+    </RelativeLayout>
+
+
+
+    <View
+        android:visibility="invisible"
+        android:id="@+id/viewSepratorID"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_above="@+id/rlvBottomViewID"
+        android:background="@color/colorGray" />
+
+    <LinearLayout
+
+        android:id="@+id/rlvBottomViewID"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_55sdp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorWhite"
+        android:orientation="horizontal"
+        android:weightSum="4"
+
+        >
+
+        <RelativeLayout
+            android:id="@+id/rlvPlantBottomViewID"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/imgPlantIconID"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_above="@+id/txtPlantHeadID"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_home_ds_selected" />
+
+            <TextView
+                android:id="@+id/txtPlantHeadID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/_7sdp"
+                android:fontFamily="@font/open_sans_regular"
+                android:text="@string/KLP_Dashboard"
+                android:textAllCaps="true"
+                android:textColor="@color/colorBuleDark"
+                android:textSize="@dimen/_12ssp" />
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:background="@drawable/btn_grediant_drawable"
+            android:id="@+id/rlvChatBottomViewID"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/imgMessageIconID"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_above="@+id/txtMessageHeadID"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_graph_ds_unselected" />
+
+            <TextView
+
+                android:id="@+id/txtMessageHeadID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/_7sdp"
+                android:fontFamily="@font/open_sans_regular"
+                android:text="@string/KLP_Graph"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12ssp" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:background="@drawable/btn_grediant_drawable"
+            android:id="@+id/rlvUserBottomViewID"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/imgUserIconID"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_above="@+id/txtUserHeadID"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_inverter_ds_unselected" />
+
+            <TextView
+                android:id="@+id/txtUserHeadID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/_7sdp"
+                android:fontFamily="@font/open_sans_regular"
+                android:text="@string/Inverter"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12ssp" />
+
+
+        </RelativeLayout>
+
+
+        <!--Map-->
+        <RelativeLayout
+            android:background="@drawable/btn_grediant_drawable"
+            android:id="@+id/rlvMapBottomViewID"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/imgMapIconID"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_above="@+id/txtMapHeadID"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_map_ds_unselected" />
+
+            <TextView
+                android:id="@+id/txtMapHeadID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/_7sdp"
+                android:fontFamily="@font/open_sans_regular"
+                android:text="@string/Map"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12ssp" />
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

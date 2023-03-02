@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    >
+
+    <RelativeLayout
+        android:background="@drawable/app_bg_new"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    </RelativeLayout>
+
+
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_220sdp"
+        android:scaleType="fitXY"
+        android:visibility="gone"
+        android:layout_alignParentBottom="true"
+        />
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBuleDarkTrans"/>
+
+
+    <ImageView
+        android:id="@+id/imgLogoID"
+        android:layout_width="@dimen/_130sdp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:src="@drawable/logo"
+        />
+
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
+        <!--android:text="Shakti Pumps (India) Limited"-->
+        <!--android:textSize="20dp"-->
+        <!--android:textStyle="bold"-->
+        <!--android:id="@+id/textView3"-->
+        <!--android:layout_below="@+id/imageSplash"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_marginTop="45dp" />-->
+    <!---->
+
+
+    <com.haseebazeem.sampleGif.GifImageView
+        android:id="@+id/gifImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:src="@drawable/filetranfer"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        />
+
+</RelativeLayout>

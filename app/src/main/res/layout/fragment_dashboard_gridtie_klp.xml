@@ -1,0 +1,663 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <!--android:background="@drawable/bg_wtsp"-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent">
+
+        <!--graph area-->
+        <!--
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/chartGridEnergyID"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/lvlBottomContainerID"/>-->
+
+        <LinearLayout
+            android:id="@+id/lrlGraphViewDataID"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginStart="@dimen/_3sdp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:layout_marginEnd="@dimen/_3sdp"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+
+            <RelativeLayout
+                android:id="@+id/rlvDayViewID"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="@dimen/_1sdp"
+                android:layout_weight="1.3"
+                android:background="@drawable/rounded_corner_gredient_btn">
+
+                <TextView
+                    android:id="@+id/txtDayWiseDataID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:gravity="center"
+                    android:text="@string/st_Day"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_8ssp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlvDayViewID1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="@dimen/_1sdp"
+                android:layout_weight="0.4"
+                android:background="@drawable/rounded_corner_gredient_btn">
+
+                <TextView
+                    android:id="@+id/txtTotalEnergyValueID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/digital_narmal"
+                    android:text="4473:489"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_28ssp" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="@dimen/_3sdp"
+
+                    android:fontFamily="@font/open_sans_bold"
+                    android:text="@string/st_KWH"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_8sdp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlvMonthViewID"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_1sdp"
+                android:layout_marginEnd="@dimen/_1sdp"
+                android:layout_weight="1.3"
+                android:background="@drawable/rounded_corner_gredient_btn">
+
+                <TextView
+                    android:id="@+id/txtMonthWiseDataID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:gravity="center"
+                    android:text="@string/st_Month"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_8ssp" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/lvlTDMTTLRenergyViewID"
+            android:layout_below="@+id/lrlGraphViewDataID"
+            android:background="@color/white">
+
+           <!-- <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/chartGridEnergyID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:background="@android:color/transparent" />-->
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/chartGridEnergyID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:background="@android:color/transparent" />
+
+            <TextView
+
+                android:id="@+id/txtDateHeadingGraphID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20ssp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:fontFamily="@font/open_sans_semibold"
+                android:gravity="start"
+                android:text="@string/st_Time"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/_10ssp" />
+
+            <View
+                android:id="@+id/vViewID"
+                android:layout_width="@dimen/_33sdp"
+                android:layout_height="@dimen/_2sdp"
+                android:layout_marginStart="@dimen/_1ssp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:background="@color/blue"
+                android:rotation="30"
+
+                />
+
+            <TextView
+                android:id="@+id/txtEnergyHeadingGraphID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/vViewID"
+                android:layout_marginStart="@dimen/_1sdp"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:layout_marginEnd="@dimen/_1ssp"
+                android:fontFamily="@font/open_sans_semibold"
+                android:text="@string/st_KWH"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/_10ssp" />
+
+
+        </RelativeLayout>
+
+
+        <!--vikas new layout as per manoj sir-->
+        <LinearLayout
+            android:id="@+id/lvlTDMTTLRenergyViewID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/lvlBottomContainerID"
+            android:layout_marginBottom="@dimen/_1sdp"
+            android:background="@android:color/transparent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardTodayViewID"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:elevation="@dimen/_5sdp"
+                    app:cardBackgroundColor="@android:color/transparent"
+                    app:cardCornerRadius="@dimen/_6sdp">
+
+                    <RelativeLayout
+                        android:id="@+id/rvlTodayGridEnrgyID"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:background="@drawable/today_energy_gredient">
+
+                        <TextView
+                            android:id="@+id/txtTodayEnergyNameID"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:fontFamily="@font/open_sans_semibold"
+                            android:gravity="center_vertical"
+                            android:text="@string/st_TodayEnergy"
+                            android:textAllCaps="true"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10ssp" />
+
+
+                        <RelativeLayout
+                            android:layout_width="@dimen/_80sdp"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:layout_marginEnd="@dimen/_1sdp"
+                            android:layout_toStartOf="@+id/txtTodayEnergyUnitID"
+                            android:background="@drawable/white_round"
+                            android:paddingTop="@dimen/_1sdp"
+
+                            android:paddingBottom="@dimen/_3sdp">
+
+                            <TextView
+                                android:id="@+id/txtTodayEnergyValueID"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:fontFamily="@font/open_sans_bold"
+                                android:text="0.0"
+                                android:textColor="@color/font_color_red"
+                                android:textSize="@dimen/_12ssp" />
+
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/txtTodayEnergyUnitID"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/_2sdp"
+
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:fontFamily="@font/open_sans_bold"
+                            android:gravity="end"
+                            android:text="Kwh"
+
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_8ssp" />
+
+                        <!--  <TextView
+                              android:id="@+id/txtTodayEnergyValueID"
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:layout_above="@+id/txtTodayEnergyUnitID"
+                              android:layout_alignParentEnd="true"
+                              android:layout_marginEnd="@dimen/_10sdp"
+                              android:fontFamily="@font/digital_mono"
+                              android:text="0.0"
+                              android:textColor="@color/white"
+                              android:textSize="@dimen/_18ssp" />
+
+                          <TextView
+                              android:id="@+id/txtTodayEnergyUnitID"
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:layout_alignParentEnd="true"
+                              android:layout_alignParentBottom="true"
+                              android:layout_marginStart="@dimen/_2sdp"
+                              android:layout_marginEnd="@dimen/_5sdp"
+                              android:layout_marginBottom="@dimen/_1sdp"
+                              android:fontFamily="@font/open_sans_semibold"
+                              android:gravity="center_vertical"
+                              android:text="Kwh"
+
+                              android:textColor="@color/white"
+                              android:textSize="@dimen/_8ssp" />-->
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardMonthlyViewID"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_below="@+id/cardTodayViewID"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:elevation="@dimen/_5sdp"
+                    app:cardBackgroundColor="@android:color/transparent"
+                    app:cardCornerRadius="@dimen/_6sdp">
+
+                    <RelativeLayout
+
+                        android:id="@+id/rvlMonthlyGridEnrgyID"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/monthly_energy_gredient">
+
+                        <TextView
+                            android:id="@+id/txtMonthlyGridEnergyNameID"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:fontFamily="@font/open_sans_semibold"
+                            android:gravity="center_vertical"
+                            android:text="@string/st_Monthly_Energy"
+                            android:textAllCaps="true"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10ssp" />
+
+
+                        <RelativeLayout
+                            android:layout_width="@dimen/_80sdp"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:layout_marginEnd="@dimen/_1sdp"
+                            android:layout_toStartOf="@+id/txtMonthlyGridUnitNameID"
+                            android:background="@drawable/white_round"
+                            android:paddingTop="@dimen/_1sdp"
+
+                            android:paddingBottom="@dimen/_3sdp">
+
+                            <TextView
+                                android:id="@+id/txtMonthlyGridEnergyVlaueID"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:fontFamily="@font/open_sans_bold"
+                                android:text="0.0"
+                                android:textColor="@color/font_color_green"
+                                android:textSize="@dimen/_12ssp" />
+
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/txtMonthlyGridUnitNameID"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/_2sdp"
+
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:fontFamily="@font/open_sans_bold"
+                            android:gravity="end"
+                            android:text="Kwh"
+
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_8ssp" />
+
+                     <!--   <TextView
+                            android:id="@+id/txtMonthlyGridEnergyVlaueID"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_above="@+id/txtMonthlyGridUnitNameID"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:fontFamily="@font/digital_mono"
+                            android:text="0.0"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_18ssp" />
+
+                        <TextView
+                            android:id="@+id/txtMonthlyGridUnitNameID"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginStart="@dimen/_2sdp"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:layout_marginBottom="@dimen/_1sdp"
+                            android:fontFamily="@font/open_sans_semibold"
+                            android:gravity="center_vertical"
+                            android:text="Kwh"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_8ssp" />-->
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardTotalViewID"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_below="@+id/cardMonthlyViewID"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:elevation="@dimen/_5sdp"
+                    app:cardBackgroundColor="@android:color/transparent"
+                    app:cardCornerRadius="@dimen/_6sdp">
+
+                    <RelativeLayout
+
+                        android:id="@+id/rvlTotalGridEnrgyID"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/total_energy_gredient">
+
+                        <TextView
+                            android:id="@+id/txtTotalGridEnergyNameID"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:fontFamily="@font/open_sans_semibold"
+                            android:text="@string/st_Totalenergy"
+                            android:textAllCaps="true"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10ssp" />
+
+                        <RelativeLayout
+                            android:layout_width="@dimen/_80sdp"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:layout_marginEnd="@dimen/_1sdp"
+                            android:layout_toStartOf="@+id/txtTotalGridUnitNameID"
+                            android:background="@drawable/white_round"
+                            android:paddingTop="@dimen/_1sdp"
+
+                            android:paddingBottom="@dimen/_3sdp">
+
+                            <TextView
+                                android:id="@+id/txtTotalGridEnergyVlaueID"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:fontFamily="@font/open_sans_bold"
+                                android:text="0.0"
+                                android:textColor="@color/font_color_blue"
+                                android:textSize="@dimen/_12ssp" />
+
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/txtTotalGridUnitNameID"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/_2sdp"
+
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:fontFamily="@font/open_sans_bold"
+                            android:gravity="end"
+                            android:text="Kwh"
+
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_8ssp" />
+
+                      <!--  <TextView
+                            android:id="@+id/txtTotalGridEnergyVlaueID"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_above="@+id/txtTotalGridUnitNameID"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:fontFamily="@font/digital_mono"
+                            android:text="0.0"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_18ssp" />
+
+                        <TextView
+                            android:id="@+id/txtTotalGridUnitNameID"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginStart="@dimen/_2sdp"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:layout_marginBottom="@dimen/_1sdp"
+                            android:fontFamily="@font/open_sans_semibold"
+                            android:gravity="center_vertical"
+                            android:text="Kwh"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_8ssp" />-->
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+        <!--end of graph area-->
+
+        <LinearLayout
+            android:id="@+id/lvlBottomContainerID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/_2sdp"
+            android:orientation="vertical">
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_centerInParent="true"
+
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:elevation="@dimen/_10sdp"
+                app:cardBackgroundColor="@android:color/transparent"
+                app:cardCornerRadius="@dimen/_6sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:weightSum="2">
+
+                    <RelativeLayout
+                        android:id="@+id/rvlTotalGridRunninghourID"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="@dimen/_1sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_grediant_drawable">
+
+                        <TextView
+                            android:id="@+id/txtTotalGridRuningNameID"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_above="@+id/txtTotalGridRuningValueID"
+                            android:layout_centerHorizontal="true"
+                            android:layout_gravity="center_vertical"
+                            android:fontFamily="@font/open_sans_semibold"
+                            android:gravity="center_vertical"
+                            android:text="@string/st_TotalRunninghoursVk"
+                            android:textAllCaps="true"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_8ssp" />
+
+                        <TextView
+
+                            android:id="@+id/txtTotalGridRuningValueID"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_above="@+id/txtTotalGridRuningUnitNameID"
+                            android:layout_centerHorizontal="true"
+                            android:fontFamily="@font/digital_mono"
+                            android:text="0.0"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_14ssp" />
+
+                        <TextView
+                            android:id="@+id/txtTotalGridRuningUnitNameID"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginStart="@dimen/_2sdp"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:layout_marginBottom="@dimen/_1sdp"
+                            android:fontFamily="@font/open_sans_semibold"
+                            android:gravity="center_vertical"
+                            android:text="HR"
+
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_7ssp" />
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/rvlTodayGridRunninghourID"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_1sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_grediant_drawable">
+
+                        <TextView
+                            android:id="@+id/txtTodayRuningHourNameID"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:layout_above="@+id/txtTodayRuningHourValueID"
+                            android:layout_centerHorizontal="true"
+                            android:layout_gravity="center_vertical"
+                            android:fontFamily="@font/open_sans_semibold"
+                            android:gravity="center_vertical"
+                            android:text="@string/st_TodayRunninghoursVk"
+                            android:textAllCaps="true"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_8ssp" />
+
+                        <TextView
+
+                            android:id="@+id/txtTodayRuningHourValueID"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_above="@+id/txtTodayRunningHourUnitID"
+                            android:layout_centerHorizontal="true"
+
+                            android:fontFamily="@font/digital_mono"
+                            android:gravity="center_vertical"
+                            android:text="0.0"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_14ssp" />
+
+                        <TextView
+                            android:id="@+id/txtTodayRunningHourUnitID"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginStart="@dimen/_2sdp"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:layout_marginBottom="@dimen/_1sdp"
+                            android:fontFamily="@font/open_sans_semibold"
+                            android:gravity="center_vertical"
+                            android:text="HR"
+
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_7ssp" />
+
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+
+</RelativeLayout>

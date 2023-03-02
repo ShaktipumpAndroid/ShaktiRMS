@@ -1,0 +1,159 @@
+apply plugin: 'com.android.application'
+
+android {
+    //compileSdkVersion 28
+    compileSdkVersion 31
+    //buildToolsVersion "24.0.2"
+    aaptOptions {
+        cruncherEnabled false
+    }
+    defaultConfig {
+        applicationId "com.shaktipumps.shakti_rms"
+        minSdkVersion 21
+        // targetSdkVersion 28
+        targetSdkVersion 31
+        versionCode 72/////old 55
+        versionName "7.2 " /////old 5.5
+        multiDexEnabled true
+    }
+
+
+
+    buildTypes {
+        release {
+            debuggable false
+            shrinkResources true
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+            /*  minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'*/
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+    }
+
+    dexOptions {
+        //incremental = true;
+        //preDexLibraries = true
+        javaMaxHeapSize "4g" // 2g should be also OK
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+}
+
+configurations.all {
+    resolutionStrategy {
+        //  force 'com.android.support:support-v4:27.1.0'
+        force 'com.google.firebase:firebase-messaging:20.1.0'
+        force 'org.kie.modules:org-apache-commons-net:6.5.0.Final'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //  implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+
+
+
+    implementation files('libs/httpclient-4.3.6.jar')
+    implementation files('libs/httpcore-4.3.3.jar')
+
+    implementation files('libs/library-1.2.1-sources.jar')
+    // compile files('libs/universal-image-loader-1.9.0.jar')
+    implementation files('libs/jsoup-1.10.2.jar')
+    implementation files('libs/apache-commons-net.jar')
+    implementation files('libs/acra-4.9.1-sources.jar')
+    implementation files('libs/acra-4.9.1-javadoc.jar')
+
+    //noinspection GradleCompatible
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    //noinspection GradleCompatible
+    implementation 'com.android.support:design:28.0.0'
+    //noinspection GradleCompatible
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    //noinspection GradleCompatible
+    implementation 'com.android.support:cardview-v7:28.0.0'
+
+    implementation 'com.google.android.gms:play-services-auth:18.0.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.6.2'
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.2'
+
+
+    implementation 'ch.acra:acra:4.9.0'
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+    // compile 'com.google.android.gms:play-services-maps:9.8.0'
+    implementation 'com.android.support:multidex:1.0.3'
+    //compile 'com.google.android.gms:play-services-location:9.8.0'
+    implementation 'com.google.android.gms:play-services-location:17.0.0'
+    //implementation 'com.google.android.gms:play-services-location:10.2.4'
+
+    //compile 'com.google.android.gms:play-services-appindexing:9.8.0'
+    implementation 'com.google.firebase:firebase-appindexing:19.1.0'
+    implementation 'com.journeyapps:zxing-android-embedded:2.0.1@aar'
+    implementation 'com.journeyapps:zxing-android-legacy:2.0.1@aar'
+    implementation 'com.journeyapps:zxing-android-integration:2.0.1@aar'
+    implementation 'com.google.zxing:core:3.0.1'
+
+    implementation 'com.intuit.ssp:ssp-android:1.0.5'
+    implementation 'com.intuit.sdp:sdp-android:1.0.5'
+
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
+    implementation 'com.github.clans:fab:1.6.2'
+    implementation 'com.github.paolorotolo:appintro:4.0.0'
+    implementation 'com.github.amlcurran.showcaseview:library:5.4.3'
+
+    implementation 'com.weiwangcn.betterspinner:library-material:1.1.0'
+    implementation 'com.google.code.gson:gson:2.8.5'
+
+    implementation 'com.rilixtech:materialfancybuttons:1.8.7'
+    implementation 'com.rilixtech:fontawesome-typeface:4.7.0.4'
+    implementation 'com.loopj.android:android-async-http:1.4.9'
+    implementation 'com.wdullaer:materialdatetimepicker:3.6.0'
+    //gradle for picasso.
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.3'
+    implementation 'com.squareup.okhttp3:okhttp:4.9.3'
+    //noinspection GradleCompatible
+    implementation 'com.android.support:cardview-v7:28.0.0'
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+    // https://mvnrepository.com/artifact/org.apache.poi/poi
+    implementation group: 'org.apache.poi', name: 'poi', version: '3.7'
+    // implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
+    //  implementation 'com.github.PhilJay:MPAndroidChart:v3.0.0'
+    implementation 'com.github.PhilJay:MPAndroidChart:v2.0.9'
+    implementation 'com.roger.gifloadinglibrary:gifloadinglibrary:1.0.0'
+    implementation 'com.github.adhishlal:gifloader:1.1'
+    //compile 'com.plattysoft.leonids:LeonidsLib:1.3.2'
+    implementation 'com.plattysoft.leonids:LeonidsLib:1.3.2'
+    //compile 'com.github.markushi:circlebutton:1.1'
+    implementation 'com.github.markushi:circlebutton:1.1'
+    // implementation 'androidx.work:work-runtime:2.3.1'
+    implementation 'com.google.firebase:firebase-core:17.2.2'
+    implementation 'com.google.firebase:firebase-messaging:20.1.0'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'com.payumoney.core:payumoney-sdk:7.6.0'
+  //  implementation 'com.payumoney.sdkui:plug-n-play:1.6.0'
+    //implementation 'org.kie.modules:org-apache-commons-net:6.5.0.Final'
+    implementation 'com.github.haseebazeem15:gifImageView:1.4'
+   // implementation project(':sdkui')
+
+    implementation 'com.devlomi:circularstatusview:1.0.1'
+
+    implementation 'com.jjoe64:graphview:4.2.2'
+    implementation 'com.github.lecho:hellocharts-library:1.5.8@aar'
+
+
+
+}
+apply plugin: 'com.google.gms.google-services'

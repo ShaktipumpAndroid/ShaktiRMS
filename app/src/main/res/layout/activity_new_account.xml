@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar" />
+
+    <ScrollView
+        android:id="@+id/scrollView_New_Account"
+        android:layout_height="wrap_content"
+        android:scrollbars="horizontal|vertical"
+        android:layout_width="match_parent"
+        android:layout_marginTop="5dip"
+        android:background="@color/white"
+        android:scrollbarStyle="outsideInset"
+        android:fillViewport="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_layout_user_firstname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:textSize="@dimen/size_large18"
+                app:hintTextAppearance="@style/input_layout_hint"
+                android:layout_marginTop="30dp">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/et_user_firstname"
+                    android:singleLine="true"
+                    android:drawableLeft="@drawable/ic_mendotry"
+                    android:textSize="@dimen/size_mid16"
+                    android:hint="@string/hint_user_first_name"
+                    android:layout_marginTop="20dp"
+                    android:maxLength="50"
+                    tools:ignore="Autofill"
+                    android:digits="_@.0123456789QWERTYUIOPASDFGHJKLZXCVBNMqwertzuiopasdfghjklyxcvbnm"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_layout_user_lastname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:textSize="@dimen/size_large18"
+                app:hintTextAppearance="@style/input_layout_hint"
+                android:layout_marginTop="30dp">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/et_user_lastname"
+                    android:singleLine="true"
+                    android:drawableLeft="@drawable/ic_mendotry"
+                    android:textSize="@dimen/size_mid16"
+                    android:hint="@string/hint_user_last_name"
+                    android:layout_marginTop="20dp"
+                    android:maxLength="50"
+                    tools:ignore="Autofill"
+                    android:digits="_@.0123456789QWERTYUIOPASDFGHJKLZXCVBNMqwertzuiopasdfghjklyxcvbnm"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_layout_user_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:textSize="@dimen/size_large18"
+                app:hintTextAppearance="@style/input_layout_hint"
+                android:layout_marginTop="30dp">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/et_user_name"
+                    android:singleLine="true"
+                    android:drawableLeft="@drawable/ic_mendotry"
+                    android:textSize="@dimen/size_mid16"
+                    android:hint="@string/hint_user_name"
+                    android:layout_marginTop="20dp"
+                    android:maxLength="50"
+                    tools:ignore="Autofill"
+                    android:digits="_@.0123456789QWERTYUIOPASDFGHJKLZXCVBNMqwertzuiopasdfghjklyxcvbnm"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_layout_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/size_large18"
+                app:hintTextAppearance="@style/input_layout_hint"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/et_password"
+                    android:singleLine="true"
+                    android:drawableLeft="@drawable/ic_mendotry"
+                    android:textSize="@dimen/size_mid16"
+                    android:hint="@string/hint_password"
+                    android:inputType="textPassword"
+                    android:layout_marginTop="20dp"
+                    android:maxLength="50"
+                    tools:ignore="Autofill"
+                    android:digits="_@.0123456789QWERTYUIOPASDFGHJKLZXCVBNMqwertzuiopasdfghjklyxcvbnm"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_layout_confirm_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/size_large18"
+                app:hintTextAppearance="@style/input_layout_hint"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/et_confirm_password"
+                    android:singleLine="true"
+                    android:drawableLeft="@drawable/ic_mendotry"
+                    android:textSize="@dimen/size_mid16"
+                    android:hint="@string/hint_confirm_password"
+                    android:inputType="textPassword"
+                    android:layout_marginTop="20dp"
+                    android:maxLength="50"
+                    tools:ignore="Autofill"
+                    android:digits="_@.0123456789QWERTYUIOPASDFGHJKLZXCVBNMqwertzuiopasdfghjklyxcvbnm"/>
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <!--<com.google.android.material.textfield.TextInputLayout-->
+                <!--android:id="@+id/input_layout_controller_id"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="@dimen/size_large18"-->
+                <!--app:hintTextAppearance="@style/input_layout_hint"-->
+                <!--android:layout_marginTop="10dp">-->
+
+                <!--<EditText-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:id="@+id/et_controller_id"-->
+                    <!--android:singleLine="true"-->
+                    <!--android:drawableLeft="@drawable/ic_mendotry"-->
+                    <!--android:textSize="@dimen/size_mid16"-->
+                    <!--android:hint="@string/hint_controller_id"-->
+                    <!--android:layout_marginTop="20dp"-->
+                    <!--android:maxLength="300"     />-->
+            <!--</com.google.android.material.textfield.TextInputLayout>-->
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_layout_phone_no"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/size_large18"
+                app:hintTextAppearance="@style/input_layout_hint"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/et_phone_no"
+                    android:singleLine="true"
+                    android:textSize="@dimen/size_mid16"
+                    android:hint="@string/hint_phone_no"
+
+                    android:drawableLeft="@drawable/ic_mendotry"
+                    android:layout_marginTop="20dp"
+                    android:maxLength="13"
+                    tools:ignore="Autofill"
+                    android:inputType="number" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_layout_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/size_large18"
+
+                app:hintTextAppearance="@style/input_layout_hint"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_mendotry"
+                    android:id="@+id/et_address"
+                    android:singleLine="true"
+                    android:textSize="@dimen/size_mid16"
+                    android:hint="@string/hint_address"
+                    tools:ignore="Autofill"
+                    android:layout_marginTop="20dp"
+                    android:maxLength="250"     />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <TextView
+                android:text="@string/btn_sign_up"
+                android:id="@+id/btn_sign_up"
+                android:layout_width="200dp"
+                android:layout_gravity="center_horizontal"
+                android:padding="@dimen/space_mid10"
+                android:background="@layout/rounded_corner_blue"
+                android:layout_marginTop="@dimen/space_large25"
+                android:gravity="center"
+                android:textColor="@color/white"
+
+                android:layout_height="wrap_content" />
+
+
+
+
+
+
+
+        </LinearLayout>
+
+
+
+
+    </ScrollView>
+
+
+
+
+</LinearLayout>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+
+    >
+
+    <RelativeLayout
+        android:background="@android:color/transparent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ViewFlipper
+            android:id="@+id/flvViewFlipperID"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+
+            >
+
+
+            <!--        <ImageView
+                        android:id="@+id/imgFlipViewID1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/flipone"
+                        android:visibility="gone"/>
+
+                    <ImageView
+                        android:id="@+id/imgFlipViewID2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/fliptwo" />
+
+                    <ImageView
+                        android:id="@+id/imgFlipViewID3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:layout_gravity="center"
+                        android:src="@drawable/flipfour" />
+
+                    <ImageView
+                        android:id="@+id/imgFlipViewID4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/bg" />-->
+
+        </ViewFlipper>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#80000000">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/logo_blue"
+                android:visibility="gone"
+
+                android:layout_centerInParent="true"/>
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:weightSum="2"
+            android:background="@android:color/transparent">
+
+
+
+
+            <TextView
+                android:layout_weight="1"
+                android:text="Bluetooth"
+                android:id="@+id/txtBluetoothId"
+                android:layout_width="match_parent"
+                android:textSize="@dimen/_14ssp"
+                android:padding="@dimen/space_mid10"
+                android:background="@layout/rounded_corner_blue"
+                android:layout_marginTop="@dimen/space_large25"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_height="wrap_content" />
+
+
+
+            <TextView
+                android:layout_weight="1"
+                android:text="Internet"
+                android:id="@+id/txtOtherId"
+                android:layout_width="match_parent"
+                android:textStyle="bold"
+                android:textSize="@dimen/_14ssp"
+                android:padding="@dimen/space_mid10"
+                android:background="@layout/rounded_corner_blue"
+                android:layout_marginTop="@dimen/space_large25"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_height="wrap_content" />
+
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</RelativeLayout>

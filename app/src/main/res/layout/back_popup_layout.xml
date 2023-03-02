@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_105sdp"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/txtBTHeadingTopID"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:background="@color/white"
+            android:text="@string/app_name"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="@dimen/_18ssp"
+            android:textColor="@color/blue_fb"
+            android:visibility="gone"/>
+
+        <RelativeLayout
+            android:id="@+id/lvlOptionViewID"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_1sdp"
+
+            android:layout_below="@+id/txtBTHeadingTopID"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtSettingTextPopUpID"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+
+                android:text="Setting"
+                android:gravity="center"
+
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:textSize="@dimen/_12ssp"
+                android:textColor="@color/black"
+                android:layout_marginEnd="@dimen/_1sdp"/>
+
+            <View
+                android:id="@+id/veiwSepraterID"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:layout_below="@+id/txtSettingTextPopUpID"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:background="@android:color/transparent"/>
+
+            <TextView
+                android:layout_below="@+id/veiwSepraterID"
+                android:id="@+id/txtDeletePopUpID"
+                android:layout_marginStart="@dimen/_1sdp"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+
+                android:text="Delete"
+                android:gravity="center"
+
+                android:textSize="@dimen/_12ssp"
+                android:textColor="@color/black"/>
+
+        </RelativeLayout>
+
+
+
+
+
+
+
+    </RelativeLayout>
+
+
+
+
+
+</RelativeLayout>

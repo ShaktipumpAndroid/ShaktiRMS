@@ -1,0 +1,109 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+
+    >
+
+
+
+    <RelativeLayout
+        android:id="@+id/rlvHeaderViewID"
+        android:background="@color/blue_fb"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp">
+
+        <ImageView
+            android:id="@+id/imgBackBTNID"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:src="@drawable/icn_back"
+            android:paddingEnd="@dimen/_20sdp"
+            android:paddingBottom="@dimen/_15sdp"
+            android:paddingTop="@dimen/_15sdp"/>
+
+        <TextView
+            android:id="@+id/txtTopHEadingID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:gravity="center"
+            android:layout_centerInParent="true"
+            android:textSize="@dimen/_16ssp"
+            android:textColor="@color/white"
+            android:textStyle="bold"/>
+
+        <ImageView
+            android:visibility="invisible"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/imgLogoutBTNID"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:src="@drawable/ic_logout_n"
+            android:paddingStart="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_13sdp"
+            android:paddingTop="@dimen/_13sdp"
+            android:rotation="90"/>
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_below="@+id/rlvHeaderViewID"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/_10sdp"
+        android:paddingEnd="@dimen/_10sdp"
+        android:paddingStart="@dimen/_10sdp">
+
+    <TextView
+
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:text="@string/paired_devices"
+        android:textColor="@color/colorAccent" />
+
+    <com.rilixtech.materialfancybutton.MaterialFancyButton
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="15dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="5dp"
+        fancy:mfb_borderColor="@color/colorAccent"
+        fancy:mfb_borderWidth="2dp"
+        fancy:mfb_defaultColor="#1976D2"
+        fancy:mfb_focusColor="#42A5F5"
+        fancy:mfb_fontIconSize="20sp"
+        fancy:mfb_icon="@string/fawi_android"
+        fancy:mfb_iconFont="fontawesome.ttf"
+        fancy:mfb_iconPosition="left"
+        fancy:mfb_radius="30dp"
+        fancy:mfb_text="Paired Devices"
+        fancy:mfb_textColor="#FFFFFF"
+        fancy:mfb_textSize="20sp" />
+
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button"
+        android:layout_below="@+id/textView"
+        android:dividerHeight="0dp"
+        android:divider="@null"
+        android:scrollbars="none"
+        android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Bluetooth_Names">
+        <item>SKU1</item>
+        <item>SKU2</item>
+        <item>SKU3</item>
+
+    </string-array>
+
+    <string-array name="ThreePhase_Bluetooth_Names">
+
+        <item>SKU1A</item>
+        <item>SKU1B</item>
+        <item>SKU2A</item>
+        <item>SKU2B</item>
+    </string-array>
+
+</resources>

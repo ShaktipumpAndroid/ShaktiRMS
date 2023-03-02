@@ -1,0 +1,3639 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/tools"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    app:ignore="NamespaceTypo">
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rlvHeaderViewID"
+            android:background="@color/blue_fb"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp">
+
+            <ImageView
+                android:layout_alignParentStart="true"
+                android:id="@+id/imgBackBTNID"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:src="@drawable/icn_back"
+                android:paddingEnd="@dimen/_20sdp"
+                android:layout_marginStart="@dimen/_3sdp"
+                android:paddingBottom="@dimen/_15sdp"
+                android:paddingTop="@dimen/_15sdp"/>
+
+            <TextView
+                android:id="@+id/txtTopHEadingID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Shakti A1 SS"
+                android:gravity="center"
+                android:layout_centerInParent="true"
+                android:textSize="@dimen/_16ssp"
+                android:textColor="@color/white"
+                android:textStyle="bold"/>
+
+            <ImageView
+                android:layout_toStartOf="@+id/imgRefreshBTNID"
+                android:id="@+id/imgSettingBTNID"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:src="@drawable/ic_setti"
+                android:layout_marginEnd="@dimen/_1sdp"
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_15sdp"
+                android:paddingTop="@dimen/_15sdp"
+                android:visibility="visible"/>
+
+            <ImageView
+                android:layout_alignParentEnd="true"
+                android:id="@+id/imgRefreshBTNID"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:src="@drawable/ic_refresh"
+                android:layout_marginEnd="@dimen/_2sdp"
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_15sdp"
+                android:paddingTop="@dimen/_15sdp"/>
+
+
+        </RelativeLayout>
+
+        <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:fillViewport="true">
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="5dp"
+                android:paddingTop="2dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="5dp">
+
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_110sdp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/bteststs"
+                    android:orientation="vertical"
+                    android:id="@+id/lvlPumpVarietyMainViewID"
+                    android:padding="5dp"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+
+                        android:text="Pump Variety"
+                        android:textAllCaps="true"
+                        android:textColor="#000"
+                        android:textSize="16dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@android:color/white" />
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp"
+                        android:orientation="horizontal">
+
+                        <com.rilixtech.materialfancybutton.MaterialFancyButton
+                            android:id="@+id/getpumpvarietybutton"
+                            style="@style/getbutton_style"
+                            android:layout_width="55dp"
+                            android:layout_height="45dp"
+                            fancy:mfb_defaultColor="@color/blue_fb"
+                            fancy:mfb_focusColor="@color/colorAccent"
+                            fancy:mfb_icon="@string/fawi_download"
+                            fancy:mfb_iconPosition="top"
+                            fancy:mfb_radius="25dp"
+                            fancy:mfb_text="GET"
+                            fancy:mfb_textColor="#fff"
+                            fancy:mfb_textSize="8sp" />
+
+
+                        <EditText
+                            android:id="@+id/editpumpvariety"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical|center_horizontal"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_weight="1"
+                            android:inputType="number"
+                            android:maxLength="4"
+                            android:singleLine="true"
+                            android:textAlignment="center"
+                            android:textColor="@color/green" />
+
+                        <TextView
+                            android:id="@+id/txtpumpvariertunits"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_18sdp"
+                            android:background="@android:color/transparent"
+                            android:text=""
+                            android:textColor="@color/green"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <com.rilixtech.materialfancybutton.MaterialFancyButton
+                            android:id="@+id/setpumpvarietybutton"
+                            style="@style/setbutton_style"
+                            android:layout_width="55dp"
+                            android:layout_height="45dp"
+                            fancy:mfb_defaultColor="@color/blue_fb"
+                            fancy:mfb_focusColor="@color/colorAccent"
+                            fancy:mfb_icon="@string/fawi_upload"
+                            fancy:mfb_iconPosition="top"
+                            fancy:mfb_radius="25dp"
+                            fancy:mfb_text="SET"
+                            fancy:mfb_textColor="#fff"
+                            fancy:mfb_textSize="8sp"
+                            android:visibility="visible"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtpumpvarietytime"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:background="@color/white"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <TextView
+                            android:id="@+id/txtpumpvarietyresp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:background="@color/white"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:textSize="@dimen/_12ssp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_110sdp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/bteststs"
+                    android:orientation="vertical"
+                    android:padding="5dp"
+                    android:id="@+id/lvlRatedMainViewID">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:text="Rated Current"
+                        android:textAllCaps="true"
+                        android:textColor="#000"
+                        android:textSize="16dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@android:color/white" />
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp"
+                        android:orientation="horizontal">
+
+                        <com.rilixtech.materialfancybutton.MaterialFancyButton
+                            android:id="@+id/getratedcurrentbutton"
+                            style="@style/getbutton_style"
+                            android:layout_width="55dp"
+                            android:layout_height="45dp"
+                            fancy:mfb_defaultColor="@color/blue_fb"
+                            fancy:mfb_focusColor="@color/colorAccent"
+                            fancy:mfb_icon="@string/fawi_download"
+                            fancy:mfb_iconPosition="top"
+                            fancy:mfb_radius="25dp"
+                            fancy:mfb_text="GET"
+                            fancy:mfb_textColor="#fff"
+                            fancy:mfb_textSize="8sp" />
+
+
+                        <EditText
+                            android:id="@+id/editratedcurrent"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical|center_horizontal"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_weight="1"
+                            android:inputType="numberDecimal"
+                            android:maxLength="5"
+                            android:singleLine="true"
+                            android:textAlignment="center"
+                            android:textColor="@color/green" />
+
+                        <TextView
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_18sdp"
+                            android:background="@android:color/transparent"
+                            android:text="Amps"
+                            android:textColor="@color/green"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <com.rilixtech.materialfancybutton.MaterialFancyButton
+                            android:id="@+id/setratedcurrentbutton"
+                            style="@style/setbutton_style"
+                            android:layout_width="55dp"
+                            android:layout_height="45dp"
+                            fancy:mfb_defaultColor="@color/blue_fb"
+                            fancy:mfb_focusColor="@color/colorAccent"
+                            fancy:mfb_icon="@string/fawi_upload"
+                            fancy:mfb_iconPosition="top"
+                            fancy:mfb_radius="25dp"
+                            fancy:mfb_text="SET"
+                            fancy:mfb_textColor="#fff"
+                            fancy:mfb_textSize="8sp"
+                            android:visibility="visible"/>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:background="@color/white"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtratedcurrenttime"
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:background="@color/white"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <TextView
+                            android:id="@+id/txtratedcurrentresp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:background="@color/white"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:textSize="@dimen/_12ssp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_110sdp"
+                    android:layout_marginTop="3dp"
+                    android:id="@+id/lvlOLPercentMainViewID"
+                    android:background="@drawable/bteststs"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+
+                        android:text="OL Percent"
+                        android:textAllCaps="true"
+                        android:textColor="#000"
+                        android:textSize="16dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@android:color/white" />
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp"
+                        android:orientation="horizontal">
+
+                        <com.rilixtech.materialfancybutton.MaterialFancyButton
+                            android:id="@+id/getolcurrentbutton"
+                            style="@style/getbutton_style"
+                            android:layout_width="55dp"
+                            android:layout_height="45dp"
+                            fancy:mfb_defaultColor="@color/blue_fb"
+                            fancy:mfb_focusColor="@color/colorAccent"
+                            fancy:mfb_icon="@string/fawi_download"
+                            fancy:mfb_iconPosition="top"
+                            fancy:mfb_radius="25dp"
+                            fancy:mfb_text="GET"
+                            fancy:mfb_textColor="#fff"
+                            fancy:mfb_textSize="8sp" />
+
+
+                        <EditText
+                            android:id="@+id/editolcurrent"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical|center_horizontal"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_weight="1"
+
+                            android:inputType="number"
+                            android:maxLength="4"
+
+                            android:singleLine="true"
+                            android:textAlignment="center"
+                            android:textColor="@color/green" />
+
+                        <TextView
+                            android:id="@+id/txtolcurrentunits"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_18sdp"
+                            android:background="@android:color/transparent"
+                            android:text="%"
+                            android:textColor="@color/green"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <com.rilixtech.materialfancybutton.MaterialFancyButton
+                            android:id="@+id/setolcurrentbutton"
+                            style="@style/setbutton_style"
+                            android:layout_width="55dp"
+                            android:layout_height="45dp"
+                            fancy:mfb_defaultColor="@color/blue_fb"
+                            fancy:mfb_focusColor="@color/colorAccent"
+                            fancy:mfb_icon="@string/fawi_upload"
+                            fancy:mfb_iconPosition="top"
+                            fancy:mfb_radius="25dp"
+                            fancy:mfb_text="SET"
+                            fancy:mfb_textColor="#fff"
+                            fancy:mfb_textSize="8sp"
+                            android:visibility="visible"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:background="@color/white"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtolcurrenttime"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:background="@color/white"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <TextView
+                            android:id="@+id/txtolcurrentresp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:background="@color/white"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:textSize="@dimen/_12ssp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_110sdp"
+                    android:layout_marginTop="3dp"
+                    android:id="@+id/lvlOverCurrentMaxMainViewID"
+                    android:background="@drawable/bteststs"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+
+                        android:text="OverCurrent Max"
+                        android:textAllCaps="true"
+                        android:textColor="#000"
+                        android:textSize="16dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@android:color/white" />
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp"
+                        android:orientation="horizontal">
+
+                        <com.rilixtech.materialfancybutton.MaterialFancyButton
+                            android:id="@+id/getolshorttimebutton"
+                            style="@style/getbutton_style"
+                            android:layout_width="55dp"
+                            android:layout_height="45dp"
+                            fancy:mfb_defaultColor="@color/blue_fb"
+                            fancy:mfb_focusColor="@color/colorAccent"
+                            fancy:mfb_icon="@string/fawi_download"
+                            fancy:mfb_iconPosition="top"
+                            fancy:mfb_radius="25dp"
+                            fancy:mfb_text="GET"
+                            fancy:mfb_textColor="#fff"
+                            fancy:mfb_textSize="8sp" />
+
+
+                        <EditText
+                            android:id="@+id/editolshorttime"
+
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical|center_horizontal"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_weight="1"
+
+
+                            android:inputType="number"
+                            android:maxLength="4"
+                            android:singleLine="true"
+                            android:textAlignment="center"
+                            android:textColor="@color/green" />
+
+                        <TextView
+                            android:id="@+id/txtolshorttimeunits"
+
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_18sdp"
+                            android:background="@android:color/transparent"
+                            android:text="%"
+                            android:textColor="@color/green"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <com.rilixtech.materialfancybutton.MaterialFancyButton
+                            android:id="@+id/setolshorttimebutton"
+                            style="@style/setbutton_style"
+                            android:layout_width="55dp"
+                            android:layout_height="45dp"
+                            fancy:mfb_defaultColor="@color/blue_fb"
+                            fancy:mfb_focusColor="@color/colorAccent"
+                            fancy:mfb_icon="@string/fawi_upload"
+                            fancy:mfb_iconPosition="top"
+                            fancy:mfb_radius="25dp"
+                            fancy:mfb_text="SET"
+                            fancy:mfb_textColor="#fff"
+                            fancy:mfb_textSize="8sp"
+                            android:visibility="visible"/>
+                        <!--Chnage by chinamay sir for showing set option 25_01_2020-->
+
+                    </LinearLayout>
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtolshorttimetime"
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:background="@color/white"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <TextView
+                            android:id="@+id/txtolshorttimeresp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:background="@color/white"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:textSize="@dimen/_12ssp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_110sdp"
+                    android:layout_marginTop="3dp"
+                    android:id="@+id/lvlAutoManualMainViewID"
+                    android:background="@drawable/bteststs"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+
+                        android:text="AUTO / Manual"
+                        android:textAllCaps="true"
+                        android:textColor="#000"
+                        android:textSize="16dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@android:color/white" />
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp"
+                        android:orientation="horizontal">
+
+                        <com.rilixtech.materialfancybutton.MaterialFancyButton
+                            android:id="@+id/getautoormanualbutton"
+                            style="@style/getbutton_style"
+                            android:layout_width="55dp"
+                            android:layout_height="45dp"
+                            fancy:mfb_defaultColor="@color/blue_fb"
+                            fancy:mfb_focusColor="@color/colorAccent"
+                            fancy:mfb_icon="@string/fawi_download"
+                            fancy:mfb_iconPosition="top"
+                            fancy:mfb_radius="25dp"
+                            fancy:mfb_text="GET"
+                            fancy:mfb_textColor="#fff"
+                            fancy:mfb_textSize="8sp" />
+
+                        <Switch
+                            android:id="@+id/switchautoormanual"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical|center_horizontal"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_weight="1"
+                            android:checked="false"
+                            android:gravity="center"
+                            android:textColor="@color/green">
+
+                        </Switch>
+
+                        <TextView
+                            android:id="@+id/txtautoormanualunits"
+
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_18sdp"
+                            android:background="@android:color/transparent"
+                            android:textColor="@color/green"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <com.rilixtech.materialfancybutton.MaterialFancyButton
+                            android:id="@+id/setautoormanualbutton"
+                            style="@style/setbutton_style"
+                            android:layout_width="55dp"
+                            android:layout_height="45dp"
+                            fancy:mfb_defaultColor="@color/blue_fb"
+                            fancy:mfb_focusColor="@color/colorAccent"
+                            fancy:mfb_icon="@string/fawi_upload"
+                            fancy:mfb_iconPosition="top"
+                            fancy:mfb_radius="25dp"
+                            fancy:mfb_text="SET"
+                            fancy:mfb_textColor="#fff"
+                            fancy:mfb_textSize="8sp"
+                            android:visibility="visible"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:background="@color/white"
+                        android:orientation="horizontal">
+
+
+                        <TextView
+                            android:id="@+id/txtautoormanualtime"
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:background="@color/white"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <TextView
+                            android:id="@+id/txtautoormanualresp"
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:background="@color/white"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:textSize="@dimen/_12ssp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_110sdp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/bteststs"
+                    android:id="@+id/lvlDryPowerSetMainViewID"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:text="DRY Power set"
+                        android:textAllCaps="true"
+                        android:textColor="#000"
+                        android:textSize="16dp" />
+
+
+
+                    <!--android:text="DRY Power set"-->
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@android:color/white" />
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp"
+                        android:orientation="horizontal">
+
+                        <com.rilixtech.materialfancybutton.MaterialFancyButton
+                            android:id="@+id/getdrypowersetbutton"
+                            style="@style/getbutton_style"
+                            android:layout_width="55dp"
+                            android:layout_height="45dp"
+                            fancy:mfb_defaultColor="@color/blue_fb"
+                            fancy:mfb_focusColor="@color/colorAccent"
+                            fancy:mfb_icon="@string/fawi_download"
+                            fancy:mfb_iconPosition="top"
+                            fancy:mfb_radius="25dp"
+                            fancy:mfb_text="GET"
+                            fancy:mfb_textColor="#fff"
+                            fancy:mfb_textSize="8sp" />
+
+
+                        <EditText
+                            android:id="@+id/editdrypowerset"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical|center_horizontal"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_weight="1"
+                            android:inputType="number"
+                            android:maxLength="4"
+                            android:singleLine="true"
+                            android:textAlignment="center"
+                            android:textColor="@color/green" />
+
+                        <TextView
+                            android:id="@+id/txtdrypowersetunits"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_18sdp"
+                            android:background="@android:color/transparent"
+                            android:text="Watt"
+                            android:textColor="@color/green"
+                            android:textSize="@dimen/_12ssp" />
+
+
+
+                        <com.rilixtech.materialfancybutton.MaterialFancyButton
+                            android:id="@+id/setdrypowersetbutton"
+                            style="@style/setbutton_style"
+                            android:layout_width="55dp"
+                            android:layout_height="45dp"
+                            fancy:mfb_defaultColor="@color/blue_fb"
+                            fancy:mfb_focusColor="@color/colorAccent"
+                            fancy:mfb_icon="@string/fawi_upload"
+                            fancy:mfb_iconPosition="top"
+                            fancy:mfb_radius="25dp"
+                            fancy:mfb_text="SET"
+                            android:visibility="visible"
+                            fancy:mfb_textColor="#fff"
+                            fancy:mfb_textSize="8sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtdrypowersettime"
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:background="@color/white"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <TextView
+                            android:id="@+id/txtdrypowersetresp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:background="@color/white"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:textSize="@dimen/_12ssp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_110sdp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/bteststs"
+                    android:id="@+id/lvlMinLuxMainViewID"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                   <!-- <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:text="DRY Power set"
+                        android:textAllCaps="true"
+                        android:textColor="#000"
+                        android:textSize="16dp" />-->
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:text="Min Lux set"
+                        android:textAllCaps="true"
+                        android:textColor="#000"
+                        android:textSize="16dp" />
+
+                    <!--android:text="DRY Power set"-->
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@android:color/white" />
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp"
+                        android:orientation="horizontal">
+
+                        <com.rilixtech.materialfancybutton.MaterialFancyButton
+                            android:id="@+id/getdrypowersetbutton2"
+                            style="@style/getbutton_style"
+                            android:layout_width="55dp"
+                            android:layout_height="45dp"
+                            fancy:mfb_defaultColor="@color/blue_fb"
+                            fancy:mfb_focusColor="@color/colorAccent"
+                            fancy:mfb_icon="@string/fawi_download"
+                            fancy:mfb_iconPosition="top"
+                            fancy:mfb_radius="25dp"
+                            fancy:mfb_text="GET"
+                            fancy:mfb_textColor="#fff"
+                            fancy:mfb_textSize="8sp" />
+
+
+                        <EditText
+                            android:id="@+id/editdrypowerset2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical|center_horizontal"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_weight="1"
+                            android:inputType="number"
+                            android:maxLength="4"
+                            android:singleLine="true"
+                            android:textAlignment="center"
+                            android:textColor="@color/green" />
+
+                        <!--<TextView
+                            android:id="@+id/txtdrypowersetunits"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_18sdp"
+                            android:background="@android:color/transparent"
+                            android:text="Watt"
+                            android:textColor="@color/green"
+                            android:textSize="@dimen/_12ssp" />-->
+
+                         <TextView
+                            android:id="@+id/txtdrypowersetunits2"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_18sdp"
+                            android:background="@android:color/transparent"
+                            android:text="Lux"
+                            android:textColor="@color/green"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <com.rilixtech.materialfancybutton.MaterialFancyButton
+                            android:id="@+id/setdrypowersetbutton2"
+                            style="@style/setbutton_style"
+                            android:layout_width="55dp"
+                            android:layout_height="45dp"
+                            fancy:mfb_defaultColor="@color/blue_fb"
+                            fancy:mfb_focusColor="@color/colorAccent"
+                            fancy:mfb_icon="@string/fawi_upload"
+                            fancy:mfb_iconPosition="top"
+                            fancy:mfb_radius="25dp"
+                            fancy:mfb_text="SET"
+                            android:visibility="visible"
+                            fancy:mfb_textColor="#fff"
+                            fancy:mfb_textSize="8sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtdrypowersettime2"
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:background="@color/white"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <TextView
+                            android:id="@+id/txtdrypowersetresp2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:background="@color/white"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:textSize="@dimen/_12ssp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!--Add by vikas come from tarak-->
+
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_110sdp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/bteststs"
+                    android:id="@+id/lvlMaxLuxMainViewID"
+                    android:orientation="vertical"
+                    android:visibility="visible"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:text="Max Lux set"
+                        android:textAllCaps="true"
+                        android:textColor="#000"
+                        android:textSize="16dp" />
+
+                    <!--android:text="DRY Power set"-->
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@android:color/white" />
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp"
+                        android:orientation="horizontal">
+
+                        <com.rilixtech.materialfancybutton.MaterialFancyButton
+                            android:id="@+id/getdrypowersetbutton1"
+                            style="@style/getbutton_style"
+                            android:layout_width="55dp"
+                            android:layout_height="45dp"
+                            fancy:mfb_defaultColor="@color/blue_fb"
+                            fancy:mfb_focusColor="@color/colorAccent"
+                            fancy:mfb_icon="@string/fawi_download"
+                            fancy:mfb_iconPosition="top"
+                            fancy:mfb_radius="25dp"
+                            fancy:mfb_text="GET"
+                            fancy:mfb_textColor="#fff"
+                            fancy:mfb_textSize="8sp" />
+
+
+                        <EditText
+                            android:id="@+id/editdrypowerset1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical|center_horizontal"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_weight="1"
+                            android:inputType="number"
+                            android:maxLength="4"
+                            android:singleLine="true"
+                            android:textAlignment="center"
+                            android:textColor="@color/green" />
+
+                        <TextView
+                            android:id="@+id/txtdrypowersetunits1"
+
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_18sdp"
+                            android:background="@android:color/transparent"
+                            android:text="Lux"
+                            android:textColor="@color/green"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <com.rilixtech.materialfancybutton.MaterialFancyButton
+                            android:id="@+id/setdrypowersetbutton1"
+                            style="@style/setbutton_style"
+                            android:layout_width="55dp"
+                            android:layout_height="45dp"
+                            fancy:mfb_defaultColor="@color/blue_fb"
+                            fancy:mfb_focusColor="@color/colorAccent"
+                            fancy:mfb_icon="@string/fawi_upload"
+                            fancy:mfb_iconPosition="top"
+                            fancy:mfb_radius="25dp"
+                            fancy:mfb_text="SET"
+                            android:visibility="visible"
+                            fancy:mfb_textColor="#fff"
+                            fancy:mfb_textSize="8sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtdrypowersettime1"
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:background="@color/white"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <TextView
+                            android:id="@+id/txtdrypowersetresp1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:background="@color/white"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:textSize="@dimen/_12ssp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <!-- END Add by vikas come from tarak-->
+
+
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_110sdp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/bteststs"
+                    android:id="@+id/lvlDRYRUNEnableDMainViewID"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+
+                        android:text="DRY RUN Enable / Disable"
+                        android:textAllCaps="true"
+                        android:textColor="#000"
+                        android:textSize="16dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@android:color/white" />
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp"
+                        android:orientation="horizontal">
+
+                        <com.rilixtech.materialfancybutton.MaterialFancyButton
+                            android:id="@+id/getdryrunenableordisablebutton"
+                            style="@style/getbutton_style"
+                            android:layout_width="55dp"
+                            android:layout_height="45dp"
+                            fancy:mfb_defaultColor="@color/blue_fb"
+                            fancy:mfb_focusColor="@color/colorAccent"
+                            fancy:mfb_icon="@string/fawi_download"
+                            fancy:mfb_iconPosition="top"
+                            fancy:mfb_radius="25dp"
+                            fancy:mfb_text="GET"
+                            fancy:mfb_textColor="#fff"
+                            fancy:mfb_textSize="8sp" />
+
+                        <Switch
+                            android:id="@+id/switchdryrunenableordisable"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical|center_horizontal"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_weight="1"
+                            android:checked="false"
+
+
+                            android:gravity="center"
+                            android:textColor="@color/green">
+
+                        </Switch>
+
+                        <TextView
+                            android:id="@+id/txtdryrunenableordisableunits"
+
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_18sdp"
+                            android:background="@android:color/transparent"
+                            android:textColor="@color/green"
+                            android:textSize="@dimen/_12ssp" />
+
+
+                        <com.rilixtech.materialfancybutton.MaterialFancyButton
+                            android:id="@+id/setdryrunenableordisablebutton"
+                            style="@style/setbutton_style"
+                            android:layout_width="55dp"
+                            android:layout_height="45dp"
+                            fancy:mfb_defaultColor="@color/blue_fb"
+                            fancy:mfb_focusColor="@color/colorAccent"
+                            fancy:mfb_icon="@string/fawi_upload"
+                            fancy:mfb_iconPosition="top"
+                            fancy:mfb_radius="25dp"
+                            fancy:mfb_text="SET"
+                            android:visibility="visible"
+                            fancy:mfb_textColor="#fff"
+                            fancy:mfb_textSize="8sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtdryrunenableordisabletime"
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:background="@color/white"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <TextView
+                            android:id="@+id/txtdryrunenableordisableresp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:background="@color/white"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:textSize="@dimen/_12ssp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_110sdp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/bteststs"
+                    android:id="@+id/lvlDRYRUNRestartTimeMainViewID"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:text="DRY RUN Restart Time"
+                        android:textAllCaps="true"
+                        android:textColor="#000"
+                        android:textSize="16dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@android:color/white" />
+
+                    <LinearLayout
+                        xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp"
+                        android:orientation="horizontal">
+
+                        <com.rilixtech.materialfancybutton.MaterialFancyButton
+                            android:id="@+id/getdryrunrestarttimebutton"
+                            style="@style/getbutton_style"
+                            android:layout_width="55dp"
+                            android:layout_height="45dp"
+                            fancy:mfb_defaultColor="@color/blue_fb"
+                            fancy:mfb_focusColor="@color/colorAccent"
+                            fancy:mfb_icon="@string/fawi_download"
+                            fancy:mfb_iconPosition="top"
+                            fancy:mfb_radius="25dp"
+                            fancy:mfb_text="GET"
+                            fancy:mfb_textColor="#fff"
+                            fancy:mfb_textSize="8sp" />
+
+
+                        <EditText
+                            android:id="@+id/editdryrunrestarttim"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical|center_horizontal"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_weight="1"
+                            android:inputType="number"
+                            android:maxLength="4"
+                            android:singleLine="true"
+                            android:textAlignment="center"
+                            android:textColor="@color/green" />
+
+                        <TextView
+                            android:id="@+id/txtdryrunrestarttimeunits"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_18sdp"
+                            android:background="@android:color/transparent"
+                            android:text="Minutes"
+                            android:textColor="@color/green"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <com.rilixtech.materialfancybutton.MaterialFancyButton
+                            android:id="@+id/setdryrunrestarttimebutton"
+                            style="@style/setbutton_style"
+                            android:layout_width="55dp"
+                            android:layout_height="45dp"
+                            fancy:mfb_defaultColor="@color/blue_fb"
+                            fancy:mfb_focusColor="@color/colorAccent"
+                            fancy:mfb_icon="@string/fawi_upload"
+                            fancy:mfb_iconPosition="top"
+                            fancy:mfb_radius="25dp"
+                            fancy:mfb_text="SET"
+                            fancy:mfb_textColor="#fff"
+                            fancy:mfb_textSize="8sp"
+                            android:visibility="visible"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtdryrunrestarttimetime"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:background="@color/white"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <TextView
+                            android:id="@+id/txtdryrunrestarttimeresp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:background="@color/white"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:textSize="@dimen/_12ssp" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_110sdp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/bteststs"
+                    android:id="@+id/lvlDRYRUNRestartEnableDMainViewID"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:text="DRY RUN Restart Enable/Disable"
+                        android:textAllCaps="true"
+                        android:textColor="#000"
+                        android:textSize="16dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@android:color/white" />
+
+                    <LinearLayout
+                        xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp"
+                        android:orientation="horizontal">
+
+                        <com.rilixtech.materialfancybutton.MaterialFancyButton
+                            android:id="@+id/getdryrunrestartenableordisablebutton"
+                            style="@style/getbutton_style"
+                            android:layout_width="55dp"
+                            android:layout_height="45dp"
+                            fancy:mfb_defaultColor="@color/blue_fb"
+                            fancy:mfb_focusColor="@color/colorAccent"
+                            fancy:mfb_icon="@string/fawi_download"
+                            fancy:mfb_iconPosition="top"
+                            fancy:mfb_radius="25dp"
+                            fancy:mfb_text="GET"
+                            fancy:mfb_textColor="#fff"
+                            fancy:mfb_textSize="8sp" />
+
+                        <Switch
+                            android:id="@+id/switchdryrunrestartenableordisable"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical|center_horizontal"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_weight="1"
+                            android:checked="false"
+                            android:gravity="center"
+                            android:textColor="@color/green">
+
+                        </Switch>
+
+                        <TextView
+                            android:id="@+id/txtdryrunrestartenableordisableunits"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_18sdp"
+                            android:background="@android:color/transparent"
+                            android:textColor="@color/green"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <com.rilixtech.materialfancybutton.MaterialFancyButton
+                            android:id="@+id/setdryrunrestartenableordisablebutton"
+                            style="@style/setbutton_style"
+                            android:layout_width="55dp"
+                            android:layout_height="45dp"
+                            fancy:mfb_defaultColor="@color/blue_fb"
+                            fancy:mfb_focusColor="@color/colorAccent"
+                            fancy:mfb_icon="@string/fawi_upload"
+                            fancy:mfb_iconPosition="top"
+                            fancy:mfb_radius="25dp"
+                            fancy:mfb_text="SET"
+                            fancy:mfb_textColor="#fff"
+                            fancy:mfb_textSize="8sp"
+                            android:visibility="visible"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtdryrunrestartenableordisabletime"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:background="@color/white"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <TextView
+                            android:id="@+id/txtdryrunrestartenableordisableresp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:background="@color/white"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:textSize="@dimen/_12ssp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_110sdp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/bteststs"
+                    android:id="@+id/lvlUVTRIPSettingMainViewID"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:text="UV TRIP Setting"
+                        android:textAllCaps="true"
+                        android:textColor="#000"
+                        android:textSize="16dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@android:color/white" />
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp"
+                        android:orientation="horizontal">
+
+                        <com.rilixtech.materialfancybutton.MaterialFancyButton
+                            android:id="@+id/getuvtripsetbutton"
+                            style="@style/getbutton_style"
+                            android:layout_width="55dp"
+                            android:layout_height="45dp"
+                            fancy:mfb_defaultColor="@color/blue_fb"
+                            fancy:mfb_focusColor="@color/colorAccent"
+                            fancy:mfb_icon="@string/fawi_download"
+                            fancy:mfb_iconPosition="top"
+                            fancy:mfb_radius="25dp"
+                            fancy:mfb_text="GET"
+                            fancy:mfb_textColor="#fff"
+                            fancy:mfb_textSize="8sp" />
+
+
+                        <EditText
+                            android:id="@+id/edituvtripset"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical|center_horizontal"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_weight="1"
+                            android:inputType="number"
+                            android:maxLength="4"
+                            android:singleLine="true"
+                            android:textAlignment="center"
+                            android:textColor="@color/green" />
+
+                        <TextView
+                            android:id="@+id/txtuvtripsetunits"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_18sdp"
+                            android:background="@android:color/transparent"
+                            android:text="Volts"
+                            android:textColor="@color/green"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <com.rilixtech.materialfancybutton.MaterialFancyButton
+                            android:id="@+id/setuvtripsetbutton"
+                            style="@style/setbutton_style"
+                            android:layout_width="55dp"
+                            android:layout_height="45dp"
+                            fancy:mfb_defaultColor="@color/blue_fb"
+                            fancy:mfb_focusColor="@color/colorAccent"
+                            fancy:mfb_icon="@string/fawi_upload"
+                            fancy:mfb_iconPosition="top"
+                            fancy:mfb_radius="25dp"
+                            fancy:mfb_text="SET"
+                            fancy:mfb_textColor="#fff"
+                            fancy:mfb_textSize="8sp"
+                            android:visibility="visible"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtuvtripsettime"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:background="@color/white"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <TextView
+                            android:id="@+id/txtuvtripsetresp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:background="@color/white"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:textSize="@dimen/_12ssp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_110sdp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/bteststs"
+                    android:orientation="vertical"
+                    android:id="@+id/lvlUOVTRIPSettingMainViewID"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:text="OV TRIP Setting"
+                        android:textAllCaps="true"
+                        android:textColor="#000"
+                        android:textSize="16dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@android:color/white" />
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp"
+                        android:orientation="horizontal">
+
+                        <com.rilixtech.materialfancybutton.MaterialFancyButton
+                            android:id="@+id/getovtripsetbutton"
+                            style="@style/getbutton_style"
+                            android:layout_width="55dp"
+                            android:layout_height="45dp"
+                            fancy:mfb_defaultColor="@color/blue_fb"
+                            fancy:mfb_focusColor="@color/colorAccent"
+                            fancy:mfb_icon="@string/fawi_download"
+                            fancy:mfb_iconPosition="top"
+                            fancy:mfb_radius="25dp"
+                            fancy:mfb_text="GET"
+                            fancy:mfb_textColor="#fff"
+                            fancy:mfb_textSize="8sp" />
+
+
+                        <EditText
+                            android:id="@+id/editovtripset"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical|center_horizontal"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_weight="1"
+                            android:inputType="number"
+                            android:maxLength="4"
+                            android:singleLine="true"
+                            android:textAlignment="center"
+                            android:textColor="@color/green" />
+
+                        <TextView
+                            android:id="@+id/txtovtripsetunits"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_18sdp"
+                            android:background="@android:color/transparent"
+                            android:text="Volts"
+                            android:textColor="@color/green"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <com.rilixtech.materialfancybutton.MaterialFancyButton
+                            android:id="@+id/setovtripsetbutton"
+                            style="@style/setbutton_style"
+                            android:layout_width="55dp"
+                            android:layout_height="45dp"
+                            fancy:mfb_defaultColor="@color/blue_fb"
+                            fancy:mfb_focusColor="@color/colorAccent"
+                            fancy:mfb_icon="@string/fawi_upload"
+                            fancy:mfb_iconPosition="top"
+                            fancy:mfb_radius="25dp"
+                            fancy:mfb_text="SET"
+                            android:visibility="visible"
+                            fancy:mfb_textColor="#fff"
+                            fancy:mfb_textSize="8sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtovtripsettime"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:background="@color/white"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <TextView
+                            android:id="@+id/txtovtripsetresp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:background="@color/white"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:textSize="@dimen/_12ssp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_110sdp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/bteststs"
+                    android:id="@+id/lvlSTARTTimeMainViewID"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:text="START Time"
+                        android:textAllCaps="true"
+                        android:textColor="#000"
+                        android:textSize="16dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@android:color/white" />
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp"
+                        android:orientation="horizontal">
+
+                        <com.rilixtech.materialfancybutton.MaterialFancyButton
+                            android:id="@+id/getstarttimebutton"
+                            style="@style/getbutton_style"
+                            android:layout_width="55dp"
+                            android:layout_height="45dp"
+                            fancy:mfb_defaultColor="@color/blue_fb"
+                            fancy:mfb_focusColor="@color/colorAccent"
+                            fancy:mfb_icon="@string/fawi_download"
+                            fancy:mfb_iconPosition="top"
+                            fancy:mfb_radius="25dp"
+                            fancy:mfb_text="GET"
+                            fancy:mfb_textColor="#fff"
+                            fancy:mfb_textSize="8sp" />
+
+
+                        <EditText
+                            android:id="@+id/editstarttimebutton"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical|center_horizontal"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_weight="1"
+                            android:inputType="number"
+                            android:maxLength="4"
+                            android:singleLine="true"
+                            android:textAlignment="center"
+                            android:textColor="@color/green" />
+
+                        <TextView
+                            android:id="@+id/txtstarttimeunits"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_18sdp"
+                            android:background="@android:color/transparent"
+                            android:text="mSec"
+                            android:textColor="@color/green"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <com.rilixtech.materialfancybutton.MaterialFancyButton
+                            android:id="@+id/setstarttimebutton"
+                            style="@style/setbutton_style"
+                            android:layout_width="55dp"
+                            android:layout_height="45dp"
+                            fancy:mfb_defaultColor="@color/blue_fb"
+                            fancy:mfb_focusColor="@color/colorAccent"
+                            fancy:mfb_icon="@string/fawi_upload"
+                            fancy:mfb_iconPosition="top"
+                            fancy:mfb_radius="25dp"
+                            fancy:mfb_text="SET"
+                            android:visibility="visible"
+                            fancy:mfb_textColor="#fff"
+                            fancy:mfb_textSize="8sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtstarttimetime"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:background="@color/white"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <TextView
+                            android:id="@+id/txtstarttimeresp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:background="@color/white"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:textSize="@dimen/_12ssp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_110sdp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/bteststs"
+                    android:id="@+id/lvlSoftSTOPTimeMainViewID"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:text="Soft STOP Time"
+                        android:textAllCaps="true"
+                        android:textColor="#000"
+                        android:textSize="16dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@android:color/white" />
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp"
+                        android:orientation="horizontal">
+
+                        <com.rilixtech.materialfancybutton.MaterialFancyButton
+                            android:id="@+id/getsoftstoptimebutton"
+                            style="@style/getbutton_style"
+                            android:layout_width="55dp"
+                            android:layout_height="45dp"
+                            fancy:mfb_defaultColor="@color/blue_fb"
+                            fancy:mfb_focusColor="@color/colorAccent"
+                            fancy:mfb_icon="@string/fawi_download"
+                            fancy:mfb_iconPosition="top"
+                            fancy:mfb_radius="25dp"
+                            fancy:mfb_text="GET"
+                            fancy:mfb_textColor="#fff"
+                            fancy:mfb_textSize="8sp" />
+
+
+                        <EditText
+                            android:id="@+id/editsoftstoptimebutton"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical|center_horizontal"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_weight="1"
+                            android:inputType="number"
+                            android:maxLength="4"
+                            android:singleLine="true"
+                            android:textAlignment="center"
+                            android:textColor="@color/green" />
+
+                        <TextView
+                            android:id="@+id/txtsoftstoptimeunits"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_18sdp"
+                            android:background="@android:color/transparent"
+                            android:text="mSec"
+                            android:textColor="@color/green"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <com.rilixtech.materialfancybutton.MaterialFancyButton
+                            android:id="@+id/setsoftstoptimebutton"
+                            style="@style/setbutton_style"
+                            android:layout_width="55dp"
+                            android:layout_height="45dp"
+                            fancy:mfb_defaultColor="@color/blue_fb"
+                            fancy:mfb_focusColor="@color/colorAccent"
+                            fancy:mfb_icon="@string/fawi_upload"
+                            fancy:mfb_iconPosition="top"
+                            fancy:mfb_radius="25dp"
+                            fancy:mfb_text="SET"
+                            android:visibility="visible"
+                            fancy:mfb_textColor="#fff"
+                            fancy:mfb_textSize="8sp" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtsoftstoptimetime"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:background="@color/white"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <TextView
+                            android:id="@+id/txtsoftstoptimeresp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:background="@color/white"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:textSize="@dimen/_12ssp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_110sdp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/bteststs"
+                    android:id="@+id/lvlONtimeMainViewID"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:text="ON time"
+                        android:textAllCaps="true"
+                        android:textColor="#000"
+                        android:textSize="16dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@android:color/white" />
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp"
+                        android:orientation="horizontal">
+
+                        <com.rilixtech.materialfancybutton.MaterialFancyButton
+                            android:id="@+id/getontimebutton"
+                            style="@style/getbutton_style"
+                            android:layout_width="55dp"
+                            android:layout_height="45dp"
+                            fancy:mfb_defaultColor="@color/blue_fb"
+                            fancy:mfb_focusColor="@color/colorAccent"
+                            fancy:mfb_icon="@string/fawi_download"
+                            fancy:mfb_iconPosition="top"
+                            fancy:mfb_radius="25dp"
+                            fancy:mfb_text="GET"
+                            fancy:mfb_textColor="#fff"
+                            fancy:mfb_textSize="8sp" />
+
+
+                        <EditText
+                            android:id="@+id/editontimebutton"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical|center_horizontal"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_weight="1"
+                            android:inputType="number"
+                            android:maxLength="4"
+                            android:singleLine="true"
+                            android:textAlignment="center"
+                            android:textColor="@color/green" />
+
+                        <TextView
+                            android:id="@+id/txtontimeunits"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_18sdp"
+                            android:background="@android:color/transparent"
+                            android:text="Minutes"
+                            android:textColor="@color/green"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <com.rilixtech.materialfancybutton.MaterialFancyButton
+                            android:id="@+id/setontimebutton"
+                            style="@style/setbutton_style"
+                            android:layout_width="55dp"
+                            android:layout_height="45dp"
+                            fancy:mfb_defaultColor="@color/blue_fb"
+                            fancy:mfb_focusColor="@color/colorAccent"
+                            fancy:mfb_icon="@string/fawi_upload"
+                            fancy:mfb_iconPosition="top"
+                            fancy:mfb_radius="25dp"
+                            fancy:mfb_text="SET"
+                            android:visibility="visible"
+                            fancy:mfb_textColor="#fff"
+                            fancy:mfb_textSize="8sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtontimetime"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:background="@color/white"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <TextView
+                            android:id="@+id/txtontimetimeresp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:background="@color/white"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:textSize="@dimen/_12ssp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_110sdp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/bteststs"
+                    android:id="@+id/lvlPumpHeadMainViewID"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:text="Pump Head"
+                        android:textAllCaps="true"
+                        android:textColor="#000"
+                        android:textSize="16dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@android:color/white" />
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp"
+                        android:orientation="horizontal">
+
+                        <com.rilixtech.materialfancybutton.MaterialFancyButton
+                            android:id="@+id/getpumpheadbutton"
+                            style="@style/getbutton_style"
+                            android:layout_width="55dp"
+                            android:layout_height="45dp"
+                            fancy:mfb_defaultColor="@color/blue_fb"
+                            fancy:mfb_focusColor="@color/colorAccent"
+                            fancy:mfb_icon="@string/fawi_download"
+                            fancy:mfb_iconPosition="top"
+                            fancy:mfb_radius="25dp"
+                            fancy:mfb_text="GET"
+                            fancy:mfb_textColor="#fff"
+                            fancy:mfb_textSize="8sp" />
+
+
+                        <EditText
+                            android:id="@+id/editpumphead"
+
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical|center_horizontal"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_weight="1"
+                            android:inputType="number"
+                            android:maxLength="4"
+                            android:singleLine="true"
+
+                            android:textAlignment="center"
+                            android:textColor="@color/green" />
+
+                        <TextView
+                            android:id="@+id/txtpumpheadunits"
+
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_18sdp"
+                            android:background="@android:color/transparent"
+                            android:text="Meters"
+                            android:textColor="@color/green"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <com.rilixtech.materialfancybutton.MaterialFancyButton
+                            android:id="@+id/setpumpheadbutton"
+                            style="@style/setbutton_style"
+                            android:layout_width="55dp"
+                            android:layout_height="45dp"
+                            fancy:mfb_defaultColor="@color/blue_fb"
+                            fancy:mfb_focusColor="@color/colorAccent"
+                            fancy:mfb_icon="@string/fawi_upload"
+                            fancy:mfb_iconPosition="top"
+                            fancy:mfb_radius="25dp"
+                            fancy:mfb_text="SET"
+                            android:visibility="visible"
+                            fancy:mfb_textColor="#fff"
+                            fancy:mfb_textSize="8sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtpumpheadtime"
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:background="@color/white"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <TextView
+                            android:id="@+id/txtpumpheadtimeresp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:background="@color/white"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:textSize="@dimen/_12ssp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_110sdp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/bteststs"
+                    android:id="@+id/lvlIOLMultiplierMainViewID"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+
+                        android:text="IOL Multiplier"
+                        android:textAllCaps="true"
+                        android:textColor="#000"
+                        android:textSize="16dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@android:color/white" />
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp"
+                        android:orientation="horizontal">
+
+                        <com.rilixtech.materialfancybutton.MaterialFancyButton
+                            android:id="@+id/getmotoconfigurationbutton"
+                            style="@style/setbutton_style"
+                            android:layout_width="55dp"
+                            android:layout_height="45dp"
+                            fancy:mfb_defaultColor="@color/blue_fb"
+                            fancy:mfb_focusColor="@color/colorAccent"
+                            fancy:mfb_icon="@string/fawi_download"
+                            fancy:mfb_iconPosition="top"
+                            fancy:mfb_radius="25dp"
+                            fancy:mfb_text="GET"
+                            fancy:mfb_textColor="#fff"
+                            fancy:mfb_textSize="8sp" />
+
+
+                        <EditText
+                            android:id="@+id/editmotoconfiguration"
+
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical|center_horizontal"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_weight="1"
+
+                            android:inputType="number"
+                            android:maxLength="4"
+                            android:singleLine="true"
+                            android:textAlignment="center"
+                            android:textColor="@color/green" />
+
+                        <TextView
+                            android:id="@+id/txtmotoconfiguration"
+
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_18sdp"
+                            android:background="@android:color/transparent"
+                            android:text=""
+                            android:textColor="@color/green"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <com.rilixtech.materialfancybutton.MaterialFancyButton
+                            android:id="@+id/setmotoconfigurationbutton"
+                            style="@style/setbutton_style"
+                            android:layout_width="55dp"
+                            android:layout_height="45dp"
+
+                            fancy:mfb_defaultColor="@color/blue_fb"
+                            fancy:mfb_focusColor="@color/colorAccent"
+                            fancy:mfb_icon="@string/fawi_upload"
+                            fancy:mfb_iconPosition="top"
+                            fancy:mfb_radius="25dp"
+                            fancy:mfb_text="SET"
+                            android:visibility="visible"
+
+                            fancy:mfb_textColor="#fff"
+                            fancy:mfb_textSize="8sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtmotoconfigurationtime"
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:background="@color/white"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <TextView
+                            android:id="@+id/txtmotoconfigurationresp"
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:background="@color/white"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:textSize="@dimen/_12ssp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_110sdp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/bteststs"
+                    android:id="@+id/lvlDwellTimeMainViewID"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+
+                        android:text="Dwell Time"
+                        android:textAllCaps="true"
+                        android:textColor="#000"
+                        android:textSize="16dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@android:color/white" />
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp"
+                        android:orientation="horizontal">
+
+                        <com.rilixtech.materialfancybutton.MaterialFancyButton
+                            android:id="@+id/getdwelltimebutton"
+                            style="@style/getbutton_style"
+                            android:layout_width="55dp"
+                            android:layout_height="45dp"
+                            fancy:mfb_defaultColor="@color/blue_fb"
+                            fancy:mfb_focusColor="@color/colorAccent"
+                            fancy:mfb_icon="@string/fawi_download"
+                            fancy:mfb_iconPosition="top"
+                            fancy:mfb_radius="25dp"
+                            fancy:mfb_text="GET"
+                            fancy:mfb_textColor="#fff"
+                            fancy:mfb_textSize="8sp" />
+
+
+                        <EditText
+                            android:id="@+id/editdwelltime"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical|center_horizontal"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_weight="1"
+
+                            android:inputType="number"
+                            android:maxLength="3"
+
+                            android:singleLine="true"
+                            android:textAlignment="center"
+                            android:textColor="@color/green" />
+
+                        <TextView
+                            android:id="@+id/txtdwelltimeunits"
+
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_18sdp"
+                            android:background="@android:color/transparent"
+                            android:text="Seconds"
+                            android:textColor="@color/green"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <com.rilixtech.materialfancybutton.MaterialFancyButton
+                            android:id="@+id/setdwelltimebutton"
+                            style="@style/setbutton_style"
+                            android:layout_width="55dp"
+                            android:layout_height="45dp"
+
+                            fancy:mfb_defaultColor="@color/blue_fb"
+                            fancy:mfb_focusColor="@color/colorAccent"
+                            fancy:mfb_icon="@string/fawi_upload"
+                            fancy:mfb_iconPosition="top"
+                            fancy:mfb_radius="25dp"
+                            fancy:mfb_text="SET"
+                            android:visibility="visible"
+                            fancy:mfb_textColor="#fff"
+                            fancy:mfb_textSize="8sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtdwelltimetime"
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:background="@color/white"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <TextView
+                            android:id="@+id/txtdwelltimeresp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:background="@color/white"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:textSize="@dimen/_12ssp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!--
+                                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_110sdp"
+                                    android:layout_marginTop="3dp"
+                                    android:background="@drawable/bteststs"
+                                    android:orientation="vertical"
+                                    android:padding="5dp">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="24dp"
+
+                                        android:text="Reset All Energy"
+                                        android:textAllCaps="true"
+                                        android:textColor="#000"
+                                        android:textSize="16dp" />
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:background="@android:color/white" />
+
+                                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="65dp"
+                                        android:orientation="horizontal">
+
+                                        <com.rilixtech.materialfancybutton.MaterialFancyButton
+                                            android:id="@+id/getresetallenergybutton"
+                                            android:layout_width="55dp"
+                                            android:layout_height="45dp"
+                                            style="@style/setbutton_style"
+
+                                            fancy:mfb_defaultColor="@color/blue_fb"
+                                            fancy:mfb_focusColor="@color/colorAccent"
+                                            fancy:mfb_icon="@string/fawi_download"
+                                            fancy:mfb_iconPosition="top"
+                                            fancy:mfb_radius="25dp"
+                                            fancy:mfb_text="GET"
+                                            fancy:mfb_textColor="#fff"
+                                            fancy:mfb_textSize="8sp" />
+
+                                        <Switch
+                                            android:id="@+id/switchresetallenergy"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center_vertical|center_horizontal"
+                                            android:layout_marginEnd="5dp"
+                                            android:layout_marginStart="10dp"
+                                            android:layout_weight="1"
+                                            android:checked="false"
+
+
+                                            android:gravity="center"
+                                            android:textColor="#000">
+
+                                        </Switch>
+
+                                        <TextView
+                                            android:id="@+id/txtresetallenergy"
+
+                                            android:background="@android:color/transparent"
+                            android:textSize="@dimen/_12ssp"
+                            android:textColor="@color/green"
+                            android:layout_marginTop="@dimen/_18sdp"
+                                            android:layout_width="60dp"
+
+                                            android:layout_height="wrap_content"
+                                            android:text="Units" />
+
+                                        <com.rilixtech.materialfancybutton.MaterialFancyButton
+                                            android:id="@+id/setresetallenergybutton"
+                                            android:layout_width="55dp"
+                                            android:layout_height="45dp"
+                                            style="@style/setbutton_style"
+
+                                            fancy:mfb_defaultColor="@color/blue_fb"
+                                            fancy:mfb_focusColor="@color/colorAccent"
+                                            fancy:mfb_icon="@string/fawi_upload"
+                                            fancy:mfb_iconPosition="top"
+                                            fancy:mfb_radius="25dp"
+                                            fancy:mfb_text="SET"
+                                            fancy:mfb_textColor="#fff"
+                                            fancy:mfb_textSize="8sp" />
+
+                                    </LinearLayout>
+
+                                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        android:layout_gravity="center_vertical|center_horizontal"
+                                        android:background="@color/white"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:id="@+id/txtresetallenergytime"
+
+                                            android:background="@color/white"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:textSize="@dimen/_12ssp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="2" />
+
+                                        <TextView
+                                            android:id="@+id/txtresetallenergyresp"
+                                            android:background="@color/white"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:textSize="@dimen/_12ssp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="3" />
+
+                                    </LinearLayout>
+                                </LinearLayout>
+                -->
+
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_110sdp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/bteststs"
+                    android:id="@+id/lvlUnbalanceCurrentMainViewID"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+
+                        android:text="Unbalance Current "
+                        android:textAllCaps="true"
+                        android:textColor="#000"
+                        android:textSize="16dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@android:color/white" />
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp"
+                        android:orientation="horizontal">
+
+                        <com.rilixtech.materialfancybutton.MaterialFancyButton
+                            android:id="@+id/getunbalancebutton"
+                            style="@style/getbutton_style"
+                            android:layout_width="55dp"
+                            android:layout_height="45dp"
+                            fancy:mfb_defaultColor="@color/blue_fb"
+                            fancy:mfb_focusColor="@color/colorAccent"
+                            fancy:mfb_icon="@string/fawi_download"
+                            fancy:mfb_iconPosition="top"
+                            fancy:mfb_radius="25dp"
+                            fancy:mfb_text="GET"
+                            fancy:mfb_textColor="#fff"
+                            fancy:mfb_textSize="8sp" />
+
+
+                        <EditText
+                            android:id="@+id/editunbalance"
+
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical|center_horizontal"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_weight="1"
+
+                            android:inputType="number"
+
+                            android:maxLength="4"
+                            android:singleLine="true"
+                            android:textAlignment="center"
+                            android:textColor="@color/green" />
+
+                        <TextView
+                            android:id="@+id/txtunbalanceunits"
+
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_18sdp"
+                            android:background="@android:color/transparent"
+                            android:text="%"
+                            android:textColor="@color/green"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <com.rilixtech.materialfancybutton.MaterialFancyButton
+                            android:id="@+id/setunbalancebutton"
+                            style="@style/setbutton_style"
+                            android:layout_width="55dp"
+                            android:layout_height="45dp"
+                            fancy:mfb_defaultColor="@color/blue_fb"
+                            fancy:mfb_focusColor="@color/colorAccent"
+                            fancy:mfb_icon="@string/fawi_upload"
+                            fancy:mfb_iconPosition="top"
+                            fancy:mfb_radius="25dp"
+                            fancy:mfb_text="SET"
+                            android:visibility="visible"
+                            fancy:mfb_textColor="#fff"
+                            fancy:mfb_textSize="8sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtunbalancetime"
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:background="@color/white"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <TextView
+                            android:id="@+id/txtunbalanceresp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:background="@color/white"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:textSize="@dimen/_12ssp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_110sdp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/bteststs"
+                    android:orientation="vertical"
+                    android:id="@+id/lvlUnbalanceVoltageMainViewID"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+
+                        android:text="Unbalance Voltage"
+                        android:textAllCaps="true"
+                        android:textColor="#000"
+                        android:textSize="16dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@android:color/white" />
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp"
+                        android:orientation="horizontal">
+
+                        <com.rilixtech.materialfancybutton.MaterialFancyButton
+                            android:id="@+id/getvoltageunbalancebutton"
+                            style="@style/getbutton_style"
+                            android:layout_width="55dp"
+                            android:layout_height="45dp"
+                            fancy:mfb_defaultColor="@color/blue_fb"
+                            fancy:mfb_focusColor="@color/colorAccent"
+                            fancy:mfb_icon="@string/fawi_download"
+                            fancy:mfb_iconPosition="top"
+                            fancy:mfb_radius="25dp"
+                            fancy:mfb_text="GET"
+                            fancy:mfb_textColor="#fff"
+                            fancy:mfb_textSize="8sp" />
+
+
+                        <EditText
+                            android:id="@+id/editvoltageunbalance"
+
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical|center_horizontal"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_weight="1"
+
+
+                            android:inputType="number"
+                            android:maxLength="4"
+                            android:singleLine="true"
+                            android:textAlignment="center"
+                            android:textColor="@color/green" />
+
+                        <TextView
+                            android:id="@+id/txtvoltageunbalance"
+
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_18sdp"
+                            android:background="@android:color/transparent"
+                            android:text="%"
+                            android:textColor="@color/green"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <com.rilixtech.materialfancybutton.MaterialFancyButton
+                            android:id="@+id/setvoltageunbalancebutton"
+                            style="@style/setbutton_style"
+                            android:layout_width="55dp"
+                            android:layout_height="45dp"
+                            fancy:mfb_defaultColor="@color/blue_fb"
+                            fancy:mfb_focusColor="@color/colorAccent"
+                            fancy:mfb_icon="@string/fawi_upload"
+                            fancy:mfb_iconPosition="top"
+                            fancy:mfb_radius="25dp"
+                            fancy:mfb_text="SET"
+                            android:visibility="visible"
+                            fancy:mfb_textColor="#fff"
+                            fancy:mfb_textSize="8sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtvoltageunbalancetime"
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:background="@color/white"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <TextView
+                            android:id="@+id/txtvoltageunbalanceresp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:background="@color/white"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:textSize="@dimen/_12ssp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_110sdp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/bteststs"
+                    android:orientation="vertical"
+                    android:id="@+id/lvlMaximumStartStopperhourMainViewID"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+
+                        android:text="Maximum Start/Stop per hour"
+                        android:textAllCaps="true"
+                        android:textColor="#000"
+                        android:textSize="16dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@android:color/white" />
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp"
+                        android:orientation="horizontal">
+
+                        <com.rilixtech.materialfancybutton.MaterialFancyButton
+                            android:id="@+id/getmaxstartstopbutton"
+                            style="@style/getbutton_style"
+                            android:layout_width="55dp"
+                            android:layout_height="45dp"
+                            fancy:mfb_defaultColor="@color/blue_fb"
+                            fancy:mfb_focusColor="@color/colorAccent"
+                            fancy:mfb_icon="@string/fawi_download"
+                            fancy:mfb_iconPosition="top"
+                            fancy:mfb_radius="25dp"
+                            fancy:mfb_text="GET"
+                            fancy:mfb_textColor="#fff"
+                            fancy:mfb_textSize="8sp" />
+
+                        <EditText
+                            android:id="@+id/editmaxstartstop"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical|center_horizontal"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_weight="1"
+
+                            android:inputType="number"
+                            android:maxLength="4"
+                            android:singleLine="true"
+                            android:textAlignment="center"
+                            android:textColor="@color/green" />
+
+                        <TextView
+                            android:id="@+id/txtmaxstartstopunits"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_18sdp"
+                            android:background="@android:color/transparent"
+                            android:text=""
+                            android:textColor="@color/green"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <com.rilixtech.materialfancybutton.MaterialFancyButton
+                            android:id="@+id/setmaxstartstopbutton"
+                            style="@style/setbutton_style"
+                            android:layout_width="55dp"
+                            android:layout_height="45dp"
+                            fancy:mfb_defaultColor="@color/blue_fb"
+                            fancy:mfb_focusColor="@color/colorAccent"
+                            fancy:mfb_icon="@string/fawi_upload"
+                            fancy:mfb_iconPosition="top"
+                            fancy:mfb_radius="25dp"
+                            fancy:mfb_text="SET"
+                            android:visibility="visible"
+                            fancy:mfb_textColor="#fff"
+                            fancy:mfb_textSize="8sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtmaxstartstoptime"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:background="@color/white"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <TextView
+                            android:id="@+id/txtmaxstartstopresp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:background="@color/white"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:textSize="@dimen/_12ssp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_110sdp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/bteststs"
+                    android:id="@+id/lvlSettoDefaultMainViewID"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:text="Set to Default"
+                        android:textAllCaps="true"
+                        android:textColor="#000"
+                        android:textSize="16dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@android:color/white" />
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp"
+                        android:orientation="horizontal">
+
+                        <com.rilixtech.materialfancybutton.MaterialFancyButton
+                            android:id="@+id/getsettodefaultbutton"
+                            style="@style/getbutton_style"
+                            android:layout_width="55dp"
+                            android:layout_height="45dp"
+
+                            fancy:mfb_defaultColor="@color/blue_fb"
+                            fancy:mfb_focusColor="@color/colorAccent"
+                            fancy:mfb_icon="@string/fawi_download"
+                            fancy:mfb_iconPosition="top"
+                            fancy:mfb_radius="25dp"
+                            fancy:mfb_text="GET"
+                            fancy:mfb_textColor="#fff"
+                            fancy:mfb_textSize="8sp" />
+
+                        <Switch
+                            android:id="@+id/switchsettodefault"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical|center_horizontal"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_weight="1"
+                            android:checked="false"
+
+                            android:gravity="center"
+                            android:textColor="@color/green">
+
+                        </Switch>
+
+                        <TextView
+                            android:id="@+id/txtsettodefault"
+
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_18sdp"
+                            android:background="@android:color/transparent"
+                            android:text=""
+                            android:textColor="@color/green"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <com.rilixtech.materialfancybutton.MaterialFancyButton
+                            android:id="@+id/setsettodefaultbutton"
+                            style="@style/setbutton_style"
+                            android:layout_width="55dp"
+                            android:layout_height="45dp"
+                            fancy:mfb_defaultColor="@color/blue_fb"
+                            fancy:mfb_focusColor="@color/colorAccent"
+                            fancy:mfb_icon="@string/fawi_upload"
+                            fancy:mfb_iconPosition="top"
+                            fancy:mfb_radius="25dp"
+                            android:visibility="visible"
+                            fancy:mfb_text="SET"
+                            fancy:mfb_textColor="#fff"
+                            fancy:mfb_textSize="8sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtsettodefaulttime"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:background="@color/white"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <TextView
+                            android:id="@+id/txtsettodefaultresp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:background="@color/white"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:textSize="@dimen/_12ssp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_110sdp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/bteststs"
+                    android:id="@+id/lvlEnergyLogIntervalMainViewID"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+
+                        android:text="Energy Log Interval"
+                        android:textAllCaps="true"
+                        android:textColor="#000"
+                        android:textSize="16dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@android:color/white" />
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp"
+                        android:orientation="horizontal">
+
+                        <com.rilixtech.materialfancybutton.MaterialFancyButton
+                            android:id="@+id/getenergylogbutton"
+                            style="@style/getbutton_style"
+                            android:layout_width="55dp"
+                            android:layout_height="45dp"
+                            fancy:mfb_defaultColor="@color/blue_fb"
+                            fancy:mfb_focusColor="@color/colorAccent"
+                            fancy:mfb_icon="@string/fawi_download"
+                            fancy:mfb_iconPosition="top"
+                            fancy:mfb_radius="25dp"
+                            fancy:mfb_text="GET"
+                            fancy:mfb_textColor="#fff"
+                            fancy:mfb_textSize="8sp" />
+
+
+                        <EditText
+                            android:id="@+id/editenergylog"
+
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical|center_horizontal"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="5dp"
+
+                            android:layout_weight="1"
+
+                            android:inputType="number"
+                            android:maxLength="4"
+                            android:singleLine="true"
+                            android:textAlignment="center"
+                            android:textColor="@color/green" />
+
+                        <TextView
+                            android:id="@+id/txtenergylogunits"
+
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_18sdp"
+                            android:background="@android:color/transparent"
+                            android:text="Minutes"
+                            android:textColor="@color/green"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <com.rilixtech.materialfancybutton.MaterialFancyButton
+                            android:id="@+id/setenergylogbutton"
+                            style="@style/setbutton_style"
+                            android:layout_width="55dp"
+                            android:layout_height="45dp"
+                            fancy:mfb_defaultColor="@color/blue_fb"
+                            fancy:mfb_focusColor="@color/colorAccent"
+                            fancy:mfb_icon="@string/fawi_upload"
+                            fancy:mfb_iconPosition="top"
+                            fancy:mfb_radius="25dp"
+                            android:visibility="visible"
+                            fancy:mfb_text="SET"
+                            fancy:mfb_textColor="#fff"
+                            fancy:mfb_textSize="8sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtenergylogbuttontime"
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:background="@color/white"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <TextView
+                            android:id="@+id/txtenergylogbuttonresp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:background="@color/white"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:textSize="@dimen/_12ssp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_110sdp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/bteststs"
+                    android:id="@+id/lvlOperatingFrequencyMainViewID"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+
+                        android:text="Operating Frequency"
+                        android:textAllCaps="true"
+                        android:textColor="#000"
+                        android:textSize="16dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@android:color/white" />
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp"
+                        android:orientation="horizontal">
+
+                        <com.rilixtech.materialfancybutton.MaterialFancyButton
+                            android:id="@+id/getoperatingfreqencybutton"
+                            style="@style/getbutton_style"
+                            android:layout_width="55dp"
+                            android:layout_height="45dp"
+
+                            fancy:mfb_defaultColor="@color/blue_fb"
+                            fancy:mfb_focusColor="@color/colorAccent"
+                            fancy:mfb_icon="@string/fawi_download"
+                            fancy:mfb_iconPosition="top"
+                            fancy:mfb_radius="25dp"
+                            fancy:mfb_text="GET"
+                            fancy:mfb_textColor="#fff"
+                            fancy:mfb_textSize="8sp" />
+
+                        <Switch
+                            android:id="@+id/switoperatingfreqency"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical|center_horizontal"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_weight="1"
+                            android:checked="false"
+
+                            android:gravity="center"
+                            android:textColor="@color/green">
+
+                        </Switch>
+
+                        <TextView
+                            android:id="@+id/txtoperatingfreqenc"
+
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_18sdp"
+                            android:background="@android:color/transparent"
+                            android:text="Hz"
+                            android:textColor="@color/green"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <com.rilixtech.materialfancybutton.MaterialFancyButton
+                            android:id="@+id/setoperatingfreqencybutton"
+                            style="@style/setbutton_style"
+                            android:layout_width="55dp"
+                            android:layout_height="45dp"
+                            fancy:mfb_defaultColor="@color/blue_fb"
+                            fancy:mfb_focusColor="@color/colorAccent"
+                            fancy:mfb_icon="@string/fawi_upload"
+                            fancy:mfb_iconPosition="top"
+                            fancy:mfb_radius="25dp"
+                            android:visibility="visible"
+                            fancy:mfb_text="SET"
+                            fancy:mfb_textColor="#fff"
+                            fancy:mfb_textSize="8sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtoperatingfreqencytime"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:background="@color/white"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <TextView
+                            android:id="@+id/txtoperatingfreqencyresp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:background="@color/white"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:textSize="@dimen/_12ssp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_110sdp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/bteststs"
+                    android:id="@+id/lvlSensorModeMainViewID"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+
+                        android:text="Sensor Mode"
+                        android:textAllCaps="true"
+                        android:textColor="@color/green"
+                        android:textSize="16dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@android:color/white" />
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp"
+                        android:orientation="horizontal">
+
+                        <com.rilixtech.materialfancybutton.MaterialFancyButton
+                            android:id="@+id/getsensormode"
+                            style="@style/getbutton_style"
+                            android:layout_width="55dp"
+                            android:layout_height="45dp"
+                            fancy:mfb_defaultColor="@color/blue_fb"
+                            fancy:mfb_focusColor="@color/colorAccent"
+                            fancy:mfb_icon="@string/fawi_download"
+                            fancy:mfb_iconPosition="top"
+                            fancy:mfb_radius="25dp"
+                            fancy:mfb_text="GET"
+                            fancy:mfb_textColor="#fff"
+                            fancy:mfb_textSize="8sp" />
+
+                        <androidx.appcompat.widget.AppCompatSpinner
+                            android:id="@+id/sensormodespinner"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical|center_horizontal"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_weight="1"
+
+                            android:hint="Model"
+                            android:textAlignment="center"
+                            android:textColor="@color/green"
+                            android:textColorHint="@color/green"
+                            app:met_floatingLabel="normal" />
+
+                        <com.rilixtech.materialfancybutton.MaterialFancyButton
+                            android:id="@+id/setsensormode"
+                            style="@style/setbutton_style"
+                            android:layout_width="55dp"
+                            android:layout_height="45dp"
+                            fancy:mfb_defaultColor="@color/blue_fb"
+                            fancy:mfb_focusColor="@color/colorAccent"
+                            fancy:mfb_icon="@string/fawi_upload"
+                            fancy:mfb_iconPosition="top"
+                            fancy:mfb_radius="25dp"
+                            android:visibility="visible"
+                            fancy:mfb_text="SET"
+                            fancy:mfb_textColor="#fff"
+                            fancy:mfb_textSize="8sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtsensoremodetime"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:background="@color/white"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <TextView
+                            android:id="@+id/txtsensormoderesp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:background="@color/white"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:textSize="@dimen/_12ssp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_110sdp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/bteststs"
+                    android:id="@+id/lvlSensorPolarityMainViewID"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+
+                        android:text="Sensor Polarity"
+                        android:textAllCaps="true"
+                        android:textColor="#000"
+                        android:textSize="16dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@android:color/white" />
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp"
+                        android:orientation="horizontal">
+
+                        <com.rilixtech.materialfancybutton.MaterialFancyButton
+                            android:id="@+id/getsensorpolaritybutton"
+                            style="@style/getbutton_style"
+                            android:layout_width="55dp"
+                            android:layout_height="45dp"
+                            fancy:mfb_defaultColor="@color/blue_fb"
+                            fancy:mfb_focusColor="@color/colorAccent"
+                            fancy:mfb_icon="@string/fawi_download"
+                            fancy:mfb_iconPosition="top"
+                            fancy:mfb_radius="25dp"
+                            fancy:mfb_text="GET"
+                            fancy:mfb_textColor="#fff"
+                            fancy:mfb_textSize="8sp" />
+
+
+                        <EditText
+                            android:id="@+id/editsensorpolarity"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical|center_horizontal"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_weight="1"
+
+                            android:inputType="number"
+                            android:maxLength="2"
+                            android:singleLine="true"
+                            android:textAlignment="center"
+                            android:textColor="@color/green" />
+
+                        <TextView
+                            android:id="@+id/txtsensorpolarityunits"
+
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_18sdp"
+                            android:background="@android:color/transparent"
+                            android:text=""
+                            android:textColor="@color/green"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <com.rilixtech.materialfancybutton.MaterialFancyButton
+                            android:id="@+id/setsensorpolaritybutton"
+                            style="@style/setbutton_style"
+                            android:layout_width="55dp"
+                            android:layout_height="45dp"
+                            fancy:mfb_defaultColor="@color/blue_fb"
+                            fancy:mfb_focusColor="@color/colorAccent"
+                            fancy:mfb_icon="@string/fawi_upload"
+                            fancy:mfb_iconPosition="top"
+                            fancy:mfb_radius="25dp"
+                            android:visibility="visible"
+                            fancy:mfb_text="SET"
+                            fancy:mfb_textColor="#fff"
+                            fancy:mfb_textSize="8sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtsensorpolaritytime"
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:background="@color/white"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <TextView
+                            android:id="@+id/txtsensorpolarityresp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:background="@color/white"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:textSize="@dimen/_12ssp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_110sdp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/bteststs"
+                    android:id="@+id/lvlGroundFaultCurrentMainViewID"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+
+                        android:text="Ground Fault Current"
+                        android:textAllCaps="true"
+                        android:textColor="#000"
+                        android:textSize="16dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@android:color/white" />
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp"
+                        android:orientation="horizontal">
+
+                        <com.rilixtech.materialfancybutton.MaterialFancyButton
+                            android:id="@+id/getgroundfaultcurrentbutton"
+                            style="@style/getbutton_style"
+                            android:layout_width="55dp"
+                            android:layout_height="45dp"
+                            fancy:mfb_defaultColor="@color/blue_fb"
+                            fancy:mfb_focusColor="@color/colorAccent"
+                            fancy:mfb_icon="@string/fawi_download"
+                            fancy:mfb_iconPosition="top"
+                            fancy:mfb_radius="25dp"
+                            fancy:mfb_text="GET"
+                            fancy:mfb_textColor="#fff"
+                            fancy:mfb_textSize="8sp" />
+
+
+                        <EditText
+                            android:id="@+id/editgroundfaultcurrent"
+
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical|center_horizontal"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_weight="1"
+
+                            android:inputType="numberDecimal"
+
+                            android:maxLength="3"
+                            android:singleLine="true"
+                            android:textAlignment="center"
+                            android:textColor="@color/green" />
+
+                        <TextView
+                            android:id="@+id/txtgroundfaultcurrentunits"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_18sdp"
+                            android:background="@android:color/transparent"
+                            android:text="Amps"
+                            android:textColor="@color/green"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <com.rilixtech.materialfancybutton.MaterialFancyButton
+                            android:id="@+id/setgroundfaultcurrentbutton"
+                            style="@style/setbutton_style"
+                            android:layout_width="55dp"
+                            android:layout_height="45dp"
+                            fancy:mfb_defaultColor="@color/blue_fb"
+                            fancy:mfb_focusColor="@color/colorAccent"
+                            fancy:mfb_icon="@string/fawi_upload"
+                            fancy:mfb_iconPosition="top"
+                            fancy:mfb_radius="25dp"
+                            android:visibility="visible"
+                            fancy:mfb_text="SET"
+                            fancy:mfb_textColor="#fff"
+                            fancy:mfb_textSize="8sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtgroundfaultcurrenttime"
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:background="@color/white"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <TextView
+                            android:id="@+id/txtgroundfaultcurrentresp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:background="@color/white"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:textSize="@dimen/_12ssp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_110sdp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/bteststs"
+                    android:id="@+id/lvlFlowCalibrationMainViewID"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+
+                        android:text="Flow Calibration"
+                        android:textAllCaps="true"
+                        android:textColor="#000"
+                        android:textSize="16dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@android:color/white" />
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp"
+                        android:orientation="horizontal">
+
+                        <com.rilixtech.materialfancybutton.MaterialFancyButton
+                            android:id="@+id/getflowcalibrationbutton"
+                            style="@style/getbutton_style"
+                            android:layout_width="55dp"
+                            android:layout_height="45dp"
+                            fancy:mfb_defaultColor="@color/blue_fb"
+                            fancy:mfb_focusColor="@color/colorAccent"
+                            fancy:mfb_icon="@string/fawi_download"
+                            fancy:mfb_iconPosition="top"
+                            fancy:mfb_radius="25dp"
+                            fancy:mfb_text="GET"
+                            fancy:mfb_textColor="#fff"
+                            fancy:mfb_textSize="8sp" />
+
+
+                        <EditText
+                            android:id="@+id/editflowcalibration"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical|center_horizontal"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_weight="1"
+
+                            android:inputType="numberDecimal"
+                            android:maxLength="4"
+                            android:singleLine="true"
+                            android:textAlignment="center"
+                            android:textColor="@color/green" />
+
+                        <TextView
+                            android:id="@+id/txtflowcalibrationunits"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_18sdp"
+                            android:background="@android:color/transparent"
+                            android:text="Units"
+                            android:textColor="@color/green"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <com.rilixtech.materialfancybutton.MaterialFancyButton
+                            android:id="@+id/setflowcalibrationbutton"
+                            style="@style/setbutton_style"
+                            android:layout_width="55dp"
+                            android:layout_height="45dp"
+                            fancy:mfb_defaultColor="@color/blue_fb"
+                            fancy:mfb_focusColor="@color/colorAccent"
+                            fancy:mfb_icon="@string/fawi_upload"
+                            fancy:mfb_iconPosition="top"
+                            fancy:mfb_radius="25dp"
+                            android:visibility="visible"
+                            fancy:mfb_text="SET"
+                            fancy:mfb_textColor="#fff"
+                            fancy:mfb_textSize="8sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtflowcalibrationtime"
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:background="@color/white"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <TextView
+                            android:id="@+id/txtflowcalibrationresp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:background="@color/white"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:textSize="@dimen/_12ssp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</LinearLayout>
+

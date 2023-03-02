@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:orientation="vertical"
+        android:layout_height="fill_parent" >
+
+
+
+        <!--organization selection-->
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content">
+
+            <ExpandableListView
+                android:id="@+id/orglistview"
+                android:groupIndicator="@drawable/settings_selector"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content" />
+
+
+            <TextView
+                android:id="@+id/previous_level"
+                android:visibility="invisible"
+
+                android:layout_alignRight="@+id/orglistview"
+
+                android:text="Back"
+                android:textColor="@color/black"
+                android:drawableRight="@drawable/go_up"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right" />
+        </RelativeLayout>
+
+        <!--organization selection-->
+
+
+
+        <EditText
+            android:id="@+id/search"
+            android:layout_width="fill_parent"
+            android:layout_height="25dp"
+            android:singleLine="true"
+            android:hint="Search By Device Number,Date"
+            android:background="@color/background_floating_material_light"
+
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:textSize="15sp"
+            android:textStyle="bold|italic">
+
+            <requestFocus />
+        </EditText>
+
+        <ListView
+            android:id="@+id/listview"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@+id/search"
+            android:layout_marginTop="20dp"
+
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            />
+    </LinearLayout>
+
+
+
+</LinearLayout>

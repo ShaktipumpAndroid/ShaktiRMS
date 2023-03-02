@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="User Information">
+
+        <Preference
+            android:defaultValue="Email ID"
+            android:key="email_id"
+            android:summary="njadhgajhdga@gmail.com"
+            android:title="Email ID" />
+
+        <Preference
+            android:defaultValue="Mobile Number"
+            android:key="mobile_number"
+            android:summary="8977616777"
+            android:title="Mobile Number" />
+
+        <Preference
+            android:enabled="false"
+            android:key="change_Password"
+            android:title="Request change of password" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Connection Mode">
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="connect_bluetooth"
+            android:summaryOff="Connect with Bluetooth"
+            android:summaryOn="Bluetooth is the default mode of communication"
+            android:title="Bluetooth" />
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="connect_usb"
+            android:summaryOff="Connect with USB"
+            android:summaryOn="USB is the default mode of communication"
+            android:title="USB" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Permissions">
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="sw_action"
+            android:summaryOff="Permission Denied!"
+            android:summaryOn="@string/performpermissions"
+            android:enabled="false"
+            android:title="Perform Actions" />
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="sw_set_parameters"
+            android:summaryOff="Permission Denied!"
+            android:summaryOn="@string/setparapermissions"
+            android:enabled="false"
+            android:title="Set Parameters" />
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="sw_view_parameters"
+            android:summaryOn="@string/parameters_permission"
+            android:summaryOff="Permission Denied!"
+            android:enabled="false"
+            android:title="View Parameters" />
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="sw_view_logs"
+            android:summaryOn="@string/view_logs"
+            android:summaryOff="Permission Denied!"
+            android:enabled="false"
+            android:title="View Logs" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Others">
+
+        <Preference
+            android:key="app_version"
+            android:title="App Version"  />
+
+        <EditTextPreference
+            android:defaultValue="OW"
+            android:key="bluetooth_name"
+            android:summary="OW"
+            android:title="Bluetooth Name" />
+
+        <Preference
+            android:key="device_serial_number"
+            android:title="Device Serial Number"  />
+
+        <Preference
+            android:defaultValue="Export"
+            android:key="export_path"
+            android:summary="0/sd/e_device/export"
+            android:title="Export Data" />
+
+        <Preference
+            android:key="sendmail"
+            android:summary="cs@aryabhatta"
+            android:title="Contact" />
+
+
+    </PreferenceCategory>
+
+
+    <PreferenceCategory android:title="Credits">
+
+        <Preference
+            android:key="shakti"
+            android:title="Developed For"
+            android:icon="@drawable/shakti"
+            android:summary="@string/shakthipumpss">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="@string/url2">
+            </intent>
+
+        </Preference>
+
+        <Preference
+            android:key="devfor"
+            android:title="Project"
+            android:icon="@drawable/el"
+            android:summary="@string/client">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="@string/url1">
+            </intent>
+
+        </Preference>
+
+
+        <Preference
+            android:key="device_serial_number"
+            android:title="@string/Designandde"
+            android:icon="@drawable/acc"
+            android:summary="@string/copyrightoffice">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="@string/url">
+
+            </intent>
+
+        </Preference>
+
+
+
+    </PreferenceCategory>
+
+
+</PreferenceScreen>

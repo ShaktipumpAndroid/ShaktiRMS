@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_10sdp"
+    android:background="@color/white">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/txtFileNameID"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:background="@color/off_gray"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:text="Select file to upload"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/_10sdp"
+            android:textStyle="bold"
+            android:textSize="@dimen/_14ssp"
+            android:textColor="@color/blue_fb"/>
+
+
+
+        <TextView
+            android:id="@+id/txtOkayPopUpID"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:background="@drawable/round_shape_setbtn"
+            android:text="Ok"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="@dimen/_18ssp"
+            android:textColor="@color/white"
+            android:layout_marginEnd="@dimen/_1sdp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:visibility="invisible"
+            android:layout_marginBottom="@dimen/_5sdp"/>
+
+
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

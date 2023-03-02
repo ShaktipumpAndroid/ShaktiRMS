@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "436319395719",
+    "firebase_url": "https://shakti-remote-monitoring.firebaseio.com",
+    "project_id": "shakti-remote-monitoring",
+    "storage_bucket": "shakti-remote-monitoring.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:436319395719:android:f49334aa4c77c2a09c3d22",
+        "android_client_info": {
+          "package_name": "com.shaktipumps.shakti_rms"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "436319395719-8mfhen57190ued2rim4u5161qsdlq19b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.shaktipumps.shakti_rms",
+            "certificate_hash": "7532ad8fdea51407e4a45b63caeda5de1350f6f6"
+          }
+        },
+        {
+          "client_id": "436319395719-hbgm5vctc72iv92ebbejvhn1f8n61rs4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgu4jeeQp-h62U19rJtZwaZu6s_85Xxg4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "436319395719-hbgm5vctc72iv92ebbejvhn1f8n61rs4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

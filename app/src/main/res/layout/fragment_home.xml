@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/edit_text_border_bg"
+    android:orientation="vertical"
+    android:weightSum="1"
+    tools:context="activity.HomeFragment">
+
+    <LinearLayout
+        android:id="@+id/app_version_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/red"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="2dp"
+            android:text="This version of Shakti Remote Monitoring is out of date. Tap here to install the latest version of the app."
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+    <!--organization selection-->
+    <RelativeLayout
+        android:id="@+id/org_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:visibility="gone">
+
+        <ExpandableListView
+            android:id="@+id/orglistview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@color/white"
+            android:minHeight="15dp"
+            android:transcriptMode="alwaysScroll" />
+
+        <!--android:transcriptMode="alwaysScroll"-->
+        <TextView
+            android:id="@+id/previous_level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/orglistview"
+            android:layout_gravity="right"
+            android:drawableRight="@drawable/go_up"
+            android:gravity="center"
+            android:text="Back"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:visibility="invisible" />
+
+    </RelativeLayout>
+    <!--organization selection-->
+
+    <LinearLayout
+        android:id="@+id/lvlListViewDataContainerID"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/org_layout"
+        android:layout_marginTop="5dp"
+        android:background="@color/white"
+        android:orientation="vertical"
+
+        >
+
+        <EditText
+            android:visibility="gone"
+            android:id="@+id/search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:hint="@string/homeSerchbycustemername"
+            android:singleLine="true"
+            android:textSize="15sp"
+            android:textStyle="italic">
+
+            <requestFocus />
+        </EditText>
+
+        <LinearLayout
+            android:id="@+id/lrlGraphViewDataID"
+android:visibility="visible"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <RelativeLayout
+                android:id="@+id/rlvDevicesViewID"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="@dimen/_1sdp"
+                android:layout_weight="1"
+                android:background="@drawable/left_round_selected">
+
+                <TextView
+                    android:id="@+id/txtDayWiseDataID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:gravity="center"
+                    android:text="@string/Devices"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_15ssp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlvPlantViewID"
+                android:layout_marginStart="@dimen/_1sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:background="@drawable/right_round_unselected"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/txtMonthWiseDataID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/SolarPlant"
+                    android:gravity="center"
+                    android:layout_centerInParent="true"
+                    android:textSize="@dimen/_15ssp"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/open_sans_semibold"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/rlvMainContainerDeviceID"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/search"
+            android:layout_alignEnd="@+id/lvlListViewDataContainerID">
+
+            <ListView
+                android:visibility="visible"
+                android:id="@+id/listview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_marginBottom="@dimen/_1sdp"
+                android:background="@drawable/bg_wtsp" />
+
+
+            <TextView
+                android:id="@+id/txtAddDeviceMSGIDDD"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:text="No device found."
+                android:textColor="@color/black"
+                android:textSize="@dimen/_15ssp"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_below="@+id/search"
+            android:id="@+id/rlvPlantMainContainerID"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+android:visibility="gone"
+            android:layout_alignEnd="@+id/lvlListViewDataContainerID">
+
+            <androidx.recyclerview.widget.RecyclerView
+
+                android:id="@+id/mMenuCardRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_marginBottom="@dimen/_1sdp"
+                android:visibility="gone"
+                android:background="@drawable/bg_wtsp"/>
+
+            <TextView
+                android:id="@+id/txtAddDeviceMSGID"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:text="No Plant found."
+                android:textColor="@color/black"
+                android:textSize="@dimen/_15ssp"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/crdStartViewID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:elevation="@dimen/_20sdp"
+        app:cardBackgroundColor="@android:color/transparent"
+        app:cardCornerRadius="@dimen/_30sdp">
+
+        <at.markushi.ui.CircleButton
+            android:id="@+id/txtAddDeviceBTNID"
+            android:layout_width="64dip"
+            android:layout_height="64dip"
+            android:src="@drawable/float_btn"
+            app:cb_color="#99CC00"
+            app:cb_pressedRingWidth="8dip" /><!--    <ImageView
+
+        android:id="@+id/txtAddDeviceBTNID"
+        android:layout_width="@dimen/_65sdp"
+        android:layout_height="@dimen/_65sdp"
+        android:layout_centerInParent="true"
+
+        android:src="@drawable/float_btn"
+
+
+        android:visibility="visible" />-->
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- <TextView
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/txtAddDeviceBTNID"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:background="@drawable/circle_vk"
+        android:textAlignment="center"
+        android:text="+"
+        android:fontFamily="@font/open_sans_bold"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_30ssp"
+        android:visibility="visible" />-->
+
+</RelativeLayout>

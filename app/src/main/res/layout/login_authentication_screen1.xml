@@ -1,0 +1,154 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    android:backgroundTint="@color/backgroundtintcolor"
+    android:backgroundTintMode="src_atop"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true"
+    android:gravity="center_vertical|center_horizontal"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
+
+
+    <LinearLayout
+        android:id="@+id/ll1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1.1"
+        android:gravity="center_vertical|center_horizontal">
+
+        <ImageView
+            android:id="@+id/circleImageView"
+            android:layout_width="match_parent"
+            android:background="@color/cb_white"
+            android:layout_height="120dp"
+            android:padding="35dp"
+            android:layout_gravity="center"
+            android:src="@drawable/shakti" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|center_horizontal">
+
+        <ScrollView
+            android:id="@+id/login_form"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/email_login_form"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/app_name"
+                        android:background="@android:color/transparent"
+                        android:textAllCaps="true"
+                        android:layout_marginBottom="5dp"
+                        android:textAlignment="center"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/_20ssp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:text="Welcome Back"
+                        android:textAlignment="center"
+                        android:textColor="#ffffffff"
+                        android:textColorHint="#ffffffff"
+                        android:textSize="@dimen/_16ssp"/>
+
+                    <TextView
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:id="@+id/auth_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+
+                        android:textAlignment="center"
+                        android:textColor="#ffffffff"
+                        android:textColorHint="#ffffffff"
+                        android:textSize="@dimen/_15ssp" />
+
+                    <EditText
+                        android:id="@+id/auth_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:hint="Password"
+                        android:imeActionLabel="Sign in"
+                        android:imeOptions="actionUnspecified"
+                        android:inputType="textPassword"
+                        android:textColor="#ffffffff"
+                        android:textColorHint="#ffffffff"
+                        android:textSize="@dimen/_15sdp"/>
+
+                    <Button
+                        android:id="@+id/authlogin"
+                        style="?android:textAppearanceSmall"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:background="@color/white"
+                        android:text="@string/loginbutton"
+                        android:textColor="@color/blue_fb"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/_14ssp"/>
+
+                    <TextView
+                        android:id="@+id/forgotpass"
+                        style="?android:textAppearanceSmall"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/trans"
+                        android:paddingBottom="10dp"
+                        android:paddingTop="10dp"
+                        android:text="Forgot Password?"
+                        android:textAlignment="center"
+                        android:textColor="#ffffffff"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/_14ssp"/>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1.2"
+        android:gravity="bottom|center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/skip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:text="@string/copyrightoffice"
+            android:textAlignment="center"
+            android:textColor="#ffffffff"
+            android:typeface="serif"
+            android:textSize="@dimen/_14ssp"/>
+
+
+    </LinearLayout>
+</LinearLayout>

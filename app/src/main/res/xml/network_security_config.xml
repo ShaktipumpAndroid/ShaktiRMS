@@ -1,0 +1,14 @@
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>
+
+    <!--
+    <network-security-config>
+        <domain-config cleartextTrafficPermitted="true">
+            <domain includeSubdomains="true">http://votivelaravel.in</domain>
+        </domain-config>
+    </network-security-config>-->

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:orientation="vertical"
+
+    android:layout_height="fill_parent" >
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:gravity="center"
+        android:background="@color/white"
+        >
+
+        <TextView
+            android:id="@+id/time_zone_long"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:gravity="center"
+            android:layout_below="@+id/time_zone_city"
+
+
+            android:layout_height="wrap_content"
+            android:textSize="11sp"
+
+            android:layout_marginTop="1dp" />
+
+
+        <TextView
+            android:id="@+id/time_zone_city"
+            android:layout_width="wrap_content"
+            android:gravity="center"
+
+            android:layout_marginLeft="3dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/select_time_zone_txt"
+            android:textSize="11sp"
+            android:layout_marginTop="3dp"
+            />
+
+
+
+        <TextView
+            android:id="@+id/time_zone_short"
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:layout_marginLeft="15dp"
+
+            android:layout_toRightOf="@+id/time_zone_city"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/select_time_zone_txt"
+            android:textSize="11sp"
+            android:layout_marginTop="3dp"
+            />
+
+
+
+        <TextView
+            android:id="@+id/select_time_zone_txt"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:gravity="center"
+            android:text="Select time zone "
+            android:textStyle="bold"
+
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:layout_marginTop="15dp"/>
+
+
+
+
+        <!--<TextView-->
+            <!--android:id="@+id/deleteDevice"-->
+            <!--android:layout_width="wrap_content"-->
+
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_toRightOf="@+id/deviceNo"-->
+            <!--android:drawableTop="@drawable/delete_device"-->
+
+            <!--android:layout_height="wrap_content"-->
+
+            <!--android:textSize="1dp"-->
+            <!--android:layout_marginTop="10dp"/>-->
+
+
+
+
+
+        <!--<TextView-->
+            <!--android:id="@+id/line"-->
+            <!--android:textAllCaps="false"-->
+            <!--android:layout_width="5dp"-->
+
+            <!--android:layout_toRightOf="@+id/start_gps"-->
+            <!--android:layout_below="@+id/customer_name_txt"-->
+
+
+            <!--android:textColor="@color/white"-->
+            <!--android:layout_gravity="left"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="13dp"-->
+            <!--android:layout_marginBottom="5dp" />-->
+
+
+
+    </RelativeLayout>
+
+
+    <!--   </LinearLayout>-->
+
+</LinearLayout>
