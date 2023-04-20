@@ -982,11 +982,10 @@ public class ActivityDeviceDetailsInfoOLDKLP extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (checkAndRequestPermissions())
-                {
+
                     Intent intent = new Intent(mContext, AddDevice.class);
                     startActivity(intent);
-                }
+
                 // overridePendingTransition(R.anim.right_to_left, R.anim.lefr_to_right);
                 rlvSlideMenuViewID.setVisibility(View.GONE);
             }
@@ -1164,59 +1163,6 @@ public class ActivityDeviceDetailsInfoOLDKLP extends AppCompatActivity {
 
     }
 
-
-    private boolean checkAndRequestPermissions() {
-
-        int LOCATION = ContextCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_FINE_LOCATION);
-        int CAMERAV = ContextCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_FINE_LOCATION);
-
-        List<String> listPermissionsNeeded = new ArrayList<>();
-
-        if (LOCATION != PackageManager.PERMISSION_GRANTED) {
-            listPermissionsNeeded.add(Manifest.permission.ACCESS_FINE_LOCATION);
-        }
-        if (!listPermissionsNeeded.isEmpty()) {
-            ActivityCompat.requestPermissions(mActivity, listPermissionsNeeded.toArray(new String[listPermissionsNeeded.size()]), REQUEST_ID_MULTIPLE_PERMISSIONS);
-            return false;
-        }
-
-        if (CAMERAV != PackageManager.PERMISSION_GRANTED) {
-            listPermissionsNeeded.add(Manifest.permission.CAMERA);
-        }
-        if (!listPermissionsNeeded.isEmpty()) {
-            ActivityCompat.requestPermissions(mActivity, listPermissionsNeeded.toArray(new String[listPermissionsNeeded.size()]), REQUEST_ID_MULTIPLE_PERMISSIONS);
-            return false;
-        }
-        return true;
-    }
-
-    //This method will be called when the user will tap on allow or deny
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-
-        if (requestCode == STORAGE_PERMISSION_CODE) {
-
-            // if (grantResults.length > 0 && grantResults[2] == PackageManager.PERMISSION_GRANTED)
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
-            {
-//Displaying a toast
-                Toast.makeText(mContext, getResources().getString(R.string.Permission_granted_now_you_can_use_user_location_text), Toast.LENGTH_LONG).show();
-            } else {
-//Displaying another toast if permission is not granted
-                Toast.makeText(mContext, getResources().getString(R.string.Oops_you_just_denied_the_permission_text), Toast.LENGTH_LONG).show();
-                // checkAndRequestPermissions();
-            }
-
-            if (grantResults.length > 0 && grantResults[1] == PackageManager.PERMISSION_GRANTED) {
-//Displaying a toast
-                Toast.makeText(mContext, getResources().getString(R.string.Permission_granted_now_you_can_use_camera_text), Toast.LENGTH_LONG).show();
-            } else {
-//Displaying another toast if permission is not granted
-                Toast.makeText(mContext, getResources().getString(R.string.Oops_you_just_denied_the_permission_text), Toast.LENGTH_LONG).show();
-                // checkAndRequestPermissions();
-            }
-        }
-    }
 
 
 

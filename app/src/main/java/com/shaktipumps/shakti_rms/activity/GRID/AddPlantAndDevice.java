@@ -386,7 +386,7 @@ public class AddPlantAndDevice extends AppCompatActivity {
         }
     }
     public void ScannQRcode() {
-        if (checkAndRequestPermissions()) {
+
             try {
                 IntentIntegrator integrator = new IntentIntegrator(AddPlantAndDevice.this);
                 integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE_TYPES);
@@ -404,7 +404,7 @@ public class AddPlantAndDevice extends AppCompatActivity {
             } catch (ActivityNotFoundException anfe) {
                 Log.e("onCreate", "Scanner Not Found", anfe);
             }
-        }
+
 
     }
 
@@ -429,73 +429,8 @@ public class AddPlantAndDevice extends AppCompatActivity {
     }
 
 
-    private boolean checkAndRequestPermissions() {
-        int IMEI_NUM = ContextCompat.checkSelfPermission(mContextt, Manifest.permission.READ_PHONE_STATE);
-        int LOCATION = ContextCompat.checkSelfPermission(mContextt, Manifest.permission.ACCESS_FINE_LOCATION);
-        int CAMERAV = ContextCompat.checkSelfPermission(mContextt, Manifest.permission.CAMERA);
 
 
-        List<String> listPermissionsNeeded = new ArrayList<>();
-
-        if (IMEI_NUM != PackageManager.PERMISSION_GRANTED) {
-            listPermissionsNeeded.add(Manifest.permission.READ_PHONE_STATE);
-        }
-
-        if (LOCATION != PackageManager.PERMISSION_GRANTED) {
-            listPermissionsNeeded.add(Manifest.permission.ACCESS_FINE_LOCATION);
-        }
-
-        if (CAMERAV != PackageManager.PERMISSION_GRANTED) {
-            listPermissionsNeeded.add(Manifest.permission.CAMERA);
-        }
-        if (!listPermissionsNeeded.isEmpty()) {
-            ActivityCompat.requestPermissions(this, listPermissionsNeeded.toArray(new String[listPermissionsNeeded.size()]), REQUEST_ID_MULTIPLE_PERMISSIONS);
-            return false;
-        }
-        return true;
-    }
-
-    @TargetApi(Build.VERSION_CODES.M)
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == STORAGE_PERMISSION_CODE) {
-
-//If permission is granted
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-//Displaying a toast
-                //canGetLocation = true;
-                Toast.makeText(this, "Permission granted now you can read the storage", Toast.LENGTH_LONG).show();
-            } else {
-                //  canGetLocation = false;
-//Displaying another toast if permission is not granted
-                Toast.makeText(this, "Oops you just denied the permission", Toast.LENGTH_LONG).show();
-            }
-
-            if (grantResults.length > 0 && grantResults[1] == PackageManager.PERMISSION_GRANTED) {
-//Displaying a toast
-                // canGetLocation = true;
-                Toast.makeText(this, "Permission granted now you can use camera", Toast.LENGTH_LONG).show();
-            } else {
-                //  canGetLocation = false;
-//Displaying another toast if permission is not granted
-                Toast.makeText(this, "Oops you just denied the permission", Toast.LENGTH_LONG).show();
-            }
-
-            if (grantResults.length > 0 && grantResults[2] == PackageManager.PERMISSION_GRANTED) {
-//Displaying a toast
-                // canGetLocation = true;
-                Toast.makeText(this, "Permission granted now you can use user location", Toast.LENGTH_LONG).show();
-            } else {
-                // canGetLocation = false;
-//Displaying another toast if permission is not granted
-                Toast.makeText(this, "Oops you just denied the permission", Toast.LENGTH_LONG).show();
-            }
-
-
-        }
-    }
 
     private void callGetPlantListCheckAPI() {
 

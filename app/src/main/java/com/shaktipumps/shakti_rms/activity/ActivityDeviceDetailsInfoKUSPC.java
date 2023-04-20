@@ -1098,12 +1098,6 @@ public class ActivityDeviceDetailsInfoKUSPC extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-               /* Intent mIntent = new Intent(mContext, ActivityDeviceDetailsInfoShima.class);
-                mIntent.putExtra("mDeviceDetail", (Serializable) customerSearchesList);
-                mIntent.putExtra("mPos", mPosition);
-                mContext.startActivity(mIntent);
-*/
-
                 callTotalEnergyAndConjuptionAPI();
 
                 // overridePendingTransition(R.anim.right_to_left, R.anim.lefr_to_right);
@@ -1115,11 +1109,9 @@ public class ActivityDeviceDetailsInfoKUSPC extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (checkAndRequestPermissions()) {
+
                     Intent intent = new Intent(mContext, AddDevice.class);
                     startActivity(intent);
-                }
-                // overridePendingTransition(R.anim.right_to_left, R.anim.lefr_to_right);
                 rlvSlideMenuViewID.setVisibility(View.GONE);
             }
         });
@@ -1227,88 +1219,6 @@ public class ActivityDeviceDetailsInfoKUSPC extends AppCompatActivity {
                 })
                 .show();
 
-    }
-
-
-    /////////////////////////////////////////////////////////////////////////////
-    private boolean checkAndRequestPermissions() {
-
-        int SD_CARD = ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE);
-        int CAMERA = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA);
-        int LOCATION = ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION);
-        //   int TELEPHONY = ContextCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE);
-        //   int SMS = ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS);
-
-        List<String> listPermissionsNeeded = new ArrayList<>();
-        if (SD_CARD != PackageManager.PERMISSION_GRANTED) {
-            listPermissionsNeeded.add(Manifest.permission.READ_EXTERNAL_STORAGE);
-        }
-        if (CAMERA != PackageManager.PERMISSION_GRANTED) {
-            listPermissionsNeeded.add(Manifest.permission.CAMERA);
-        }
-        if (LOCATION != PackageManager.PERMISSION_GRANTED) {
-            listPermissionsNeeded.add(Manifest.permission.ACCESS_FINE_LOCATION);
-        }
-     /*   if (TELEPHONY != PackageManager.PERMISSION_GRANTED) {
-            listPermissionsNeeded.add(Manifest.permission.CALL_PHONE);
-        }
-        if (SMS != PackageManager.PERMISSION_GRANTED) {
-            listPermissionsNeeded.add(Manifest.permission.SEND_SMS);
-        }*/
-        if (!listPermissionsNeeded.isEmpty()) {
-            ActivityCompat.requestPermissions(this, listPermissionsNeeded.toArray(new String[listPermissionsNeeded.size()]), REQUEST_ID_MULTIPLE_PERMISSIONS);
-            return false;
-        }
-        return true;
-    }
-
-    //This method will be called when the user will tap on allow or deny
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == STORAGE_PERMISSION_CODE) {
-
-//If permission is granted
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-//Displaying a toast
-                Toast.makeText(this, "Permission granted now you can read the storage", Toast.LENGTH_LONG).show();
-            } else {
-//Displaying another toast if permission is not granted
-                Toast.makeText(this, "Oops you just denied the permission", Toast.LENGTH_LONG).show();
-            }
-
-            if (grantResults.length > 0 && grantResults[1] == PackageManager.PERMISSION_GRANTED) {
-//Displaying a toast
-                Toast.makeText(this, "Permission granted now you can use camera", Toast.LENGTH_LONG).show();
-            } else {
-//Displaying another toast if permission is not granted
-                Toast.makeText(this, "Oops you just denied the permission", Toast.LENGTH_LONG).show();
-            }
-
-            if (grantResults.length > 0 && grantResults[2] == PackageManager.PERMISSION_GRANTED) {
-//Displaying a toast
-                Toast.makeText(this, "Permission granted now you can use user location", Toast.LENGTH_LONG).show();
-            } else {
-//Displaying another toast if permission is not granted
-                Toast.makeText(this, "Oops you just denied the permission", Toast.LENGTH_LONG).show();
-            }
-
-           /* if (grantResults.length > 0 && grantResults[3] == PackageManager.PERMISSION_GRANTED) {
-//Displaying a toast
-                Toast.makeText(this, "Permission granted now you can able to call", Toast.LENGTH_LONG).show();
-            } else {
-//Displaying another toast if permission is not granted
-                Toast.makeText(this, "Oops you just denied the permission", Toast.LENGTH_LONG).show();
-            }
-            if (grantResults.length > 0 && grantResults[4] == PackageManager.PERMISSION_GRANTED) {
-//Displaying a toast
-                Toast.makeText(this, "Permission granted now you can able to send sms", Toast.LENGTH_LONG).show();
-            } else {
-//Displaying another toast if permission is not granted
-                Toast.makeText(this, "Oops you just denied the permission", Toast.LENGTH_LONG).show();
-            }*/
-        }
     }
 
 

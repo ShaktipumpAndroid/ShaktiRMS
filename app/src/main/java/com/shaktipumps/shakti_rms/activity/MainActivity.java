@@ -313,12 +313,10 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
                 break;
 
             case 1:
-                if (checkAndRequestPermissions()) {
+
                     Intent intent1 = new Intent(mContext, AddDevice.class);
                     startActivity(intent1);
-                }
-                /*intent = new Intent(MainActivity.this, AddDevice.class);
-                startActivity(intent);*/
+
                 break;
 
           /*  case 2:
@@ -651,76 +649,6 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
 
     }
 
-    public void showMap() {
-        progressDialog.show(); // Display Progress Dialog
-
-        new Thread(new Runnable() {
-            public void run() {
-                try {
-                    if (CustomUtility.isOnline(mContex)) {
-                        progressDialog.dismiss();
-                        Intent intent = new Intent(mContex, MapsActivity.class);
-                        intent.putExtra("MUserId", pref.getString("key_muserid", "invalid_muserid"));
-
-                        if (clientid == 0) // for single user
-                        {
-                            intent.putExtra("ClientId", "0");
-                        } else // for org user
-                        // this client id is taken from home layout for selected org client
-                        {
-                            intent.putExtra("ClientId", pref.getString("key_clientid_for_map", "0"));
-                        }
-                        intent.putExtra("MDeviceId", "0");
-                        mContex.startActivity(intent);
-                    } else {
-                        progressDialog.dismiss();
-                        CustomUtility.isErrorDialog(mContex, "Error", "No Internet Connection");
-                    }
-
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-
-            }
-        }).start();
-
-    }
-
-
-    public void device_activation_pending() {
-        progressDialog = new ProgressDialog(mContex);
-        progressDialog.setMessage("Loading..."); // Setting Message
-        progressDialog.setTitle("Please wait..."); // Setting Title
-        progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER); // Progress Dialog Style Spinner
-        progressDialog.show(); // Display Progress Dialog
-        progressDialog.setCancelable(false);
-
-        new Thread(new Runnable() {
-            public void run() {
-                try {
-
-
-                    if (CustomUtility.isOnline(mContex)) {
-                        progressDialog.dismiss();
-                        Intent intent = new Intent(MainActivity.this, ActivationPendingActivity.class);
-                        startActivity(intent);
-
-
-                    } else {
-                        progressDialog.dismiss();
-                        CustomUtility.isErrorDialog(mContex, "Error", getString(R.string.st_Pleasecheckinternetconnection));
-
-                    }
-
-
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-
-
-            }
-        }).start();
-    }
 
     @Override
     public void onBackPressed() {
@@ -749,156 +677,6 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
         alert.show();
     }
 
-
-    /////////////////////////////////////////////////////////////////////////////
-
-    private boolean checkAndRequestPermissions() {
-        int IMEI_NUM = ContextCompat.checkSelfPermission(mContext, Manifest.permission.READ_PHONE_STATE);
-        int LOCATION = ContextCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_FINE_LOCATION);
-        int CAMERAV = ContextCompat.checkSelfPermission(mContext, Manifest.permission.CAMERA);
-
-
-        List<String> listPermissionsNeeded = new ArrayList<>();
-
-        if (IMEI_NUM != PackageManager.PERMISSION_GRANTED) {
-            listPermissionsNeeded.add(Manifest.permission.READ_PHONE_STATE);
-        }
-
-        if (LOCATION != PackageManager.PERMISSION_GRANTED) {
-            listPermissionsNeeded.add(Manifest.permission.ACCESS_FINE_LOCATION);
-        }
-
-        if (CAMERAV != PackageManager.PERMISSION_GRANTED) {
-            listPermissionsNeeded.add(Manifest.permission.CAMERA);
-        }
-        if (!listPermissionsNeeded.isEmpty()) {
-            ActivityCompat.requestPermissions(mActivity, listPermissionsNeeded.toArray(new String[listPermissionsNeeded.size()]), REQUEST_ID_MULTIPLE_PERMISSIONS);
-            return false;
-        }
-        return true;
-    }
-
-    @TargetApi(Build.VERSION_CODES.M)
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == STORAGE_PERMISSION_CODE) {
-
-//If permission is granted
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-//Displaying a toast
-
-                Toast.makeText(mActivity, "Permission granted now you can read the storage", Toast.LENGTH_LONG).show();
-            } else {
-
-//Displaying another toast if permission is not granted
-                Toast.makeText(mActivity, "Oops you just denied the permission", Toast.LENGTH_LONG).show();
-            }
-
-            if (grantResults.length > 0 && grantResults[1] == PackageManager.PERMISSION_GRANTED) {
-//Displaying a toast
-
-                Toast.makeText(mActivity, "Permission granted now you can use camera", Toast.LENGTH_LONG).show();
-            } else {
-
-//Displaying another toast if permission is not granted
-                Toast.makeText(mActivity, "Oops you just denied the permission", Toast.LENGTH_LONG).show();
-            }
-
-            if (grantResults.length > 0 && grantResults[2] == PackageManager.PERMISSION_GRANTED) {
-//Displaying a toast
-
-                Toast.makeText(mActivity, "Permission granted now you can use user location", Toast.LENGTH_LONG).show();
-            } else {
-
-//Displaying another toast if permission is not granted
-                Toast.makeText(mActivity, "Oops you just denied the permission", Toast.LENGTH_LONG).show();
-            }
-
-
-        }
-    }
-
-
-    /*    private boolean checkAndRequestPermissions() {
-
-        int SD_CARD = ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE);
-        int CAMERA = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA);
-        int LOCATION = ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION);
-        //   int TELEPHONY = ContextCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE);
-        //   int SMS = ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS);
-
-        List<String> listPermissionsNeeded = new ArrayList<>();
-        if (SD_CARD != PackageManager.PERMISSION_GRANTED) {
-            listPermissionsNeeded.add(Manifest.permission.READ_EXTERNAL_STORAGE);
-        }
-        if (CAMERA != PackageManager.PERMISSION_GRANTED) {
-            listPermissionsNeeded.add(Manifest.permission.CAMERA);
-        }
-        if (LOCATION != PackageManager.PERMISSION_GRANTED) {
-            listPermissionsNeeded.add(Manifest.permission.ACCESS_FINE_LOCATION);
-        }
-     *//*   if (TELEPHONY != PackageManager.PERMISSION_GRANTED) {
-            listPermissionsNeeded.add(Manifest.permission.CALL_PHONE);
-        }
-        if (SMS != PackageManager.PERMISSION_GRANTED) {
-            listPermissionsNeeded.add(Manifest.permission.SEND_SMS);
-        }*//*
-        if (!listPermissionsNeeded.isEmpty()) {
-            ActivityCompat.requestPermissions(this, listPermissionsNeeded.toArray(new String[listPermissionsNeeded.size()]), REQUEST_ID_MULTIPLE_PERMISSIONS);
-            return false;
-        }
-        return true;
-    }
-
-    //This method will be called when the user will tap on allow or deny
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-
-        if (requestCode == STORAGE_PERMISSION_CODE) {
-
-//If permission is granted
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-//Displaying a toast
-                Toast.makeText(this, "Permission granted now you can read the storage", Toast.LENGTH_LONG).show();
-            } else {
-//Displaying another toast if permission is not granted
-                Toast.makeText(this, "Oops you just denied the permission", Toast.LENGTH_LONG).show();
-            }
-
-            if (grantResults.length > 0 && grantResults[1] == PackageManager.PERMISSION_GRANTED) {
-//Displaying a toast
-                Toast.makeText(this, "Permission granted now you can use camera", Toast.LENGTH_LONG).show();
-            } else {
-//Displaying another toast if permission is not granted
-                Toast.makeText(this, "Oops you just denied the permission", Toast.LENGTH_LONG).show();
-            }
-
-            if (grantResults.length > 0 && grantResults[2] == PackageManager.PERMISSION_GRANTED) {
-//Displaying a toast
-                Toast.makeText(this, "Permission granted now you can use user location", Toast.LENGTH_LONG).show();
-            } else {
-//Displaying another toast if permission is not granted
-                Toast.makeText(this, "Oops you just denied the permission", Toast.LENGTH_LONG).show();
-            }
-
-           *//* if (grantResults.length > 0 && grantResults[3] == PackageManager.PERMISSION_GRANTED) {
-//Displaying a toast
-                Toast.makeText(this, "Permission granted now you can able to call", Toast.LENGTH_LONG).show();
-            } else {
-//Displaying another toast if permission is not granted
-                Toast.makeText(this, "Oops you just denied the permission", Toast.LENGTH_LONG).show();
-            }
-            if (grantResults.length > 0 && grantResults[4] == PackageManager.PERMISSION_GRANTED) {
-//Displaying a toast
-                Toast.makeText(this, "Permission granted now you can able to send sms", Toast.LENGTH_LONG).show();
-            } else {
-//Displaying another toast if permission is not granted
-                Toast.makeText(this, "Oops you just denied the permission", Toast.LENGTH_LONG).show();
-            }*//*
-        }
-    }*/
 
 
 }

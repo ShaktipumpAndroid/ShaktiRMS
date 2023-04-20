@@ -395,6 +395,7 @@
     <string name="MWh">MWh</string>
 
     <string name="MWp">MWp</string>
+    <string name="all_permission">Please allow all the permission</string>
 
 
 </resources>

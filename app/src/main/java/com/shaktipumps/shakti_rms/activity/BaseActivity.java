@@ -265,49 +265,6 @@ public class BaseActivity extends AppCompatActivity {
 
 
 
-    private boolean checkAndRequestPermissions() {
-        int IMEI_NUM = ContextCompat.checkSelfPermission(mContext, Manifest.permission.READ_PHONE_STATE);
-
-
-
-        List<String> listPermissionsNeeded = new ArrayList<>();
-
-        if (IMEI_NUM != PackageManager.PERMISSION_GRANTED) {
-            listPermissionsNeeded.add(Manifest.permission.READ_PHONE_STATE);
-        }
-
-
-        if (!listPermissionsNeeded.isEmpty()) {
-            ActivityCompat.requestPermissions(mActivity, listPermissionsNeeded.toArray(new String[listPermissionsNeeded.size()]), REQUEST_ID_MULTIPLE_PERMISSIONS);
-            return false;
-        }
-        return true;
-    }
-
-    //This method will be called when the user will tap on allow or deny
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == STORAGE_PERMISSION_CODE) {
-
-            // if (grantResults.length > 0 && grantResults[2] == PackageManager.PERMISSION_GRANTED)
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-//Displaying a toast
-                Toast.makeText(mContext, getResources().getString(R.string.Permission_granted_now_you_can_use_user_imeinumber_text), Toast.LENGTH_LONG).show();
-            } else {
-//Displaying another toast if permission is not granted
-                Toast.makeText(mContext, getResources().getString(R.string.Oops_you_just_denied_the_permission_text), Toast.LENGTH_LONG).show();
-                checkAndRequestPermissions();
-            }
-
-        } else {
-            //permission_set_manually
-            Toast.makeText(mContext, getResources().getString(R.string.permission_set_manually), Toast.LENGTH_LONG).show();
-        }
-
-    }
-
 
 
 

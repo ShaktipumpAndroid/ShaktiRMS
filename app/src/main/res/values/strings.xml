@@ -446,6 +446,7 @@
     <string name="Map">Map</string>
 
     <string name="st_W">W</string>
+    <string name="all_permission">Please allow all the permission</string>
 
 
 </resources>

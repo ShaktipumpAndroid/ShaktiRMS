@@ -194,7 +194,7 @@ public class HomeFragment extends Fragment {
       //  txtAddDeviceBTNID = (CircleButton) rootView.findViewById(R.id.txtAddDeviceBTNID);
         //txtAddDeviceBTNID = (ImageView) rootView.findViewById(R.id.txtAddDeviceBTNID);
         txtAddDeviceBTNID = (CircleButton) rootView.findViewById(R.id.txtAddDeviceBTNID);
-       checkAndRequestPermissions();
+
 
         rlvPlantViewID.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -1479,73 +1479,6 @@ public class HomeFragment extends Fragment {
     }
 
 
-
-    private boolean checkAndRequestPermissions() {
-        int IMEI_NUM = ContextCompat.checkSelfPermission(mContext, Manifest.permission.READ_PHONE_STATE);
-        int LOCATION = ContextCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_FINE_LOCATION);
-        int CAMERAV = ContextCompat.checkSelfPermission(mContext, Manifest.permission.CAMERA);
-
-
-        List<String> listPermissionsNeeded = new ArrayList<>();
-
-        if (IMEI_NUM != PackageManager.PERMISSION_GRANTED) {
-            listPermissionsNeeded.add(Manifest.permission.READ_PHONE_STATE);
-        }
-
-        if (LOCATION != PackageManager.PERMISSION_GRANTED) {
-            listPermissionsNeeded.add(Manifest.permission.ACCESS_FINE_LOCATION);
-        }
-
-        if (CAMERAV != PackageManager.PERMISSION_GRANTED) {
-            listPermissionsNeeded.add(Manifest.permission.CAMERA);
-        }
-        if (!listPermissionsNeeded.isEmpty()) {
-            ActivityCompat.requestPermissions(mActivity, listPermissionsNeeded.toArray(new String[listPermissionsNeeded.size()]), REQUEST_ID_MULTIPLE_PERMISSIONS);
-            return false;
-        }
-        return true;
-    }
-
-    @TargetApi(Build.VERSION_CODES.M)
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-
-        if (requestCode == STORAGE_PERMISSION_CODE) {
-
-//If permission is granted
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-//Displaying a toast
-
-                Toast.makeText(mActivity, "Permission granted now you can read the storage", Toast.LENGTH_LONG).show();
-            } else {
-
-//Displaying another toast if permission is not granted
-                Toast.makeText(mActivity, "Oops you just denied the permission", Toast.LENGTH_LONG).show();
-            }
-
-            if (grantResults.length > 0 && grantResults[1] == PackageManager.PERMISSION_GRANTED) {
-//Displaying a toast
-
-                Toast.makeText(mActivity, "Permission granted now you can use camera", Toast.LENGTH_LONG).show();
-            } else {
-
-//Displaying another toast if permission is not granted
-                Toast.makeText(mActivity, "Oops you just denied the permission", Toast.LENGTH_LONG).show();
-            }
-
-            if (grantResults.length > 0 && grantResults[2] == PackageManager.PERMISSION_GRANTED) {
-//Displaying a toast
-
-                Toast.makeText(mActivity, "Permission granted now you can use user location", Toast.LENGTH_LONG).show();
-            } else {
-
-//Displaying another toast if permission is not granted
-                Toast.makeText(mActivity, "Oops you just denied the permission", Toast.LENGTH_LONG).show();
-            }
-        }
-    }
-
-    //////////////////////////////////////////Palnatttttt
 
     private void setDataAdapter(){
         if (recyclerViewAdapter != null)

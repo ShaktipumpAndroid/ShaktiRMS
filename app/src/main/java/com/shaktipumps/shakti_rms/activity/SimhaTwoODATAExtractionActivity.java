@@ -420,7 +420,7 @@ public class SimhaTwoODATAExtractionActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                requestStoragePermission();
+
                 UploadFileToServerOption(mContext);
                 //showFileChooser();
                 // fileUplaodToServer(mContext);
@@ -2838,8 +2838,17 @@ public class SimhaTwoODATAExtractionActivity extends AppCompatActivity {
 
 
     private void changeButtonVisibility(boolean state, float alphaRate, TextView txtDoanloadFileBTNID) {
-        txtDoanloadFileBTNID.setEnabled(state);
-        txtDoanloadFileBTNID.setAlpha(alphaRate);
+        runOnUiThread(new Runnable() {
+
+            @Override
+            public void run() {
+
+                txtUploadBTNID.setEnabled(state);
+                txtUploadBTNID.setAlpha(alphaRate);
+
+            }
+        });
+
     }
 
     /////////////////////////////
@@ -4577,7 +4586,7 @@ public class SimhaTwoODATAExtractionActivity extends AppCompatActivity {
 
                 try {
                  //   filePath = "/storage/emulated/0/Android/data/com.shaktipumps.shakti_rms/files/Month_" + mBtNameHead + ".xls";//Month_26-0018-0-18-03-19-0.xls";
-                    filePath = "/storage/emulated/0/Documents/ShaktiExtractionFile/Month_" + mBtNameHead + ".xls";//Month_26-0018-0-18-03-19-0.xls";
+                    filePath = "/storage/emulated/0/Documents/ShaktiExtractionFile/DAY_" + mBtNameHead + ".xls";//Month_26-0018-0-18-03-19-0.xls";
                     // Log.d("picUri", picUri.toString());
                     Log.d("filePath", filePath);
                   //  String[] mDataNameString = filePath.split("files/");
@@ -4597,7 +4606,7 @@ public class SimhaTwoODATAExtractionActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    filePath = "/storage/emulated/0/Documents/ShaktiExtractionFile/Day_" + mBtNameHead + ".xls";//Month_26-0018-0-18-03-19-0.xls";
+                    filePath = "/storage/emulated/0/Documents/ShaktiExtractionFile/Month_" + mBtNameHead + ".xls";//Month_26-0018-0-18-03-19-0.xls";
                //     filePath = "/storage/emulated/0/Android/data/com.shaktipumps.shakti_rms/files/Day_" + mBtNameHead + ".xls";//Month_26-0018-0-18-03-19-0.xls";
                     // Log.d("picUri", picUri.toString());
                     Log.d("filePath", filePath);
@@ -4773,11 +4782,13 @@ public class SimhaTwoODATAExtractionActivity extends AppCompatActivity {
                 public void onResponse(Call<ProfileUpdateModel> call, retrofit2.Response<ProfileUpdateModel> response) {
                     try {
                         ProfileUpdateModel dashResponse = response.body();
-                        Log.e("status", "** " + dashResponse);
-                        if (dashResponse.getStatus().equalsIgnoreCase("true")) {
-                            Toast.makeText(mContext, dashResponse.getMessage(), Toast.LENGTH_SHORT).show();
-                        } else {
-                            Toast.makeText(mContext, dashResponse.getMessage(), Toast.LENGTH_SHORT).show();
+
+                        if (dashResponse != null) {
+                            if (dashResponse.getStatus().equalsIgnoreCase("true")) {
+                                Toast.makeText(mContext, dashResponse.getMessage(), Toast.LENGTH_SHORT).show();
+                            } else {
+                                Toast.makeText(mContext, dashResponse.getMessage(), Toast.LENGTH_SHORT).show();
+                            }
                         }
                         baseRequest.hideLoader();
                     } catch (Exception e) {
@@ -4804,97 +4815,6 @@ public class SimhaTwoODATAExtractionActivity extends AppCompatActivity {
     }
 
 
-    /*New code for permission in android 11*/
-    public void takePermissions() {
-
-        if(isPermissionsGranted()){
-            Toast.makeText(mContext, "Permission already Granted", Toast.LENGTH_SHORT).show();
-        }
-        else
-        {
-            takePermission();
-        }
-
-
-    }
-
-    private boolean isPermissionsGranted() {
-        if (Build.VERSION.SDK_INT == Build.VERSION_CODES.R) {
-            // android 11
-            return Environment.isExternalStorageManager();
-        } else {
-            int readEnternalStoragePermission = ContextCompat.checkSelfPermission(mContext, Manifest.permission.READ_EXTERNAL_STORAGE);
-            return readEnternalStoragePermission == PackageManager.PERMISSION_GRANTED;
-        }
-
-    }
-
-    private void takePermission()
-    {
-        if (Build.VERSION.SDK_INT == Build.VERSION_CODES.R){
-            try{
-                Intent intent = new Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION);
-                intent.addCategory("android.intent.category.DEFAULT");
-                intent.setData(Uri.parse(String.format("package:%s",getApplicationContext().getApplicationContext())));
-                startActivityForResult(intent, 100);
-            }catch (Exception exception)
-            {
-                Intent intent = new Intent(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
-                startActivityForResult(intent, 100);
-            }
-        }
-        else
-        {
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 101);
-        }
-
-    }
-
-
-    /*End New code for permission in android 11*/
-
-
-    //Requesting permission
-    private void requestStoragePermission() {
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED)
-            return;
-
-        if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.READ_EXTERNAL_STORAGE)) {
-        }
-        //And finally ask for the permission
-        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, STORAGE_PERMISSION_CODE);
-    }
-
-    //This method will be called when the user will tap on allow or deny
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        //Checking the request code of our request
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == STORAGE_PERMISSION_CODE) {
-            //If permission is granted
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                //Displaying a toast
-                Toast.makeText(this, "Permission granted now you can read the storage", Toast.LENGTH_LONG).show();
-            } else {
-                //Displaying another toast if permission is not granted
-                Toast.makeText(this, "Oops you just denied the permission", Toast.LENGTH_LONG).show();
-            }
-        } else {
-            Toast.makeText(mContext, getResources().getString(R.string.permission_set_manually), Toast.LENGTH_LONG).show();
-        }
-
-        if(grantResults.length > 0)
-        {
-            boolean readExternalStorage = grantResults[0] == PackageManager.PERMISSION_GRANTED;
-            if(readExternalStorage){
-                Toast.makeText(mContext, "Read permissin is granted in android 10 or below", Toast.LENGTH_SHORT).show();
-            }
-            else
-            {
-                takePermission();
-            }
-        }
-    }
 
     private String getPath(Uri contentUri) {
         String[] proj = {MediaStore.Images.Media.DATA};
@@ -4931,10 +4851,7 @@ public class SimhaTwoODATAExtractionActivity extends AppCompatActivity {
                     {
                         Toast.makeText(mContext, "Permission granted in andorid 11 and above!", Toast.LENGTH_SHORT).show();
                     }
-                    else
-                    {
-                        takePermission();
-                    }
+
                 }
 
             }
@@ -5255,5 +5172,11 @@ public class SimhaTwoODATAExtractionActivity extends AppCompatActivity {
         }
     }
 
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if(BTReceiver!=null){
+            unregisterReceiver(BTReceiver);
+        }
+    }
 }
