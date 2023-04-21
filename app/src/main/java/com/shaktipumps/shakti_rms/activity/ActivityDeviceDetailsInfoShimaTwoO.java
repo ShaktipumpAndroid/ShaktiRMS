@@ -785,7 +785,6 @@ public class ActivityDeviceDetailsInfoShimaTwoO extends AppCompatActivity {
     @Override
     public void onDestroy() {
         try {
-            progressDialog.dismiss();
 
             if (progressDialog != null)
                 progressDialog = null;

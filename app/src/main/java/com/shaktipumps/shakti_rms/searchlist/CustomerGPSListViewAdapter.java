@@ -275,7 +275,7 @@ public class CustomerGPSListViewAdapter extends BaseAdapter {
                 NewSolarVFD.DEVICE_NUMBER_PAYMENT = customerSearchesList.get(position).getDeviceNo();
 
                 //SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-                @SuppressLint("SimpleDateFormat") SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+                @SuppressLint("SimpleDateFormat") SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd hh:mm:ss");
                 Date currentDate = new Date();
                 Date strDate = null;
                 try {

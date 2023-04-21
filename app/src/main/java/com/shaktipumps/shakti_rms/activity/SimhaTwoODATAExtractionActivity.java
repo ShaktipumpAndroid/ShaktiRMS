@@ -4585,11 +4585,11 @@ public class SimhaTwoODATAExtractionActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 try {
-                 //   filePath = "/storage/emulated/0/Android/data/com.shaktipumps.shakti_rms/files/Month_" + mBtNameHead + ".xls";//Month_26-0018-0-18-03-19-0.xls";
-                    filePath = "/storage/emulated/0/Documents/ShaktiExtractionFile/DAY_" + mBtNameHead + ".xls";//Month_26-0018-0-18-03-19-0.xls";
-                    // Log.d("picUri", picUri.toString());
+                    File file = new File(GlobalMethod.commonDocumentDirPath("ShaktiExtractionFile"), "DAY_" + mBtNameHead + ".xls");
+
+
+                    filePath = file.getAbsolutePath();//Month_26-0018-0-18-03-19-0.xls";
                     Log.d("filePath", filePath);
-                  //  String[] mDataNameString = filePath.split("files/");
                     String[] mDataNameString = filePath.split("ShaktiExtractionFile/");
                     String[] mDataNameString1 = mDataNameString[1].split(".xls");
                     String[] mDataNameString2 = mDataNameString1[0].split("_");
@@ -4606,12 +4606,11 @@ public class SimhaTwoODATAExtractionActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    filePath = "/storage/emulated/0/Documents/ShaktiExtractionFile/Month_" + mBtNameHead + ".xls";//Month_26-0018-0-18-03-19-0.xls";
-               //     filePath = "/storage/emulated/0/Android/data/com.shaktipumps.shakti_rms/files/Day_" + mBtNameHead + ".xls";//Month_26-0018-0-18-03-19-0.xls";
-                    // Log.d("picUri", picUri.toString());
+                    File file = new File(GlobalMethod.commonDocumentDirPath("ShaktiExtractionFile"), "Month_" + mBtNameHead + ".xls");
+                    filePath = file.getAbsolutePath();//Month_26-0018-0-18-03-19-0.xls";
+                 /*   filePath = "/storage/emulated/0/Documents/ShaktiExtractionFile/Month_" + mBtNameHead + ".xls";//Month_26-0018-0-18-03-19-0.xls";
                     Log.d("filePath", filePath);
-                   // String[] mDataNameString = filePath.split("files/");
-                    String[] mDataNameString = filePath.split("ShaktiExtractionFile/");
+                 */   String[] mDataNameString = filePath.split("ShaktiExtractionFile/");
                     String[] mDataNameString1 = mDataNameString[1].split(".xls");
                     String[] mDataNameString2 = mDataNameString1[0].split("_");
                     GetProfileUpdate_Task(mDataNameString2[1], mDataNameString2[0], headerLenghtMonth);
@@ -4650,12 +4649,12 @@ public class SimhaTwoODATAExtractionActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 try {
-                  //  filePath = "/storage/emulated/0/Android/data/com.shaktipumps.shakti_rms/files/DongleDay_" + mBtNameHead + ".xls";//Month_26-0018-0-18-03-19-0.xls";
-                    filePath = "/storage/emulated/0/Documents/ShaktiExtractionFile/DongleDay_" + mBtNameHead + ".xls";//Month_26-0018-0-18-03-19-0.xls";
-                    // Log.d("picUri", picUri.toString());
+                  //  filePath = "/storage/emulated/0/Documents/ShaktiExtractionFile/DongleDay_" + mBtNameHead + ".xls";//Month_26-0018-0-18-03-19-0.xls";
+                    File file = new File(GlobalMethod.commonDocumentDirPath("ShaktiExtractionFile"), "DongleDay_" + mBtNameHead + ".xls");
+                    filePath = file.getAbsolutePath();//Month_26-0018-0-18-03-19-0.xls";
+
                     Log.d("filePath", filePath);
 
-                   // String[] mDataNameString = filePath.split("files/");
                     String[] mDataNameString = filePath.split("ShaktiExtractionFile/");
                     String[] mDataNameString1 = mDataNameString[1].split(".xls");
                     String[] mDataNameString2 = mDataNameString1[0].split("_");
