@@ -57,7 +57,10 @@ import com.shaktipumps.shakti_rms.retrofit.BaseRequest;
 import com.shaktipumps.shakti_rms.webservice.GlobalMethod;
 import com.shaktipumps.shakti_rms.webservice.NewSolarVFD;
 
+import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFCellStyle;
+import org.apache.poi.hssf.usermodel.HSSFRow;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.hssf.util.HSSFColor;
 import org.apache.poi.ss.usermodel.Cell;
@@ -476,9 +479,7 @@ public class SimhaTwoODATAExtractionActivity extends AppCompatActivity {
                 mPostionFinal = 0;
                 mBoolflag = false;
                 mCheckCLICKDayORMonth = 1;/////////months
-                // new BluetoothCommunicationForFirstActivity().execute("M0000000000E", "M0000000000E", "START");
-                //    new BluetoothCommunicationForFirstActivity().execute(":MDATA#", ":MDATA#", "START");
-                if (mMonthHeaderList.size() > 0)
+                  if (mMonthHeaderList.size() > 0)
                     mMonthHeaderList.clear();
 
                 runOnUiThread(new Runnable() {
@@ -4051,7 +4052,6 @@ public class SimhaTwoODATAExtractionActivity extends AppCompatActivity {
             //  baseRequest.showLoader();
         }
 
-        @RequiresApi(api = Build.VERSION_CODES.KITKAT)
         @Override
         protected Boolean doInBackground(String... requests) //while the progress dialog is shown, the connection is done in background
         {
@@ -4334,41 +4334,6 @@ public class SimhaTwoODATAExtractionActivity extends AppCompatActivity {
                                     //      baseRequest.hideLoader();
                                 }
 
-                                mvDay = mDay;
-                                mvMonth = mMonth;
-                                mvYear = mYear;
-                                mvHour = "" + mHour;
-                                mvMinute = "" + mMinut;
-                                mvNo_of_Start = "" + mStatus;
-
-                                fvFrequency = fFrequency;
-                                fvRMSVoltage = fRMSVoltage;
-                                fvOutputCurrent = fOutputCurrent;
-                                mvRPM = "" + mRPM;
-                                fvLPM = fLPM;
-                                fvPVVoltage = fPVVoltage;
-                                fvPVCurrent = fPVCurrent;
-                                mvFault = "" + mFault;
-                                fvInvTemp = fInvTemp;
-
-                                mvDay = mDay;
-                                mvMonth = mMonth;
-                                mvYear = mYear;
-                                mvHour = "" + mHour;
-                                mvMinute = "" + mMinut;
-                                mvNo_of_Start = "" + mStatus;
-
-                                fvFrequency = fFrequency;
-                                fvRMSVoltage = fRMSVoltage;
-                                fvOutputCurrent = fOutputCurrent;
-                                mvRPM = "" + mRPM;
-                                fvLPM = fLPM;
-                                fvPVVoltage = fPVVoltage;
-                                fvPVCurrent = fPVCurrent;
-                                mvFault = "" + mFault;
-                                fvInvTemp = fInvTemp;
-
-
                             } else {
                                 // cs.setFillPattern(HSSFCellStyle.NO_FILL);
                                 row = sheet1.createRow(mPostionFinal + 1);
@@ -4442,12 +4407,6 @@ public class SimhaTwoODATAExtractionActivity extends AppCompatActivity {
                                             e.printStackTrace();
                                         }
 
-                                       /* sheet1.setColumnWidth(j, (10 * 200));
-                                        fFrequency = mTotalTime[j];
-
-                                        c = row.createCell(j);
-                                        c.setCellValue("" + fFrequency);
-                                        c.setCellStyle(cs);*/
                                     }
                                 } catch (NumberFormatException e) {
                                     e.printStackTrace();
@@ -4472,21 +4431,6 @@ public class SimhaTwoODATAExtractionActivity extends AppCompatActivity {
                             fvPVCurrent = fPVCurrent;
                             mvFault = "" + mFault;
                             fvInvTemp = fInvTemp;
-
-                           /* if (((mDay == 0) || (mMonth == 0) || (mYear == 0))) {
-
-                                baseRequest.showLoader();
-
-                            } else if ((mDay != 255) && (mMonth != 255) && (mYear != 255)) {
-                                runOnUiThread(new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        // addHeadersDay();
-                                        // addDataMonth(mPostionFinal + 1, mvDay + "", mvMonth + "", mvYear + "", mvHour, mvMinute, mvNo_of_Start, fvFrequency, fvRMSVoltage, fvOutputCurrent, mvRPM, fvLPM, fvPVVoltage, fvPVCurrent, mvFault, fvInvTemp);
-                                        addDataMonth(mPostionFinal + 1, mvDay + "", mvMonth + "", mvYear + "", mTotalTime);
-                                    }
-                                });
-                            }*/
 
                             mPostionFinal++;
                         }
