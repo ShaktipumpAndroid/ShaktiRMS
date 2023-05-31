@@ -25,7 +25,10 @@ import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.shaktipumps.shakti_rms.R;
 import com.shaktipumps.shakti_rms.bean.UserBeanOTP.UserRegistratinModel;
+import com.shaktipumps.shakti_rms.model.Register.RegisterResponse;
 import com.shaktipumps.shakti_rms.other.CustomUtility;
+import com.shaktipumps.shakti_rms.retrofit.ApiClient;
+import com.shaktipumps.shakti_rms.retrofit.ApiInterface;
 import com.shaktipumps.shakti_rms.retrofit.BaseRequest;
 import com.shaktipumps.shakti_rms.retrofit.RequestReciever;
 import com.shaktipumps.shakti_rms.webservice.CustomHttpClient;
@@ -33,15 +36,21 @@ import com.shaktipumps.shakti_rms.webservice.NewSolarVFD;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
+import org.jetbrains.annotations.NotNull;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class NewAccountActivity extends AppCompatActivity {
     private Toolbar mToolbar;
     private ProgressDialog progressDialog;
     private TextView btn_new_account;
     String otp = "null";
+    ApiInterface apiInterface;
     private TextInputLayout input_layout_user_lastname,input_layout_user_firstname,inputLayoutUserName, inputLayoutPassword,inputLayoutConfirmPassword,
                            inputLayoutController,inputLayoutPhone,inputLayoutAddress;
     private EditText et_user_lastname,et_user_firstname,inputUserName, inputPassword,inputConfirmPassword,inputController,inputPhone,inputAddress;
@@ -108,8 +117,6 @@ public class NewAccountActivity extends AppCompatActivity {
             btn_new_account.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
-
 
                     submitForm();
 
@@ -192,7 +199,7 @@ public class NewAccountActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
 
 
-                        serverLogin();
+                        registerUser();
 
                         dialog.cancel();
                         dialog.dismiss();
@@ -212,6 +219,60 @@ public class NewAccountActivity extends AppCompatActivity {
                 .show();
 
 
+    }
+
+    private void registerUser() {
+
+        ProgressDialog progress;
+
+        progress = new ProgressDialog(this);
+        progress.setTitle("Please Wait!!");
+        progress.setMessage("Wait!!");
+        progress.setCancelable(true);
+        progress.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        progress.show();
+
+        lastname = et_user_lastname.getText().toString();
+        firstname = et_user_firstname.getText().toString();
+        username = inputUserName.getText().toString();
+        password = inputPassword.getText().toString();
+        confirmPassword = inputConfirmPassword.getText().toString();
+        phone_no = inputPhone.getText().toString();
+        address = inputAddress.getText().toString();
+
+        apiInterface = ApiClient.getClientRegister().create(ApiInterface.class);
+        Call<RegisterResponse> call = apiInterface.sendUserRegister("0","0", firstname, lastname ,username,password,phone_no,address,"true");
+
+        Log.e("URL====>",call.request().url().toString());
+        call.enqueue(new Callback<RegisterResponse>() {
+            @Override
+            public void onResponse(@NotNull Call<RegisterResponse> call, @NotNull Response<RegisterResponse> response) {
+
+
+                if(response!=null && response.isSuccessful()){
+                    Log.e("response=====>",response.body().toString());
+
+                    Log.e("RESPONSE===>", "" + response.body().getMFirstName());
+
+                    if (response.body().getActive())
+                    {
+                        progress.dismiss();
+                        Toast.makeText(NewAccountActivity.this, "USER REGISTERED SUCCESSFULLY ", Toast.LENGTH_SHORT).show();
+                    } else {
+                        progress.dismiss();
+                        Toast.makeText(NewAccountActivity.this, "USERNAME ALREADY REGISTERED TRY SOMETHING ElES" , Toast.LENGTH_SHORT).show();
+
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(@NotNull Call<RegisterResponse> call, @NotNull Throwable t) {
+                Log.e("errror===>",t.getMessage());
+                call.cancel();
+            }
+
+        });
     }
 
     private boolean validateUserName() {

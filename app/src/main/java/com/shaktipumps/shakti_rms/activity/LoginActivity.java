@@ -75,7 +75,7 @@ public class LoginActivity extends AppCompatActivity {
     private TextInputLayout inputLayoutUserName, inputLayoutPassword;
     private EditText inputUserName, inputPassword;
     private ProgressDialog progressDialog;
-    private TextView btn_login, txtGetBTDATABTNID, btn_new_account, btn_forgot_password;
+    private TextView btn_login,  btn_new_account, btn_forgot_password;
     private ImageView txtGetBTDATABTNID1;
     String username = "null", password = "null", login_string = "null";
     final ArrayList<NameValuePair> sms_param = new ArrayList<NameValuePair>();

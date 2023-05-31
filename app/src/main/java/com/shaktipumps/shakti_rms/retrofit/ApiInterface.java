@@ -2,6 +2,7 @@ package com.shaktipumps.shakti_rms.retrofit;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.shaktipumps.shakti_rms.model.Register.RegisterResponse;
 import com.shaktipumps.shakti_rms.model.UploadModel.ProfileUpdateModel;
 
 import org.json.JSONObject;
@@ -17,6 +18,7 @@ import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Part;
+import retrofit2.http.Query;
 import retrofit2.http.QueryMap;
 import retrofit2.http.Url;
 
@@ -60,6 +62,11 @@ public interface ApiInterface {
     @POST("ExcelUpload")
     Call<ProfileUpdateModel> getProfileUpdateDatanew(@Part("DeviceNO") RequestBody deviceno, @Part("type") RequestBody type, @Part("columnCount") RequestBody columnCount, @Part MultipartBody.Part file);
 
+    @POST("UserLogin")
+    Call<RegisterResponse> sendUserRegister(@Query("MParentId")String value, @Query("MUserId") String val, @Query("firstName") String firstName,
+                                            @Query("lastName") String lastName, @Query("MUserName") String userName,
+                                            @Query("MPassword") String password, @Query("MobileNo") String mobileNo,
+                                            @Query("MAddress") String address, @Query("Status") String status);
 
 
 }
