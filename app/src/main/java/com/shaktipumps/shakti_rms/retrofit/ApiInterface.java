@@ -51,8 +51,12 @@ public interface ApiInterface {
      * @return
      */
 
+
     @GET
     Call<JsonElement> postDataGET(@Url String remainingURL, @QueryMap Map<String, String> map);
+
+    @GET
+    Call<JsonElement> postDataGET(@Url String remainingURL);
 
     @Multipart
     @POST("ExcelUpload")

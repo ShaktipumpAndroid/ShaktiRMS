@@ -192,7 +192,7 @@
 
                     android:drawableLeft="@drawable/ic_mendotry"
                     android:layout_marginTop="20dp"
-                    android:maxLength="13"
+                    android:maxLength="10"
                     tools:ignore="Autofill"
                     android:inputType="number" />
             </com.google.android.material.textfield.TextInputLayout>

@@ -3,6 +3,7 @@ package com.shaktipumps.shakti_rms.activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
@@ -31,7 +32,7 @@ public class OTPForgotPasswordActivity extends AppCompatActivity {
     private TextView txtSaveBTNID, btn_send_otp;
     private EditText edtNewPassID, edtConfrimPassID, edtOTPID;
 
-    private String mUserNameStr;
+    private String mUserNameStr,OTP;
     private String mNewPassStr;
     private String mOTPPassStr;
     private String mConfirmPassStr;
@@ -54,8 +55,10 @@ public class OTPForgotPasswordActivity extends AppCompatActivity {
 
         baseRequest = new BaseRequest(this);
         mUserNameStr = getIntent().getStringExtra("USER_NAME");
-
+        OTP = getIntent().getStringExtra("OTP");
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
+
+        Log.e("","OTP====>"+OTP);
 
         setSupportActionBar(mToolbar);
 
@@ -103,6 +106,7 @@ public class OTPForgotPasswordActivity extends AppCompatActivity {
         mConfirmPassStr = edtConfrimPassID.getText().toString().trim();
         mOTPPassStr = edtOTPID.getText().toString().trim();
 
+        Log.e("Enter","OTP++>"+mOTPPassStr);
         try {
             if (mNewPassStr.equalsIgnoreCase("")) {
                 //  Toast.makeText(mContext, "Please enter username.", Toast.LENGTH_SHORT).show();
@@ -122,6 +126,10 @@ public class OTPForgotPasswordActivity extends AppCompatActivity {
             } else if (mOTPPassStr.equalsIgnoreCase("")) {
                 //  Toast.makeText(mContext, "Please enter username.", Toast.LENGTH_SHORT).show();
                 edtOTPID.setError("Enter OTP.");
+                edtOTPID.requestFocus();
+                return false;
+            }else if(!OTP.equalsIgnoreCase(mOTPPassStr)){
+                edtOTPID.setError("Wrong OTP ,Check and write again or resend OTP");
                 edtOTPID.requestFocus();
                 return false;
             } else if (mOTPPassStr.length() < 4) {

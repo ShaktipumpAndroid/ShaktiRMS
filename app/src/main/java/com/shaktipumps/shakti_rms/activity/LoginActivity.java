@@ -421,27 +421,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(LoginActivity.this, ForgetPasswordActivity.class);
                 startActivity(intent);
-       /*         progressDialog = ProgressDialog.show(LoginActivity.this, "", "Loading..");
 
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        if (CustomUtility.isOnline(LoginActivity.this)) {
-                            progressDialog.dismiss();
-
-                          *//*  Intent intent = new Intent(LoginActivity.this, ForgotPassword.class);
-                            startActivity(intent);*//*
-                            Constant.CHECK_FORGOT_PASS_COME_ONES_ORMORE = 0;
-                            Intent intent = new Intent(LoginActivity.this, ForgetPasswordActivity.class);
-                            startActivity(intent);
-
-                        } else {
-
-                            progressDialog.dismiss();
-                            CustomUtility.isErrorDialog(LoginActivity.this, getString(R.string.error), getString(R.string.err_internet));
-                        }
-                    }
-                }).start();*/
             }
         });
 

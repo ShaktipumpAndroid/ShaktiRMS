@@ -161,6 +161,15 @@ public class BaseRequest extends BaseRequestParser {
         call.enqueue(responseCallback);
     }
 
+    public void callAPIGETDirectURL(final int APINumber,String remainingURL) {
+        APINumber_ = APINumber;
+        showLoader();
+        System.out.println("BaseReq INPUT URL : " + remainingURL);
+        Call<JsonElement> call = apiInterface.postDataGET(remainingURL);
+        call.enqueue(responseCallback);
+    }
+
+
     public void callAPIPostShimha2(final int APINumber, JsonObject jsonObject, String remainingURL) {
         APINumber_ = APINumber;
        // showLoader();

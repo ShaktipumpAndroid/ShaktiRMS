@@ -1,5 +1,6 @@
 package com.shaktipumps.shakti_rms.activity;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -21,6 +22,8 @@ import com.shaktipumps.shakti_rms.retrofit.BaseRequest;
 import com.shaktipumps.shakti_rms.retrofit.RequestReciever;
 import com.shaktipumps.shakti_rms.webservice.NewSolarVFD;
 
+import java.util.Random;
+
 public class ForgetPasswordActivity extends AppCompatActivity {
 
     private Context mContext = null;
@@ -31,7 +34,7 @@ public class ForgetPasswordActivity extends AppCompatActivity {
     private EditText edtUserNameID;
     private EditText edtnewPassID;
     private EditText edtOldPassID;
-
+    private String mORG_OTP_VALUE = "";
     private BaseRequest baseRequest;
 
     private String mUsernameStr;
@@ -51,7 +54,7 @@ public class ForgetPasswordActivity extends AppCompatActivity {
 
     private void inotView() {
 
-        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        mToolbar =  findViewById(R.id.toolbar);
 
         setSupportActionBar(mToolbar);
 
@@ -62,8 +65,8 @@ public class ForgetPasswordActivity extends AppCompatActivity {
 
         getSupportActionBar().setTitle(R.string.action_forgotPassword);
 
-        txtNextBTNID = (TextView) findViewById(R.id.txtNextBTNID);
-        edtUserNameID = (EditText) findViewById(R.id.edtUserNameID);
+        txtNextBTNID =  findViewById(R.id.txtNextBTNID);
+        edtUserNameID =  findViewById(R.id.edtUserNameID);
 
 
 
@@ -125,24 +128,24 @@ public class ForgetPasswordActivity extends AppCompatActivity {
 
 
     private void callSendOTPAPI() {
+        baseRequest.showLoader();
+        mORG_OTP_VALUE = getRandomNumberString();
         baseRequest.setBaseRequestListner(new RequestReciever() {
             @Override
             public void onSuccess(int APINumber, String Json, Object obj) {
                 //  JSONArray arr = (JSONArray) obj;
                 try {
                     Gson gson = new Gson();
-                    //////////////add model class here
-
                     ForgotOTPPassModel mForgotOTPPassModel = gson.fromJson(Json, ForgotOTPPassModel.class);
 
                     if(mForgotOTPPassModel.getStatus())
                     {
-
+                        baseRequest.hideLoader();
                         Intent mIntent = new Intent(mContext,OTPForgotPasswordActivity.class);
                         mIntent.putExtra("USER_MOBILE",mForgotOTPPassModel.getResponse().getMobileNo());
                         mIntent.putExtra("USER_ID",mForgotOTPPassModel.getResponse().getMUserId());
-                        //mIntent.putExtra("USER_ID",mForgotOTPPassModel.getResponse().getMUserId());
                         mIntent.putExtra("USER_NAME",mForgotOTPPassModel.getResponse().getMUserName());
+                        mIntent.putExtra("OTP",mORG_OTP_VALUE);
                         startActivity(mIntent);
 
                     }
@@ -159,7 +162,7 @@ public class ForgetPasswordActivity extends AppCompatActivity {
             @Override
             public void onFailure(int APINumber, String errorCode, String message) {
 
-                Toast.makeText(mContext, message, Toast.LENGTH_LONG).show();
+              //  Toast.makeText(mContext, message, Toast.LENGTH_LONG).show();
 
             }
 
@@ -171,21 +174,33 @@ public class ForgetPasswordActivity extends AppCompatActivity {
 
         JsonObject jsonObject = new JsonObject();
         try {
-            ////Put input parameter here
+
             jsonObject.addProperty("MUserName", mUsernameStr);
 
 
         } catch (Exception e) {
             e.printStackTrace();
         }
-        //baseRequest.callAPIPost(1, jsonObject, Constant.GET_ALL_NOTIFICATION_LIST_API);/////
-        baseRequest.callAPIPost(1, jsonObject, NewSolarVFD.ORG_SEND_OTP_FORGOTPASS);/////
+
+        baseRequest.callAPIPost(1, jsonObject, NewSolarVFD.ORG_SEND_OTP_FORGOTPASS);
+     //   baseRequest.callAPIGETDirectURL(1,   "http://control.yourbulksms.com/api/sendhttp.php?authkey=393770756d707334373701&mobiles="+mUsernameStr+"&message=Please%20Enter%20Following%20OTP%20To%20Reset%20Your%20Password%20"+mORG_OTP_VALUE+"%20SHAKTI%20GROUP&sender=SHAKTl&route=2&unicode=0&country=91&DLT_TE_ID=1707161726018508169");
+
     }
 
+
+    @SuppressLint("DefaultLocale")
+    private String getRandomNumberString() {
+        // It will generate 6 digit random Number.
+        // from 0 to 999999
+        Random rnd = new Random();
+        int number = rnd.nextInt(9999);
+
+        // this will convert any number sequence into 6 character.
+        return String.format("%04d", number);
+    }
     @Override
     protected void onResume() {
         super.onResume();
-        //Constant.CHECK_FORGOT_PASS_COME_ONES_ORMORE
         if(Constant.CHECK_FORGOT_PASS_COME_ONES_ORMORE == 2)
         {
             finish();
