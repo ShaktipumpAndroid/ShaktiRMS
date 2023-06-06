@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     //compileSdkVersion 28
-    compileSdkVersion 31
+    compileSdkVersion 33
     //buildToolsVersion "24.0.2"
     aaptOptions {
         cruncherEnabled false
@@ -11,9 +11,9 @@ android {
         applicationId "com.shaktipumps.shakti_rms"
         minSdkVersion 21
         // targetSdkVersion 28
-        targetSdkVersion 31
-        versionCode 72/////old 55
-        versionName "7.2 " /////old 5.5
+        targetSdkVersion 33
+        versionCode 74/////old 55
+        versionName "7.4" /////old 5.5
         multiDexEnabled true
     }
 

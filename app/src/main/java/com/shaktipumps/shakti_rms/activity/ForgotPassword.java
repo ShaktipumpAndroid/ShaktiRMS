@@ -1,5 +1,6 @@
 package com.shaktipumps.shakti_rms.activity;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -29,12 +30,13 @@ public class ForgotPassword extends AppCompatActivity {
     Toolbar toolbar;
 
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forgot_password);
 
-        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        mToolbar =  findViewById(R.id.toolbar);
 
         setSupportActionBar(mToolbar);
 
@@ -150,7 +152,7 @@ public class ForgotPassword extends AppCompatActivity {
 
         webView = (WebView) findViewById(R.id.webView);
         webView.getSettings().setJavaScriptEnabled(true);
-        webView.getSettings().setAppCacheEnabled(true);
+        //webView.getSettings().setAppCacheEnabled(true);
         webView.loadUrl(NewSolarVFD.FORGOT_PASSWORD);
         swipe.setRefreshing(true);
     }

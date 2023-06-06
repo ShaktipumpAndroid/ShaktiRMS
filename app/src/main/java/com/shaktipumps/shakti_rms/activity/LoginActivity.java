@@ -1010,16 +1010,6 @@ public class LoginActivity extends AppCompatActivity {
                 }
             });
 
-          /*  JsonObject jsonObject = new JsonObject();
-            try {
-                ////Put input parameter here
-                jsonObject.addProperty("DeviceTypeID", "");
-
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            //baseRequest.callAPIPost(1, jsonObject, Constant.GET_ALL_NOTIFICATION_LIST_API);/////
-            baseRequest.callAPIPost(1, jsonObject, NewSolarVFD.ORG_MOBILE_VERSION);/////*/
 
             Map<String, String> wordsByKey = new HashMap<>();
 

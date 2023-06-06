@@ -133,36 +133,22 @@ public class ForgetPasswordActivity extends AppCompatActivity {
         baseRequest.setBaseRequestListner(new RequestReciever() {
             @Override
             public void onSuccess(int APINumber, String Json, Object obj) {
-                //  JSONArray arr = (JSONArray) obj;
-                try {
-                    Gson gson = new Gson();
-                    ForgotOTPPassModel mForgotOTPPassModel = gson.fromJson(Json, ForgotOTPPassModel.class);
-
-                    if(mForgotOTPPassModel.getStatus())
-                    {
-                        baseRequest.hideLoader();
-                        Intent mIntent = new Intent(mContext,OTPForgotPasswordActivity.class);
-                        mIntent.putExtra("USER_MOBILE",mForgotOTPPassModel.getResponse().getMobileNo());
-                        mIntent.putExtra("USER_ID",mForgotOTPPassModel.getResponse().getMUserId());
-                        mIntent.putExtra("USER_NAME",mForgotOTPPassModel.getResponse().getMUserName());
-                        mIntent.putExtra("OTP",mORG_OTP_VALUE);
-                        startActivity(mIntent);
-
-                    }
-                    else
-                    {
-                        Toast.makeText(mContext, mForgotOTPPassModel.getMessage(), Toast.LENGTH_SHORT).show();
-                    }
-                  //  getDeviceSettingListResponse(mSettingModelView);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
             }
 
             @Override
             public void onFailure(int APINumber, String errorCode, String message) {
 
-              //  Toast.makeText(mContext, message, Toast.LENGTH_LONG).show();
+                try {
+
+                    baseRequest.hideLoader();
+                    Intent mIntent = new Intent(mContext,OTPForgotPasswordActivity.class);
+                    mIntent.putExtra("USER_MOBILE",mUsernameStr);
+                    mIntent.putExtra("OTP",mORG_OTP_VALUE);
+                    startActivity(mIntent);
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
 
             }
 
@@ -174,16 +160,14 @@ public class ForgetPasswordActivity extends AppCompatActivity {
 
         JsonObject jsonObject = new JsonObject();
         try {
-
             jsonObject.addProperty("MUserName", mUsernameStr);
-
 
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        baseRequest.callAPIPost(1, jsonObject, NewSolarVFD.ORG_SEND_OTP_FORGOTPASS);
-     //   baseRequest.callAPIGETDirectURL(1,   "http://control.yourbulksms.com/api/sendhttp.php?authkey=393770756d707334373701&mobiles="+mUsernameStr+"&message=Please%20Enter%20Following%20OTP%20To%20Reset%20Your%20Password%20"+mORG_OTP_VALUE+"%20SHAKTI%20GROUP&sender=SHAKTl&route=2&unicode=0&country=91&DLT_TE_ID=1707161726018508169");
+       // baseRequest.callAPIPost(1, jsonObject, NewSolarVFD.ORG_SEND_OTP_FORGOTPASS);
+        baseRequest.callAPIGETDirectURL(1,   "http://control.yourbulksms.com/api/sendhttp.php?authkey=393770756d707334373701&mobiles="+mUsernameStr+"&message=Please%20Enter%20Following%20OTP%20To%20Reset%20Your%20Password%20"+mORG_OTP_VALUE+"%20SHAKTI%20GROUP&sender=SHAKTl&route=2&unicode=0&country=91&DLT_TE_ID=1707161726018508169");
 
     }
 
@@ -198,6 +182,7 @@ public class ForgetPasswordActivity extends AppCompatActivity {
         // this will convert any number sequence into 6 character.
         return String.format("%04d", number);
     }
+
     @Override
     protected void onResume() {
         super.onResume();
