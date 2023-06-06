@@ -75,7 +75,7 @@ public class LoginActivity extends AppCompatActivity {
     private TextInputLayout inputLayoutUserName, inputLayoutPassword;
     private EditText inputUserName, inputPassword;
     private ProgressDialog progressDialog;
-    private TextView btn_login, txtGetBTDATABTNID, btn_new_account, btn_forgot_password;
+    private TextView btn_login,  btn_new_account, btn_forgot_password;
     private ImageView txtGetBTDATABTNID1;
     String username = "null", password = "null", login_string = "null";
     final ArrayList<NameValuePair> sms_param = new ArrayList<NameValuePair>();
@@ -421,27 +421,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(LoginActivity.this, ForgetPasswordActivity.class);
                 startActivity(intent);
-       /*         progressDialog = ProgressDialog.show(LoginActivity.this, "", "Loading..");
 
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        if (CustomUtility.isOnline(LoginActivity.this)) {
-                            progressDialog.dismiss();
-
-                          *//*  Intent intent = new Intent(LoginActivity.this, ForgotPassword.class);
-                            startActivity(intent);*//*
-                            Constant.CHECK_FORGOT_PASS_COME_ONES_ORMORE = 0;
-                            Intent intent = new Intent(LoginActivity.this, ForgetPasswordActivity.class);
-                            startActivity(intent);
-
-                        } else {
-
-                            progressDialog.dismiss();
-                            CustomUtility.isErrorDialog(LoginActivity.this, getString(R.string.error), getString(R.string.err_internet));
-                        }
-                    }
-                }).start();*/
             }
         });
 
@@ -1030,16 +1010,6 @@ public class LoginActivity extends AppCompatActivity {
                 }
             });
 
-          /*  JsonObject jsonObject = new JsonObject();
-            try {
-                ////Put input parameter here
-                jsonObject.addProperty("DeviceTypeID", "");
-
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            //baseRequest.callAPIPost(1, jsonObject, Constant.GET_ALL_NOTIFICATION_LIST_API);/////
-            baseRequest.callAPIPost(1, jsonObject, NewSolarVFD.ORG_MOBILE_VERSION);/////*/
 
             Map<String, String> wordsByKey = new HashMap<>();
 
