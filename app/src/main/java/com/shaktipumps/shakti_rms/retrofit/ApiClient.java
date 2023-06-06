@@ -88,5 +88,14 @@ public class ApiClient {
         return okHttpClient;
     }*/
 
+    public static Retrofit getClientRegister() {
 
+        retrofit = new Retrofit.Builder()
+                .baseUrl("https://solar10.shaktisolarrms.com/RMSAppTest/")
+                .addConverterFactory(GsonConverterFactory.create())
+
+                .build();
+
+        return retrofit;
+    }
 }

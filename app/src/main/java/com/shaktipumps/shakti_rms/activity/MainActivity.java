@@ -1,5 +1,13 @@
 package com.shaktipumps.shakti_rms.activity;
 
+import static android.Manifest.permission.ACCESS_COARSE_LOCATION;
+import static android.Manifest.permission.ACCESS_FINE_LOCATION;
+import static android.Manifest.permission.CAMERA;
+import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
+import static android.Manifest.permission.READ_MEDIA_IMAGES;
+import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
+import static android.os.Build.VERSION.SDK_INT;
+
 import android.Manifest;
 import android.annotation.TargetApi;
 import android.app.Activity;
@@ -21,6 +29,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
@@ -43,11 +52,7 @@ import com.shaktipumps.shakti_rms.webservice.NewSolarVFD;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-/*import androidx.appcompat.app.AppCompatActivity;*/
 
-//import androidx.appcompat.app.AppCompatActivity;
-
-//import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity implements FragmentDrawer.FragmentDrawerListener {
     SharedPreferences pref;
@@ -61,20 +66,11 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
     private FragmentDrawer drawerFragment;
     String versionName = "0.0";
     ProgressDialog progressDialog;
+    private static final int REQUEST_CODE_PERMISSION = 2;
 
-    private ArrayList<Customer_GPS_Search> arraylist;
-    private DatabaseHelperTeacher databaseHelperTeacher;
-
-    private static final int STORAGE_PERMISSION_CODE = 123;
     public static final int REQUEST_ID_MULTIPLE_PERMISSIONS = 1;
 
-    private boolean vCheckBtOrInternetOPSN = false;
-
     DrawerLayout drawer_layout;
-
-    private MenuItem mInternet;
-    private MenuItem mBluetooth;
-
     int clientid = 0;
 
     @Override
@@ -82,35 +78,14 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        drawer_layout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer_layout =  findViewById(R.id.drawer_layout);
 
         mContex = this;
         mContext = this;
         mActivity = this;
-
-    /*    databaseHelperTeacher = new DatabaseHelperTeacher(this);
-
-
-        arraylist = new ArrayList<Customer_GPS_Search>();
-        if (arraylist.size() > 0)
-            arraylist.clear();
-
-        try {
-            arraylist = databaseHelperTeacher.getDeviceListData();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }*/
-
-        //  clientid == 0 means single user login
-
-        /*if (arraylist.size() == 1) {
-            Constant.CHECK_COUNT_OF_DELETE = 1;
-            conditionFunctionNAvigation(arraylist);
-            finishAffinity();
-
-        } else*/ {
+        {
             drawer_layout.setVisibility(View.VISIBLE);
-            mToolbar = (Toolbar) findViewById(R.id.toolbar);
+            mToolbar =  findViewById(R.id.toolbar);
             setSupportActionBar(mToolbar);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
 
@@ -310,10 +285,15 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
                 break;
 
             case 1:
-
+                if (checkPermission()) {
                     Intent intent1 = new Intent(mContext, AddDevice.class);
                     startActivity(intent1);
-
+                }
+                else {
+                    requestPermission();
+                }
+                /*intent = new Intent(MainActivity.this, AddDevice.class);
+                startActivity(intent);*/
                 break;
 
           /*  case 2:
@@ -673,6 +653,86 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
         AlertDialog alert = builder.create();
         alert.show();
     }
+
+
+    @RequiresApi(api = Build.VERSION_CODES.TIRAMISU)
+    private boolean checkPermission() {
+        int FineLocation = ContextCompat.checkSelfPermission(getApplicationContext(), ACCESS_FINE_LOCATION);
+        int CoarseLocation = ContextCompat.checkSelfPermission(getApplicationContext(), ACCESS_COARSE_LOCATION);
+        int Camera = ContextCompat.checkSelfPermission(getApplicationContext(), CAMERA);
+        int ReadExternalStorage = ContextCompat.checkSelfPermission(getApplicationContext(), READ_EXTERNAL_STORAGE);
+        int WriteExternalStorage = ContextCompat.checkSelfPermission(getApplicationContext(), WRITE_EXTERNAL_STORAGE);
+        int ReadMediaImages = ContextCompat.checkSelfPermission(getApplicationContext(), READ_MEDIA_IMAGES);
+
+        if (SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            return CoarseLocation == PackageManager.PERMISSION_GRANTED
+                    && Camera == PackageManager.PERMISSION_GRANTED  && ReadMediaImages == PackageManager.PERMISSION_GRANTED;
+
+        }else {
+            return FineLocation == PackageManager.PERMISSION_GRANTED && CoarseLocation == PackageManager.PERMISSION_GRANTED
+                    && Camera == PackageManager.PERMISSION_GRANTED && ReadExternalStorage == PackageManager.PERMISSION_GRANTED
+                    && WriteExternalStorage == PackageManager.PERMISSION_GRANTED;
+        }
+    }
+
+    private void requestPermission() {
+        if (SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.CAMERA,  Manifest.permission.ACCESS_COARSE_LOCATION,
+                            READ_MEDIA_IMAGES},
+                    REQUEST_CODE_PERMISSION);
+        }  else {
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.CAMERA, Manifest.permission.ACCESS_FINE_LOCATION,
+                            Manifest.permission.ACCESS_COARSE_LOCATION,Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                            Manifest.permission.READ_EXTERNAL_STORAGE}, REQUEST_CODE_PERMISSION);
+
+        }
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.TIRAMISU)
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        switch (requestCode) {
+            case REQUEST_CODE_PERMISSION:
+                if (grantResults.length > 0) {
+
+                    if (SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+
+                        boolean CoarseLocationAccepted = grantResults[0] == PackageManager.PERMISSION_GRANTED;
+                        boolean  Camera = grantResults[1] == PackageManager.PERMISSION_GRANTED;
+                        boolean  ReadMediaImages = grantResults[2] == PackageManager.PERMISSION_GRANTED;
+
+                        if (CoarseLocationAccepted  && Camera && ReadMediaImages ) {
+                            // perform action when allow permission success
+                            Intent intent1 = new Intent(mContext, AddDevice.class);
+                            startActivity(intent1);
+                        }else {
+                            requestPermission();
+                        }
+                    } else   {
+                        boolean  FineLocationAccepted = grantResults[0] == PackageManager.PERMISSION_GRANTED;
+                        boolean CoarseLocationAccepted = grantResults[1] == PackageManager.PERMISSION_GRANTED;
+                        boolean  Camera = grantResults[2] == PackageManager.PERMISSION_GRANTED;
+                        boolean ReadPhoneStorage = grantResults[3] == PackageManager.PERMISSION_GRANTED;
+                        boolean WritePhoneStorage = grantResults[4] == PackageManager.PERMISSION_GRANTED;
+
+
+                        if(FineLocationAccepted && CoarseLocationAccepted && Camera && ReadPhoneStorage && WritePhoneStorage ){
+                            Intent intent1 = new Intent(mContext, AddDevice.class);
+                            startActivity(intent1);
+                        }else {
+                            requestPermission();
+                        }
+                    }
+                }
+                break;
+        }
+    }
+
+
+
 
 
 

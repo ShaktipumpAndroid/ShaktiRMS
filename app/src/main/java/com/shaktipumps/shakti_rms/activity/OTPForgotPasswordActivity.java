@@ -1,8 +1,10 @@
 package com.shaktipumps.shakti_rms.activity;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
@@ -25,13 +27,12 @@ import com.shaktipumps.shakti_rms.webservice.NewSolarVFD;
 public class OTPForgotPasswordActivity extends AppCompatActivity {
 
     private Context mContext = null;
-
     private Toolbar mToolbar;
 
     private TextView txtSaveBTNID, btn_send_otp;
-    private EditText edtNewPassID, edtConfrimPassID, edtOTPID;
+    private EditText edtNewPassID, edtConfrimPassID, edtOTPID ,edtUserID;
 
-    private String mUserNameStr;
+    private String mUserNameStr,OTP,mobile;
     private String mNewPassStr;
     private String mOTPPassStr;
     private String mConfirmPassStr;
@@ -46,6 +47,10 @@ public class OTPForgotPasswordActivity extends AppCompatActivity {
         setContentView(R.layout.activity_otpforgot_password);
         mContext = this;
 
+        Bundle bundle = getIntent().getExtras();
+        mobile = bundle.getString("USER_MOBILE");
+        OTP = bundle.getString("OTP");
+
         inotView();
     }
 
@@ -53,9 +58,9 @@ public class OTPForgotPasswordActivity extends AppCompatActivity {
 
 
         baseRequest = new BaseRequest(this);
-        mUserNameStr = getIntent().getStringExtra("USER_NAME");
-
-        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+     /*   mUserNameStr = getIntent().getStringExtra("USER_NAME");
+        OTP = getIntent().getStringExtra("OTP");*/
+        mToolbar =  findViewById(R.id.toolbar);
 
         setSupportActionBar(mToolbar);
 
@@ -63,35 +68,28 @@ public class OTPForgotPasswordActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(R.string.action_forgotPassword);
 
-        txtTimerCounterID = (TextView) findViewById(R.id.txtTimerCounterID);
-        btn_send_otp = (TextView) findViewById(R.id.btn_send_otp);
-        txtSaveBTNID = (TextView) findViewById(R.id.txtSaveBTNID);
-        edtNewPassID = (EditText) findViewById(R.id.edtNewPassID);
-        edtConfrimPassID = (EditText) findViewById(R.id.edtConfrimPassID);
-        edtOTPID = (EditText) findViewById(R.id.edtOTPID);
+        txtTimerCounterID =  findViewById(R.id.txtTimerCounterID);
+        btn_send_otp =  findViewById(R.id.btn_send_otp);
+        txtSaveBTNID =  findViewById(R.id.txtSaveBTNID);
+        edtNewPassID =  findViewById(R.id.edtNewPassID);
+        edtConfrimPassID =  findViewById(R.id.edtConfrimPassID);
+        edtOTPID =  findViewById(R.id.edtOTPID);
+        edtUserID = findViewById(R.id.edtUserID);
 
-        txtSaveBTNID.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                if (checkValidation()) {
-                    callSaveForgetPassAPI();
-                }
-
+        txtSaveBTNID.setOnClickListener(v -> {
+            if (checkValidation()) {
+                callSaveForgetPassAPI();
             }
+
         });
 
-        btn_send_otp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        btn_send_otp.setOnClickListener(view -> {
 
-                //    reSendOTP();
-                callSendOTPAPI();
-                changeButtonVisibilityRLV(false, 0.5f,btn_send_otp);
+            callSendOTPAPI();
+            changeButtonVisibilityRLV(false, 0.5f,btn_send_otp);
 
-                startTimer(30000);
+            startTimer(30000);
 
-            }
         });
 
     }
@@ -99,9 +97,13 @@ public class OTPForgotPasswordActivity extends AppCompatActivity {
 
     private Boolean checkValidation() {
 
+        mUserNameStr = edtUserID.getText().toString().trim();
         mNewPassStr = edtNewPassID.getText().toString().trim();
         mConfirmPassStr = edtConfrimPassID.getText().toString().trim();
         mOTPPassStr = edtOTPID.getText().toString().trim();
+
+        Log.e("Enter","OTP++>"+mOTPPassStr);
+
 
         try {
             if (mNewPassStr.equalsIgnoreCase("")) {
@@ -124,6 +126,10 @@ public class OTPForgotPasswordActivity extends AppCompatActivity {
                 edtOTPID.setError("Enter OTP.");
                 edtOTPID.requestFocus();
                 return false;
+            }else if(!OTP.equalsIgnoreCase(mOTPPassStr)){
+                edtOTPID.setError("Wrong OTP ,Check and write again or resend OTP");
+                edtOTPID.requestFocus();
+                return false;
             } else if (mOTPPassStr.length() < 4) {
                 //  Toast.makeText(mContext, "Please enter username.", Toast.LENGTH_SHORT).show();
                 edtOTPID.setError("Enter Valid 4 digit OTP.");
@@ -140,10 +146,15 @@ public class OTPForgotPasswordActivity extends AppCompatActivity {
 
 
     private void callSaveForgetPassAPI() {
+        baseRequest.showLoader();
+
         baseRequest.setBaseRequestListner(new RequestReciever() {
             @Override
             public void onSuccess(int APINumber, String Json, Object obj) {
                 //  JSONArray arr = (JSONArray) obj;
+
+                baseRequest.hideLoader();
+
                 try {
                     Gson gson = new Gson();
                     //////////////add model class here
@@ -164,21 +175,24 @@ public class OTPForgotPasswordActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(int APINumber, String errorCode, String message) {
+                baseRequest.hideLoader();
                 Toast.makeText(mContext, message, Toast.LENGTH_LONG).show();
             }
 
             @Override
             public void onNetworkFailure(int APINumber, String message) {
+                baseRequest.hideLoader();
                 Toast.makeText(mContext, "Please check internet connection!", Toast.LENGTH_LONG).show();
             }
         });
 
         JsonObject jsonObject = new JsonObject();
         try {
+
             ////Put input parameter here
             jsonObject.addProperty("MUserName", mUserNameStr);
             jsonObject.addProperty("Password", mNewPassStr);
-            jsonObject.addProperty("OTP", mOTPPassStr);
+            jsonObject.addProperty("OTP", "0");
 
 
         } catch (Exception e) {
@@ -193,7 +207,7 @@ public class OTPForgotPasswordActivity extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
 
-        Constant.CHECK_FORGOT_PASS_COME_ONES_ORMORE = 0;////not to stop
+        Constant.CHECK_FORGOT_PASS_COME_ONES_ORMORE = 0;// //not to stop
     }
 
     @Override
@@ -206,7 +220,7 @@ public class OTPForgotPasswordActivity extends AppCompatActivity {
         switch (id) {
 
             case android.R.id.home:
-                Constant.CHECK_FORGOT_PASS_COME_ONES_ORMORE = 1;////finish old screen
+                Constant.CHECK_FORGOT_PASS_COME_ONES_ORMORE = 1;// //finish old screen
                 onBackPressed();
 
                 return true;
@@ -237,22 +251,15 @@ public class OTPForgotPasswordActivity extends AppCompatActivity {
                 txtTimerCounterID.setText(String.format("%02d", seconds / 60)
                         + ":" + String.format("%02d", seconds % 60));
                 // format the textview to show the easily readable format
-
             }
 
+            @SuppressLint("SetTextI18n")
             @Override
             public void onFinish() {
-                // this function will be called when the timecount is finished
                 txtTimerCounterID.setText("Time up!");
                 txtTimerCounterID.setVisibility(View.GONE);
                 changeButtonVisibilityRLV(true, 1.0f,btn_send_otp);
-
-                // textViewShowTime.setVisibility(View.VISIBLE);
-                // buttonStartTime.setVisibility(View.VISIBLE);
-                //  buttonStopTime.setVisibility(View.GONE);
-                //  edtTimerValue.setVisibility(View.VISIBLE);
             }
-
         }.start();
 
     }
@@ -261,32 +268,8 @@ public class OTPForgotPasswordActivity extends AppCompatActivity {
         baseRequest.setBaseRequestListner(new RequestReciever() {
             @Override
             public void onSuccess(int APINumber, String Json, Object obj) {
-                //  JSONArray arr = (JSONArray) obj;
-                try {
-                    Gson gson = new Gson();
-                    //////////////add model class here
+                Toast.makeText(mContext, "Re-Send OTP ", Toast.LENGTH_LONG).show();
 
-                    ForgotOTPPassModel mForgotOTPPassModel = gson.fromJson(Json, ForgotOTPPassModel.class);
-
-                    if(mForgotOTPPassModel.getStatus())
-                    {
-
-                       /* Intent mIntent = new Intent(mContext,OTPForgotPasswordActivity.class);
-                        mIntent.putExtra("USER_MOBILE",mForgotOTPPassModel.getResponse().getMobileNo());
-                        mIntent.putExtra("USER_ID",mForgotOTPPassModel.getResponse().getMUserId());
-                        //mIntent.putExtra("USER_ID",mForgotOTPPassModel.getResponse().getMUserId());
-                        mIntent.putExtra("USER_NAME",mForgotOTPPassModel.getResponse().getMUserName());
-                        startActivity(mIntent);*/
-
-                    }
-                    else
-                    {
-                        Toast.makeText(mContext, mForgotOTPPassModel.getMessage(), Toast.LENGTH_SHORT).show();
-                    }
-                    //  getDeviceSettingListResponse(mSettingModelView);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
             }
 
             @Override
@@ -312,7 +295,10 @@ public class OTPForgotPasswordActivity extends AppCompatActivity {
             e.printStackTrace();
         }
         //baseRequest.callAPIPost(1, jsonObject, Constant.GET_ALL_NOTIFICATION_LIST_API);/////
-        baseRequest.callAPIPost(1, jsonObject, NewSolarVFD.ORG_SEND_OTP_FORGOTPASS);/////
+      //  baseRequest.callAPIPost(1, jsonObject, NewSolarVFD.ORG_SEND_OTP_FORGOTPASS);/////
+
+        baseRequest.callAPIGETDirectURL(1,   "http://control.yourbulksms.com/api/sendhttp.php?authkey=393770756d707334373701&mobiles="+mobile+"&message=Please%20Enter%20Following%20OTP%20To%20Reset%20Your%20Password%20"+OTP+"%20SHAKTI%20GROUP&sender=SHAKTl&route=2&unicode=0&country=91&DLT_TE_ID=1707161726018508169");
+
     }
 
 }
