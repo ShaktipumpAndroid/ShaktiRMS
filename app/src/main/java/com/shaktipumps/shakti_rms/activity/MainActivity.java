@@ -152,16 +152,13 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
 
     @Override
     public void onDestroy() {
-        try {
-            progressDialog.dismiss();
 
-            if (progressDialog != null)
-                progressDialog = null;
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
         super.onDestroy();
+
+        if (progressDialog != null) {
+            progressDialog.dismiss();
+            progressDialog = null;
+        }
     }
 
     private void conditionFunctionNAvigation(ArrayList<Customer_GPS_Search> arraylist) {

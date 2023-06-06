@@ -9,7 +9,10 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Paint;
 import android.graphics.Typeface;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.Settings;
 import android.text.TextPaint;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -35,6 +38,8 @@ import com.shaktipumps.shakti_rms.aryabata.settings.SettingsActivity;
 
 import static com.shaktipumps.shakti_rms.aryabata.Bluetooth_DeviceLists_Activity.EXTRA_ADDRESS;
 import static com.shaktipumps.shakti_rms.aryabata.Bluetooth_DeviceLists_Activity.EXTRA_NAME;
+
+import java.io.File;
 
 
 public class Dashboard_Activity extends AppCompatActivity implements View.OnClickListener {

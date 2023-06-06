@@ -74,12 +74,14 @@ public class GlobalMethod {
         File dir = null;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R)
         {
-            dir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS) + "/" + FolderName);
+            dir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS) , FolderName);
             System.out.println("dir_ in  = "+dir);
+
+          //  File root = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS), FOLDER_NAME);
         }
         else
         {
-            dir = new File(Environment.getExternalStorageDirectory() + "/" + FolderName);
+            dir = new File(Environment.getExternalStorageDirectory() , FolderName);
             System.out.println("dir_ out  = "+dir);
         }
 

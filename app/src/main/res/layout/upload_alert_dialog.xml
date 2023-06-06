@@ -75,7 +75,7 @@
                 android:background="@color/upload_btn_color"
                 android:gravity="center_vertical|center_horizontal"
 
-                android:text="5th years"
+                android:text="1 years"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_8sdp" />
 
