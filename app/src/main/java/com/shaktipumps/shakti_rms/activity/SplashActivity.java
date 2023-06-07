@@ -38,6 +38,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.multidex.BuildConfig;
@@ -65,21 +66,17 @@ public class SplashActivity extends AppCompatActivity {
 
     private static final int REQUEST_CODE_PERMISSION = 2;
     Intent i ;
-    private static int SPLASH_TIME_OUT = 1000;
+    public static int SPLASH_TIME_OUT = 1000;
 
     SharedPreferences pref ;
     SharedPreferences.Editor editor;
-    String current_date = "null" ,current_time;
     Context mContex ;
-
     ImageView imgLogoID;
 
 
     @Override
     /** Called when the activity is first created. */
     protected void onCreate(Bundle savedInstanceState) {
-        //Remove title bar
-        //this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
@@ -95,263 +92,38 @@ public class SplashActivity extends AppCompatActivity {
         else {
             requestPermission();
         }
-//vikas end
-
-
-/*Intent i = new Intent(SplashActivity.this, AddPlantAndDeviceOPtion.class);
-startActivity(i);*/
         }
 
     private void openNextActivity()     {
         new Handler().postDelayed(new Runnable() {
-
             @Override
             public void run() {
-                try {
+
                     SharedPreferencesUtil.setData(mContex, Constant.USER_APP_OPEN_STATUS, "true");
-                    String mmCheckLogin = SharedPreferencesUtil.getData(mContex, Constant.USER_LOGIN_STATUS);
-                    String mmCheckLogin_Welcom = SharedPreferencesUtil.getData(mContex, Constant.USER_APP_OPEN_STATUS);
-                    if (SharedPreferencesUtil.getData(mContex, Constant.LANGUAGE_NAME_CODE) == null || SharedPreferencesUtil.getData(mContex, Constant.LANGUAGE_NAME_CODE).equalsIgnoreCase(""))
-                    {
+                    if (SharedPreferencesUtil.getData(mContex, Constant.LANGUAGE_NAME_CODE) == null || SharedPreferencesUtil.getData(mContex, Constant.LANGUAGE_NAME_CODE).equalsIgnoreCase("")) {
                         SharedPreferencesUtil.setData(mContex, Constant.LANGUAGE_NAME_CODE, "en");
                         SharedPreferencesUtil.setData(mContex, Constant.LANGUAGE_NAME_SAVE, "English");
-
                         Constant.setLocale(mContex, "en");
-                    }
-                    else
-                    {
+                    } else {
                         String hhhhh = SharedPreferencesUtil.getData(mContex, Constant.LANGUAGE_NAME_CODE);
                         Constant.setLocale(mContex, hhhhh);
                     }
 
-                    if (pref.getString("key_login", "login_status").equalsIgnoreCase("Y"))
-                    {
-                        //  i = new Intent(SplashActivity.this, BaseActivity.class);
-                        i = new Intent(SplashActivity.this, MainActivity.class);
-                        // i = new Intent(SplashActivity.this, WalthroughActivity.class);
+                    if (pref.getString("key_login", "login_status").equalsIgnoreCase("Y")) {
+                        Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+                        startActivity(intent);
+                        finish();
                     }
-                    else
-                    {
-                        //SplashActivity.this.finish();
-                        i = new Intent(SplashActivity.this, LoginActivity.class);
-                        //i = new Intent(SplashActivity.this, WalthroughActivity.class);
+                    else {
+                        Intent intent =  new Intent(SplashActivity.this, LoginActivity.class);
+                        startActivity(intent);
+                        finish();
                     }
-
-                    startActivity(i);
-                    finish();
-                } catch (Exception e) {
-
-                    i = new Intent(SplashActivity.this, LoginActivity.class);
-                    // i = new Intent(SplashActivity.this, WalthroughActivity.class);
-                    startActivity(i);
-                    finish();
-                    e.printStackTrace();
-                }
-
             }
         }, SPLASH_TIME_OUT);
     }
 
-    public static File commonDocumentDirPath(String FolderName)
-    {
-        File dir = null;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R)
-        {
-            dir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS) + "/" + FolderName);
-        }
-        else
-        {
-            dir = new File(Environment.getExternalStorageDirectory() + "/" + FolderName);
-        }
 
-        // Make sure the path directory exists.
-        if (!dir.exists())
-        {
-            // Make it, if it doesn't exit
-            boolean success = dir.mkdirs();
-            if (!success)
-            {
-                dir = null;
-            }
-        }
-        return dir;
-    }
-
-    @Override
-    public void onAnimationEnd(Animation animation) {
-        // Take any action after completing the animation
-    }
-
-    @Override
-    public void onAnimationRepeat(Animation animation) {
-        // TODO Auto-generated method stub
-    }
-
-    @Override
-    public void onAnimationStart(Animation animation) {
-        // TODO Auto-generated method stub
-    }
-
-
-    private void getCheckAppUpdateModelViewResponse(CheckAppUpdateModelView mCheckAppUpdateModelView) {
-
-        if (mCheckAppUpdateModelView.getStatus()) {
-            float mCurrentMobileVer = mCheckAppUpdateModelView.getResponse().getMobVersion();
-            //if(Float.parseFloat(mCurrentMobileVer) > Float.parseFloat(mOldMobileVer))
-            if(mCurrentMobileVer > Float.parseFloat(mOldMobileVer))
-            {
-                forceFullyUpdateAppFromStore();
-               /* final String appPackageName = getPackageName(); // getPackageName() from Context or Activity object
-                try {
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName)));
-                }
-                catch (android.content.ActivityNotFoundException anfe) {
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + appPackageName)));
-                }*/
-            }
-            else {
-                new Handler().postDelayed(new Runnable() {
-
-                    @Override
-                    public void run() {
-                        try {
-
-                            SharedPreferencesUtil.setData(mContex, Constant.USER_APP_OPEN_STATUS, "true");
-                            String mmCheckLogin = SharedPreferencesUtil.getData(mContex, Constant.USER_LOGIN_STATUS);
-                            String mmCheckLogin_Welcom = SharedPreferencesUtil.getData(mContex, Constant.USER_APP_OPEN_STATUS);
-                            if (SharedPreferencesUtil.getData(mContex, Constant.LANGUAGE_NAME_CODE) == null || SharedPreferencesUtil.getData(mContex, Constant.LANGUAGE_NAME_CODE).equalsIgnoreCase(""))
-                            {
-                                SharedPreferencesUtil.setData(mContex, Constant.LANGUAGE_NAME_CODE, "en");
-                                SharedPreferencesUtil.setData(mContex, Constant.LANGUAGE_NAME_SAVE, "English");
-
-                                Constant.setLocale(mContex, "en");
-                            }
-                            else
-                            {
-                                Constant.setLocale(mContex, SharedPreferencesUtil.getData(mContex, Constant.LANGUAGE_NAME_CODE));
-                            }
-
-                            if (pref.getString("key_login", "login_status").equalsIgnoreCase("Y"))
-                            {
-                              //  i = new Intent(SplashActivity.this, BaseActivity.class);//correct
-                                i = new Intent(SplashActivity.this, MainActivity.class);//correct
-                            }
-                            else
-                            {
-                                //SplashActivity.this.finish();
-                               i = new Intent(SplashActivity.this, LoginActivity.class);///currect
-                             //  i = new Intent(SplashActivity.this, WalthroughActivity.class);///currect
-
-                            }
-                            startActivity(i);
-                            SplashActivity.this.finish();
-                        } catch (Exception e) {
-                              i = new Intent(SplashActivity.this, LoginActivity.class);///currect
-                             // i = new Intent(SplashActivity.this, WalthroughActivity.class);///currect
-
-                            startActivity(i);
-                            SplashActivity.this.finish();
-                            e.printStackTrace();
-                        }
-                    }
-                }, SPLASH_TIME_OUT);
-            }
-        }
-    }
-
-
-    public void forceFullyUpdateAppFromStore() {
-        ////////////////////////////
-        // create a dialog with AlertDialog builder
-        AlertDialog.Builder builder = new AlertDialog.Builder(mContex, R.style.alertDialogForceUpdate);
-        //AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
-        builder.setTitle(getString(R.string.force_fully_update_heading_text));
-        builder.setMessage(getString(R.string.force_fully_update_text));
-
-        String positiveText = getString(R.string.Update_text);
-        builder.setPositiveButton(positiveText,
-                (dialog, which) -> {
-
-
-                  //  deleteCache(mContex);
-                    // dismiss alert dialog, update preferences with game score and restart play fragment
-                    final String appPackageName = getPackageName(); // getPackageName() from Context or Activity object
-                    try {
-                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName)));
-                        File myDb = mContex.getDatabasePath(DatabaseHelperTeacher.DATABASE_NAME_RMS);
-                        Boolean isDelete = myDb.delete();
-                        if(isDelete)
-                        {
-                            Toast.makeText(mContex, "Database deleted.", Toast.LENGTH_SHORT).show();
-                        }
-
-                    }
-                    catch (android.content.ActivityNotFoundException anfe) {
-                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + appPackageName)));
-                        File myDb = mContex.getDatabasePath(DatabaseHelperTeacher.DATABASE_NAME_RMS);
-                        Boolean isDelete = myDb.delete();
-                        if(isDelete)
-                        {
-                            Toast.makeText(mContex, "Database deleted.", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                   // finish();
-                   // Log.d("myTag", "positive button clicked");
-                  // dialog.dismiss();
-                });
-
-        String negativeText = getString(R.string.No_thanks_text);
-        builder.setNegativeButton(negativeText,
-                new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        // dismiss dialog, start counter again
-                        finish();
-                        dialog.dismiss();
-                        Log.d("myTag", "negative button clicked");
-                        new Handler().postDelayed(new Runnable() {
-
-                            @Override
-                            public void run() {
-                                try {
-                                    if (pref.getString("key_login", "login_status").equalsIgnoreCase("Y"))
-                                    {
-                                      //  i = new Intent(SplashActivity.this, BaseActivity.class);
-                                           i = new Intent(SplashActivity.this, MainActivity.class);
-                                    }
-                                    else
-                                    {
-                                        //SplashActivity.this.finish();
-                                        i = new Intent(SplashActivity.this, LoginActivity.class);
-
-                                        // i = new Intent(SplashActivity.this, WalthroughActivity.class);
-                                    }
-
-                                    startActivity(i);
-                                    SplashActivity.this.finish();
-                                } catch (Exception e) {
-
-
-                                    i = new Intent(SplashActivity.this, LoginActivity.class);
-                                    //  i = new Intent(SplashActivity.this, WalthroughActivity.class);
-
-                                    startActivity(i);
-                                    SplashActivity.this.finish();
-                                    e.printStackTrace();
-                                }
-
-                            }
-                        }, SPLASH_TIME_OUT);
-                    }
-                });
-
-        AlertDialog dialog = builder.create();
-        dialog.show();
-
-    }
-
-
-    @RequiresApi(api = Build.VERSION_CODES.TIRAMISU)
     private boolean checkPermission() {
         int FineLocation = ContextCompat.checkSelfPermission(getApplicationContext(), ACCESS_FINE_LOCATION);
         int CoarseLocation = ContextCompat.checkSelfPermission(getApplicationContext(), ACCESS_COARSE_LOCATION);

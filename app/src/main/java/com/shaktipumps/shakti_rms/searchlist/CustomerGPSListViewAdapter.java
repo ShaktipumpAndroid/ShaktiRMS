@@ -238,11 +238,11 @@ public class CustomerGPSListViewAdapter extends BaseAdapter {
         }
 
 
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd hh:mm:ss");
         Date currentDate1 = new Date();
         Date strDate1 = null;
         try {
-            strDate1 = sdf.parse(customerSearchesList.get(position).getMobValidationDate());
+              strDate1 = sdf.parse(customerSearchesList.get(position).getMobValidationDate());
         } catch (ParseException e) {
             e.printStackTrace();
         }
