@@ -76,7 +76,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class ActivityDeviceDetailsInfoAOneSS extends AppCompatActivity {
 
 
-    private  int PagePositionIndex = 1;
+    private int PagePositionIndex = 1;
     private Context mContext;
     private Activity mActivity;
 
@@ -98,13 +98,13 @@ public class ActivityDeviceDetailsInfoAOneSS extends AppCompatActivity {
 
     private int mPosition = 0;
 
-    private  String mImageUrl = null;
+    private String mImageUrl = null;
 
     private CircleImageView imgDeviceImageID;
     private TextView txtHeaderID;
 
     private String vMUserId,
-            vDeviceType, vDeviceNo,vStartdate, isLoginCheck, isPumpCheck, vMDeviceId;
+            vDeviceType, vDeviceNo, vStartdate, isLoginCheck, isPumpCheck, vMDeviceId;
 
     // private TextView txtTotalEnergyValueID, txtConsumptionValueID;
     private UUID mMyUDID;
@@ -115,14 +115,14 @@ public class ActivityDeviceDetailsInfoAOneSS extends AppCompatActivity {
 
     final ArrayList<NameValuePair> param = new ArrayList<NameValuePair>();
     String start = "null", stop = "null", userid = "null", DeviceNo = "null", DeviceType = "null",
-            MUserId = "null", MDeviceId = "null", CustomerName = "null", mModelType = "null",Mobile = "null", otp = "null", sms_url = "null", delete_url = "null";
-    int clientid = 0 ;
+            MUserId = "null", MDeviceId = "null", CustomerName = "null", mModelType = "null", Mobile = "null", otp = "null", sms_url = "null", delete_url = "null";
+    int clientid = 0;
 
-    private int total_fault , current_fault ;
+    private int total_fault, current_fault;
 
     int mmCheckStart = 0;
     int mmCheckStop = 0;
-    private ImageView start_gps, stop_gps,imgData_ExtractionID, product_image, real_monitoring, imgBTAndInternetToggleID;
+    private ImageView start_gps, stop_gps, imgData_ExtractionID, product_image, real_monitoring, imgBTAndInternetToggleID;
 
     private List<Customer_GPS_Search> customerSearchesList = null;
     private boolean mCheckBT = false;
@@ -139,11 +139,11 @@ public class ActivityDeviceDetailsInfoAOneSS extends AppCompatActivity {
     private LineChart chartEnergyID;
     private LineChart chartFlowID;
 
-    private int  ioio = 0;
+    private int ioio = 0;
     String mValueData = "date";
 
     // private TextView txtDataID,txtGraphID;
-    private ImageView imgVFDId,txtGraphID;
+    private ImageView imgVFDId, txtGraphID;
     private String TAG;
 
     private ViewPagerAdapter adapter;
@@ -151,12 +151,12 @@ public class ActivityDeviceDetailsInfoAOneSS extends AppCompatActivity {
     private CustomViewPager viewPager;
     private int mSwipePosition = 1;
 
-   // private ImageView imgInternetToggleID, imgBTToggleID;
+    // private ImageView imgInternetToggleID, imgBTToggleID;
     private ImageView imgINT_BT_HTPTID;
 
     //  private TextView txtTotalEnergyHeadingID, txtConsumptionHeadingID;
 
-   // private Switch switch1;
+    // private Switch switch1;
     private int mTotalTimeInt = 0;
 
     private TextView txtSettingID, txtVfdID;
@@ -165,12 +165,12 @@ public class ActivityDeviceDetailsInfoAOneSS extends AppCompatActivity {
     private RelativeLayout rlvSlideMenuViewID;
     private RelativeLayout rlvMenuOptionRemoveDeviceViewID;
 
-    private RelativeLayout rlvMenuOptionHomeViewID, rlvMenuOptionAddDeviceViewID, rlvMenuOptionChangePassViewID, rlvMenuOptionFaultReportViewID, rlvMenuOptionDataReportViewID,rlvMenuOptionLogoutViewID;
+    private RelativeLayout rlvMenuOptionHomeViewID, rlvMenuOptionAddDeviceViewID, rlvMenuOptionChangePassViewID, rlvMenuOptionFaultReportViewID, rlvMenuOptionDataReportViewID, rlvMenuOptionLogoutViewID;
 
     private SwipeRefreshLayout swipeRefresh;
-    private  RelativeLayout rlvTabControlID,  rlvTabMotorID;
+    private RelativeLayout rlvTabControlID, rlvTabMotorID;
 
-    private CircleButton imgMoterStatusID,txtDeleteButtonID;
+    private CircleButton imgMoterStatusID, txtDeleteButtonID;
     private TextView txtMotorStatusIID;
 
     private DatabaseHelperTeacher mDatabaseHelperTeacher;
@@ -201,11 +201,9 @@ public class ActivityDeviceDetailsInfoAOneSS extends AppCompatActivity {
         viewPager.setCurrentItem(mSwipePosition);
 
         try {
-            if(mCheckBT)
-            {
+            if (mCheckBT) {
                 if (Constant.BT_DEVICE_NAME.equalsIgnoreCase("") || Constant.BT_DEVICE_NAME.equalsIgnoreCase(null) || Constant.BT_DEVICE_MAC_ADDRESS.equalsIgnoreCase("") || Constant.BT_DEVICE_MAC_ADDRESS.equalsIgnoreCase(null)) {
-                    if(ioio== 0)
-                    {
+                    if (ioio == 0) {
                         ioio = 1;
                         Intent intent = new Intent(mContext, PairedDeviceActivity.class);
                         mContext.startActivity(intent);
@@ -226,15 +224,12 @@ public class ActivityDeviceDetailsInfoAOneSS extends AppCompatActivity {
         CustomerName = "";
         Mobile = "";
 
-        if (SharedPreferencesUtil.getData(mContext, com.shaktipumps.shakti_rms.webservice.Constant.LANGUAGE_NAME_CODE) == null || SharedPreferencesUtil.getData(mContext, com.shaktipumps.shakti_rms.webservice.Constant.LANGUAGE_NAME_CODE).equalsIgnoreCase(""))
-        {
+        if (SharedPreferencesUtil.getData(mContext, com.shaktipumps.shakti_rms.webservice.Constant.LANGUAGE_NAME_CODE) == null || SharedPreferencesUtil.getData(mContext, com.shaktipumps.shakti_rms.webservice.Constant.LANGUAGE_NAME_CODE).equalsIgnoreCase("")) {
             SharedPreferencesUtil.setData(mContext, com.shaktipumps.shakti_rms.webservice.Constant.LANGUAGE_NAME_CODE, "en");
             SharedPreferencesUtil.setData(mContext, com.shaktipumps.shakti_rms.webservice.Constant.LANGUAGE_NAME_SAVE, "English");
 
             com.shaktipumps.shakti_rms.webservice.Constant.setLocale(mContext, "en");
-        }
-        else
-        {
+        } else {
             String hhhhh = SharedPreferencesUtil.getData(mContext, com.shaktipumps.shakti_rms.webservice.Constant.LANGUAGE_NAME_CODE);
             com.shaktipumps.shakti_rms.webservice.Constant.setLocale(mContext, hhhhh);
         }
@@ -243,7 +238,7 @@ public class ActivityDeviceDetailsInfoAOneSS extends AppCompatActivity {
         Constant.CHECK_FOR_WORK_WITH_BT_OR_IN = 0;
         Constant.BT_DEVICE_NAME = "";
         Constant.BT_DEVICE_MAC_ADDRESS = "";
-        mPosition = getIntent().getIntExtra("mPos",0);
+        mPosition = getIntent().getIntExtra("mPos", 0);
         customerSearchesList = (List<Customer_GPS_Search>) getIntent().getSerializableExtra("mDeviceDetail");
         vDeviceNo = customerSearchesList.get(mPosition).getDeviceNo();
 
@@ -253,15 +248,14 @@ public class ActivityDeviceDetailsInfoAOneSS extends AppCompatActivity {
         //MUserId = customerSearchesList.get(mPosition).getMUserId();
         try {
             MUserId = pref.getString("key_muserid", "invalid_muserid");
-            clientid = Integer.parseInt(pref.getString("key_clientid", "0")) ;
+            clientid = Integer.parseInt(pref.getString("key_clientid", "0"));
         } catch (Exception e) {
             e.printStackTrace();
         }
 
 
-        if (  clientid == 9999)
-        {
-            clientid = 0 ;
+        if (clientid == 9999) {
+            clientid = 0;
         }
 
         DeviceNo = customerSearchesList.get(mPosition).getDeviceNo();
@@ -284,14 +278,11 @@ public class ActivityDeviceDetailsInfoAOneSS extends AppCompatActivity {
         txtMotorStatusIID = (TextView) findViewById(R.id.txtMotorStatusIID);
 
 
-        if (  clientid == 0)
-        {
+        if (clientid == 0) {
             // single_user_displayView(0);
             SideMenuInitView(0);
             txtDeleteButtonID.setVisibility(View.VISIBLE);
-        }
-        else
-        {
+        } else {
             //org_user_displayView(0);
             SideMenuInitView(1);
             txtDeleteButtonID.setVisibility(View.GONE);
@@ -326,15 +317,12 @@ public class ActivityDeviceDetailsInfoAOneSS extends AppCompatActivity {
         txtHeaderID = (TextView) findViewById(R.id.txtHeaderID);
 
 
-
-
         rlvTabMotorID = (RelativeLayout) findViewById(R.id.rlvTabMotorID);
         rlvTabControlID = (RelativeLayout) findViewById(R.id.rlvTabControlID);
 
 
         txtSettingID = (TextView) findViewById(R.id.txtSettingID);
         txtVfdID = (TextView) findViewById(R.id.txtVfdID);
-
 
 
         //txtTotalEnergyHeadingID = (TextView) findViewById(R.id.txtTotalEnergyHeadingID);
@@ -345,16 +333,10 @@ public class ActivityDeviceDetailsInfoAOneSS extends AppCompatActivity {
         txtGraphID = (ImageView) findViewById(R.id.txtGraphID);
 
 
-
-
-
-
-
         rlvTabMotorID.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 imgVFDId.setImageResource(R.drawable.iv_vfd_motor_blue);
-
 
 
                 //  txtDataID.setTextColor(getResources().getColor(R.color.white));
@@ -367,7 +349,7 @@ public class ActivityDeviceDetailsInfoAOneSS extends AppCompatActivity {
                 txtSettingID.setTextColor(getResources().getColor(R.color.dark_bg_grey));
                 //  txtGraphID.setTextColor(getResources().getColor(R.color.black));
 
-                PagePositionIndex =0;
+                PagePositionIndex = 0;
                 viewPager.setCurrentItem(0);
             }
         });
@@ -380,13 +362,12 @@ public class ActivityDeviceDetailsInfoAOneSS extends AppCompatActivity {
                 imgVFDId.setImageResource(R.drawable.iv_vfd_motor_gray);
 
 
-
                 txtVfdID.setTextColor(getResources().getColor(R.color.dark_bg_grey));
 
                 txtSettingID.setTextColor(getResources().getColor(R.color.blue_fb));
                 //   txtDataID.setTextColor(getResources().getColor(R.color.black));
 
-                PagePositionIndex =1;
+                PagePositionIndex = 1;
                 viewPager.setCurrentItem(1);
             }
         });
@@ -398,21 +379,16 @@ public class ActivityDeviceDetailsInfoAOneSS extends AppCompatActivity {
         imgHeaderID = (ImageView) findViewById(R.id.imgHeaderID);
         txtHeaderID.setText(customerSearchesList.get(mPosition).getDeviceNo());
 
-        if(Constant.CHECK_BACK_MENU_VIEW_ICON == 1)
-        {
+        if (Constant.CHECK_BACK_MENU_VIEW_ICON == 1) {
             imgHeaderID.setImageResource(R.drawable.icn_menu);
-        }
-        else
-        {
+        } else {
             imgHeaderID.setImageResource(R.drawable.icn_back);
         }
 
 
         try {
-            if(mImageUrl == null || mImageUrl.equalsIgnoreCase(""))
-            {
-            }else
-            {
+            if (mImageUrl == null || mImageUrl.equalsIgnoreCase("")) {
+            } else {
                 Picasso.with(this).load(mImageUrl).placeholder(R.drawable.logo).into(imgDeviceImageID);
             }
         } catch (Exception e) {
@@ -426,9 +402,6 @@ public class ActivityDeviceDetailsInfoAOneSS extends AppCompatActivity {
         vDeviceType = customerSearchesList.get(mPosition).getDeviceType();
         mModelType = customerSearchesList.get(mPosition).getModelType();
         vMDeviceId = customerSearchesList.get(mPosition).getMDeviceId();
-
-
-
 
 
         txtDeleteButtonID.setOnClickListener(new View.OnClickListener() {
@@ -456,18 +429,18 @@ public class ActivityDeviceDetailsInfoAOneSS extends AppCompatActivity {
 
                 swipeRefresh.setRefreshing(true);
                 //  callTotalEnergyAndConjuptionAPI();
-                if(CustomUtility.isOnline(mContext)){
+                if (CustomUtility.isOnline(mContext)) {
                     callTotalEnergyAndConjuptionAPI();
-                }else{
+                } else {
                     swipeRefresh.setRefreshing(false);
                     mAOneSSResponse = mDatabaseHelperTeacher.getDeviceA1ssDATA(vDeviceType);
                 }
             }
         });
 
-        if(CustomUtility.isOnline(mContext)){
+        if (CustomUtility.isOnline(mContext)) {
             callTotalEnergyAndConjuptionAPI();
-        }else{
+        } else {
 
             //swipeRefresh.setRefreshing(false);
             mAOneSSResponse = mDatabaseHelperTeacher.getDeviceA1ssDATA(vDeviceType);
@@ -488,7 +461,6 @@ public class ActivityDeviceDetailsInfoAOneSS extends AppCompatActivity {
             }
         }
         // callTotalEnergyAndConjuptionAPI();
-
 
 
     }
@@ -560,8 +532,7 @@ public class ActivityDeviceDetailsInfoAOneSS extends AppCompatActivity {
     }
 
 
-    private void SideMenuInitView(int OEM_Check)
-    {
+    private void SideMenuInitView(int OEM_Check) {
         rlvMenuOptionRemoveDeviceViewID = (RelativeLayout) findViewById(R.id.rlvMenuOptionRemoveDeviceViewID);
         rlvSlideMenuViewID = (RelativeLayout) findViewById(R.id.rlvSlideMenuViewID);
         rlvMenuOptionHomeViewID = (RelativeLayout) findViewById(R.id.rlvMenuOptionHomeViewID);
@@ -579,25 +550,19 @@ public class ActivityDeviceDetailsInfoAOneSS extends AppCompatActivity {
 
         String version = "App Version: " + versionName;
 
-      //  txtAppVersionID.setText(version);
-        txtAppVersionID.setText("App Version: "+NewSolarVFD.versionNameForAll);
+        //  txtAppVersionID.setText(version);
+        txtAppVersionID.setText("App Version: " + NewSolarVFD.versionNameForAll);
 
-        if(OEM_Check == 0)
-        {
+        if (OEM_Check == 0) {
             rlvMenuOptionAddDeviceViewID.setVisibility(View.VISIBLE);
-        }
-        else
-        {
+        } else {
             rlvMenuOptionAddDeviceViewID.setVisibility(View.GONE);
         }
 
 
-        if(Constant.CHECK_COUNT_OF_DELETE == 1)
-        {
+        if (Constant.CHECK_COUNT_OF_DELETE == 1) {
             rlvMenuOptionRemoveDeviceViewID.setVisibility(View.VISIBLE);
-        }
-        else
-        {
+        } else {
             rlvMenuOptionRemoveDeviceViewID.setVisibility(View.GONE);
         }
 
@@ -634,12 +599,10 @@ public class ActivityDeviceDetailsInfoAOneSS extends AppCompatActivity {
             public void onClick(View v) {
 
 
-                if (checkAndRequestPermissions())
-                {
+
                     Intent intent = new Intent(mContext, AddDevice.class);
                     startActivity(intent);
-                }
-                // overridePendingTransition(R.anim.right_to_left, R.anim.lefr_to_right);
+
                 rlvSlideMenuViewID.setVisibility(View.GONE);
             }
         });
@@ -648,8 +611,8 @@ public class ActivityDeviceDetailsInfoAOneSS extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                    Intent intent = new Intent(mContext, ChangePasswordActivity.class);
-                    startActivity(intent);
+                Intent intent = new Intent(mContext, ChangePasswordActivity.class);
+                startActivity(intent);
 
                 // overridePendingTransition(R.anim.right_to_left, R.anim.lefr_to_right);
                 rlvSlideMenuViewID.setVisibility(View.GONE);
@@ -692,7 +655,7 @@ public class ActivityDeviceDetailsInfoAOneSS extends AppCompatActivity {
 
     }
 
-    public  void  logout(){
+    public void logout() {
 
         new AlertDialog.Builder(this)
 
@@ -707,12 +670,12 @@ public class ActivityDeviceDetailsInfoAOneSS extends AppCompatActivity {
 
                         editor.putString("key_otp_for_user", "9999");
                         editor.putString("key_mparentid", "9999");
-                        editor.putString("key_muserid","9999");
+                        editor.putString("key_muserid", "9999");
                         // editor.putString("key_clientid","9999");
-                        editor.putString("key_clientid","0");
+                        editor.putString("key_clientid", "0");
                         editor.putString("key_login_username", "Invalid User");
-                        editor.putString("key_clientid_for_map","9999");
-                        editor.putString("key_clientid_for_data_report","9999");
+                        editor.putString("key_clientid_for_map", "9999");
+                        editor.putString("key_clientid_for_data_report", "9999");
                         SharedPreferencesUtil.setData(getApplicationContext(), Constant.CHECK_APP_DEVICE_TYPE, "0");
 
 //                        editor.putString("key_time_zone_city","Invalid" );
@@ -822,13 +785,10 @@ public class ActivityDeviceDetailsInfoAOneSS extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //finish();
-                if(Constant.CHECK_BACK_MENU_VIEW_ICON == 1)
-                {
+                if (Constant.CHECK_BACK_MENU_VIEW_ICON == 1) {
                     rlvSlideMenuViewID.setVisibility(View.VISIBLE);
                     overridePendingTransition(R.anim.lefr_to_right, R.anim.right_to_left);
-                }
-                else
-                {
+                } else {
                     finish();
                 }
 
@@ -893,7 +853,7 @@ public class ActivityDeviceDetailsInfoAOneSS extends AppCompatActivity {
         try {
             progressDialog.dismiss();
 
-            if(progressDialog !=null)
+            if (progressDialog != null)
                 progressDialog = null;
 
         } catch (Exception e) {
@@ -904,10 +864,9 @@ public class ActivityDeviceDetailsInfoAOneSS extends AppCompatActivity {
 
     private void getAOneSSResponse(AOneSSModel mAOneSSModel) {
         // if (!mSettingModelView.getStatus().equalsIgnoreCase("") && !mSettingModelView.getStatus().equalsIgnoreCase("null") && mSettingModelView.getStatus().equalsIgnoreCase("true"))
-        if (mAOneSSModel.getStatus())
-        {
+        if (mAOneSSModel.getStatus()) {
             swipeRefresh.setRefreshing(false);
-            if(mAOneSSResponse != null )
+            if (mAOneSSResponse != null)
                 mAOneSSResponse = null;
 
             // mAOneSSModel = mWelcomeModelView.getResponse();
@@ -916,8 +875,8 @@ public class ActivityDeviceDetailsInfoAOneSS extends AppCompatActivity {
             //total_fault = mAOneSSResponse.getTotalFault();
             current_fault = mAOneSSResponse.getFault();
 
-            if(mAOneSSResponse != null ){
-                mDatabaseHelperTeacher.insertDeviceA1ssData(vMUserId, vMDeviceId, vDeviceNo, vDeviceType,mAOneSSResponse,mCheckFirst);
+            if (mAOneSSResponse != null) {
+                mDatabaseHelperTeacher.insertDeviceA1ssData(vMUserId, vMDeviceId, vDeviceNo, vDeviceType, mAOneSSResponse, mCheckFirst);
             }
 
             if (viewPager != null) {
@@ -987,9 +946,8 @@ public class ActivityDeviceDetailsInfoAOneSS extends AppCompatActivity {
 
     private void getTotalEndAndConsuptionsResponse(ShimaModel mShimaModel) {
         // if (!mSettingModelView.getStatus().equalsIgnoreCase("") && !mSettingModelView.getStatus().equalsIgnoreCase("null") && mSettingModelView.getStatus().equalsIgnoreCase("true"))
-        if (mShimaModel.getStatus())
-        {
-            if(mShimaResponse != null )
+        if (mShimaModel.getStatus()) {
+            if (mShimaResponse != null)
                 mShimaResponse = null;
 
             // mTotalEndAndConsuptionsModelView = mWelcomeModelView.getResponse();
@@ -1013,7 +971,7 @@ public class ActivityDeviceDetailsInfoAOneSS extends AppCompatActivity {
                 //  txtMotorStatusIID.setTextColor(getResources().getColor(R.color.gray));
                 // imgMoterStatusID.setImageResource(R.mipmap.grey_ball);
             }
-            mDatabaseHelperTeacher.insertDeviceSHIMAData(vMUserId, vMDeviceId, vDeviceNo, vDeviceType,mShimaResponse,mCheckFirst);
+            mDatabaseHelperTeacher.insertDeviceSHIMAData(vMUserId, vMDeviceId, vDeviceNo, vDeviceType, mShimaResponse, mCheckFirst);
 
             if (viewPager != null) {
 
@@ -1040,7 +998,7 @@ public class ActivityDeviceDetailsInfoAOneSS extends AppCompatActivity {
         @Override
         public void handleMessage(Message msg) {
             String mString = (String) msg.obj;
-            Toast.makeText(mContext, ""+mString, Toast.LENGTH_LONG).show();
+            Toast.makeText(mContext, "" + mString, Toast.LENGTH_LONG).show();
         }
     };
 
@@ -1118,8 +1076,6 @@ public class ActivityDeviceDetailsInfoAOneSS extends AppCompatActivity {
             imgVFDId.setImageResource(R.drawable.iv_vfd_motor_gray);
 
 
-
-
             txtVfdID.setTextColor(getResources().getColor(R.color.dark_bg_grey));
 
             txtSettingID.setTextColor(getResources().getColor(R.color.blue_fb));
@@ -1135,13 +1091,11 @@ public class ActivityDeviceDetailsInfoAOneSS extends AppCompatActivity {
     }
 
 
-
-
     private class PageListener extends CustomViewPager.SimpleOnPageChangeListener {
         public void onPageSelected(int position) {
             Log.i(TAG, "page selected " + position);
 
-            if (position == 0){
+            if (position == 0) {
                 try {
 
                     txtGraphID.setImageResource(R.drawable.settings_unselected);
@@ -1158,7 +1112,7 @@ public class ActivityDeviceDetailsInfoAOneSS extends AppCompatActivity {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-            }else {
+            } else {
                 try {
 
                     txtGraphID.setImageResource(R.drawable.settings_selected);
@@ -1186,7 +1140,6 @@ public class ActivityDeviceDetailsInfoAOneSS extends AppCompatActivity {
         txtDataExtractionID.setEnabled(state);
         txtDataExtractionID.setAlpha(alphaRate);
     }
-
 
 
     public void backConfirmPopupID(final Context context, final List<Customer_GPS_Search> customerSearchesList, final int pos) {
@@ -1255,58 +1208,5 @@ public class ActivityDeviceDetailsInfoAOneSS extends AppCompatActivity {
 
     }
 
-
-    private boolean checkAndRequestPermissions() {
-
-        int LOCATION = ContextCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_FINE_LOCATION);
-        int CAMERAV = ContextCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_FINE_LOCATION);
-
-        List<String> listPermissionsNeeded = new ArrayList<>();
-
-        if (LOCATION != PackageManager.PERMISSION_GRANTED) {
-            listPermissionsNeeded.add(Manifest.permission.ACCESS_FINE_LOCATION);
-        }
-        if (!listPermissionsNeeded.isEmpty()) {
-            ActivityCompat.requestPermissions(mActivity, listPermissionsNeeded.toArray(new String[listPermissionsNeeded.size()]), REQUEST_ID_MULTIPLE_PERMISSIONS);
-            return false;
-        }
-
-        if (CAMERAV != PackageManager.PERMISSION_GRANTED) {
-            listPermissionsNeeded.add(Manifest.permission.CAMERA);
-        }
-        if (!listPermissionsNeeded.isEmpty()) {
-            ActivityCompat.requestPermissions(mActivity, listPermissionsNeeded.toArray(new String[listPermissionsNeeded.size()]), REQUEST_ID_MULTIPLE_PERMISSIONS);
-            return false;
-        }
-        return true;
-    }
-
-    //This method will be called when the user will tap on allow or deny
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-
-        if (requestCode == STORAGE_PERMISSION_CODE) {
-
-            // if (grantResults.length > 0 && grantResults[2] == PackageManager.PERMISSION_GRANTED)
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
-            {
-//Displaying a toast
-                Toast.makeText(mContext, getResources().getString(R.string.Permission_granted_now_you_can_use_user_location_text), Toast.LENGTH_LONG).show();
-            } else {
-//Displaying another toast if permission is not granted
-                Toast.makeText(mContext, getResources().getString(R.string.Oops_you_just_denied_the_permission_text), Toast.LENGTH_LONG).show();
-                // checkAndRequestPermissions();
-            }
-
-            if (grantResults.length > 0 && grantResults[1] == PackageManager.PERMISSION_GRANTED) {
-//Displaying a toast
-                Toast.makeText(mContext, getResources().getString(R.string.Permission_granted_now_you_can_use_camera_text), Toast.LENGTH_LONG).show();
-            } else {
-//Displaying another toast if permission is not granted
-                Toast.makeText(mContext, getResources().getString(R.string.Oops_you_just_denied_the_permission_text), Toast.LENGTH_LONG).show();
-                // checkAndRequestPermissions();
-            }
-        }
-    }
 
 }

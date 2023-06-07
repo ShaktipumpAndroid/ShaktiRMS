@@ -1,6 +1,5 @@
 package com.shaktipumps.shakti_rms.activity;
 
-import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -13,7 +12,6 @@ import android.content.CursorLoader;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -23,7 +21,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.provider.Settings;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
@@ -41,7 +38,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
-import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -420,7 +416,7 @@ public class SimhaTwoODATAExtractionActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                requestStoragePermission();
+
                 UploadFileToServerOption(mContext);
                 //showFileChooser();
                 // fileUplaodToServer(mContext);
@@ -476,9 +472,7 @@ public class SimhaTwoODATAExtractionActivity extends AppCompatActivity {
                 mPostionFinal = 0;
                 mBoolflag = false;
                 mCheckCLICKDayORMonth = 1;/////////months
-                // new BluetoothCommunicationForFirstActivity().execute("M0000000000E", "M0000000000E", "START");
-                //    new BluetoothCommunicationForFirstActivity().execute(":MDATA#", ":MDATA#", "START");
-                if (mMonthHeaderList.size() > 0)
+                  if (mMonthHeaderList.size() > 0)
                     mMonthHeaderList.clear();
 
                 runOnUiThread(new Runnable() {
@@ -2838,8 +2832,17 @@ public class SimhaTwoODATAExtractionActivity extends AppCompatActivity {
 
 
     private void changeButtonVisibility(boolean state, float alphaRate, TextView txtDoanloadFileBTNID) {
-        txtDoanloadFileBTNID.setEnabled(state);
-        txtDoanloadFileBTNID.setAlpha(alphaRate);
+        runOnUiThread(new Runnable() {
+
+            @Override
+            public void run() {
+
+                txtUploadBTNID.setEnabled(state);
+                txtUploadBTNID.setAlpha(alphaRate);
+
+            }
+        });
+
     }
 
     /////////////////////////////
@@ -4042,7 +4045,6 @@ public class SimhaTwoODATAExtractionActivity extends AppCompatActivity {
             //  baseRequest.showLoader();
         }
 
-        @RequiresApi(api = Build.VERSION_CODES.KITKAT)
         @Override
         protected Boolean doInBackground(String... requests) //while the progress dialog is shown, the connection is done in background
         {
@@ -4153,36 +4155,31 @@ public class SimhaTwoODATAExtractionActivity extends AppCompatActivity {
                                 i++;
                             }
                         } else {
-
-                            File file = new File(GlobalMethod.commonDocumentDirPath("ShaktiExtractionFile"), "Month_" + mBtNameHead + ".xls");
-
-                           // File file = new File(mContext.getExternalFilesDir(null), "Month_" + mBtNameHead + ".xls");
-                            // File file = new File(mContext.getExternalFilesDir(null), "Month_" + mBtNameHead + ".xlsx");
+                            File file_day = new File(GlobalMethod.commonDocumentDirPath("ShaktiExtractionFile"), "Month_" + mBtNameHead + ".xls");
                             FileOutputStream os = null;
-                            System.out.println("vikas--4==>4");
-                            //baseRequest.hideLoader();
+
                             try {
-                                os = new FileOutputStream(file);
+                                os = new FileOutputStream(file_day);
                                 wb.write(os);
-                                Log.w("FileUtils", "Writing file" + file);
+                                Log.w("FileUtils", "Writing file" + file_day);
                                 success = true;
                             } catch (IOException e) {
-                                Log.w("FileUtils", "Error writing " + file, e);
+                                Log.w("FileUtils", "Error writing " + file_day, e);
                             } catch (Exception e) {
                                 Log.w("FileUtils", "Failed to save file", e);
                             } finally {
                                 try {
-                                    os = new FileOutputStream(file);
+
+                                    os = new FileOutputStream(file_day);
                                     wb.write(os);
                                     if (null != os)
                                         os.close();
                                 } catch (Exception ex) {
-                                    System.out.println("vikas--5==>5");
-                                    // baseRequest.hideLoader();
+                                    //  baseRequest.hideLoader();
                                     ex.printStackTrace();
                                 }
                             }
-                            // myBluetooth.disable();
+                            //   myBluetooth.disable();
                             changeButtonVisibility(true, 1.0f, txtUploadBTNID);
                             // Toast.makeText(mContext, "Process completed..1", Toast.LENGTH_SHORT).show();
                             break;
@@ -4192,14 +4189,9 @@ public class SimhaTwoODATAExtractionActivity extends AppCompatActivity {
                             // File file = new File(mContext.getExternalFilesDir(null), "Month_" + mBtNameHead + ".xlsx");
 
                             File file = new File(GlobalMethod.commonDocumentDirPath("ShaktiExtractionFile"), "Month_" + mBtNameHead + ".xls");
-
-                          //  File file = new File(mContext.getExternalFilesDir(null), "Month_" + mBtNameHead + ".xls");
-                            FileOutputStream os = null;
-                            //  File file = new File(mContext.getExternalFilesDir(null), "Month" + mBtNameHead + ".xls");
-                            //   FileOutputStream os = null;
-                            //    baseRequest.hideLoader();
+                            FileOutputStream  os;
                             try {
-                                os = new FileOutputStream(file);
+                                  os = new FileOutputStream(file);
                                 wb.write(os);
                                 Log.w("FileUtils", "Writing file" + file);
                                 success = true;
@@ -4209,11 +4201,13 @@ public class SimhaTwoODATAExtractionActivity extends AppCompatActivity {
                                 Log.w("FileUtils", "Failed to save file", e);
                             } finally {
                                 try {
+
                                     os = new FileOutputStream(file);
                                     wb.write(os);
                                     if (null != os)
                                         os.close();
                                 } catch (Exception ex) {
+                                    //  baseRequest.hideLoader();
                                     ex.printStackTrace();
                                 }
                             }
@@ -4325,41 +4319,6 @@ public class SimhaTwoODATAExtractionActivity extends AppCompatActivity {
                                     //      baseRequest.hideLoader();
                                 }
 
-                                mvDay = mDay;
-                                mvMonth = mMonth;
-                                mvYear = mYear;
-                                mvHour = "" + mHour;
-                                mvMinute = "" + mMinut;
-                                mvNo_of_Start = "" + mStatus;
-
-                                fvFrequency = fFrequency;
-                                fvRMSVoltage = fRMSVoltage;
-                                fvOutputCurrent = fOutputCurrent;
-                                mvRPM = "" + mRPM;
-                                fvLPM = fLPM;
-                                fvPVVoltage = fPVVoltage;
-                                fvPVCurrent = fPVCurrent;
-                                mvFault = "" + mFault;
-                                fvInvTemp = fInvTemp;
-
-                                mvDay = mDay;
-                                mvMonth = mMonth;
-                                mvYear = mYear;
-                                mvHour = "" + mHour;
-                                mvMinute = "" + mMinut;
-                                mvNo_of_Start = "" + mStatus;
-
-                                fvFrequency = fFrequency;
-                                fvRMSVoltage = fRMSVoltage;
-                                fvOutputCurrent = fOutputCurrent;
-                                mvRPM = "" + mRPM;
-                                fvLPM = fLPM;
-                                fvPVVoltage = fPVVoltage;
-                                fvPVCurrent = fPVCurrent;
-                                mvFault = "" + mFault;
-                                fvInvTemp = fInvTemp;
-
-
                             } else {
                                 // cs.setFillPattern(HSSFCellStyle.NO_FILL);
                                 row = sheet1.createRow(mPostionFinal + 1);
@@ -4403,14 +4362,14 @@ public class SimhaTwoODATAExtractionActivity extends AppCompatActivity {
 
                                             if (mmIntt == 1) {
 
+                                                if(j<15) {
+                                                    sheet1.setColumnWidth(j, (10 * 200));
+                                                    fFrequency = mTotalTime[j];
 
-                                                sheet1.setColumnWidth(j, (10 * 200));
-                                                fFrequency = mTotalTime[j];
-
-                                                c = row.createCell(j);
-                                                c.setCellValue("" + fFrequency);
-                                                c.setCellStyle(cs);
-
+                                                    c = row.createCell(j);
+                                                    c.setCellValue("" + fFrequency);
+                                                    c.setCellStyle(cs);
+                                                }
                                                 // tr.addView(getTextView(counter, ((mTotalTime[i] / mmIntt)) + "", Color.BLACK, Typeface.NORMAL, ContextCompat.getColor(this, R.color.white)));
                                             } else {
 
@@ -4433,12 +4392,6 @@ public class SimhaTwoODATAExtractionActivity extends AppCompatActivity {
                                             e.printStackTrace();
                                         }
 
-                                       /* sheet1.setColumnWidth(j, (10 * 200));
-                                        fFrequency = mTotalTime[j];
-
-                                        c = row.createCell(j);
-                                        c.setCellValue("" + fFrequency);
-                                        c.setCellStyle(cs);*/
                                     }
                                 } catch (NumberFormatException e) {
                                     e.printStackTrace();
@@ -4463,21 +4416,6 @@ public class SimhaTwoODATAExtractionActivity extends AppCompatActivity {
                             fvPVCurrent = fPVCurrent;
                             mvFault = "" + mFault;
                             fvInvTemp = fInvTemp;
-
-                           /* if (((mDay == 0) || (mMonth == 0) || (mYear == 0))) {
-
-                                baseRequest.showLoader();
-
-                            } else if ((mDay != 255) && (mMonth != 255) && (mYear != 255)) {
-                                runOnUiThread(new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        // addHeadersDay();
-                                        // addDataMonth(mPostionFinal + 1, mvDay + "", mvMonth + "", mvYear + "", mvHour, mvMinute, mvNo_of_Start, fvFrequency, fvRMSVoltage, fvOutputCurrent, mvRPM, fvLPM, fvPVVoltage, fvPVCurrent, mvFault, fvInvTemp);
-                                        addDataMonth(mPostionFinal + 1, mvDay + "", mvMonth + "", mvYear + "", mTotalTime);
-                                    }
-                                });
-                            }*/
 
                             mPostionFinal++;
                         }
@@ -4576,15 +4514,15 @@ public class SimhaTwoODATAExtractionActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 try {
-                 //   filePath = "/storage/emulated/0/Android/data/com.shaktipumps.shakti_rms/files/Month_" + mBtNameHead + ".xls";//Month_26-0018-0-18-03-19-0.xls";
-                    filePath = "/storage/emulated/0/Documents/ShaktiExtractionFile/Month_" + mBtNameHead + ".xls";//Month_26-0018-0-18-03-19-0.xls";
+                    //   filePath = "/storage/emulated/0/Android/data/com.shaktipumps.shakti_rms/files/Month_" + mBtNameHead + ".xls";//Month_26-0018-0-18-03-19-0.xls";
+                    filePath = "/storage/emulated/0/Documents/ShaktiExtractionFile/DAY_" + mBtNameHead + ".xls";//Month_26-0018-0-18-03-19-0.xls";
                     // Log.d("picUri", picUri.toString());
                     Log.d("filePath", filePath);
-                  //  String[] mDataNameString = filePath.split("files/");
+                    //  String[] mDataNameString = filePath.split("files/");
                     String[] mDataNameString = filePath.split("ShaktiExtractionFile/");
                     String[] mDataNameString1 = mDataNameString[1].split(".xls");
                     String[] mDataNameString2 = mDataNameString1[0].split("_");
-                    GetProfileUpdate_Task(mDataNameString2[1], mDataNameString2[0], headerLenghtDAy);
+                    GetProfileUpdate_Task(mDataNameString2[1], mDataNameString2[0], headerLenghtDAy,filePath);
                     dialog.dismiss();
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -4597,15 +4535,15 @@ public class SimhaTwoODATAExtractionActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    filePath = "/storage/emulated/0/Documents/ShaktiExtractionFile/Day_" + mBtNameHead + ".xls";//Month_26-0018-0-18-03-19-0.xls";
-               //     filePath = "/storage/emulated/0/Android/data/com.shaktipumps.shakti_rms/files/Day_" + mBtNameHead + ".xls";//Month_26-0018-0-18-03-19-0.xls";
+                    filePath = "/storage/emulated/0/Documents/ShaktiExtractionFile/Month_" + mBtNameHead + ".xls";//Month_26-0018-0-18-03-19-0.xls";
+                    //     filePath = "/storage/emulated/0/Android/data/com.shaktipumps.shakti_rms/files/Day_" + mBtNameHead + ".xls";//Month_26-0018-0-18-03-19-0.xls";
                     // Log.d("picUri", picUri.toString());
                     Log.d("filePath", filePath);
-                   // String[] mDataNameString = filePath.split("files/");
+                    // String[] mDataNameString = filePath.split("files/");
                     String[] mDataNameString = filePath.split("ShaktiExtractionFile/");
                     String[] mDataNameString1 = mDataNameString[1].split(".xls");
                     String[] mDataNameString2 = mDataNameString1[0].split("_");
-                    GetProfileUpdate_Task(mDataNameString2[1], mDataNameString2[0], headerLenghtMonth);
+                    GetProfileUpdate_Task(mDataNameString2[1], mDataNameString2[0], headerLenghtMonth,filePath);
                     dialog.dismiss();
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -4628,7 +4566,7 @@ public class SimhaTwoODATAExtractionActivity extends AppCompatActivity {
                     String[] mDataNameString1 = mDataNameString[1].split(".xls");
                     String[] mDataNameString2 = mDataNameString1[0].split("_");
 
-                    GetProfileUpdate_Task(mDataNameString2[1], mDataNameString2[0], headerLenghtFalt);
+                    GetProfileUpdate_Task(mDataNameString2[1], mDataNameString2[0], headerLenghtFalt,filePath);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -4641,17 +4579,18 @@ public class SimhaTwoODATAExtractionActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 try {
-                  //  filePath = "/storage/emulated/0/Android/data/com.shaktipumps.shakti_rms/files/DongleDay_" + mBtNameHead + ".xls";//Month_26-0018-0-18-03-19-0.xls";
+                    //  filePath = "/storage/emulated/0/Android/data/com.shaktipumps.shakti_rms/files/DongleDay_" + mBtNameHead + ".xls";//Month_26-0018-0-18-03-19-0.xls";
                     filePath = "/storage/emulated/0/Documents/ShaktiExtractionFile/DongleDay_" + mBtNameHead + ".xls";//Month_26-0018-0-18-03-19-0.xls";
                     // Log.d("picUri", picUri.toString());
                     Log.d("filePath", filePath);
 
-                   // String[] mDataNameString = filePath.split("files/");
+                    // String[] mDataNameString = filePath.split("files/");
+
                     String[] mDataNameString = filePath.split("ShaktiExtractionFile/");
                     String[] mDataNameString1 = mDataNameString[1].split(".xls");
                     String[] mDataNameString2 = mDataNameString1[0].split("_");
 
-                    GetProfileUpdate_Task(mDataNameString2[1], mDataNameString2[0], headerLenghtDayDongle);
+                    GetProfileUpdate_Task(mDataNameString2[1], mDataNameString2[0], headerLenghtDayDongle,filePath);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -4747,14 +4686,14 @@ public class SimhaTwoODATAExtractionActivity extends AppCompatActivity {
         dialog.show();
     }*/
 
-    public void GetProfileUpdate_Task(String deviceno, String type, String len) {
+    public void GetProfileUpdate_Task(String deviceno, String type, String len, String filePath) {
 
         if (CustomUtility.isOnline(mContext)) {
             baseRequest.showLoader();
             ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
             RequestBody fbody;
             MultipartBody.Part body = null;
-            Log.e("fileActualPath", "& " + filePath);
+            Log.e("fileActualPath", "& " +filePath);
             if (!UtilMethod.isStringNullOrBlank(filePath)) {
                 file = new File(filePath);
                 // fbody = RequestBody.create(MediaType.parse("xls/*"), file);
@@ -4770,14 +4709,16 @@ public class SimhaTwoODATAExtractionActivity extends AppCompatActivity {
 
             call.enqueue(new Callback<ProfileUpdateModel>() {
                 @Override
-                public void onResponse(Call<ProfileUpdateModel> call, retrofit2.Response<ProfileUpdateModel> response) {
+                public void onResponse(@NonNull Call<ProfileUpdateModel> call,@NonNull retrofit2.Response<ProfileUpdateModel> response) {
                     try {
                         ProfileUpdateModel dashResponse = response.body();
-                        Log.e("status", "** " + dashResponse);
-                        if (dashResponse.getStatus().equalsIgnoreCase("true")) {
-                            Toast.makeText(mContext, dashResponse.getMessage(), Toast.LENGTH_SHORT).show();
-                        } else {
-                            Toast.makeText(mContext, dashResponse.getMessage(), Toast.LENGTH_SHORT).show();
+
+                        if (dashResponse != null) {
+                            if (dashResponse.getStatus().equalsIgnoreCase("true")) {
+                                Toast.makeText(mContext, dashResponse.getMessage(), Toast.LENGTH_SHORT).show();
+                            } else {
+                                Toast.makeText(mContext, dashResponse.getMessage(), Toast.LENGTH_SHORT).show();
+                            }
                         }
                         baseRequest.hideLoader();
                     } catch (Exception e) {
@@ -4804,97 +4745,6 @@ public class SimhaTwoODATAExtractionActivity extends AppCompatActivity {
     }
 
 
-    /*New code for permission in android 11*/
-    public void takePermissions() {
-
-        if(isPermissionsGranted()){
-            Toast.makeText(mContext, "Permission already Granted", Toast.LENGTH_SHORT).show();
-        }
-        else
-        {
-            takePermission();
-        }
-
-
-    }
-
-    private boolean isPermissionsGranted() {
-        if (Build.VERSION.SDK_INT == Build.VERSION_CODES.R) {
-            // android 11
-            return Environment.isExternalStorageManager();
-        } else {
-            int readEnternalStoragePermission = ContextCompat.checkSelfPermission(mContext, Manifest.permission.READ_EXTERNAL_STORAGE);
-            return readEnternalStoragePermission == PackageManager.PERMISSION_GRANTED;
-        }
-
-    }
-
-    private void takePermission()
-    {
-        if (Build.VERSION.SDK_INT == Build.VERSION_CODES.R){
-            try{
-                Intent intent = new Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION);
-                intent.addCategory("android.intent.category.DEFAULT");
-                intent.setData(Uri.parse(String.format("package:%s",getApplicationContext().getApplicationContext())));
-                startActivityForResult(intent, 100);
-            }catch (Exception exception)
-            {
-                Intent intent = new Intent(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
-                startActivityForResult(intent, 100);
-            }
-        }
-        else
-        {
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 101);
-        }
-
-    }
-
-
-    /*End New code for permission in android 11*/
-
-
-    //Requesting permission
-    private void requestStoragePermission() {
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED)
-            return;
-
-        if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.READ_EXTERNAL_STORAGE)) {
-        }
-        //And finally ask for the permission
-        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, STORAGE_PERMISSION_CODE);
-    }
-
-    //This method will be called when the user will tap on allow or deny
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        //Checking the request code of our request
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == STORAGE_PERMISSION_CODE) {
-            //If permission is granted
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                //Displaying a toast
-                Toast.makeText(this, "Permission granted now you can read the storage", Toast.LENGTH_LONG).show();
-            } else {
-                //Displaying another toast if permission is not granted
-                Toast.makeText(this, "Oops you just denied the permission", Toast.LENGTH_LONG).show();
-            }
-        } else {
-            Toast.makeText(mContext, getResources().getString(R.string.permission_set_manually), Toast.LENGTH_LONG).show();
-        }
-
-        if(grantResults.length > 0)
-        {
-            boolean readExternalStorage = grantResults[0] == PackageManager.PERMISSION_GRANTED;
-            if(readExternalStorage){
-                Toast.makeText(mContext, "Read permissin is granted in android 10 or below", Toast.LENGTH_SHORT).show();
-            }
-            else
-            {
-                takePermission();
-            }
-        }
-    }
 
     private String getPath(Uri contentUri) {
         String[] proj = {MediaStore.Images.Media.DATA};
@@ -4931,10 +4781,7 @@ public class SimhaTwoODATAExtractionActivity extends AppCompatActivity {
                     {
                         Toast.makeText(mContext, "Permission granted in andorid 11 and above!", Toast.LENGTH_SHORT).show();
                     }
-                    else
-                    {
-                        takePermission();
-                    }
+
                 }
 
             }
@@ -5248,12 +5095,18 @@ public class SimhaTwoODATAExtractionActivity extends AppCompatActivity {
             String[] mDataNameString2 = mDataNameString1[0].split("_");
           //  filePath = "/storage/emulated/0/Android/data/com.shaktipumps.shakti_rms/files/DongleMonth" + NewSolarVFD.mNumberOfMonth + "_" + mBtNameHead + ".xls";//Month_26-0018-0-18-03-19-0.xls";
             filePath = "/storage/emulated/0/Documents/ShaktiExtractionFile/DongleMonth" + NewSolarVFD.mNumberOfMonth + "_" + mBtNameHead + ".xls";//Month_26-0018-0-18-03-19-0.xls";
-            GetProfileUpdate_Task(mDataNameString2[1], mDataNameString2[0], headerLenghtMonthDongle);
+            GetProfileUpdate_Task(mDataNameString2[1], mDataNameString2[0], headerLenghtMonthDongle,filePath);
             //dialog.dismiss();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if(BTReceiver!=null){
+            unregisterReceiver(BTReceiver);
+        }
+    }
 }

@@ -127,16 +127,13 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
 
     @Override
     public void onDestroy() {
-        try {
-            progressDialog.dismiss();
 
-            if (progressDialog != null)
-                progressDialog = null;
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
         super.onDestroy();
+
+        if (progressDialog != null) {
+            progressDialog.dismiss();
+            progressDialog = null;
+        }
     }
 
     private void conditionFunctionNAvigation(ArrayList<Customer_GPS_Search> arraylist) {
@@ -629,76 +626,6 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
 
     }
 
-    public void showMap() {
-        progressDialog.show(); // Display Progress Dialog
-
-        new Thread(new Runnable() {
-            public void run() {
-                try {
-                    if (CustomUtility.isOnline(mContex)) {
-                        progressDialog.dismiss();
-                        Intent intent = new Intent(mContex, MapsActivity.class);
-                        intent.putExtra("MUserId", pref.getString("key_muserid", "invalid_muserid"));
-
-                        if (clientid == 0) // for single user
-                        {
-                            intent.putExtra("ClientId", "0");
-                        } else // for org user
-                        // this client id is taken from home layout for selected org client
-                        {
-                            intent.putExtra("ClientId", pref.getString("key_clientid_for_map", "0"));
-                        }
-                        intent.putExtra("MDeviceId", "0");
-                        mContex.startActivity(intent);
-                    } else {
-                        progressDialog.dismiss();
-                        CustomUtility.isErrorDialog(mContex, "Error", "No Internet Connection");
-                    }
-
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-
-            }
-        }).start();
-
-    }
-
-
-    public void device_activation_pending() {
-        progressDialog = new ProgressDialog(mContex);
-        progressDialog.setMessage("Loading..."); // Setting Message
-        progressDialog.setTitle("Please wait..."); // Setting Title
-        progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER); // Progress Dialog Style Spinner
-        progressDialog.show(); // Display Progress Dialog
-        progressDialog.setCancelable(false);
-
-        new Thread(new Runnable() {
-            public void run() {
-                try {
-
-
-                    if (CustomUtility.isOnline(mContex)) {
-                        progressDialog.dismiss();
-                        Intent intent = new Intent(MainActivity.this, ActivationPendingActivity.class);
-                        startActivity(intent);
-
-
-                    } else {
-                        progressDialog.dismiss();
-                        CustomUtility.isErrorDialog(mContex, "Error", getString(R.string.st_Pleasecheckinternetconnection));
-
-                    }
-
-
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-
-
-            }
-        }).start();
-    }
 
     @Override
     public void onBackPressed() {

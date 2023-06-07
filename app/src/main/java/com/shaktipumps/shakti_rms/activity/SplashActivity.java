@@ -59,7 +59,7 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
-public class SplashActivity extends Activity implements AnimationListener {
+public class SplashActivity extends AppCompatActivity {
 
     Vibrator vibe;
 
@@ -71,13 +71,6 @@ public class SplashActivity extends Activity implements AnimationListener {
     SharedPreferences.Editor editor;
     String current_date = "null" ,current_time;
     Context mContex ;
-    // Animation
-    Animation anim;
-    private BaseRequest baseRequest;
-    private String mCurrentMobileVer;
-    private String mOldMobileVer;
-    //private GifImageView gifImageView;
-    Animation animZoomin;
 
     ImageView imgLogoID;
 
@@ -91,31 +84,7 @@ public class SplashActivity extends Activity implements AnimationListener {
         setContentView(R.layout.activity_splash);
 
         mContex = this;
-       // commonDocumentDirPath("VikasFile");
-       // FirebaseApp.initializeApp(this);
-        /*try {
-            FirebaseApp.initializeApp(this);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }*/
-        baseRequest = new BaseRequest(this);
         imgLogoID = (ImageView) findViewById(R.id.imgLogoID);
-        System.out.println("mobvr=="+BuildConfig.VERSION_NAME);
-/*        gifImageView = (GifImageView) findViewById(R.id.gifImage);
-        gifImageView.setGifImageResource(R.drawable.filetranfer);*/
-        mOldMobileVer = BuildConfig.VERSION_NAME;
-
-
-
-
-        vibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-
-        animZoomin = AnimationUtils.loadAnimation(mContex,
-                R.anim.anim_up );
-
-        animZoomin.setAnimationListener(this);
-
-        imgLogoID.startAnimation(animZoomin);
 
         pref = getApplicationContext().getSharedPreferences("MyPref", MODE_PRIVATE);
         editor = pref.edit();

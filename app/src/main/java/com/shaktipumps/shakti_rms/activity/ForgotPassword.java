@@ -42,29 +42,6 @@ public class ForgotPassword extends AppCompatActivity {
 
         mContext = this;
 
-
-//        getSupportActionBar().setDisplayShowHomeEnabled(true);
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-//        getSupportActionBar().setTitle(R.string.action_forgotPassword);
-
-
-
-//        simpleWebView = (WebView) findViewById(R.id.simpleWebView);
-//
-//
-//
-//        try {
-//            simpleWebView.setWebViewClient(new MyWebViewClient());
-//            String url = NewSolarVFD.FORGOT_PASSWORD;
-//            simpleWebView.getSettings().setJavaScriptEnabled(true);
-//            simpleWebView.loadUrl(url); // load a web page in a web view
-//        }
-//        catch (Exception e)
-//        {
-//            e.printStackTrace();
-//        }
-
-
         progressBar = (ProgressBar) findViewById(R.id.awv_progressBar);
         swipe = (SwipeRefreshLayout) findViewById(R.id.swipe);
         LoadWeb();

@@ -238,7 +238,7 @@ public class CustomerGPSListViewAdapter extends BaseAdapter {
         }
 
 
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
         Date currentDate1 = new Date();
         Date strDate1 = null;
         try {
@@ -248,32 +248,11 @@ public class CustomerGPSListViewAdapter extends BaseAdapter {
         }
 
 
-        if (clientid > 0)
-        {
+        if (clientid > 0) {
             holder.cardPaymentLayerID.setVisibility(View.GONE);
         }
-        else
-        {
-           /* if (currentDate1.after(strDate1))
-            {
-                // holder.rlvEXPLayerID.setVisibility(View.VISIBLE);
-                holder.cardPaymentLayerID.setVisibility(View.VISIBLE);
-                // holder.OrderFiltercardViewID1.setCardBackgroundColor(mContext.getResources().getColor(R.color.trans_pink));
-            }
-            else
-            {
-                //holder.rlvEXPLayerID.setVisibility(View.GONE);
-                holder.cardPaymentLayerID.setVisibility(View.GONE);
-                //  holder.OrderFiltercardViewID1.setCardBackgroundColor(mContext.getResources().getColor(R.color.white));
-            }*/
-        }
 
-        holder.cardPaymentLayerID.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-            }
-        });
 
         holder.txtRenevBTNID.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -296,7 +275,7 @@ public class CustomerGPSListViewAdapter extends BaseAdapter {
                 NewSolarVFD.DEVICE_NUMBER_PAYMENT = customerSearchesList.get(position).getDeviceNo();
 
                 //SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-                @SuppressLint("SimpleDateFormat") SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+                @SuppressLint("SimpleDateFormat") SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd hh:mm:ss");
                 Date currentDate = new Date();
                 Date strDate = null;
                 try {

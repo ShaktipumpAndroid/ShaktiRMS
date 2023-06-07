@@ -308,7 +308,7 @@ public class ActivityDeviceDetailsInfoNandi extends AppCompatActivity {
         imgVFDId = (ImageView) findViewById(R.id.imgVFDId);
         imgPVID = (ImageView) findViewById(R.id.imgPVID);
         txtGraphID = (ImageView) findViewById(R.id.txtGraphID);
-        requestStoragePermission();
+
         filePath = "/storage/emulated/0/Android/data/com.shaktipumps.shakti_rms/files/Day_" + DeviceNo + ".xls";//Month_26-0018-0-18-03-19-0.xls";
         // Log.d("picUri", picUri.toString());
         Log.d("filePath", filePath);
@@ -1463,36 +1463,7 @@ public class ActivityDeviceDetailsInfoNandi extends AppCompatActivity {
 
     }
 
-    //Requesting permission
-    private void requestStoragePermission() {
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED)
-            return;
 
-        if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.READ_EXTERNAL_STORAGE)) {
-
-        }
-        //And finally ask for the permission
-        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, STORAGE_PERMISSION_CODE);
-    }
-
-    //This method will be called when the user will tap on allow or deny
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-
-        //Checking the request code of our request
-        if (requestCode == STORAGE_PERMISSION_CODE) {
-            //If permission is granted
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                //Displaying a toast
-                Toast.makeText(this, "Permission granted now you can read the storage", Toast.LENGTH_LONG).show();
-            } else {
-                //Displaying another toast if permission is not granted
-                Toast.makeText(this, "Oops you just denied the permission", Toast.LENGTH_LONG).show();
-            }
-        } else {
-            Toast.makeText(mContext, getResources().getString(R.string.permission_set_manually), Toast.LENGTH_LONG).show();
-        }
-    }
 
     private String getPath(Uri contentUri) {
         String[] proj = {MediaStore.Images.Media.DATA};

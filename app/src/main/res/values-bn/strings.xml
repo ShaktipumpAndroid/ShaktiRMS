@@ -355,6 +355,7 @@
     <string name="st_TSMOTORON">TS MOTOR ON</string>
     <string name="st_TSONGRID">TS ON GRID </string>
     <string name="st_TSONGRID_MOTORON">TS ON GRID,MOTOR ON</string>
+    <string name="all_permission">Please allow all the permission</string>
 
 
 </resources>
